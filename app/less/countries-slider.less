@@ -1,0 +1,119 @@
+.countries-slider {
+  border-top:  1px solid #f5897f;
+  border-bottom:  1px solid #f5897f;
+  &-item {
+    min-height: 145px;
+    padding: 20px 40px 40px;
+    &__title {
+      color: #ffffff;
+      font-family: @almost-font-family;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 50px;
+    }
+    &__note {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 22px;
+      margin-bottom: 0;
+    }
+  }
+  .slick-arrow {
+    display: inline-block;
+    z-index: 20;
+    &.slick-prev {
+      left: 0;
+    }
+    &.slick-next {
+      right: 0;
+    }
+
+  }
+  .slick-arrow {
+    &.slick-prev,
+    &.slick-next {
+      content: '';
+      width: 33px;
+      height: 33px;
+      top: 50%;
+
+      &.slick-disabled{
+        display: none !important;
+      }
+      &:before {
+        content: '';
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        width: 33px;
+        height: 33px;
+      }
+    }
+  }
+
+  .slick-prev {
+    opacity: 1;
+    &:before {
+      opacity: 1;
+      background-image: url("../i/prev-icon.svg");
+      background-size: 100%;
+    }
+  }
+  .slick-next {
+    opacity: 1;
+    &:before {
+      opacity: 1;
+      background-image: url("../i/next-icon.svg");
+      background-size: 100%;
+    }
+  }
+
+  .slick-dots {
+    z-index: 10;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+    li {
+      width: auto;
+      margin: 0 4px;
+    }
+    button {
+      display: inline-block;
+      padding: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      opacity: 0.6;
+      &:before {
+        content: '';
+        display: none;
+      }
+    }
+    li.slick-active {
+      button {
+        display: inline-block;
+        padding: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        opacity: 1;
+        &:before {
+          content: '';
+          display: none;
+        }
+      }
+    }
+  }
+}
+.countries-slider__title {
+  color: #ffffff;
+  font-family: @almost-font-family;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 34px;
+}

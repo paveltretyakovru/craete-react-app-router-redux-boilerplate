@@ -1,0 +1,132 @@
+^@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-reg.woff2) format("woff2"),url(../fonts/woff/nimbussannov-reg.woff) format("woff"),url(../fonts/ttf/nimbussannov-reg.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-regita.woff2) format("woff2"),url(../fonts/woff/nimbussannov-regita.woff) format("woff"),url(../fonts/ttf/nimbussannov-regita.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-med.woff2) format("woff2"),url(../fonts/woff/nimbussannov-med.woff) format("woff"),url(../fonts/ttf/nimbussannov-med.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-medita.woff2) format("woff2"),url(../fonts/woff/nimbussannov-medita.woff) format("woff"),url(../fonts/ttf/nimbussannov-medita.ttf) format("truetype");
+  font-weight: 500;
+  font-style: italic
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-sembol.woff2) format("woff2"),url(../fonts/woff/nimbussannov-sembol.woff) format("woff"),url(../fonts/ttf/nimbussannov-sembol.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-sembolita.woff2) format("woff2"),url(../fonts/woff/nimbussannov-sembolita.woff) format("woff"),url(../fonts/ttf/nimbussannov-sembolita.ttf) format("truetype");
+  font-weight: 600;
+  font-style: italic
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-bol.woff2) format("woff2"),url(../fonts/woff/nimbussannov-bol.woff) format("woff"),url(../fonts/ttf/nimbussannov-bol.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-bolita.woff2) format("woff2"),url(../fonts/woff/nimbussannov-bolita.woff) format("woff"),url(../fonts/ttf/nimbussannov-bolita.ttf) format("truetype");
+  font-weight: 700;
+  font-style: italic
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-bla.woff2) format("woff2"),url(../fonts/woff/nimbussannov-bla.woff) format("woff"),url(../fonts/ttf/nimbussannov-bla.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNov;
+  src: url(../fonts/woff2/nimbussannov-blaita.woff2) format("woff2"),url(../fonts/woff/nimbussannov-blaita.woff) format("woff"),url(../fonts/ttf/nimbussannov-blaita.ttf) format("truetype");
+  font-weight: 900;
+  font-style: italic
+}
+
+@font-face {
+  font-family: NimbusSanMonM;
+  src: url(../fonts/woff2/nimbussanmonm-reg.woff2) format("woff2"),url(../fonts/woff/nimbussanmonm-reg.woff) format("woff"),url(../fonts/ttf/nimbussanmonm-reg.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-ultlig.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-ultlig.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-ultlig.ttf) format("truetype");
+  font-weight: 200;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-lig.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-lig.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-lig.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-reg.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-reg.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-reg.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-med.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-med.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-med.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-sembol.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-sembol.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-sembol.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-bol.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-bol.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-bol.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-hea.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-hea.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-hea.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal
+}
+
+@font-face {
+  font-family: NimbusSanNovCon;
+  src: url(../fonts/woff2/nimbussannovcon-bla.woff2) format("woff2"),url(../fonts/woff/nimbussannovcon-bla.woff) format("woff"),url(../fonts/ttf/nimbussannovcon-bla.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal
+}

@@ -1,0 +1,197 @@
+.scene {
+  display: block;
+  height: 100vh;
+  position: relative;
+  &--intro {
+    background-color: #733d5d;
+    .scene-content {
+      padding-top: 20px;
+    }
+  }
+  &--time {
+    background-color: #9247b3;
+  }
+  &--operation {
+    background-color: #9b59b6;
+  }
+  &--mobile-operation {
+    background-color: #32a3f1;
+  }
+  &--total-sum {
+    background-color: #3598db;
+  }
+  &--costs {
+    background-color: #2d82df;
+  }
+  &--largest-purchase {
+    background-color: #4c90d9;
+  }
+  &--econom-month {
+    background-color: #2fb569;
+  }
+  &--hot-month {
+    background-color: #54c483;
+  }
+  &--deposits {
+    background-color: #16a086;
+  }
+  &--contribution {
+    background-color: #1bbc9b;
+  }
+  &--cashback {
+    background-color: #de503a;
+  }
+  &--countries {
+    background-color: #f05648;
+  }
+  &--credit {
+    background-color: #f08930;
+  }
+  &--points {
+    background-color: #faa419;
+  }
+  &--finish {
+    background-color: #e5c337;
+    .scene-content__title {
+      color: #ffffff;
+      font-family: @almost-font-family;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 34px;
+      padding-top: 50px;
+      max-width: 300px;
+      margin: 0 auto 25px;
+      @media (max-width: 370px) {
+        font-size: 33px;
+        padding-top: 30px;
+      }
+    }
+    .scene-content__subtitle {
+      margin-bottom: 30px;
+      padding-top: 0;
+      @media (max-width: 370px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    &__img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &-content {
+    position: relative;
+    z-index: 10;
+    padding: 42px 20px 0;
+    text-align: center;
+    @media (max-width: 370px) {
+      padding: 22px 20px 0;
+    }
+    &__subtitle {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      padding: 0 12px;
+      margin: 0 0 40px;
+      @media (max-width: 370px) {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 21px;
+        padding: 0 12px;
+        margin: 0 0 10px;
+      }
+    }
+    &__top-title {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 15px;
+      .value {
+        font-family: @almost-font-family;
+      }
+      &--bold {
+        font-family: @almost-font-family;
+        margin-bottom: 22px;
+      }
+      &--bold-sm {
+        font-family: @almost-font-family;
+        margin-bottom: 0;
+      }
+    }
+    &__val {
+      display: block;
+      color: #ffffff;
+      font-family: @almost-font-family;
+      font-size: 74px;
+      font-weight: 400;
+      line-height: 70px;
+      @media (max-width: 370px) {
+        font-size: 55px;
+        line-height: 50px;
+      }
+      & + .scene-content__top-title {
+        margin-top: 10px;
+      }
+      .rouble {
+        font-family: 'PTRoubleSans';
+      }
+    }
+    &__val-desc {
+      display: block;
+      color: #ffffff;
+      font-family: @almost-font-family;
+      font-size: 46px;
+      font-weight: 400;
+      line-height: 46px;
+      margin-bottom: 15px;
+    }
+    &__detail {
+      color: #ffffff;
+      font-family: @almost-font-family;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    &__note {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+  &-logos {
+    padding: 25px;
+    &__item {
+      .raiff-logo {
+        width: 149px;
+        height: 30px;
+        display: block;
+      }
+    }
+  }
+
+}
+
+hr.light-line {
+  display: block;
+  border: 0;
+  height: 1px;
+  background-color: #82b2e4;
+  opacity: 0.3;
+  margin: 12px 5px 20px;
+}
+hr.bold-line {
+  display: block;
+  border: 0;
+  height: 1px;
+  background-color: #82b2e4;
+  margin: 14px 5px 20px;
+}
