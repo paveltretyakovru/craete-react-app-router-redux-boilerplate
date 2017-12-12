@@ -9,11 +9,23 @@ a {
 h1 {
   color: #ffffff;
   font-family: @almost-font-family;
-  font-size: 38px;
-  font-weight: 400;
-  line-height: 34px;
+  margin: 0 auto 42px;
   padding: 0;
-  margin: 0 0 36px;
+  max-width: 550px;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 60px;
+  @media (max-width: @screen-md-max) {
+    font-size: 65px;
+    line-height: 55px;
+  }
+  @media (max-width: @screen-xs-max) {
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 34px;
+    padding: 0;
+    margin: 0 auto 36px;
+  }
   @media (max-width: 370px) {
     font-size: 32px;
     font-weight: 400;
@@ -51,39 +63,8 @@ h3 {
 
 p {
   margin-top: 0;
-  @media (max-width: @screen-sm-max) {
-    font-size: 22px;
-  }
 }
 
-.content-wrap {
-  padding: 70px 0 50px;
-  text-align: center;
-  &__text {
-    margin: 0 0 40px;
-    line-height: 30px;
-  }
-  &--color {
-    background-color: @aquamarine;
-  }
-
-  @media (max-width: @screen-sm-max) {
-    padding: 70px 0 50px;
-    &__text {
-      font-size: 22px;
-      margin: 0 0 45px;
-    }
-  }
-  @media (max-width: @screen-xs-max) {
-    padding: 45px 0 30px;
-    &__text {
-      line-height: 24px;
-      &.xs {
-        margin-bottom: 35px;
-      }
-    }
-  }
-}
 .container-btn {
   padding: 10px 0 20px;
   @media (max-width: @screen-xs-max) {
@@ -105,21 +86,4 @@ p {
       padding-right: 15px;
     }
   }
-}
-.hidden-xs {
-  @media (max-width: @screen-xs-max) {
-    display: none;
-  }
-}
-.visible-xs {
-  display: none;
-  @media (max-width: @screen-xs-max) {
-    display: block;
-  }
-}
-
-.anchor {
-  display: block;
-  position: relative;
-  top: -80px;
 }

@@ -1,9 +1,15 @@
 .cost {
   color: #ffffff;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 24px;
-  margin-bottom: 19px;
+  @media (max-width: @screen-md-max) {
+    font-size: 22px;
+    line-height: 24px;
+  }
+  @media (max-width: @screen-xs-max) {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 19px;
+  }
   &__place {
     display: block;
   }
@@ -12,8 +18,73 @@
   }
   &-note {
     color: #ffffff;
+    display: none;
+    @media (max-width: @screen-xs-max) {
+      display: block;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+  &-right {
+    display: table;
+    max-width: 400px;
+    @media (max-width: @screen-xs-max) {
+      display: none;
+    }
+  }
+  &__diagram {
+    display: table-cell;
+    position: relative;
+    height: 100px;
+    width: 100px;
+  }
+  &__desc {
+    display: table-cell;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    vertical-align: bottom;
+    padding: 5px 20px;
+    @media (max-width: @screen-md-max) {
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+  &__percent {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    color: #ffffff;
     font-size: 15px;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 15px;
+  }
+  &__percent-val {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+}
+
+.diagram-svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  circle {
+    transition: stroke-dashoffset 0.5s linear;
+    stroke-width: 4px;
+    stroke: #31c1cc;
+    &.diagram-bar {
+      stroke: #feeb34;
+    }
   }
 }

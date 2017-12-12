@@ -1,0 +1,18 @@
+.header {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 500;
+  &-logos {
+    &__item {
+      .raiff-logo {
+        width: 180px;
+        height: 37px;
+        display: block;
+      }
+    }
+    @media (max-width: @screen-xs-max) {
+      display: none;
+    }
+  }
+}

@@ -40,13 +40,19 @@ html {
 
 .wrapper {
     width: 100%;
-    max-width: 480px;
+    min-height: 100vh;
+    //max-width: 998px;
+
     margin       : 0 auto;
     position     : relative;
     lost-utility : clearfix;
 }
 
 main {
+    min-height: 100vh;
+    @media (max-width: @screen-xs-max) {
+        height: auto;
+    }
 }
 
 * {

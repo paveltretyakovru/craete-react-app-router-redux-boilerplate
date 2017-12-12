@@ -2,20 +2,27 @@
   display: inline-block;
   vertical-align: middle;
   border-radius: 3px;
-  padding: 15px 48px;
+  padding: 24px 48px 19px;
   text-align: center;
   font-family: @almost-font-family;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 22px;
   font-weight: 400;
+  line-height: 22px;
   min-width: 250px;
   color: @black;
+  box-shadow: none;
+  border: 0;
   .transition(all .2s linear);
   &--shadow {
     .box-shadow(0 15px 25px rgba(26, 26, 26, 0.15));
     &:hover {
       .box-shadow(none);
     }
+  }
+  @media (max-width: @screen-xs-max) {
+    padding: 15px 48px;
+    font-size: 20px;
+    line-height: 20px;
   }
 }
 .btn-default {
@@ -28,15 +35,22 @@
 }
 .btn-inverted {
   background-color: @white;
-  padding: 13px 22px;
-  min-width: 155px;
-  //float: left;
   color: #000000;
   font-family: @medium-font-family;
-  font-size: 18px;
+  min-width: 230px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 24px;
-  margin: 11px 0 2px;
+  padding: 13px 22px;
+  margin: 11px 7px 2px;
+  @media (max-width: @screen-xs-max) {
+    padding: 13px 22px;
+    min-width: 155px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 11px 0 2px;
+  }
   @media (max-width: 370px) {
     font-size: 16px;
     min-width: 130px;
@@ -56,12 +70,20 @@
 .btn-container-bottom {
   border-top: 1px solid #edd573;
   border-bottom: 1px solid #edd573;
-  padding: 17px 0 20px;
-  margin-bottom: 30px;
-  height: 126px;
+  max-width: 900px;
+  margin: 0 auto 42px;
+  padding: 20px 0 24px;
   transition: height 0.5s ease;
   &.result {
-    height: 63px;
+    height: 81px;
+  }
+  @media (max-width: @screen-xs-max) {
+    padding: 17px 0 20px;
+    margin: 0 auto 30px;
+    height: 126px;
+    &.result {
+      height: 63px;
+    }
   }
   &__content {
     &.result {
@@ -74,8 +96,15 @@
   &__title {
     color: #ffffff;
     font-family: @almost-font-family;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 32px;
+    margin-bottom: 3px;
+    @media (max-width: @screen-xs-max) {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 0;
+    }
   }
 }

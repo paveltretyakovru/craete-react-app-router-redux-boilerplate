@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.2
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2017 Daniel Eden
+ */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animated  {
+  animation-name: fadeInUp;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+
+}
