@@ -148,7 +148,6 @@
 						</div>
 						<span class="scene-content__val">102 580</span>
 						<span class="scene-content__val-desc">рублей</span>
-						<hr class="bold-line">
 						<div class="cost-right">
 									<div class="cost__diagram" data-percent="65">
 										<div  class="cost__percent">на<span class="cost__percent-val">65%</span></div>
@@ -173,9 +172,8 @@
 						<div class="scene-content__top-title scene-content__top-title--bold-sm">В супермаркетах вы
 						                                                                        потратили:
 						</div>
-						<span class="scene-content__val">188 240 <span class="rouble">в</span></span>
+						<span class="scene-content__val">188 240</span>
 						<span class="scene-content__val-desc">рублей</span>
-						<hr class="bold-line">
 
 								<div class="cost-right">
 									<div class="cost__diagram" data-percent="83">

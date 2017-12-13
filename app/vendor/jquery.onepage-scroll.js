@@ -97,6 +97,19 @@
         "transition": "all " + settings.animationTime + "ms " + settings.easing
       });
     }
+
+      $.fn.transformBackPage = function(settings, pos) {
+          $(this).css({
+              "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
+              "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
+              "-moz-transform": "translate3d(0, " + pos + "%, 0)",
+              "-moz-transition": "all " + settings.animationTime + "ms " + settings.easing,
+              "-ms-transform": "translate3d(0, " + pos + "%, 0)",
+              "-ms-transition": "all " + settings.animationTime + "ms " + settings.easing,
+              "transform": "translate3d(0, " + pos + "%, 0)",
+              "transition": "all " + 0 + "ms " + settings.easing
+          });
+      }
     
     $.fn.moveDown = function() {
       var el = $(this)
@@ -121,6 +134,10 @@
         }
         pos = (index * 100) * -1;
         el.transformPage(settings, pos);
+        current.transformPage(settings, 50);
+        setTimeout(function () {
+            current.transformBackPage(settings, 0);
+        }, 1000);
       }
     }
     
@@ -146,8 +163,16 @@
             history.pushState( {}, document.title, href );
           }
         }
+        current.css('z-index', 1);
+        next.css('z-index', 2);
         pos = ((next.data("index") - 1) * 100) * -1;
         el.transformPage(settings, pos);
+          current.transformPage(settings, -50);
+          setTimeout(function () {
+              current.transformBackPage(settings, 0);
+              current.css('z-index', 0);
+              next.css('z-index', 0);
+          }, 1100);
       }
     }
     

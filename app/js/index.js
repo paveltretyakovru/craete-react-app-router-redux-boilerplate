@@ -234,7 +234,7 @@ $(function () {
             sectionContainer: "section",
             easing: "ease",
 
-            animationTime: 500,
+            animationTime: 1000,
             pagination: true,
             updateURL: false,
             beforeMove: function (index) {
