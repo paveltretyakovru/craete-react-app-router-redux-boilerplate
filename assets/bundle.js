@@ -11265,48 +11265,59 @@ var API = {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return stubResponse0; });
 var stubResponse0 = {
-    "percentsFromTDAndSA": 25301,
-    "growthOfDepositsWithoutPercents": 650000,
-    "totalSumOfTransactions": 697214,
     "linkId": "cchgnf9uxk7t",
-    "coBrandStats": [{
-        "sum": 8970,
-        "brandName": "#ВСЕСРАЗУ"
-    }],
-    "visitedCountries": [],
-    "largestExpense": {
-        "date": "2017-10-09T00:00:00",
-        "sum": 68141,
-        "outletName": "HOFF"
-    },
-    "sex": "M",
-    "monthWithMaxPayments": {
-        "transactionsCount": 12,
-        "sum": 32121,
-        "name": "апрель"
-    },
+    "clientName": "Константин",
+    "timeWithBank": "3 года",
+    "numberOfTransactionsByCard": 785,
+    "numberOfTransactionsByNFC": 55,
+    "totalSumOfTransactions": 1483745,
     "expensesByCategory": [{
-        "totalExpenses": 52364,
-        "categoryName": "Салоны красоты",
-        "relativeExpenses": "3% меньше"
+        "totalExpenses": 122863,
+        "categoryName": "путешествиях",
+        "relativeExpenses": "24% больше"
     }, {
-        "totalExpenses": 32124,
-        "categoryName": "Ремонт",
+        "totalExpenses": 62169,
+        "categoryName": "супермаркетах",
         "relativeExpenses": "5% меньше"
     }, {
-        "totalExpenses": 68141,
-        "categoryName": "Мебель",
-        "relativeExpenses": "15% меньше"
+        "totalExpenses": 59169,
+        "categoryName": "кино, театры, концерты",
+        "relativeExpenses": "15% больше"
     }],
-    "timeWithBank": "3 года и 10 месяцев",
-    "numberOfTransactionsByNFC": 1204,
-    "monthWithMinPayments": {
-        "transactionsCount": 0,
-        "sum": 0,
-        "name": "июлб"
+    "largestExpense": {
+        "date": "2017-03-13T15:12:44.316Z",
+        "sum": 103445,
+        "outletName": "S7 Airlines"
     },
-    "numberOfTransactionsByCard": 2154,
-    "clientName": "Александр"
+    "monthWithMinPayments": {
+        "transactionsCount": 30,
+        "sum": 19403,
+        "name": "июль"
+    },
+    "monthWithMaxPayments": {
+        "transactionsCount": 25,
+        "sum": 142254,
+        "name": "сентябрь"
+    },
+    "percentsFromTDAndSA": 27345,
+    "growthOfDepositsWithoutPercents": 340005,
+    "cashBackProgram": {
+        "packetName": "Золотой",
+        "sum": 3505
+    },
+    "visitedCountries": [{
+        "countryName": "Сент-Винсент и Гренадины",
+        "otherClientsPercent": "15%"
+    }, {
+        "countryName": "Венгрия",
+        "otherClientsPercent": "3%"
+    }],
+    "totalSumOfLoansPaid": 1500005,
+    "coBrandStats": [{
+        "sum": 5326,
+        "brandName": "#ВСЕСРАЗУ"
+    }],
+    "sex": "M"
 };
 
 /***/ }),
