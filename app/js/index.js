@@ -3,7 +3,28 @@ import './transition';
 import './collapse';
 import './../vendor/slick.min';
 import './../vendor/jquery.onepage-scroll';
+import { API } from './api';
+import { stubResponse0 } from './api_stub';
+import { UserInfo } from './userinfo';
 
+
+var userdataReq  = API.getInfo();
+var docReady = $.Deferred();
+
+$(function() {
+    docReady.resolve();
+});
+
+$.when(userdataReq, docReady)
+    .done(function (jqXHR) {
+        initDOM(jqXHR[0].data.jsonBody);
+    })
+    .fail(function (jqXHR) {
+        $.when(docReady)
+            .done(function () {
+                initDOM(stubResponse0);
+            });
+    });
 
 $.fn.extend({
     animateCss: function (animationName, callback) {
@@ -18,7 +39,14 @@ $.fn.extend({
     }
 });
 
-$(function () {
+function initDOM(userdata) {
+    // fill the first screen
+    $('.scene-content__welcome').html( userdata.clientName + ', здравствуйте!');
+
+    // render the rest of the page
+    var template = $("#page_template").html();
+    $('.scene--intro').after(UserInfo.render(template, userdata));
+
     $(window).scroll(function() {
 
 
@@ -216,10 +244,15 @@ $(function () {
                     }, 800);
                 }
                 break;
-            case 'result' :
+            case 'vote-yes' :
+            case 'vote-no' :
                 e.preventDefault();
                 $('.btn-container-bottom__content').fadeOut(200);
                 $('.btn-container-bottom').addClass('result');
+
+                var result = (action == 'vote-yes' ? 1 : 0);
+                API.sendVote(result);
+
                 setTimeout(function () {
                     $('.btn-container-bottom__content.result').fadeIn();
                 }, 200);
@@ -327,4 +360,4 @@ $(function () {
     $(window).on('load', function () {
         //$('.scene.active').find('.content-animation').addClass('animated');
     });
-});
+}
