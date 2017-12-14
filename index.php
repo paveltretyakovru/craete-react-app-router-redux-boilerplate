@@ -56,7 +56,7 @@
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
 			</footer>
 		</section>
-		<section class="scene scene--time" id="top-scroll">
+		<section class="scene scene--time" id="top-scroll" style=" background-image: url('assets/i/time-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 					<div class="scene-content__top-title">Вы с Райффайзенбанком уже</div>
@@ -76,7 +76,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--operation">
+		<section class="scene scene--operation" style="background-image: url('assets/i/operation-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Вы&nbsp;совершили за&nbsp;2017&nbsp;год<br>
@@ -97,13 +97,13 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--mobile-operation">
+		<section class="scene scene--mobile-operation" style="background-image: url('assets/i/mobile-operation-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold">В том числе</div>
 				<span class="scene-content__val">53</span>
 				<span class="scene-content__val-desc">операции</span>
-				<div class="scene-content__top-title">Через NFC на вашем смартфоне</div>
+				<div class="scene-content__top-title">С помошью вашего мобильного устройства</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -117,7 +117,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--total-sum">
+		<section class="scene scene--total-sum" style="background-image: url('assets/i/total-sum-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Общая сумма ваших операций<br>
@@ -138,7 +138,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--costs">
+		<section class="scene scene--costs" style="background-image: url('assets/i/costs-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-slider">
@@ -166,8 +166,41 @@
 						                       клиентов Райффайзенбанк
 						</div>
 					</div>
+					<div class="scene-slider-item">
+						<div class="scene-content__top-title scene-content__top-title--bold-sm">В путешествиях вы
+						                                                                        потратили:
+						</div>
+						<span class="scene-content__val">102 580</span>
+						<span class="scene-content__val-desc">рублей</span>
+						<div class="cost-right">
+							<div class="cost__diagram" data-percent="65">
+								<div  class="cost__percent cost__percent--val">65%</div>
+								<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+									<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
+									<circle class="diagram-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
+								</svg>
 
+							</div>
+							<div class="cost__desc">Только&nbsp;65% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы</div>
+						</div>
 
+						<div class="cost-note">Только&nbsp;65% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы
+						</div>
+					</div>
+					<div class="scene-slider-item">
+						<div class="scene-content__top-title scene-content__top-title--bold-sm">В супермаркетах вы
+						                                                                        потратили:
+						</div>
+						<span class="scene-content__val">102 580</span>
+						<span class="scene-content__val-desc">рублей</span>
+						<div class="cost-right">
+
+							<div class="cost__desc">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы</div>
+						</div>
+
+						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы
+						</div>
+					</div>
 					<div class="scene-slider-item">
 						<div class="scene-content__top-title scene-content__top-title--bold-sm">В супермаркетах вы
 						                                                                        потратили:
@@ -209,7 +242,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--largest-purchase">
+		<section class="scene scene--largest-purchase" style=" background-image: url('assets/i/largest-purchase-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<span class="scene-content__val">103 440</span>
@@ -233,7 +266,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--econom-month">
+		<section class="scene scene--econom-month" style="background-image: url('assets/i/econom-month-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold-sm">Ваш самый экономный месяц был
@@ -255,7 +288,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--hot-month">
+		<section class="scene scene--hot-month" style="background-image: url('assets/i/hot-month-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold-sm">А вот самый «горячий» месяц
@@ -278,7 +311,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--deposits">
+		<section class="scene scene--deposits" style="background-image: url('assets/i/deposits-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Ваши накопительные счета
@@ -299,11 +332,10 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--contribution">
+		<section class="scene scene--contribution" style="background-image: url('assets/i/contribution-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
-				<div class="scene-content__top-title">За&nbsp;2017&nbsp;год ваши вклады
-				                                      подросли&nbsp;на
+				<div class="scene-content__top-title">За&nbsp;2017 год вы&nbsp;пополнили свои вклады&nbsp;на
 				</div>
 				<span class="scene-content__val">340 000</span>
 				<span class="scene-content__val-desc">рублей</span>
@@ -320,7 +352,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--cashback">
+		<section class="scene scene--cashback" style="background-image: url('assets/i/cashback-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Ваш кэшбек по&nbsp;пакету<br>
@@ -341,7 +373,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--countries">
+		<section class="scene scene--countries" style="background-image: url('assets/i/countries-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="countries-slider__title">Страны, которе вы&nbsp;посетили
@@ -377,18 +409,21 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--credit">
+		<section class="scene scene--credit" style="background-image: url('assets/i/credit-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
-				<div class="scene-content__top-title">В&nbsp;этом году завершился<br>
-				                                      ваш&nbsp;кредит на&nbsp;сумму
+				<div class="scene-content__top-title">
+
+					<!--В&nbsp;2017&nbsp;году вы&nbsp;закрыли<br> свой кредит на&nbsp;сумму-->
+					В&nbsp;2017 году вы&nbsp;закрыли свои кредиты на&nbsp;общую сумму
+
 				</div>
 				<span class="scene-content__val">1&nbsp;500&nbsp;000</span>
 				<span class="scene-content__val-desc">рублей</span>
 			</div>
+			</div>
 			<div class="scene-bottom">
 				<img class="scene-bottom__img visible-xs" src="assets/i/credit.png" alt="">
-			</div>
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -398,7 +433,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--points">
+		<section class="scene scene--points" style="background-image: url('assets/i/points-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold">А еще вы накопили</div>

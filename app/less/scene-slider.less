@@ -2,7 +2,10 @@
   padding: 0;
   &-item {
     height: 100vh;
-    padding-top: 8%;
+    padding-top: 20vh;
+    @media (max-height: 800px) {
+      padding-top: 14vh;
+    }
 
     .scene-content__val-desc {
       margin-bottom: 85px;
@@ -130,13 +133,13 @@
 
   .slick-dots {
     z-index: 10;
-    top: 250px;
+    top: 265px;
     bottom: auto;
     left: 0;
     text-align: center;
     @media (max-width: 370px) {
       font-size: 33px;
-      top: 270px;
+      top: 275px;
     }
     li {
       width: auto;

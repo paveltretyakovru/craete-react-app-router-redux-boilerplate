@@ -79,7 +79,6 @@ $(function () {
         arrows: true,
         speed: 800,
         slidesToShow: 1,
-        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 480,
@@ -95,7 +94,6 @@ $(function () {
         arrows: true,
         speed: 800,
         slidesToShow: 1,
-        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 480,
@@ -143,20 +141,7 @@ $(function () {
     }
 
     $('.countries-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        var slideCount = $(this).slick("getSlick").slideCount - 2;
-        if (currentSlide === slideCount) {
-            $(this).slick('slickPause');
-            $('#countries-svg').addClass('no-animate');
-        }
-        if (!$('#countries-svg').hasClass('no-animate')) {
-            $('#countries-svg').addClass('animate');
-            var $circle = $('#countries-svg #countries-bar');
-            changeCircle($circle, 100);
-            setTimeout(function () {
-                $('#countries-svg').removeClass('animate');
-                changeCircle($circle, 0);
-            }, 5000);
-        }
+
     });
 
     if ($('.scene-slider').hasClass('slick-slider') && $(window).width() > 480) {
@@ -177,24 +162,6 @@ $(function () {
     }
 
     $('.scene-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-
-        var slideCount = $(this).slick("getSlick").slideCount - 2;
-        if (currentSlide === slideCount) {
-            $(this).slick('slickPause');
-            $('#scene-svg').addClass('no-animate');
-        }
-
-        if (!$('#scene-svg').hasClass('no-animate')) {
-            $('#scene-svg').addClass('animate');
-            var $circle = $('#scene-svg #scene-bar');
-            changeCircle($circle, 100);
-            setTimeout(function () {
-                $('#scene-svg').removeClass('animate');
-                changeCircle($circle, 0);
-            }, 5000);
-        }
-
-
     });
 
     $('.cost__diagram').each(function () {
@@ -245,12 +212,13 @@ $(function () {
             loop: true,
             keyboard: false,
             responsiveFallback: false,
-            // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-            // the browser's width is less than 600, the fallback will kick in.
             direction: "vertical"
         });
     }
 
+
+
+    /*** Анимация слайдера с посещенными странами ***/
     var animateCountrySlider = function () {
         if ($('.scene.active').find('.countries-slider').length > 0) {
             var $circle = $('#countries-svg #countries-bar');
@@ -261,21 +229,97 @@ $(function () {
 
                 setTimeout(function () {
                     $('#countries-svg').addClass('animate');
-
                     changeCircle($circle, 100);
                 }, 100);
-                setTimeout(function () {
-                    $('.countries-slider').slick('slickPlay');
-                }, 1000);
-                setTimeout(function () {
-                    $('#countries-svg').removeClass('animate');
-                    changeCircle($circle, 0);
-                }, 5100);
+
+                var slideCount = $('.countries-slider').slick("getSlick").slideCount;
+
+                if (slideCount > 1) {
+                 for (let i=0; i < slideCount-1; i++) {
+                     let time = 5100 * (i+1);
+                         setTimeout(function () {
+                             if (!$('#countries-svg').hasClass('no-animate')) {
+                                 $('#countries-svg').addClass('animate');
+                                 changeCircle($circle, 100);
+                             } else {
+                                 console.log(false);
+                                 return;
+                             }
+                         }, time - 5000);
+                         setTimeout(function () {
+                             if (!$('#countries-svg').hasClass('no-animate')) {
+                                 $('.countries-slider').slick('slickNext');
+                             } else {
+                                 console.log(false);
+                                 return;
+                             }
+                         }, time);
+                         setTimeout(function () {
+                             if (!$('#countries-svg').hasClass('no-animate')) {
+                             $('#countries-svg').removeClass('animate');
+                             changeCircle($circle, 0);
+                             } else {
+                                 console.log(false);
+                                 return;
+                             }
+                         }, time + 50);
+                 }
             }
+        }
+    }
+    else {
+
         }
     }
 
     var animateSceneSlider = function () {
+
+        if ($('.scene.active').find('.scene-slider').length > 0) {
+            var $circle = $('#scene-svg #scene-bar');
+
+            if (!$('.scene-slider').hasClass('active')) {
+
+                $('.scene-slider').addClass('active');
+
+                //анимация заполнения полоски
+                setTimeout(function () {
+                    $('#scene-svg').addClass('animate');
+                    changeCircle($circle, 100);
+                }, 100);
+
+                var slideCount = $('.scene-slider').slick("getSlick").slideCount;
+
+                if (slideCount > 1) {
+                    for (let i=0; i < slideCount-1; i++) {
+                        let time = 5100 * (i+1);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('#scene-svg').addClass('animate');
+                                changeCircle($circle, 100);
+                            } else {
+                                return;
+                            }
+                        }, time - 5000);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('.scene-slider').slick('slickNext');
+                            } else {
+                                return;
+                            }
+                        }, time);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('#scene-svg').removeClass('animate');
+                                changeCircle($circle, 0);
+                            } else {
+                                return;
+                            }
+                        }, time + 50);
+                    }
+                }
+            }
+        }
+
         if ($('.scene.active').find('.scene-slider').length > 0) {
             var $circle = $('#scene-svg #scene-bar');
 
@@ -290,7 +334,7 @@ $(function () {
                 }, 100);
                 setTimeout(function () {
                     $('.scene-slider').slick('slickPlay');
-                }, 1000);
+                }, 800);
                 setTimeout(function () {
                     $('#scene-svg').removeClass('animate');
                     changeCircle($circle, 0);
@@ -324,7 +368,9 @@ $(function () {
         $('#countries-svg').removeClass('animate');
     });
 
-    $(window).on('load', function () {
+    $(document).ready(function () {
+        $('.scene-slider').slick('slickPause');
+        $('.countries-slider').slick('slickPause');
         //$('.scene.active').find('.content-animation').addClass('animated');
     });
 });
