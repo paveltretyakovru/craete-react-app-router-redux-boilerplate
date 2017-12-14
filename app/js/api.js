@@ -1,5 +1,6 @@
 export var API = {
     getInfo: function () {
+        com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : this.getLinkID()}));
         return $.ajax({
             url: '/webapi-1/info/' + this.getLinkID(),
             dataType: 'json'
@@ -7,6 +8,9 @@ export var API = {
     },
 
     sendVote: function (vote) {
+
+        com.rooxteam.statistic.client.logOperation("sendVote", com.rooxteam.statistic.getContext({ "vote": vote, "linkId" : this.getLinkID()}));
+
         return $.ajax({
             type: 'PUT',
             url: '/webapi-1/feedbacks/' + this.getLinkID(),

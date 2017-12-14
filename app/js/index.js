@@ -6,7 +6,7 @@ import './../vendor/jquery.onepage-scroll';
 import { API } from './api';
 import { stubResponse0 } from './api_stub';
 import { UserInfo } from './userinfo';
-
+import './statistics';
 
 var userdataReq  = API.getInfo();
 var docReady = $.Deferred();
