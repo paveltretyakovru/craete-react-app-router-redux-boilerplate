@@ -77,13 +77,14 @@
   $.fn.onepage_scroll = function(options){
     var settings = $.extend({}, defaults, options),
         el = $(this),
-        sections = $(settings.sectionContainer)
+        sections = $(settings.sectionContainer),
         total = sections.length,
         status = "off",
         topPos = 0,
         lastAnimation = 0,
         quietPeriod = 500,
-        paginationList = "";
+        paginationList = "",
+        posTop;
     
     $.fn.transformPage = function(settings, pos) {
       $(this).css({
@@ -113,10 +114,10 @@
     
     $.fn.moveDown = function() {
       var el = $(this)
-      index = $(settings.sectionContainer +".active").data("index");
+      var index = $(settings.sectionContainer +".active").data("index");
       if(index < total) {
-        current = $(settings.sectionContainer + "[data-index='" + index + "']");
-        next = $(settings.sectionContainer + "[data-index='" + (index + 1) + "']");
+        var current = $(settings.sectionContainer + "[data-index='" + index + "']");
+        var next = $(settings.sectionContainer + "[data-index='" + (index + 1) + "']");
         if(next) {
           current.removeClass("active")
           next.addClass("active");
@@ -132,7 +133,7 @@
             history.pushState( {}, document.title, href );
           }
         }
-        pos = (index * 100) * -1;
+        var pos = (index * 100) * -1;
         el.transformPage(settings, pos);
         current.transformPage(settings, 50);
         setTimeout(function () {
@@ -143,10 +144,10 @@
     
     $.fn.moveUp = function() {
       var el = $(this)
-      index = $(settings.sectionContainer +".active").data("index");
+      var index = $(settings.sectionContainer +".active").data("index");
       if(index <= total && index > 1) {
-        current = $(settings.sectionContainer + "[data-index='" + index + "']");
-        next = $(settings.sectionContainer + "[data-index='" + (index - 1) + "']");
+        var current = $(settings.sectionContainer + "[data-index='" + index + "']");
+        var next = $(settings.sectionContainer + "[data-index='" + (index - 1) + "']");
 
         if(next) {
           current.removeClass("active")
@@ -165,7 +166,7 @@
         }
         current.css('z-index', 1);
         next.css('z-index', 2);
-        pos = ((next.data("index") - 1) * 100) * -1;
+        var pos = ((next.data("index") - 1) * 100) * -1;
         el.transformPage(settings, pos);
           current.transformPage(settings, -50);
           setTimeout(function () {
@@ -177,7 +178,7 @@
     }
     
     function init_scroll(event, delta) {
-        deltaOfInterest = delta;
+        var deltaOfInterest = delta;
         var timeNow = new Date().getTime();
         // Cancel scroll if currently animating or within quiet period
         if(timeNow - lastAnimation < quietPeriod + settings.animationTime) {
