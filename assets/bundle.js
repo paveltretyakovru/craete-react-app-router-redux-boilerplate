@@ -11936,7 +11936,7 @@ $(function () {
             var step = Math.floor(100 / slideCount);
             var curArrow = slider.find('.slick-next');
             curArrow.attr('data-pct', step);
-            var circleStr = '<svg id="countries-svg" class="animate" width="55" height="55" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="countries-bar" cx="26.7" cy="27.2" r="23" stroke-dasharray="144.52"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
+            var circleStr = '<svg id="countries-svg" class="progress-svg animate" width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="countries-bar" class="progress-bar" cx="27" cy="27" r="24" stroke-dasharray="150.796416"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
             curArrow.append(circleStr);
             var $circle = $('#countries-svg #countries-bar');
             changeCircle($circle, 0);
@@ -11953,7 +11953,7 @@ $(function () {
             var step = Math.floor(100 / slideCount);
             var curArrow = slider.find('.slick-next');
             curArrow.attr('data-pct', step);
-            var circleStr = '<svg id="scene-svg" class="animate" width="55" height="55" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="scene-bar" cx="26.7" cy="27.2" r="23" stroke-dasharray="144.52"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
+            var circleStr = '<svg id="scene-svg" class="progress-svg animate" width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="scene-bar" class="progress-bar" cx="27" cy="27" r="24" stroke-dasharray="150.796416"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
             curArrow.append(circleStr);
             var $circle = $('#scene-svg #scene-bar');
             changeCircle($circle, 0);
