@@ -4,10 +4,10 @@ com.rooxteam.statistic.updateConfiguration(
     com.rooxteam.config.statistic,
     {
         "ENABLED": true,
-        "LIC_ENABLED": true,
+        "LIC_ENABLED": false,
         "TRANSPORT": "POST",
         "CREDENTIALS_SYNC_ENABLED": true,
-        "SERVER_ADDRESS": 'https://raif.demo.rooxteam.com/pushreport',
+        "SERVER_ADDRESS": 'https://www.raiffeisen.ru/ny2018/pushreport',
         "LIC_SERVER_ADDRESS": 'https://lic.rooxcloud.com/pushreport',
         "IO_EVENTS_ENABLED": true,
         "VIEW_EVENTS_ENABLED": true,
