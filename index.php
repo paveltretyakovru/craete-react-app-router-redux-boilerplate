@@ -335,7 +335,7 @@
 		<section class="scene scene--countries">
 			<div class="scene-content">
 				<div class="content-animation">
-				<div class="countries-slider__title">Страны, которе вы&nbsp;посетили
+				<div class="countries-slider__title">Страны, которые вы&nbsp;посетили
 				                                     в&nbsp;этом&nbsp;году
 				</div>
 				<div class="countries-slider">
