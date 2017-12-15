@@ -14,7 +14,7 @@
 <header class="header">
 	<div class="header-logos">
 		<div class="header-logos__item">
-			<a href="#">
+			<a href="http://raiffeisen.ru" target="_blank">
 				<svg class="raiff-logo">
 					<use xlink:href="#spr-raiff-logo-rus"></use>
 				</svg>
@@ -27,7 +27,7 @@
 		<section class="scene scene--intro visible">
 			<div class="scene-logos">
 				<div class="scene-logos__item">
-					<a href="#">
+					<a href="http://raiffeisen.ru" target="_blank">
 						<svg class="raiff-logo">
 							<use xlink:href="#spr-raiff-logo-rus"></use>
 						</svg>
@@ -149,30 +149,6 @@
 						<span class="scene-content__val">102 580</span>
 						<span class="scene-content__val-desc">рублей</span>
 						<div class="cost-right">
-									<div class="cost__diagram" data-percent="65">
-										<div  class="cost__percent">на<span class="cost__percent-val">65%</span></div>
-										<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
-											<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
-											<circle class="diagram-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
-										</svg>
-
-									</div>
-									<div class="cost__desc">Это на&nbsp;65% больше,
-									                        чем&nbsp;большинство клиентов
-									                        Райффайзенбанка</div>
-						</div>
-
-						<div class="cost-note">Это на 65% больше,чем большинство
-						                       клиентов Райффайзенбанк
-						</div>
-					</div>
-					<div class="scene-slider-item">
-						<div class="scene-content__top-title scene-content__top-title--bold-sm">В путешествиях вы
-						                                                                        потратили:
-						</div>
-						<span class="scene-content__val">102 580</span>
-						<span class="scene-content__val-desc">рублей</span>
-						<div class="cost-right">
 							<div class="cost__diagram" data-percent="65">
 								<div  class="cost__percent cost__percent--val">65%</div>
 								<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -194,38 +170,10 @@
 						<span class="scene-content__val">102 580</span>
 						<span class="scene-content__val-desc">рублей</span>
 						<div class="cost-right">
-
-							<div class="cost__desc">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы</div>
+							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы</div>
 						</div>
 
 						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы
-						</div>
-					</div>
-					<div class="scene-slider-item">
-						<div class="scene-content__top-title scene-content__top-title--bold-sm">В супермаркетах вы
-						                                                                        потратили:
-						</div>
-						<span class="scene-content__val">188 240</span>
-						<span class="scene-content__val-desc">рублей</span>
-
-								<div class="cost-right">
-									<div class="cost__diagram" data-percent="83">
-										<div  class="cost__percent">на<span class="cost__percent-val">83%</span></div>
-										<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
-											<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
-											<circle class="diagram-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
-										</svg>
-
-									</div>
-									<div class="cost__desc">Это на&nbsp;83% больше,
-									                        чем&nbsp;большинство клиентов
-									                        Райффайзенбанка</div>
-						</div>
-
-
-
-						<div class="cost-note">Это на 83% больше,чем большинство
-						                       клиентов Райффайзенбанк
 						</div>
 					</div>
 				</div>
@@ -376,7 +324,7 @@
 		<section class="scene scene--countries" style="background-image: url('assets/i/countries-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
-				<div class="countries-slider__title">Страны, которе вы&nbsp;посетили
+				<div class="countries-slider__title">Страны, которые вы&nbsp;посетили
 				                                     в&nbsp;этом&nbsp;году
 				</div>
 				<div class="countries-slider">
@@ -386,12 +334,22 @@
 						                                       3%&nbsp;наших клиентов</p>
 					</div>
 					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">Грузия</div>
+						<div class="countries-slider-item__title">Великобритания</div>
 						<p class="countries-slider-item__note">Туда отправились также
 						                                       3%&nbsp;наших клиентов</p>
 					</div>
 					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">Грузия</div>
+						<div class="countries-slider-item__title">Северные Марианские Острова</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
+					</div>
+					<div class="countries-slider-item">
+						<div class="countries-slider-item__title">Сент-Винсент и Гренадины</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
+					</div>
+					<div class="countries-slider-item">
+						<div class="countries-slider-item__title">Остров Херд и острова Макдональд</div>
 						<p class="countries-slider-item__note">Туда отправились также
 						                                       3%&nbsp;наших клиентов</p>
 					</div>

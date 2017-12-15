@@ -11753,8 +11753,8 @@ requireContext.keys().map(requireContext);
             $(".onepage-pagination li a").click(function () {
                 var page_index = $(this).data("index");
                 if (!$(this).hasClass("active")) {
-                    current = $(settings.sectionContainer + ".active");
-                    next = $(settings.sectionContainer + "[data-index='" + page_index + "']");
+                    var current = $(settings.sectionContainer + ".active");
+                    var next = $(settings.sectionContainer + "[data-index='" + page_index + "']");
                     if (next) {
                         current.removeClass("active");
                         next.addClass("active");
@@ -11763,7 +11763,7 @@ requireContext.keys().map(requireContext);
                         $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
                         $("body").addClass("viewing-page-" + next.data("index"));
                     }
-                    pos = (page_index - 1) * 100 * -1;
+                    var pos = (page_index - 1) * 100 * -1;
                     el.transformPage(settings, pos);
                 }
                 if (settings.updateURL == false) return false;
@@ -11848,40 +11848,6 @@ $(function () {
         }
     });
 
-    /*$(window).bind('mousewheel', function(e) {
-         const $target = $(e.target);
-        const event = e || window.event;
-        const delta = event.detail || event.wheelDelta || -event.deltaY;
-         let curDelta = $('wrapper').data('delta');
-         if (!$('wrapper').data('lock') && !$target.closest('.js-scroll').length && ($(window).width()>480)) {
-            if (($('wrapper').data('delta') < 0 && delta > 0) || ($('wrapper').data('delta') > 0 && delta < 0)) {
-                $('wrapper').data('delta', 0);
-            }
-             $('wrapper').data('delta', curDelta + delta);
-            let set = 0;
-            if ( $('wrapper').data('delta') < -20) {
-                set = 1;
-            }
-            if ( $('wrapper').data('delta') > 20) {
-                set = -1;
-            }
-            if (set !== 0) {
-                $('wrapper').data('delta', 0);
-                $('wrapper').check(false, set > 0);
-            }
-        }
-         var vh = $(window).height();
-        var scroll = $(window).scrollTop();
-        var coef = Math.floor(scroll / vh);
-        if (event.originalEvent.wheelDelta >= 0) {
-            console.log('Scroll up');
-            console.log(coef);
-        }
-        else {
-            console.log('Scroll down');
-        }
-    }); */
-
     $('.scene-slider').slick({
         dots: false,
         infinite: false,
@@ -11929,6 +11895,38 @@ $(function () {
             curCircle.css({ strokeDashoffset: pct });
         }
     };
+
+    if ($(window).width() > 1200) {
+        $('.countries-slider-item__title').each(function () {
+            var simbolCount = $(this).text().length;
+            if (simbolCount > 9 && simbolCount < 20) {
+                $(this).css({ 'font-size': '80px', 'line-height': '80px' });
+            }
+            if (simbolCount > 20) {
+                $(this).css({ 'font-size': '60px', 'line-height': '60px' });
+            }
+        });
+    }
+
+    if ($(window).width() > 1024 && $(window).width() < 1200) {
+        $('.countries-slider-item__title').each(function () {
+            var simbolCount = $(this).text().length;
+            if (simbolCount > 9 && simbolCount < 20) {
+                $(this).css({ 'font-size': '60px', 'line-height': '60px' });
+            }
+            if (simbolCount > 20) {
+                $(this).css({ 'font-size': '60px', 'line-height': '60px' });
+            }
+        });
+    }
+    if ($(window).width() > 480 && $(window).width() < 1024) {
+        $('.countries-slider-item__title').each(function () {
+            var simbolCount = $(this).text().length;
+            if (simbolCount > 9) {
+                $(this).css({ 'font-size': '50px', 'line-height': '50px' });
+            }
+        });
+    }
 
     if ($('.countries-slider').hasClass('slick-slider') && $(window).width() > 480) {
 
@@ -12040,7 +12038,6 @@ $(function () {
                                 $('#countries-svg').addClass('animate');
                                 changeCircle($circle, 100);
                             } else {
-                                console.log(false);
                                 return;
                             }
                         }, time - 5000);
@@ -12048,7 +12045,6 @@ $(function () {
                             if (!$('#countries-svg').hasClass('no-animate')) {
                                 $('.countries-slider').slick('slickNext');
                             } else {
-                                console.log(false);
                                 return;
                             }
                         }, time);
@@ -12057,7 +12053,6 @@ $(function () {
                                 $('#countries-svg').removeClass('animate');
                                 changeCircle($circle, 0);
                             } else {
-                                console.log(false);
                                 return;
                             }
                         }, time + 50);
@@ -12152,19 +12147,25 @@ $(function () {
     });
 
     $('.scene-slider .slick-arrow').click(function () {
-        $('.scene-slider').slick('slickPause');
         $('#scene-svg').addClass('no-animate');
         $('#scene-svg').removeClass('animate');
     });
     $('.countries-slider .slick-arrow').click(function () {
-        $('.countries-slider').slick('slickPause');
+        $('#countries-svg').addClass('no-animate');
+        $('#countries-svg').removeClass('animate');
+    });
+
+    $('.scene-slider').on('swipe', function (event, slick, direction) {
+        $('#scene-svg').addClass('no-animate');
+        $('#scene-svg').removeClass('animate');
+    });
+
+    $('.countries-slider').on('swipe', function (event, slick, direction) {
         $('#countries-svg').addClass('no-animate');
         $('#countries-svg').removeClass('animate');
     });
 
     $(document).ready(function () {
-        $('.scene-slider').slick('slickPause');
-        $('.countries-slider').slick('slickPause');
         //$('.scene.active').find('.content-animation').addClass('animated');
     });
 });

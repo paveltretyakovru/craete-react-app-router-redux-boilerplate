@@ -250,8 +250,8 @@
             $(".onepage-pagination li a").click(function (){
                 var page_index = $(this).data("index");
                 if (!$(this).hasClass("active")) {
-                    current = $(settings.sectionContainer + ".active")
-                    next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
+                    var current = $(settings.sectionContainer + ".active")
+                    var next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
                     if(next) {
                         current.removeClass("active")
                         next.addClass("active")
@@ -260,7 +260,7 @@
                         $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
                         $("body").addClass("viewing-page-"+next.data("index"))
                     }
-                    pos = ((page_index - 1) * 100) * -1;
+                    var pos = ((page_index - 1) * 100) * -1;
                     el.transformPage(settings, pos);
                 }
                 if (settings.updateURL == false) return false;

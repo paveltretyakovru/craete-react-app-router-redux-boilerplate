@@ -1817,13 +1817,27 @@ hr.bold-line {
   font-weight: 400;
   line-height: 140px;
   margin-bottom: 61px;
+  min-height: 140px;
+}
+@media (max-width: 991px) {
+  .countries-slider-item__title {
+    font-size: 90px;
+    line-height: 90px;
+  }
 }
 @media (max-width: 767px) {
   .countries-slider-item__title {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 400;
-    line-height: 50px;
+    line-height: 32px;
+    min-height: 32px;
     margin-bottom: 0;
+  }
+}
+@media (max-width: 370px) {
+  .countries-slider-item__title {
+    font-size: 28px;
+    line-height: 25px;
   }
 }
 .countries-slider-item__note {
@@ -2055,6 +2069,9 @@ hr.bold-line {
   line-height: 28px;
   vertical-align: bottom;
   padding: 5px 20px;
+}
+.cost__desc.no-diagram {
+  padding-left: 0;
 }
 @media (max-width: 1199px) {
   .cost__desc {
