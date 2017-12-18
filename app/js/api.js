@@ -16,7 +16,7 @@ export var API = {
     getInfo: function () {
         com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : this.getLinkID()}));
         var linkId = this.getLinkID();
-        if (linkId == 'index.html' || linkId == 'index.php' || linkId == 'test1')
+        if (linkId == 'index.html' || linkId == 'index.php' || linkId == 'test0')
             return ajax_response(stubResponse0);
 
         return $.ajax({
