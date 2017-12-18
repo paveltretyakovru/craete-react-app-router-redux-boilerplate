@@ -1,8 +1,26 @@
+import { stubResponse0 } from './api_stub';
+
+function ajax_response(response) {
+
+    var deferred = $.Deferred().resolve(
+        [{
+            'data': {
+                'jsonBody': response
+            }
+        }]
+    );
+    return deferred.promise();
+  }
+
 export var API = {
     getInfo: function () {
         com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : this.getLinkID()}));
+        var linkId = this.getLinkID();
+        if (linkId == 'index.html' || linkId == 'index.php' || linkId == 'test1')
+            return ajax_response(stubResponse0);
+
         return $.ajax({
-            url: '/ny2018/webapi-1/info/' + this.getLinkID(),
+            url: '/ny2018/webapi-1/info/' + linkId,
             dataType: 'json'
         });
     },
