@@ -20,7 +20,7 @@ export var API = {
             return ajax_response(stubResponse0);
 
         return $.ajax({
-            url: '/ny2018/webapi-1/info/' + linkId,
+            url: '/ny2018/webapi-1/info/' + linkId + '/',
             dataType: 'json'
         });
     },
@@ -31,7 +31,7 @@ export var API = {
 
         return $.ajax({
             type: 'PUT',
-            url: '/ny2018/webapi-1/feedbacks/' + this.getLinkID(),
+            url: '/ny2018/webapi-1/feedbacks/' + this.getLinkID() + '/',
             data: JSON.stringify({ "vote": vote }),
             contentType: "application/json",
             dataType: 'json'
