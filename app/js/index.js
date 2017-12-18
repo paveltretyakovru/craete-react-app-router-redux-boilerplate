@@ -1,3 +1,4 @@
+import './statistics';
 import './sprite.svg';
 import './transition';
 import './collapse';
@@ -6,7 +7,6 @@ import './../vendor/jquery.onepage-scroll';
 import { API } from './api';
 import { UserInfo } from './userinfo';
 import Mustache from 'mustache';
-import './statistics';
 
 var userdataReq  = API.getInfo();
 var docReady = $.Deferred();

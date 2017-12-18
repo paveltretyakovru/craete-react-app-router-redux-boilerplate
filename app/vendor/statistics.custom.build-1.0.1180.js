@@ -1325,34 +1325,38 @@ com.rooxteam.statistic = com.rooxteam.statistic || {};
 com.rooxteam.config.statistic = {
     "ENABLED": true,
     "LIC_ENABLED": false,
-    "LIC_SERVER_ADDRESS": 'http://rcmlic.roox.ru/YA/PushReport/',
+    "LIC_SERVER_ADDRESS": 'https://lic.rooxcloud.com/pushreport',
     "LIC_OBFUSCATED_DATA": ["userid", "msisdn", "^pn$", "authentication_token"], //Regexp as string
-    "TRANSPORT": "GET",
+    "TRANSPORT": "POST",
     "DISABLE_IN_ROAMING": false,
-    "SERVER_ADDRESS" : 'http://rcmlic.roox.ru/YA/PushReport/',
+    "SERVER_ADDRESS": 'https://www.raiffeisen.ru/ny2018/pushreport/',
+    "OPERATOR_ID": "RAIF",
     "SERVICE_TYPE_PARAMETER" : 'YA_REPORT_SERVICE',
     "CHECKSUM_PARAMETER" : 'YA_REPORT_CHECKSUM',
     "SENDING_TIME_PARAMETER" : 'YA_REPORT_SENDING_TIME',
     "FILTERING_ERROR_PARAMETER": 'filtering_error',
     "COUNTER_SERVICE_TYPE": 'counter',
-    "ACCUMULATE_TIME" : 60000,
+    "ACCUMULATE_TIME": 20000,
     'TIMER_UPDATE_INTERVAL': 5000,
-    "ACCUMULATE_OPERATION_LIMIT" : 20,        //after this accumulate operation limit - try send to server report
+    "ACCUMULATE_OPERATION_LIMIT": 1,        //after this accumulate operation limit - try send to server report
     "OVER_ACCUMULATE_OPERATION_LIMIT" : 100,     //max over accumulation limit if can't send report
-    "COUNT_OF_IMMEDIATE_SENDING" : 3,
+    "COUNT_OF_IMMEDIATE_SENDING" : 10,
     "MAX_URL_LENGTH" : 2000,
     "TRACEKIT_ENABLED": false,
     "IO_EVENTS_ENABLED": true,
     "VIEW_EVENTS_ENABLED": true,
     "DOM_EVENTS_ENABLED": true,
-    "USE_LS_WITH_MUTEX": false,
+    "USE_LS_WITH_MUTEX": true,
     "USE_ELECTION": false,
+    "WRAP_LINKS": true,
     "IS_SLAVE": false,
-    "JQUERY_AJAX_WRAP": false,
+    "JQUERY_AJAX_WRAP": true,
     "AJAX_WRAP": false,
     "PERFORMANCE_TIMING_ENABLED":false,
     "EXTERNAL_LINKS_LOG_ENABLED": false,
     "LINKS_LOG_REDIRECT_TIMEOUT": 100,
+    "AUTO_GENERATE_UIID": true,
+    "AUTO_GENERATE_IID": true,
     "DOM_EVENTS": {
         "click": {
             "verbose": 4,
@@ -1367,7 +1371,7 @@ com.rooxteam.config.statistic = {
             "LOADED": null
         }
     },
-    "CREDENTIALS_SYNC_ENABLED": false,
+    "CREDENTIALS_SYNC_ENABLED": true,
     "CREDENTIALS_COOKIE_DOMAIN": "",
     "CREDENTIALS_SYNC_MAP": {
         "roox_uiid": "com.roox.cm.Common.App.Properties.unit.UserInstallationId"
@@ -1524,7 +1528,6 @@ utils.syncCredentials(com.rooxteam.config.statistic.CREDENTIALS_SYNC_ENABLED);
 })(window.gadgets, com.rooxteam.statistic.utils, com.rooxteam.statistic.utils.getConsole());
 ;
 /*global com */
-com.rooxteam.config.statistic.LIC_ENABLED = true;;
 
 com.rooxteam.statistic = com.rooxteam.statistic || {};
 
@@ -3061,44 +3064,24 @@ com.rooxteam.statistic = com.rooxteam.statistic || {};
     };
 
     // setup io request logging
-    (function () {
-        if ($ && $.ajax && $.fn.ajaxComplete) {
-            $(document).ajaxComplete(function (ev, jqxhr, options) {
-                if (com.rooxteam.config.statistic.JQUERY_AJAX_WRAP) {
-                    try {
-                        com.rooxteam.statistic.client.logAjaxRequest({
-                            'url': options.url,
-                            'mthd': options.type,
-                            'et': 'na'
-                        }, jqxhr);
-                    } catch (ex) {
-                        if (gadgets && gadgets.log) {
-                            gadgets.log('An error during logAjaxRequestwas occured');
-                            gadgets.log(ex.message);
-                        }
+    if ($ && $.ajax && $.fn.ajaxComplete) {
+        $(document).ajaxComplete(function (ev, jqxhr, options) {
+            if (com.rooxteam.config.statistic.JQUERY_AJAX_WRAP && !/pushreport(\/)?$/.test(options.url)) {
+                try {
+                    com.rooxteam.statistic.client.logAjaxRequest({
+                        'url': options.url,
+                        'mthd': options.type,
+                        'et': 'na'
+                    }, jqxhr);
+                } catch (ex) {
+                    if (gadgets && gadgets.log) {
+                        gadgets.log('An error during logAjaxRequestwas occured');
+                        gadgets.log(ex.message);
                     }
                 }
-            });
-        }
-        if (window.xhook) {
-            window.xhook.after(function (request, response) {
-                if (com.rooxteam.config.statistic.AJAX_WRAP) {
-                    try {
-                        com.rooxteam.statistic.client.logAjaxRequest({
-                            'url': request.url,
-                            'mthd': request.method,
-                            'et': 'na'
-                        }, request.xhr);
-                    } catch (ex) {
-                        if (gadgets && gadgets.log) {
-                            gadgets.log('An error during logAjaxRequestwas occured');
-                            gadgets.log(ex.message);
-                        }
-                    }
-                }
-            });
-        }
-    })();
+            }
+        });
+    }
 
 })(window.gadgets, window.jQuery, window.WinJS, window.document, window.TraceKit);
 ;
