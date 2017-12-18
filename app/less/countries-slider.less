@@ -20,11 +20,21 @@
       font-weight: 400;
       line-height: 140px;
       margin-bottom: 61px;
+      min-height: 140px;
+      @media (max-width: @screen-sm-max) {
+        font-size: 90px;
+        line-height: 90px;
+      }
       @media (max-width: @screen-xs-max) {
-        font-size: 36px;
+        font-size: 34px;
         font-weight: 400;
-        line-height: 50px;
+        line-height: 32px;
+        min-height: 32px;
         margin-bottom: 0;
+      }
+      @media (max-width: 370px) {
+        font-size: 28px;
+        line-height: 25px;
       }
     }
     &__note {
@@ -60,8 +70,8 @@
     &.slick-prev,
     &.slick-next {
       content: '';
-      width: 55px;
-      height: 55px;
+      width: 54px;
+      height: 54px;
       top: auto;
       bottom: 5px;
       &.slick-disabled {
@@ -83,10 +93,10 @@
         background-repeat: no-repeat;
         background-position: center;
         display: block;
-        width: 44px;
-        height: 44px;
-        left: 5px;
-        top: 5px;
+        width: 42px;
+        height: 42px;
+        left: 6px;
+        top: 6px;
         position: absolute;
         @media (max-width: @screen-xs-max) {
           width: 33px;
@@ -101,7 +111,7 @@
     opacity: 1;
     &:before {
       opacity: 1;
-      background-image: url("../i/prev-icon.svg");
+      background-image: url("../i/prev.png");
       background-size: 100%;
     }
   }
@@ -109,7 +119,7 @@
     opacity: 1;
     &:before {
       opacity: 1;
-      background-image: url("../i/next-icon.svg");
+      background-image: url("../i/next.png");
       background-size: 100%;
     }
   }
@@ -167,7 +177,7 @@
   }
 }
 
-#countries-svg {
+/*#countries-svg {
   display: block;
   position: absolute;
   top: 0;
@@ -190,9 +200,36 @@
 }
 #countries-bar {
   stroke: #ffffff;
-}
+}*/
 
 .countries-slider .slick-arrow.slick-prev.slick-disabled,
 .countries-slider .slick-arrow.slick-next.slick-disabled {
   display: inline-block !important;
+}
+
+
+
+.progress-svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  circle {
+    stroke-width: 2px;
+    opacity: 1;
+  }
+  &.animate {
+    circle {
+      transition: stroke-dashoffset 5s linear;
+    }
+  }
+  &.no-animate {
+    circle {
+      opacity: 0;
+    }
+  }
+}
+.circle-bar {
+  stroke: #ffffff;
 }

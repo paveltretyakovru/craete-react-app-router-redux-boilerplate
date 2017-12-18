@@ -3,28 +3,7 @@ import './transition';
 import './collapse';
 import './../vendor/slick.min';
 import './../vendor/jquery.onepage-scroll';
-import { API } from './api';
-import { stubResponse0 } from './api_stub';
-import { UserInfo } from './userinfo';
-import './statistics';
 
-var userdataReq  = API.getInfo();
-var docReady = $.Deferred();
-
-$(function() {
-    docReady.resolve();
-});
-
-$.when(userdataReq, docReady)
-    .done(function (jqXHR) {
-        initDOM(jqXHR[0].data.jsonBody);
-    })
-    .fail(function (jqXHR) {
-        $.when(docReady)
-            .done(function () {
-                initDOM(stubResponse0);
-            });
-    });
 
 $.fn.extend({
     animateCss: function (animationName, callback) {
@@ -39,14 +18,7 @@ $.fn.extend({
     }
 });
 
-function initDOM(userdata) {
-    // fill the first screen
-    $('.scene-content__welcome').html( userdata.clientName + ', здравствуйте!');
-
-    // render the rest of the page
-    var template = $("#page_template").html();
-    $('.scene--intro').after(UserInfo.render(template, userdata));
-
+$(function () {
     $(window).scroll(function() {
 
 
@@ -61,53 +33,12 @@ function initDOM(userdata) {
 
     });
 
-    /*$(window).bind('mousewheel', function(e) {
-
-        const $target = $(e.target);
-        const event = e || window.event;
-        const delta = event.detail || event.wheelDelta || -event.deltaY;
-
-        let curDelta = $('wrapper').data('delta');
-
-        if (!$('wrapper').data('lock') && !$target.closest('.js-scroll').length && ($(window).width()>480)) {
-            if (($('wrapper').data('delta') < 0 && delta > 0) || ($('wrapper').data('delta') > 0 && delta < 0)) {
-                $('wrapper').data('delta', 0);
-            }
-
-            $('wrapper').data('delta', curDelta + delta);
-            let set = 0;
-            if ( $('wrapper').data('delta') < -20) {
-                set = 1;
-            }
-            if ( $('wrapper').data('delta') > 20) {
-                set = -1;
-            }
-            if (set !== 0) {
-                $('wrapper').data('delta', 0);
-                $('wrapper').check(false, set > 0);
-            }
-        }
-
-        var vh = $(window).height();
-        var scroll = $(window).scrollTop();
-        var coef = Math.floor(scroll / vh);
-        if (event.originalEvent.wheelDelta >= 0) {
-            console.log('Scroll up');
-            console.log(coef);
-        }
-        else {
-            console.log('Scroll down');
-        }
-    }); */
-
-
     $('.scene-slider').slick({
         dots: false,
         infinite: false,
         arrows: true,
         speed: 800,
         slidesToShow: 1,
-        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 480,
@@ -123,7 +54,6 @@ function initDOM(userdata) {
         arrows: true,
         speed: 800,
         slidesToShow: 1,
-        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 480,
@@ -153,6 +83,41 @@ function initDOM(userdata) {
         }
     }
 
+
+    if ($(window).width() > 1200){
+        $('.countries-slider-item__title').each(function () {
+            let simbolCount = $(this).text().length;
+            if ((simbolCount > 9) && (simbolCount < 20)) {
+                $(this).css({'font-size' : '80px', 'line-height' : '80px'});
+            }
+            if (simbolCount > 20) {
+                $(this).css({'font-size' : '60px', 'line-height' : '60px'});
+            }
+        });
+    }
+
+    if (($(window).width() > 1024) && ($(window).width() < 1200)){
+        $('.countries-slider-item__title').each(function () {
+            let simbolCount = $(this).text().length;
+            if ((simbolCount > 9) && (simbolCount < 20)) {
+                $(this).css({'font-size' : '60px', 'line-height' : '60px'});
+            }
+            if (simbolCount > 20) {
+                $(this).css({'font-size' : '60px', 'line-height' : '60px'});
+            }
+
+        });
+    }
+    if (($(window).width() > 480) && ($(window).width() < 1024)){
+        $('.countries-slider-item__title').each(function () {
+            let simbolCount = $(this).text().length;
+            if (simbolCount > 9)  {
+                $(this).css({'font-size' : '50px', 'line-height' : '50px'});
+            }
+
+        });
+    }
+
     if ($('.countries-slider').hasClass('slick-slider') && $(window).width() > 480) {
 
         var slider = $('.countries-slider');
@@ -161,8 +126,8 @@ function initDOM(userdata) {
             var step = Math.floor(100 / slideCount);
             var curArrow = slider.find('.slick-next');
             curArrow.attr('data-pct', step);
-            var circleStr = '<svg id="countries-svg" class="animate" width="55" height="55" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' +
-                '<circle id="countries-bar" cx="26.7" cy="27.2" r="23" stroke-dasharray="144.52"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' +
+            var circleStr = '<svg id="countries-svg" class="progress-svg animate" width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' +
+                '<circle id="countries-bar" class="progress-bar" cx="27" cy="27" r="24" stroke-dasharray="150.796416"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' +
                 '</svg>';
             curArrow.append(circleStr);
             var $circle = $('#countries-svg #countries-bar');
@@ -171,20 +136,7 @@ function initDOM(userdata) {
     }
 
     $('.countries-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        var slideCount = $(this).slick("getSlick").slideCount - 2;
-        if (currentSlide === slideCount) {
-            $(this).slick('slickPause');
-            $('#countries-svg').addClass('no-animate');
-        }
-        if (!$('#countries-svg').hasClass('no-animate')) {
-            $('#countries-svg').addClass('animate');
-            var $circle = $('#countries-svg #countries-bar');
-            changeCircle($circle, 100);
-            setTimeout(function () {
-                $('#countries-svg').removeClass('animate');
-                changeCircle($circle, 0);
-            }, 5000);
-        }
+
     });
 
     if ($('.scene-slider').hasClass('slick-slider') && $(window).width() > 480) {
@@ -195,8 +147,8 @@ function initDOM(userdata) {
             var step = Math.floor(100 / slideCount);
             var curArrow = slider.find('.slick-next');
             curArrow.attr('data-pct', step);
-            var circleStr = '<svg id="scene-svg" class="animate" width="55" height="55" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' +
-                '<circle id="scene-bar" cx="26.7" cy="27.2" r="23" stroke-dasharray="144.52"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' +
+            var circleStr = '<svg id="scene-svg" class="progress-svg animate" width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' +
+                '<circle id="scene-bar" class="progress-bar" cx="27" cy="27" r="24" stroke-dasharray="150.796416"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' +
                 '</svg>';
             curArrow.append(circleStr);
             var $circle = $('#scene-svg #scene-bar');
@@ -205,24 +157,6 @@ function initDOM(userdata) {
     }
 
     $('.scene-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-
-        var slideCount = $(this).slick("getSlick").slideCount - 2;
-        if (currentSlide === slideCount) {
-            $(this).slick('slickPause');
-            $('#scene-svg').addClass('no-animate');
-        }
-
-        if (!$('#scene-svg').hasClass('no-animate')) {
-            $('#scene-svg').addClass('animate');
-            var $circle = $('#scene-svg #scene-bar');
-            changeCircle($circle, 100);
-            setTimeout(function () {
-                $('#scene-svg').removeClass('animate');
-                changeCircle($circle, 0);
-            }, 5000);
-        }
-
-
     });
 
     $('.cost__diagram').each(function () {
@@ -244,15 +178,10 @@ function initDOM(userdata) {
                     }, 800);
                 }
                 break;
-            case 'vote-yes' :
-            case 'vote-no' :
+            case 'result' :
                 e.preventDefault();
                 $('.btn-container-bottom__content').fadeOut(200);
                 $('.btn-container-bottom').addClass('result');
-
-                var result = (action == 'vote-yes' ? 1 : 0);
-                API.sendVote(result);
-
                 setTimeout(function () {
                     $('.btn-container-bottom__content.result').fadeIn();
                 }, 200);
@@ -278,12 +207,13 @@ function initDOM(userdata) {
             loop: true,
             keyboard: false,
             responsiveFallback: false,
-            // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-            // the browser's width is less than 600, the fallback will kick in.
             direction: "vertical"
         });
     }
 
+
+
+    /*** Анимация слайдера с посещенными странами ***/
     var animateCountrySlider = function () {
         if ($('.scene.active').find('.countries-slider').length > 0) {
             var $circle = $('#countries-svg #countries-bar');
@@ -294,21 +224,94 @@ function initDOM(userdata) {
 
                 setTimeout(function () {
                     $('#countries-svg').addClass('animate');
-
                     changeCircle($circle, 100);
                 }, 100);
-                setTimeout(function () {
-                    $('.countries-slider').slick('slickPlay');
-                }, 1000);
-                setTimeout(function () {
-                    $('#countries-svg').removeClass('animate');
-                    changeCircle($circle, 0);
-                }, 5100);
+
+                var slideCount = $('.countries-slider').slick("getSlick").slideCount;
+
+                if (slideCount > 1) {
+                 for (let i=0; i < slideCount-1; i++) {
+                     let time = 5100 * (i+1);
+                         setTimeout(function () {
+                             if (!$('#countries-svg').hasClass('no-animate')) {
+                                 $('#countries-svg').addClass('animate');
+                                 changeCircle($circle, 100);
+                             } else {
+                                 return;
+                             }
+                         }, time - 5000);
+                         setTimeout(function () {
+                             if (!$('#countries-svg').hasClass('no-animate')) {
+                                 $('.countries-slider').slick('slickNext');
+                             } else {
+                                 return;
+                             }
+                         }, time);
+                         setTimeout(function () {
+                             if (!$('#countries-svg').hasClass('no-animate')) {
+                             $('#countries-svg').removeClass('animate');
+                             changeCircle($circle, 0);
+                             } else {
+                                 return;
+                             }
+                         }, time + 50);
+                 }
             }
+        }
+    }
+    else {
+
         }
     }
 
     var animateSceneSlider = function () {
+
+        if ($('.scene.active').find('.scene-slider').length > 0) {
+            var $circle = $('#scene-svg #scene-bar');
+
+            if (!$('.scene-slider').hasClass('active')) {
+
+                $('.scene-slider').addClass('active');
+
+                //анимация заполнения полоски
+                setTimeout(function () {
+                    $('#scene-svg').addClass('animate');
+                    changeCircle($circle, 100);
+                }, 100);
+
+                var slideCount = $('.scene-slider').slick("getSlick").slideCount;
+
+                if (slideCount > 1) {
+                    for (let i=0; i < slideCount-1; i++) {
+                        let time = 5100 * (i+1);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('#scene-svg').addClass('animate');
+                                changeCircle($circle, 100);
+                            } else {
+                                return;
+                            }
+                        }, time - 5000);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('.scene-slider').slick('slickNext');
+                            } else {
+                                return;
+                            }
+                        }, time);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('#scene-svg').removeClass('animate');
+                                changeCircle($circle, 0);
+                            } else {
+                                return;
+                            }
+                        }, time + 50);
+                    }
+                }
+            }
+        }
+
         if ($('.scene.active').find('.scene-slider').length > 0) {
             var $circle = $('#scene-svg #scene-bar');
 
@@ -323,7 +326,7 @@ function initDOM(userdata) {
                 }, 100);
                 setTimeout(function () {
                     $('.scene-slider').slick('slickPlay');
-                }, 1000);
+                }, 800);
                 setTimeout(function () {
                     $('#scene-svg').removeClass('animate');
                     changeCircle($circle, 0);
@@ -347,17 +350,25 @@ function initDOM(userdata) {
     });
 
     $('.scene-slider .slick-arrow').click(function () {
-        $('.scene-slider').slick('slickPause');
         $('#scene-svg').addClass('no-animate');
         $('#scene-svg').removeClass('animate');
     });
     $('.countries-slider .slick-arrow').click(function () {
-        $('.countries-slider').slick('slickPause');
         $('#countries-svg').addClass('no-animate');
         $('#countries-svg').removeClass('animate');
     });
 
-    $(window).on('load', function () {
+    $('.scene-slider').on('swipe', function(event, slick, direction){
+        $('#scene-svg').addClass('no-animate');
+        $('#scene-svg').removeClass('animate');
+    });
+
+    $('.countries-slider').on('swipe', function(event, slick, direction){
+        $('#countries-svg').addClass('no-animate');
+        $('#countries-svg').removeClass('animate');
+    });
+
+    $(document).ready(function () {
         //$('.scene.active').find('.content-animation').addClass('animated');
     });
-}
+});

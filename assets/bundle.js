@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11228,103 +11228,14 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return API; });
-var API = {
-    getInfo: function () {
-        return $.ajax({
-            url: '/webapi-1/info/' + this.getLinkID(),
-            dataType: 'json'
-        });
-    },
-
-    sendVote: function (vote) {
-        return $.ajax({
-            type: 'PUT',
-            url: '/webapi-1/feedbacks/' + this.getLinkID(),
-            data: JSON.stringify({ "vote": vote }),
-            contentType: "application/json",
-            dataType: 'json'
-        });
-    },
-
-    getLinkID: function () {
-        var pathParts = window.location.pathname.split('/');
-        var lastSegment = pathParts.pop() || pathParts.pop();
-        return lastSegment;
-    }
-};
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return stubResponse0; });
-var stubResponse0 = {
-    "linkId": "cchgnf9uxk7t",
-    "clientName": "Константин",
-    "timeWithBank": "3 года",
-    "numberOfTransactionsByCard": 785,
-    "numberOfTransactionsByNFC": 55,
-    "totalSumOfTransactions": 1483745,
-    "expensesByCategory": [{
-        "totalExpenses": 122863,
-        "categoryName": "путешествиях",
-        "relativeExpenses": "24% больше"
-    }, {
-        "totalExpenses": 62169,
-        "categoryName": "супермаркетах",
-        "relativeExpenses": "5% меньше"
-    }, {
-        "totalExpenses": 59169,
-        "categoryName": "кино, театры, концерты",
-        "relativeExpenses": "15% больше"
-    }],
-    "largestExpense": {
-        "date": "2017-03-13T15:12:44.316Z",
-        "sum": 103445,
-        "outletName": "S7 Airlines"
-    },
-    "monthWithMinPayments": {
-        "transactionsCount": 30,
-        "sum": 19403,
-        "name": "июль"
-    },
-    "monthWithMaxPayments": {
-        "transactionsCount": 25,
-        "sum": 142254,
-        "name": "сентябрь"
-    },
-    "percentsFromTDAndSA": 27345,
-    "growthOfDepositsWithoutPercents": 340005,
-    "cashBackProgram": {
-        "packetName": "Золотой",
-        "sum": 3505
-    },
-    "visitedCountries": [{
-        "countryName": "Сент-Винсент и Гренадины",
-        "otherClientsPercent": "15%"
-    }, {
-        "countryName": "Венгрия",
-        "otherClientsPercent": "3%"
-    }],
-    "totalSumOfLoansPaid": 1500005,
-    "coBrandStats": [{
-        "sum": 5326,
-        "brandName": "#ВСЕСРАЗУ"
-    }],
-    "sex": "M"
-};
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+"use strict";
+/* WEBPACK VAR INJECTION */(function(jQuery) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/* ========================================================================
  * Bootstrap: collapse.js v3.3.7
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
@@ -11340,7 +11251,7 @@ var stubResponse0 = {
   // COLLAPSE PUBLIC CLASS DEFINITION
   // ================================
 
-  var Collapse = function (element, options) {
+  var Collapse = function Collapse(element, options) {
     this.$element = $(element);
     this.options = $.extend({}, Collapse.DEFAULTS, options);
     this.$trigger = $('[data-toggle="collapse"][href="#' + element.id + '"],' + '[data-toggle="collapse"][data-target="#' + element.id + '"]');
@@ -11396,7 +11307,7 @@ var stubResponse0 = {
 
     this.transitioning = 1;
 
-    var complete = function () {
+    var complete = function complete() {
       this.$element.removeClass('collapsing').addClass('collapse in')[dimension]('');
       this.transitioning = 0;
       this.$element.trigger('shown.bs.collapse');
@@ -11426,7 +11337,7 @@ var stubResponse0 = {
 
     this.transitioning = 1;
 
-    var complete = function () {
+    var complete = function complete() {
       this.transitioning = 0;
       this.$element.removeClass('collapsing').addClass('collapse').trigger('hidden.bs.collapse');
     };
@@ -11468,7 +11379,7 @@ var stubResponse0 = {
     return this.each(function () {
       var $this = $(this);
       var data = $this.data('bs.collapse');
-      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option);
+      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), (typeof option === 'undefined' ? 'undefined' : _typeof(option)) == 'object' && option);
 
       if (!data && options.toggle && /show|hide/.test(option)) options.toggle = false;
       if (!data) $this.data('bs.collapse', data = new Collapse(this, options));
@@ -11507,17 +11418,23 @@ var stubResponse0 = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const requireContext = __webpack_require__(13);
+"use strict";
+
+
+var requireContext = __webpack_require__(10);
 requireContext.keys().map(requireContext);
 
 /***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+"use strict";
+/* WEBPACK VAR INJECTION */(function(jQuery) {
+
+/* ========================================================================
  * Bootstrap: transition.js v3.3.7
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
@@ -11557,7 +11474,7 @@ requireContext.keys().map(requireContext);
     $(this).one('bsTransitionEnd', function () {
       called = true;
     });
-    var callback = function () {
+    var callback = function callback() {
       if (!called) $($el).trigger($.support.transition.end);
     };
     setTimeout(callback, duration);
@@ -11572,7 +11489,7 @@ requireContext.keys().map(requireContext);
     $.event.special.bsTransitionEnd = {
       bindType: $.support.transition.end,
       delegateType: $.support.transition.end,
-      handle: function (e) {
+      handle: function handle(e) {
         if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments);
       }
     };
@@ -11581,85 +11498,13 @@ requireContext.keys().map(requireContext);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserInfo; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mustache__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mustache___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_mustache__);
-
-
-var UserInfo = {
-    numDeclension: function (titles) {
-        if (titles === undefined || titles.constructor !== Array) throw new Error('Invalid Argument: Array is expected');
-        if (titles.length != 3) throw new Error('Invalid Argument: 3 titles are expected');
-
-        var cases = [2, 0, 1, 1, 1, 2];
-        return function (number) {
-            number = parseInt(number);
-            number = Math.abs(number);
-            if (number % 100 > 4 && number % 100 < 20) return titles[2];
-            if (number % 10 > 5) return titles[2];
-            return titles[cases[number % 10]];
-        };
-    },
-
-    numberWithSpaces: function (x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, "&nbsp;");
-        return parts.join(".");
-    },
-
-    date_DnumMtxt: function (date_string) {
-        var months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
-        var date = new Date(date_string);
-        return date.getDate() + ' ' + months[date.getMonth()];
-    },
-
-    mustache_lambda: function (outsideRender) {
-        return function () {
-            return function (text, render) {
-                return outsideRender(render(text));
-            };
-        };
-    },
-
-    render: function (template, userdata) {
-
-        var context = jQuery.extend(true, {}, userdata);
-        context.decl_operations = this.mustache_lambda(this.numDeclension(['операцию', 'операции', 'операций']));
-        context.decl_rouble = this.mustache_lambda(this.numDeclension(['рубль', 'рубля', 'рублей']));
-        context.decl_transaction = this.mustache_lambda(this.numDeclension(['транзакцию', 'транзакции', 'транзакций']));
-        context.decl_visited = this.mustache_lambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
-        context.decl_visited = this.mustache_lambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
-        context.decl_bonus = this.mustache_lambda(this.numDeclension(['балл', 'балла', 'баллов']));
-
-        context.spaced_number = this.mustache_lambda(this.numberWithSpaces);
-        context.date_DnumMtxt = this.mustache_lambda(this.date_DnumMtxt);
-        context.timeWithBank_val = context.timeWithBank.split(' ')[0];
-        context.timeWithBank_unit = context.timeWithBank.split(' ')[1];
-
-        for (var i = 0; i < context.expensesByCategory.length; i++) {
-            var dest = context.expensesByCategory[i];
-            dest.relativeExpenses_val = Number(dest.relativeExpenses.split(' ')[0].replace('%', ''));
-        }
-        for (var i = 0; i < context.visitedCountries.length; i++) {
-            var dest = context.visitedCountries[i];
-            dest.otherClientsPercent = Number(dest.otherClientsPercent.replace('%', ''));
-        }
-
-        return __WEBPACK_IMPORTED_MODULE_0_mustache___default.a.to_html(template, context);
-    }
-
-};
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
-
-/***/ }),
-/* 11 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/* ===========================================================
+"use strict";
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {
+
+/* ===========================================================
  * jquery-onepage-scroll.js v1
  * ===========================================================
  * Copyright 2013 Pete Rojwongsuriya.
@@ -11675,268 +11520,274 @@ var UserInfo = {
 
 !function ($) {
 
-  var defaults = {
-    sectionContainer: "section",
-    easing: "ease",
-    animationTime: 1000,
-    pagination: true,
-    updateURL: false
-  };
-
-  /*------------------------------------------------*/
-  /*  Credit: Eike Send for the awesome swipe event */
-  /*------------------------------------------------*/
-
-  $.fn.swipeEvents = function () {
-    return this.each(function () {
-
-      var startX,
-          startY,
-          $this = $(this);
-
-      $this.bind('touchstart', touchstart);
-
-      function touchstart(event) {
-        var touches = event.originalEvent.touches;
-        if (touches && touches.length) {
-          startX = touches[0].pageX;
-          startY = touches[0].pageY;
-          $this.bind('touchmove', touchmove);
-        }
-        event.preventDefault();
-      }
-
-      function touchmove(event) {
-        var touches = event.originalEvent.touches;
-        if (touches && touches.length) {
-          var deltaX = startX - touches[0].pageX;
-          var deltaY = startY - touches[0].pageY;
-
-          if (deltaX >= 50) {
-            $this.trigger("swipeLeft");
-          }
-          if (deltaX <= -50) {
-            $this.trigger("swipeRight");
-          }
-          if (deltaY >= 50) {
-            $this.trigger("swipeUp");
-          }
-          if (deltaY <= -50) {
-            $this.trigger("swipeDown");
-          }
-          if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
-            $this.unbind('touchmove', touchmove);
-          }
-        }
-        event.preventDefault();
-      }
-    });
-  };
-
-  $.fn.onepage_scroll = function (options) {
-    var settings = $.extend({}, defaults, options),
-        el = $(this),
-        sections = $(settings.sectionContainer);
-    total = sections.length, status = "off", topPos = 0, lastAnimation = 0, quietPeriod = 500, paginationList = "";
-
-    $.fn.transformPage = function (settings, pos) {
-      $(this).css({
-        "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
-        "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "-moz-transform": "translate3d(0, " + pos + "%, 0)",
-        "-moz-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "-ms-transform": "translate3d(0, " + pos + "%, 0)",
-        "-ms-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "transform": "translate3d(0, " + pos + "%, 0)",
-        "transition": "all " + settings.animationTime + "ms " + settings.easing
-      });
+    var defaults = {
+        sectionContainer: "section",
+        easing: "ease",
+        animationTime: 1000,
+        pagination: true,
+        updateURL: false
     };
 
-    $.fn.transformBackPage = function (settings, pos) {
-      $(this).css({
-        "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
-        "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "-moz-transform": "translate3d(0, " + pos + "%, 0)",
-        "-moz-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "-ms-transform": "translate3d(0, " + pos + "%, 0)",
-        "-ms-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "transform": "translate3d(0, " + pos + "%, 0)",
-        "transition": "all " + 0 + "ms " + settings.easing
-      });
+    /*------------------------------------------------*/
+    /*  Credit: Eike Send for the awesome swipe event */
+    /*------------------------------------------------*/
+
+    $.fn.swipeEvents = function () {
+        return this.each(function () {
+
+            var startX,
+                startY,
+                $this = $(this);
+
+            $this.bind('touchstart', touchstart);
+
+            function touchstart(event) {
+                var touches = event.originalEvent.touches;
+                if (touches && touches.length) {
+                    startX = touches[0].pageX;
+                    startY = touches[0].pageY;
+                    $this.bind('touchmove', touchmove);
+                }
+                event.preventDefault();
+            }
+
+            function touchmove(event) {
+                var touches = event.originalEvent.touches;
+                if (touches && touches.length) {
+                    var deltaX = startX - touches[0].pageX;
+                    var deltaY = startY - touches[0].pageY;
+
+                    if (deltaX >= 50) {
+                        $this.trigger("swipeLeft");
+                    }
+                    if (deltaX <= -50) {
+                        $this.trigger("swipeRight");
+                    }
+                    if (deltaY >= 50) {
+                        $this.trigger("swipeUp");
+                    }
+                    if (deltaY <= -50) {
+                        $this.trigger("swipeDown");
+                    }
+                    if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
+                        $this.unbind('touchmove', touchmove);
+                    }
+                }
+                event.preventDefault();
+            }
+        });
     };
 
-    $.fn.moveDown = function () {
-      var el = $(this);
-      index = $(settings.sectionContainer + ".active").data("index");
-      if (index < total) {
-        current = $(settings.sectionContainer + "[data-index='" + index + "']");
-        next = $(settings.sectionContainer + "[data-index='" + (index + 1) + "']");
-        if (next) {
-          current.removeClass("active");
-          next.addClass("active");
-          if (settings.pagination == true) {
-            $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
-            $(".onepage-pagination li a" + "[data-index='" + (index + 1) + "']").addClass("active");
-          }
-          $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-          $("body").addClass("viewing-page-" + next.data("index"));
+    $.fn.onepage_scroll = function (options) {
+        var settings = $.extend({}, defaults, options),
+            el = $(this),
+            sections = $(settings.sectionContainer),
+            total = sections.length,
+            status = "off",
+            topPos = 0,
+            lastAnimation = 0,
+            quietPeriod = 500,
+            paginationList = "",
+            posTop;
 
-          if (history.replaceState && settings.updateURL == true) {
-            var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (index + 1);
-            history.pushState({}, document.title, href);
-          }
+        $.fn.transformPage = function (settings, pos) {
+            $(this).css({
+                "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
+                "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
+                "-moz-transform": "translate3d(0, " + pos + "%, 0)",
+                "-moz-transition": "all " + settings.animationTime + "ms " + settings.easing,
+                "-ms-transform": "translate3d(0, " + pos + "%, 0)",
+                "-ms-transition": "all " + settings.animationTime + "ms " + settings.easing,
+                "transform": "translate3d(0, " + pos + "%, 0)",
+                "transition": "all " + settings.animationTime + "ms " + settings.easing
+            });
+        };
+
+        $.fn.transformBackPage = function (settings, pos) {
+            $(this).css({
+                "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
+                "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
+                "-moz-transform": "translate3d(0, " + pos + "%, 0)",
+                "-moz-transition": "all " + settings.animationTime + "ms " + settings.easing,
+                "-ms-transform": "translate3d(0, " + pos + "%, 0)",
+                "-ms-transition": "all " + settings.animationTime + "ms " + settings.easing,
+                "transform": "translate3d(0, " + pos + "%, 0)",
+                "transition": "all " + 0 + "ms " + settings.easing
+            });
+        };
+
+        $.fn.moveDown = function () {
+            var el = $(this);
+            var index = $(settings.sectionContainer + ".active").data("index");
+            if (index < total) {
+                var current = $(settings.sectionContainer + "[data-index='" + index + "']");
+                var next = $(settings.sectionContainer + "[data-index='" + (index + 1) + "']");
+                if (next) {
+                    current.removeClass("active");
+                    next.addClass("active");
+                    if (settings.pagination == true) {
+                        $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
+                        $(".onepage-pagination li a" + "[data-index='" + (index + 1) + "']").addClass("active");
+                    }
+                    $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+                    $("body").addClass("viewing-page-" + next.data("index"));
+
+                    if (history.replaceState && settings.updateURL == true) {
+                        var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (index + 1);
+                        history.pushState({}, document.title, href);
+                    }
+                }
+                var pos = index * 100 * -1;
+                el.transformPage(settings, pos);
+                current.transformPage(settings, 50);
+                setTimeout(function () {
+                    current.transformBackPage(settings, 0);
+                }, 1000);
+            }
+        };
+
+        $.fn.moveUp = function () {
+            var el = $(this);
+            var index = $(settings.sectionContainer + ".active").data("index");
+            if (index <= total && index > 1) {
+                var current = $(settings.sectionContainer + "[data-index='" + index + "']");
+                var next = $(settings.sectionContainer + "[data-index='" + (index - 1) + "']");
+
+                if (next) {
+                    current.removeClass("active");
+                    next.addClass("active");
+                    if (settings.pagination == true) {
+                        $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
+                        $(".onepage-pagination li a" + "[data-index='" + (index - 1) + "']").addClass("active");
+                    }
+                    $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+                    $("body").addClass("viewing-page-" + next.data("index"));
+
+                    if (history.replaceState && settings.updateURL == true) {
+                        var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (index - 1);
+                        history.pushState({}, document.title, href);
+                    }
+                }
+                current.css('z-index', 1);
+                next.css('z-index', 2);
+                var pos = (next.data("index") - 1) * 100 * -1;
+                el.transformPage(settings, pos);
+                current.transformPage(settings, -50);
+                setTimeout(function () {
+                    current.transformBackPage(settings, 0);
+                    current.css('z-index', 0);
+                    next.css('z-index', 0);
+                }, 1100);
+            }
+        };
+
+        function init_scroll(event, delta) {
+            var deltaOfInterest = delta;
+            var timeNow = new Date().getTime();
+            // Cancel scroll if currently animating or within quiet period
+            if (timeNow - lastAnimation < quietPeriod + settings.animationTime) {
+                event.preventDefault();
+                return;
+            }
+
+            if (deltaOfInterest < 0) {
+                el.moveDown();
+            } else {
+                el.moveUp();
+            }
+            lastAnimation = timeNow;
         }
-        pos = index * 100 * -1;
-        el.transformPage(settings, pos);
-        current.transformPage(settings, 50);
-        setTimeout(function () {
-          current.transformBackPage(settings, 0);
-        }, 1000);
-      }
+
+        // Prepare everything before binding wheel scroll
+
+        el.addClass("onepage-wrapper").css("position", "relative");
+        $.each(sections, function (i) {
+            $(this).css({
+                position: "absolute",
+                top: topPos + "%"
+            }).addClass("section").attr("data-index", i + 1);
+            topPos = topPos + 100;
+            if (settings.pagination == true) {
+                paginationList += "<li><a data-index='" + (i + 1) + "' href='#" + (i + 1) + "'></a></li>";
+            }
+        });
+
+        el.swipeEvents().bind("swipeDown", function () {
+            el.moveUp();
+        }).bind("swipeUp", function () {
+            el.moveDown();
+        });
+
+        // Create Pagination and Display Them
+        if (settings.pagination == true) {
+            $("<ul class='onepage-pagination'>" + paginationList + "</ul>").prependTo("body");
+            posTop = el.find(".onepage-pagination").height() / 2 * -1;
+            el.find(".onepage-pagination").css("margin-top", posTop);
+        }
+
+        if (window.location.hash != "" && window.location.hash != "#1") {
+            init_index = window.location.hash.replace("#", "");
+            $(settings.sectionContainer + "[data-index='" + init_index + "']").addClass("active");
+            $("body").addClass("viewing-page-" + init_index);
+            if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
+
+            next = $(settings.sectionContainer + "[data-index='" + init_index + "']");
+            if (next) {
+                next.addClass("active");
+                if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
+                $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+                $("body").addClass("viewing-page-" + next.data("index"));
+                if (history.replaceState && settings.updateURL == true) {
+                    var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + init_index;
+                    history.pushState({}, document.title, href);
+                }
+            }
+            pos = (init_index - 1) * 100 * -1;
+            el.transformPage(settings, pos);
+        } else {
+            $(settings.sectionContainer + "[data-index='1']").addClass("active");
+            $("body").addClass("viewing-page-1");
+            if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
+        }
+        if (settings.pagination == true) {
+            $(".onepage-pagination li a").click(function () {
+                var page_index = $(this).data("index");
+                if (!$(this).hasClass("active")) {
+                    var current = $(settings.sectionContainer + ".active");
+                    var next = $(settings.sectionContainer + "[data-index='" + page_index + "']");
+                    if (next) {
+                        current.removeClass("active");
+                        next.addClass("active");
+                        $(".onepage-pagination li a" + ".active").removeClass("active");
+                        $(".onepage-pagination li a" + "[data-index='" + page_index + "']").addClass("active");
+                        $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+                        $("body").addClass("viewing-page-" + next.data("index"));
+                    }
+                    var pos = (page_index - 1) * 100 * -1;
+                    el.transformPage(settings, pos);
+                }
+                if (settings.updateURL == false) return false;
+            });
+        }
+
+        $(document).bind('mousewheel DOMMouseScroll', function (event) {
+            event.preventDefault();
+            var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+            init_scroll(event, delta);
+        });
+        return false;
     };
-
-    $.fn.moveUp = function () {
-      var el = $(this);
-      index = $(settings.sectionContainer + ".active").data("index");
-      if (index <= total && index > 1) {
-        current = $(settings.sectionContainer + "[data-index='" + index + "']");
-        next = $(settings.sectionContainer + "[data-index='" + (index - 1) + "']");
-
-        if (next) {
-          current.removeClass("active");
-          next.addClass("active");
-          if (settings.pagination == true) {
-            $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
-            $(".onepage-pagination li a" + "[data-index='" + (index - 1) + "']").addClass("active");
-          }
-          $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-          $("body").addClass("viewing-page-" + next.data("index"));
-
-          if (history.replaceState && settings.updateURL == true) {
-            var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (index - 1);
-            history.pushState({}, document.title, href);
-          }
-        }
-        current.css('z-index', 1);
-        next.css('z-index', 2);
-        pos = (next.data("index") - 1) * 100 * -1;
-        el.transformPage(settings, pos);
-        current.transformPage(settings, -50);
-        setTimeout(function () {
-          current.transformBackPage(settings, 0);
-          current.css('z-index', 0);
-          next.css('z-index', 0);
-        }, 1100);
-      }
-    };
-
-    function init_scroll(event, delta) {
-      deltaOfInterest = delta;
-      var timeNow = new Date().getTime();
-      // Cancel scroll if currently animating or within quiet period
-      if (timeNow - lastAnimation < quietPeriod + settings.animationTime) {
-        event.preventDefault();
-        return;
-      }
-
-      if (deltaOfInterest < 0) {
-        el.moveDown();
-      } else {
-        el.moveUp();
-      }
-      lastAnimation = timeNow;
-    }
-
-    // Prepare everything before binding wheel scroll
-
-    el.addClass("onepage-wrapper").css("position", "relative");
-    $.each(sections, function (i) {
-      $(this).css({
-        position: "absolute",
-        top: topPos + "%"
-      }).addClass("section").attr("data-index", i + 1);
-      topPos = topPos + 100;
-      if (settings.pagination == true) {
-        paginationList += "<li><a data-index='" + (i + 1) + "' href='#" + (i + 1) + "'></a></li>";
-      }
-    });
-
-    el.swipeEvents().bind("swipeDown", function () {
-      el.moveUp();
-    }).bind("swipeUp", function () {
-      el.moveDown();
-    });
-
-    // Create Pagination and Display Them
-    if (settings.pagination == true) {
-      $("<ul class='onepage-pagination'>" + paginationList + "</ul>").prependTo("body");
-      posTop = el.find(".onepage-pagination").height() / 2 * -1;
-      el.find(".onepage-pagination").css("margin-top", posTop);
-    }
-
-    if (window.location.hash != "" && window.location.hash != "#1") {
-      init_index = window.location.hash.replace("#", "");
-      $(settings.sectionContainer + "[data-index='" + init_index + "']").addClass("active");
-      $("body").addClass("viewing-page-" + init_index);
-      if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
-
-      next = $(settings.sectionContainer + "[data-index='" + init_index + "']");
-      if (next) {
-        next.addClass("active");
-        if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
-        $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-        $("body").addClass("viewing-page-" + next.data("index"));
-        if (history.replaceState && settings.updateURL == true) {
-          var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + init_index;
-          history.pushState({}, document.title, href);
-        }
-      }
-      pos = (init_index - 1) * 100 * -1;
-      el.transformPage(settings, pos);
-    } else {
-      $(settings.sectionContainer + "[data-index='1']").addClass("active");
-      $("body").addClass("viewing-page-1");
-      if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
-    }
-    if (settings.pagination == true) {
-      $(".onepage-pagination li a").click(function () {
-        var page_index = $(this).data("index");
-        if (!$(this).hasClass("active")) {
-          current = $(settings.sectionContainer + ".active");
-          next = $(settings.sectionContainer + "[data-index='" + page_index + "']");
-          if (next) {
-            current.removeClass("active");
-            next.addClass("active");
-            $(".onepage-pagination li a" + ".active").removeClass("active");
-            $(".onepage-pagination li a" + "[data-index='" + page_index + "']").addClass("active");
-            $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-            $("body").addClass("viewing-page-" + next.data("index"));
-          }
-          pos = (page_index - 1) * 100 * -1;
-          el.transformPage(settings, pos);
-        }
-        if (settings.updateURL == false) return false;
-      });
-    }
-
-    $(document).bind('mousewheel DOMMouseScroll', function (event) {
-      event.preventDefault();
-      var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-      init_scroll(event, delta);
-    });
-    return false;
-  };
 }(__webpack_provided_window_dot_jQuery);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */,
-/* 13 */
+/* 9 */,
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./mouse.svg": 17,
-	"./raiff-logo-rus.svg": 18
+	"./mouse.svg": 13,
+	"./raiff-logo-rus.svg": 14
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -11952,53 +11803,27 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 13;
+webpackContext.id = 10;
 
 /***/ }),
-/* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sprite_svg__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sprite_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__sprite_svg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transition__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__transition___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__transition__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collapse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collapse___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__collapse__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vendor_slick_min__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vendor_slick_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__vendor_slick_min__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vendor_jquery_onepage_scroll__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vendor_jquery_onepage_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__vendor_jquery_onepage_scroll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__api__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__api_stub__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__userinfo__ = __webpack_require__(10);
+/* WEBPACK VAR INJECTION */(function($) {
 
+__webpack_require__(6);
 
+__webpack_require__(7);
 
+__webpack_require__(5);
 
+__webpack_require__(4);
 
-
-
-
-
-var userdataReq = __WEBPACK_IMPORTED_MODULE_5__api__["a" /* API */].getInfo();
-var docReady = $.Deferred();
-
-$(function () {
-    docReady.resolve();
-});
-
-$.when(userdataReq, docReady).done(function (jqXHR) {
-    initDOM(jqXHR[0].data.jsonBody);
-}).fail(function (jqXHR) {
-    $.when(docReady).done(function () {
-        initDOM(__WEBPACK_IMPORTED_MODULE_6__api_stub__["a" /* stubResponse0 */]);
-    });
-});
+__webpack_require__(8);
 
 $.fn.extend({
-    animateCss: function (animationName, callback) {
+    animateCss: function animateCss(animationName, callback) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
         this.addClass('animated ' + animationName).one(animationEnd, function () {
             $(this).removeClass('animated ' + animationName);
@@ -12010,14 +11835,7 @@ $.fn.extend({
     }
 });
 
-function initDOM(userdata) {
-    // fill the first screen
-    $('.scene-content__welcome').html(userdata.clientName + ', здравствуйте!');
-
-    // render the rest of the page
-    var template = $("#page_template").html();
-    $('.scene--intro').after(__WEBPACK_IMPORTED_MODULE_7__userinfo__["a" /* UserInfo */].render(template, userdata));
-
+$(function () {
     $(window).scroll(function () {
 
         var scroll = $(window).scrollTop();
@@ -12030,47 +11848,12 @@ function initDOM(userdata) {
         }
     });
 
-    /*$(window).bind('mousewheel', function(e) {
-          const $target = $(e.target);
-        const event = e || window.event;
-        const delta = event.detail || event.wheelDelta || -event.deltaY;
-          let curDelta = $('wrapper').data('delta');
-          if (!$('wrapper').data('lock') && !$target.closest('.js-scroll').length && ($(window).width()>480)) {
-            if (($('wrapper').data('delta') < 0 && delta > 0) || ($('wrapper').data('delta') > 0 && delta < 0)) {
-                $('wrapper').data('delta', 0);
-            }
-              $('wrapper').data('delta', curDelta + delta);
-            let set = 0;
-            if ( $('wrapper').data('delta') < -20) {
-                set = 1;
-            }
-            if ( $('wrapper').data('delta') > 20) {
-                set = -1;
-            }
-            if (set !== 0) {
-                $('wrapper').data('delta', 0);
-                $('wrapper').check(false, set > 0);
-            }
-        }
-          var vh = $(window).height();
-        var scroll = $(window).scrollTop();
-        var coef = Math.floor(scroll / vh);
-        if (event.originalEvent.wheelDelta >= 0) {
-            console.log('Scroll up');
-            console.log(coef);
-        }
-        else {
-            console.log('Scroll down');
-        }
-    }); */
-
     $('.scene-slider').slick({
         dots: false,
         infinite: false,
         arrows: true,
         speed: 800,
         slidesToShow: 1,
-        autoplaySpeed: 5000,
         responsive: [{
             breakpoint: 480,
             settings: {
@@ -12084,7 +11867,6 @@ function initDOM(userdata) {
         arrows: true,
         speed: 800,
         slidesToShow: 1,
-        autoplaySpeed: 5000,
         responsive: [{
             breakpoint: 480,
             settings: {
@@ -12093,7 +11875,7 @@ function initDOM(userdata) {
         }]
     });
 
-    var changeCircle = function (curCircle, percent) {
+    var changeCircle = function changeCircle(curCircle, percent) {
         if (isNaN(percent)) {
             percent = 100;
             console.log('100');
@@ -12114,6 +11896,38 @@ function initDOM(userdata) {
         }
     };
 
+    if ($(window).width() > 1200) {
+        $('.countries-slider-item__title').each(function () {
+            var simbolCount = $(this).text().length;
+            if (simbolCount > 9 && simbolCount < 20) {
+                $(this).css({ 'font-size': '80px', 'line-height': '80px' });
+            }
+            if (simbolCount > 20) {
+                $(this).css({ 'font-size': '60px', 'line-height': '60px' });
+            }
+        });
+    }
+
+    if ($(window).width() > 1024 && $(window).width() < 1200) {
+        $('.countries-slider-item__title').each(function () {
+            var simbolCount = $(this).text().length;
+            if (simbolCount > 9 && simbolCount < 20) {
+                $(this).css({ 'font-size': '60px', 'line-height': '60px' });
+            }
+            if (simbolCount > 20) {
+                $(this).css({ 'font-size': '60px', 'line-height': '60px' });
+            }
+        });
+    }
+    if ($(window).width() > 480 && $(window).width() < 1024) {
+        $('.countries-slider-item__title').each(function () {
+            var simbolCount = $(this).text().length;
+            if (simbolCount > 9) {
+                $(this).css({ 'font-size': '50px', 'line-height': '50px' });
+            }
+        });
+    }
+
     if ($('.countries-slider').hasClass('slick-slider') && $(window).width() > 480) {
 
         var slider = $('.countries-slider');
@@ -12122,29 +11936,14 @@ function initDOM(userdata) {
             var step = Math.floor(100 / slideCount);
             var curArrow = slider.find('.slick-next');
             curArrow.attr('data-pct', step);
-            var circleStr = '<svg id="countries-svg" class="animate" width="55" height="55" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="countries-bar" cx="26.7" cy="27.2" r="23" stroke-dasharray="144.52"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
+            var circleStr = '<svg id="countries-svg" class="progress-svg animate" width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="countries-bar" class="progress-bar" cx="27" cy="27" r="24" stroke-dasharray="150.796416"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
             curArrow.append(circleStr);
             var $circle = $('#countries-svg #countries-bar');
             changeCircle($circle, 0);
         }
     }
 
-    $('.countries-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        var slideCount = $(this).slick("getSlick").slideCount - 2;
-        if (currentSlide === slideCount) {
-            $(this).slick('slickPause');
-            $('#countries-svg').addClass('no-animate');
-        }
-        if (!$('#countries-svg').hasClass('no-animate')) {
-            $('#countries-svg').addClass('animate');
-            var $circle = $('#countries-svg #countries-bar');
-            changeCircle($circle, 100);
-            setTimeout(function () {
-                $('#countries-svg').removeClass('animate');
-                changeCircle($circle, 0);
-            }, 5000);
-        }
-    });
+    $('.countries-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {});
 
     if ($('.scene-slider').hasClass('slick-slider') && $(window).width() > 480) {
 
@@ -12154,31 +11953,14 @@ function initDOM(userdata) {
             var step = Math.floor(100 / slideCount);
             var curArrow = slider.find('.slick-next');
             curArrow.attr('data-pct', step);
-            var circleStr = '<svg id="scene-svg" class="animate" width="55" height="55" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="scene-bar" cx="26.7" cy="27.2" r="23" stroke-dasharray="144.52"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
+            var circleStr = '<svg id="scene-svg" class="progress-svg animate" width="54" height="54" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg">' + '<circle id="scene-bar" class="progress-bar" cx="27" cy="27" r="24" stroke-dasharray="150.796416"  stroke-dashoffset="0" fill="transparent" stroke="white"/>' + '</svg>';
             curArrow.append(circleStr);
             var $circle = $('#scene-svg #scene-bar');
             changeCircle($circle, 0);
         }
     }
 
-    $('.scene-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-
-        var slideCount = $(this).slick("getSlick").slideCount - 2;
-        if (currentSlide === slideCount) {
-            $(this).slick('slickPause');
-            $('#scene-svg').addClass('no-animate');
-        }
-
-        if (!$('#scene-svg').hasClass('no-animate')) {
-            $('#scene-svg').addClass('animate');
-            var $circle = $('#scene-svg #scene-bar');
-            changeCircle($circle, 100);
-            setTimeout(function () {
-                $('#scene-svg').removeClass('animate');
-                changeCircle($circle, 0);
-            }, 5000);
-        }
-    });
+    $('.scene-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {});
 
     $('.cost__diagram').each(function () {
         var percent = $(this).data('percent');
@@ -12199,15 +11981,10 @@ function initDOM(userdata) {
                     }, 800);
                 }
                 break;
-            case 'vote-yes':
-            case 'vote-no':
+            case 'result':
                 e.preventDefault();
                 $('.btn-container-bottom__content').fadeOut(200);
                 $('.btn-container-bottom').addClass('result');
-
-                var result = action == 'vote-yes' ? 1 : 0;
-                __WEBPACK_IMPORTED_MODULE_5__api__["a" /* API */].sendVote(result);
-
                 setTimeout(function () {
                     $('.btn-container-bottom__content.result').fadeIn();
                 }, 200);
@@ -12226,20 +12003,19 @@ function initDOM(userdata) {
             animationTime: 1000,
             pagination: true,
             updateURL: false,
-            beforeMove: function (index) {},
-            afterMove: function (index) {
+            beforeMove: function beforeMove(index) {},
+            afterMove: function afterMove(index) {
                 console.log(index);
             },
             loop: true,
             keyboard: false,
             responsiveFallback: false,
-            // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-            // the browser's width is less than 600, the fallback will kick in.
             direction: "vertical"
         });
     }
 
-    var animateCountrySlider = function () {
+    /*** Анимация слайдера с посещенными странами ***/
+    var animateCountrySlider = function animateCountrySlider() {
         if ($('.scene.active').find('.countries-slider').length > 0) {
             var $circle = $('#countries-svg #countries-bar');
 
@@ -12249,21 +12025,91 @@ function initDOM(userdata) {
 
                 setTimeout(function () {
                     $('#countries-svg').addClass('animate');
-
                     changeCircle($circle, 100);
                 }, 100);
-                setTimeout(function () {
-                    $('.countries-slider').slick('slickPlay');
-                }, 1000);
-                setTimeout(function () {
-                    $('#countries-svg').removeClass('animate');
-                    changeCircle($circle, 0);
-                }, 5100);
+
+                var slideCount = $('.countries-slider').slick("getSlick").slideCount;
+
+                if (slideCount > 1) {
+                    for (var i = 0; i < slideCount - 1; i++) {
+                        var time = 5100 * (i + 1);
+                        setTimeout(function () {
+                            if (!$('#countries-svg').hasClass('no-animate')) {
+                                $('#countries-svg').addClass('animate');
+                                changeCircle($circle, 100);
+                            } else {
+                                return;
+                            }
+                        }, time - 5000);
+                        setTimeout(function () {
+                            if (!$('#countries-svg').hasClass('no-animate')) {
+                                $('.countries-slider').slick('slickNext');
+                            } else {
+                                return;
+                            }
+                        }, time);
+                        setTimeout(function () {
+                            if (!$('#countries-svg').hasClass('no-animate')) {
+                                $('#countries-svg').removeClass('animate');
+                                changeCircle($circle, 0);
+                            } else {
+                                return;
+                            }
+                        }, time + 50);
+                    }
+                }
             }
-        }
+        } else {}
     };
 
-    var animateSceneSlider = function () {
+    var animateSceneSlider = function animateSceneSlider() {
+
+        if ($('.scene.active').find('.scene-slider').length > 0) {
+            var $circle = $('#scene-svg #scene-bar');
+
+            if (!$('.scene-slider').hasClass('active')) {
+
+                $('.scene-slider').addClass('active');
+
+                //анимация заполнения полоски
+                setTimeout(function () {
+                    $('#scene-svg').addClass('animate');
+                    changeCircle($circle, 100);
+                }, 100);
+
+                var slideCount = $('.scene-slider').slick("getSlick").slideCount;
+
+                if (slideCount > 1) {
+                    for (var i = 0; i < slideCount - 1; i++) {
+                        var time = 5100 * (i + 1);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('#scene-svg').addClass('animate');
+                                changeCircle($circle, 100);
+                            } else {
+                                return;
+                            }
+                        }, time - 5000);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('.scene-slider').slick('slickNext');
+                            } else {
+                                return;
+                            }
+                        }, time);
+                        setTimeout(function () {
+                            if (!$('#scene-svg').hasClass('no-animate')) {
+                                $('#scene-svg').removeClass('animate');
+                                changeCircle($circle, 0);
+                            } else {
+                                return;
+                            }
+                        }, time + 50);
+                    }
+                }
+            }
+        }
+
         if ($('.scene.active').find('.scene-slider').length > 0) {
             var $circle = $('#scene-svg #scene-bar');
 
@@ -12278,7 +12124,7 @@ function initDOM(userdata) {
                 }, 100);
                 setTimeout(function () {
                     $('.scene-slider').slick('slickPlay');
-                }, 1000);
+                }, 800);
                 setTimeout(function () {
                     $('#scene-svg').removeClass('animate');
                     changeCircle($circle, 0);
@@ -12301,664 +12147,33 @@ function initDOM(userdata) {
     });
 
     $('.scene-slider .slick-arrow').click(function () {
-        $('.scene-slider').slick('slickPause');
         $('#scene-svg').addClass('no-animate');
         $('#scene-svg').removeClass('animate');
     });
     $('.countries-slider .slick-arrow').click(function () {
-        $('.countries-slider').slick('slickPause');
         $('#countries-svg').addClass('no-animate');
         $('#countries-svg').removeClass('animate');
     });
 
-    $(window).on('load', function () {
+    $('.scene-slider').on('swipe', function (event, slick, direction) {
+        $('#scene-svg').addClass('no-animate');
+        $('#scene-svg').removeClass('animate');
+    });
+
+    $('.countries-slider').on('swipe', function (event, slick, direction) {
+        $('#countries-svg').addClass('no-animate');
+        $('#countries-svg').removeClass('animate');
+    });
+
+    $(document).ready(function () {
         //$('.scene.active').find('.content-animation').addClass('animated');
     });
-}
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */,
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * mustache.js - Logic-less {{mustache}} templates with JavaScript
- * http://github.com/janl/mustache.js
- */
-
-/*global define: false Mustache: true*/
-
-(function defineMustache (global, factory) {
-  if (typeof exports === 'object' && exports && typeof exports.nodeName !== 'string') {
-    factory(exports); // CommonJS
-  } else if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); // AMD
-  } else {
-    global.Mustache = {};
-    factory(global.Mustache); // script, wsh, asp
-  }
-}(this, function mustacheFactory (mustache) {
-
-  var objectToString = Object.prototype.toString;
-  var isArray = Array.isArray || function isArrayPolyfill (object) {
-    return objectToString.call(object) === '[object Array]';
-  };
-
-  function isFunction (object) {
-    return typeof object === 'function';
-  }
-
-  /**
-   * More correct typeof string handling array
-   * which normally returns typeof 'object'
-   */
-  function typeStr (obj) {
-    return isArray(obj) ? 'array' : typeof obj;
-  }
-
-  function escapeRegExp (string) {
-    return string.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&');
-  }
-
-  /**
-   * Null safe way of checking whether or not an object,
-   * including its prototype, has a given property
-   */
-  function hasProperty (obj, propName) {
-    return obj != null && typeof obj === 'object' && (propName in obj);
-  }
-
-  // Workaround for https://issues.apache.org/jira/browse/COUCHDB-577
-  // See https://github.com/janl/mustache.js/issues/189
-  var regExpTest = RegExp.prototype.test;
-  function testRegExp (re, string) {
-    return regExpTest.call(re, string);
-  }
-
-  var nonSpaceRe = /\S/;
-  function isWhitespace (string) {
-    return !testRegExp(nonSpaceRe, string);
-  }
-
-  var entityMap = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;',
-    '/': '&#x2F;',
-    '`': '&#x60;',
-    '=': '&#x3D;'
-  };
-
-  function escapeHtml (string) {
-    return String(string).replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
-      return entityMap[s];
-    });
-  }
-
-  var whiteRe = /\s*/;
-  var spaceRe = /\s+/;
-  var equalsRe = /\s*=/;
-  var curlyRe = /\s*\}/;
-  var tagRe = /#|\^|\/|>|\{|&|=|!/;
-
-  /**
-   * Breaks up the given `template` string into a tree of tokens. If the `tags`
-   * argument is given here it must be an array with two string values: the
-   * opening and closing tags used in the template (e.g. [ "<%", "%>" ]). Of
-   * course, the default is to use mustaches (i.e. mustache.tags).
-   *
-   * A token is an array with at least 4 elements. The first element is the
-   * mustache symbol that was used inside the tag, e.g. "#" or "&". If the tag
-   * did not contain a symbol (i.e. {{myValue}}) this element is "name". For
-   * all text that appears outside a symbol this element is "text".
-   *
-   * The second element of a token is its "value". For mustache tags this is
-   * whatever else was inside the tag besides the opening symbol. For text tokens
-   * this is the text itself.
-   *
-   * The third and fourth elements of the token are the start and end indices,
-   * respectively, of the token in the original template.
-   *
-   * Tokens that are the root node of a subtree contain two more elements: 1) an
-   * array of tokens in the subtree and 2) the index in the original template at
-   * which the closing tag for that section begins.
-   */
-  function parseTemplate (template, tags) {
-    if (!template)
-      return [];
-
-    var sections = [];     // Stack to hold section tokens
-    var tokens = [];       // Buffer to hold the tokens
-    var spaces = [];       // Indices of whitespace tokens on the current line
-    var hasTag = false;    // Is there a {{tag}} on the current line?
-    var nonSpace = false;  // Is there a non-space char on the current line?
-
-    // Strips all whitespace tokens array for the current line
-    // if there was a {{#tag}} on it and otherwise only space.
-    function stripSpace () {
-      if (hasTag && !nonSpace) {
-        while (spaces.length)
-          delete tokens[spaces.pop()];
-      } else {
-        spaces = [];
-      }
-
-      hasTag = false;
-      nonSpace = false;
-    }
-
-    var openingTagRe, closingTagRe, closingCurlyRe;
-    function compileTags (tagsToCompile) {
-      if (typeof tagsToCompile === 'string')
-        tagsToCompile = tagsToCompile.split(spaceRe, 2);
-
-      if (!isArray(tagsToCompile) || tagsToCompile.length !== 2)
-        throw new Error('Invalid tags: ' + tagsToCompile);
-
-      openingTagRe = new RegExp(escapeRegExp(tagsToCompile[0]) + '\\s*');
-      closingTagRe = new RegExp('\\s*' + escapeRegExp(tagsToCompile[1]));
-      closingCurlyRe = new RegExp('\\s*' + escapeRegExp('}' + tagsToCompile[1]));
-    }
-
-    compileTags(tags || mustache.tags);
-
-    var scanner = new Scanner(template);
-
-    var start, type, value, chr, token, openSection;
-    while (!scanner.eos()) {
-      start = scanner.pos;
-
-      // Match any text between tags.
-      value = scanner.scanUntil(openingTagRe);
-
-      if (value) {
-        for (var i = 0, valueLength = value.length; i < valueLength; ++i) {
-          chr = value.charAt(i);
-
-          if (isWhitespace(chr)) {
-            spaces.push(tokens.length);
-          } else {
-            nonSpace = true;
-          }
-
-          tokens.push([ 'text', chr, start, start + 1 ]);
-          start += 1;
-
-          // Check for whitespace on the current line.
-          if (chr === '\n')
-            stripSpace();
-        }
-      }
-
-      // Match the opening tag.
-      if (!scanner.scan(openingTagRe))
-        break;
-
-      hasTag = true;
-
-      // Get the tag type.
-      type = scanner.scan(tagRe) || 'name';
-      scanner.scan(whiteRe);
-
-      // Get the tag value.
-      if (type === '=') {
-        value = scanner.scanUntil(equalsRe);
-        scanner.scan(equalsRe);
-        scanner.scanUntil(closingTagRe);
-      } else if (type === '{') {
-        value = scanner.scanUntil(closingCurlyRe);
-        scanner.scan(curlyRe);
-        scanner.scanUntil(closingTagRe);
-        type = '&';
-      } else {
-        value = scanner.scanUntil(closingTagRe);
-      }
-
-      // Match the closing tag.
-      if (!scanner.scan(closingTagRe))
-        throw new Error('Unclosed tag at ' + scanner.pos);
-
-      token = [ type, value, start, scanner.pos ];
-      tokens.push(token);
-
-      if (type === '#' || type === '^') {
-        sections.push(token);
-      } else if (type === '/') {
-        // Check section nesting.
-        openSection = sections.pop();
-
-        if (!openSection)
-          throw new Error('Unopened section "' + value + '" at ' + start);
-
-        if (openSection[1] !== value)
-          throw new Error('Unclosed section "' + openSection[1] + '" at ' + start);
-      } else if (type === 'name' || type === '{' || type === '&') {
-        nonSpace = true;
-      } else if (type === '=') {
-        // Set the tags for the next time around.
-        compileTags(value);
-      }
-    }
-
-    // Make sure there are no open sections when we're done.
-    openSection = sections.pop();
-
-    if (openSection)
-      throw new Error('Unclosed section "' + openSection[1] + '" at ' + scanner.pos);
-
-    return nestTokens(squashTokens(tokens));
-  }
-
-  /**
-   * Combines the values of consecutive text tokens in the given `tokens` array
-   * to a single token.
-   */
-  function squashTokens (tokens) {
-    var squashedTokens = [];
-
-    var token, lastToken;
-    for (var i = 0, numTokens = tokens.length; i < numTokens; ++i) {
-      token = tokens[i];
-
-      if (token) {
-        if (token[0] === 'text' && lastToken && lastToken[0] === 'text') {
-          lastToken[1] += token[1];
-          lastToken[3] = token[3];
-        } else {
-          squashedTokens.push(token);
-          lastToken = token;
-        }
-      }
-    }
-
-    return squashedTokens;
-  }
-
-  /**
-   * Forms the given array of `tokens` into a nested tree structure where
-   * tokens that represent a section have two additional items: 1) an array of
-   * all tokens that appear in that section and 2) the index in the original
-   * template that represents the end of that section.
-   */
-  function nestTokens (tokens) {
-    var nestedTokens = [];
-    var collector = nestedTokens;
-    var sections = [];
-
-    var token, section;
-    for (var i = 0, numTokens = tokens.length; i < numTokens; ++i) {
-      token = tokens[i];
-
-      switch (token[0]) {
-        case '#':
-        case '^':
-          collector.push(token);
-          sections.push(token);
-          collector = token[4] = [];
-          break;
-        case '/':
-          section = sections.pop();
-          section[5] = token[2];
-          collector = sections.length > 0 ? sections[sections.length - 1][4] : nestedTokens;
-          break;
-        default:
-          collector.push(token);
-      }
-    }
-
-    return nestedTokens;
-  }
-
-  /**
-   * A simple string scanner that is used by the template parser to find
-   * tokens in template strings.
-   */
-  function Scanner (string) {
-    this.string = string;
-    this.tail = string;
-    this.pos = 0;
-  }
-
-  /**
-   * Returns `true` if the tail is empty (end of string).
-   */
-  Scanner.prototype.eos = function eos () {
-    return this.tail === '';
-  };
-
-  /**
-   * Tries to match the given regular expression at the current position.
-   * Returns the matched text if it can match, the empty string otherwise.
-   */
-  Scanner.prototype.scan = function scan (re) {
-    var match = this.tail.match(re);
-
-    if (!match || match.index !== 0)
-      return '';
-
-    var string = match[0];
-
-    this.tail = this.tail.substring(string.length);
-    this.pos += string.length;
-
-    return string;
-  };
-
-  /**
-   * Skips all text until the given regular expression can be matched. Returns
-   * the skipped string, which is the entire tail if no match can be made.
-   */
-  Scanner.prototype.scanUntil = function scanUntil (re) {
-    var index = this.tail.search(re), match;
-
-    switch (index) {
-      case -1:
-        match = this.tail;
-        this.tail = '';
-        break;
-      case 0:
-        match = '';
-        break;
-      default:
-        match = this.tail.substring(0, index);
-        this.tail = this.tail.substring(index);
-    }
-
-    this.pos += match.length;
-
-    return match;
-  };
-
-  /**
-   * Represents a rendering context by wrapping a view object and
-   * maintaining a reference to the parent context.
-   */
-  function Context (view, parentContext) {
-    this.view = view;
-    this.cache = { '.': this.view };
-    this.parent = parentContext;
-  }
-
-  /**
-   * Creates a new context using the given view with this context
-   * as the parent.
-   */
-  Context.prototype.push = function push (view) {
-    return new Context(view, this);
-  };
-
-  /**
-   * Returns the value of the given name in this context, traversing
-   * up the context hierarchy if the value is absent in this context's view.
-   */
-  Context.prototype.lookup = function lookup (name) {
-    var cache = this.cache;
-
-    var value;
-    if (cache.hasOwnProperty(name)) {
-      value = cache[name];
-    } else {
-      var context = this, names, index, lookupHit = false;
-
-      while (context) {
-        if (name.indexOf('.') > 0) {
-          value = context.view;
-          names = name.split('.');
-          index = 0;
-
-          /**
-           * Using the dot notion path in `name`, we descend through the
-           * nested objects.
-           *
-           * To be certain that the lookup has been successful, we have to
-           * check if the last object in the path actually has the property
-           * we are looking for. We store the result in `lookupHit`.
-           *
-           * This is specially necessary for when the value has been set to
-           * `undefined` and we want to avoid looking up parent contexts.
-           **/
-          while (value != null && index < names.length) {
-            if (index === names.length - 1)
-              lookupHit = hasProperty(value, names[index]);
-
-            value = value[names[index++]];
-          }
-        } else {
-          value = context.view[name];
-          lookupHit = hasProperty(context.view, name);
-        }
-
-        if (lookupHit)
-          break;
-
-        context = context.parent;
-      }
-
-      cache[name] = value;
-    }
-
-    if (isFunction(value))
-      value = value.call(this.view);
-
-    return value;
-  };
-
-  /**
-   * A Writer knows how to take a stream of tokens and render them to a
-   * string, given a context. It also maintains a cache of templates to
-   * avoid the need to parse the same template twice.
-   */
-  function Writer () {
-    this.cache = {};
-  }
-
-  /**
-   * Clears all cached templates in this writer.
-   */
-  Writer.prototype.clearCache = function clearCache () {
-    this.cache = {};
-  };
-
-  /**
-   * Parses and caches the given `template` and returns the array of tokens
-   * that is generated from the parse.
-   */
-  Writer.prototype.parse = function parse (template, tags) {
-    var cache = this.cache;
-    var tokens = cache[template];
-
-    if (tokens == null)
-      tokens = cache[template] = parseTemplate(template, tags);
-
-    return tokens;
-  };
-
-  /**
-   * High-level method that is used to render the given `template` with
-   * the given `view`.
-   *
-   * The optional `partials` argument may be an object that contains the
-   * names and templates of partials that are used in the template. It may
-   * also be a function that is used to load partial templates on the fly
-   * that takes a single argument: the name of the partial.
-   */
-  Writer.prototype.render = function render (template, view, partials) {
-    var tokens = this.parse(template);
-    var context = (view instanceof Context) ? view : new Context(view);
-    return this.renderTokens(tokens, context, partials, template);
-  };
-
-  /**
-   * Low-level method that renders the given array of `tokens` using
-   * the given `context` and `partials`.
-   *
-   * Note: The `originalTemplate` is only ever used to extract the portion
-   * of the original template that was contained in a higher-order section.
-   * If the template doesn't use higher-order sections, this argument may
-   * be omitted.
-   */
-  Writer.prototype.renderTokens = function renderTokens (tokens, context, partials, originalTemplate) {
-    var buffer = '';
-
-    var token, symbol, value;
-    for (var i = 0, numTokens = tokens.length; i < numTokens; ++i) {
-      value = undefined;
-      token = tokens[i];
-      symbol = token[0];
-
-      if (symbol === '#') value = this.renderSection(token, context, partials, originalTemplate);
-      else if (symbol === '^') value = this.renderInverted(token, context, partials, originalTemplate);
-      else if (symbol === '>') value = this.renderPartial(token, context, partials, originalTemplate);
-      else if (symbol === '&') value = this.unescapedValue(token, context);
-      else if (symbol === 'name') value = this.escapedValue(token, context);
-      else if (symbol === 'text') value = this.rawValue(token);
-
-      if (value !== undefined)
-        buffer += value;
-    }
-
-    return buffer;
-  };
-
-  Writer.prototype.renderSection = function renderSection (token, context, partials, originalTemplate) {
-    var self = this;
-    var buffer = '';
-    var value = context.lookup(token[1]);
-
-    // This function is used to render an arbitrary template
-    // in the current context by higher-order sections.
-    function subRender (template) {
-      return self.render(template, context, partials);
-    }
-
-    if (!value) return;
-
-    if (isArray(value)) {
-      for (var j = 0, valueLength = value.length; j < valueLength; ++j) {
-        buffer += this.renderTokens(token[4], context.push(value[j]), partials, originalTemplate);
-      }
-    } else if (typeof value === 'object' || typeof value === 'string' || typeof value === 'number') {
-      buffer += this.renderTokens(token[4], context.push(value), partials, originalTemplate);
-    } else if (isFunction(value)) {
-      if (typeof originalTemplate !== 'string')
-        throw new Error('Cannot use higher-order sections without the original template');
-
-      // Extract the portion of the original template that the section contains.
-      value = value.call(context.view, originalTemplate.slice(token[3], token[5]), subRender);
-
-      if (value != null)
-        buffer += value;
-    } else {
-      buffer += this.renderTokens(token[4], context, partials, originalTemplate);
-    }
-    return buffer;
-  };
-
-  Writer.prototype.renderInverted = function renderInverted (token, context, partials, originalTemplate) {
-    var value = context.lookup(token[1]);
-
-    // Use JavaScript's definition of falsy. Include empty arrays.
-    // See https://github.com/janl/mustache.js/issues/186
-    if (!value || (isArray(value) && value.length === 0))
-      return this.renderTokens(token[4], context, partials, originalTemplate);
-  };
-
-  Writer.prototype.renderPartial = function renderPartial (token, context, partials) {
-    if (!partials) return;
-
-    var value = isFunction(partials) ? partials(token[1]) : partials[token[1]];
-    if (value != null)
-      return this.renderTokens(this.parse(value), context, partials, value);
-  };
-
-  Writer.prototype.unescapedValue = function unescapedValue (token, context) {
-    var value = context.lookup(token[1]);
-    if (value != null)
-      return value;
-  };
-
-  Writer.prototype.escapedValue = function escapedValue (token, context) {
-    var value = context.lookup(token[1]);
-    if (value != null)
-      return mustache.escape(value);
-  };
-
-  Writer.prototype.rawValue = function rawValue (token) {
-    return token[1];
-  };
-
-  mustache.name = 'mustache.js';
-  mustache.version = '2.3.0';
-  mustache.tags = [ '{{', '}}' ];
-
-  // All high-level mustache.* functions use this writer.
-  var defaultWriter = new Writer();
-
-  /**
-   * Clears all cached templates in the default writer.
-   */
-  mustache.clearCache = function clearCache () {
-    return defaultWriter.clearCache();
-  };
-
-  /**
-   * Parses and caches the given template in the default writer and returns the
-   * array of tokens it contains. Doing this ahead of time avoids the need to
-   * parse templates on the fly as they are rendered.
-   */
-  mustache.parse = function parse (template, tags) {
-    return defaultWriter.parse(template, tags);
-  };
-
-  /**
-   * Renders the `template` with the given `view` and `partials` using the
-   * default writer.
-   */
-  mustache.render = function render (template, view, partials) {
-    if (typeof template !== 'string') {
-      throw new TypeError('Invalid template! Template should be a "string" ' +
-                          'but "' + typeStr(template) + '" was given as the first ' +
-                          'argument for mustache#render(template, view, partials)');
-    }
-
-    return defaultWriter.render(template, view, partials);
-  };
-
-  // This is here for backwards compatibility with 0.4.x.,
-  /*eslint-disable */ // eslint wants camel cased function name
-  mustache.to_html = function to_html (template, view, partials, send) {
-    /*eslint-enable*/
-
-    var result = mustache.render(template, view, partials);
-
-    if (isFunction(send)) {
-      send(result);
-    } else {
-      return result;
-    }
-  };
-
-  // Export the escaping function so that the user may override it.
-  // See https://github.com/janl/mustache.js/issues/244
-  mustache.escape = escapeHtml;
-
-  // Export these mainly for testing, but also for advanced usage.
-  mustache.Scanner = Scanner;
-  mustache.Context = Context;
-  mustache.Writer = Writer;
-
-  return mustache;
-}));
-
-
-/***/ }),
-/* 17 */
+/* 12 */,
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12979,7 +12194,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 18 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -14,7 +14,7 @@
 <header class="header">
 	<div class="header-logos">
 		<div class="header-logos__item">
-			<a href="#">
+			<a href="http://raiffeisen.ru" target="_blank">
 				<svg class="raiff-logo">
 					<use xlink:href="#spr-raiff-logo-rus"></use>
 				</svg>
@@ -27,7 +27,7 @@
 		<section class="scene scene--intro visible">
 			<div class="scene-logos">
 				<div class="scene-logos__item">
-					<a href="#">
+					<a href="http://raiffeisen.ru" target="_blank">
 						<svg class="raiff-logo">
 							<use xlink:href="#spr-raiff-logo-rus"></use>
 						</svg>
@@ -36,7 +36,9 @@
 			</div>
 			<div class="scene-content">
 				<div class="content-animation">
-					<h1><span class="scene-content__welcome">&nbsp;</span></h1>
+					<h1>Константин
+					    Константинович,
+					    здравствуйте!</h1>
 					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
 					                                   новогодние праздники, а&nbsp;значит
 					                                   самое время подвести итоги
@@ -54,13 +56,12 @@
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
 			</footer>
 		</section>
-		<script id="page_template" type="text/template">
-		<section class="scene scene--time" id="top-scroll">
+		<section class="scene scene--time" id="top-scroll" style=" background-image: url('assets/i/time-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 					<div class="scene-content__top-title">Вы с Райффайзенбанком уже</div>
-					<span class="scene-content__val">{{timeWithBank_val}}</span>
-					<span class="scene-content__val-desc">{{timeWithBank_unit}}</span>
+					<span class="scene-content__val">36</span>
+					<span class="scene-content__val-desc">месяцев</span>
 				</div>
 
 			</div>
@@ -75,14 +76,14 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--operation">
+		<section class="scene scene--operation" style="background-image: url('assets/i/operation-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Вы&nbsp;совершили за&nbsp;2017&nbsp;год<br>
 				                                      по&nbsp;своим&nbsp;картам
 				</div>
-				<span class="scene-content__val">{{numberOfTransactionsByCard}}</span>
-				<span class="scene-content__val-desc">{{#decl_operations}}{{numberOfTransactionsByCard}}{{/decl_operations}}</span>
+				<span class="scene-content__val">208</span>
+				<span class="scene-content__val-desc">операции</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -96,14 +97,13 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{#numberOfTransactionsByNFC}}
-		<section class="scene scene--mobile-operation">
+		<section class="scene scene--mobile-operation" style="background-image: url('assets/i/mobile-operation-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold">В том числе</div>
-				<span class="scene-content__val">{{numberOfTransactionsByNFC}}</span>
-				<span class="scene-content__val-desc">{{#decl_operations}}{{numberOfTransactionsByNFC}}{{/decl_operations}}</span>
-				<div class="scene-content__top-title">Через NFC на вашем смартфоне</div>
+				<span class="scene-content__val">53</span>
+				<span class="scene-content__val-desc">операции</span>
+				<div class="scene-content__top-title">С помошью вашего мобильного устройства</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -117,15 +117,14 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/numberOfTransactionsByNFC}}
-		<section class="scene scene--total-sum">
+		<section class="scene scene--total-sum" style="background-image: url('assets/i/total-sum-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Общая сумма ваших операций<br>
 				                                      за&nbsp;2017&nbsp;год составила
 				</div>
-				<span class="scene-content__val">{{#spaced_number}}{{totalSumOfTransactions}}{{/spaced_number}}</span>
-				<span class="scene-content__val-desc">{{#decl_rouble}}{{totalSumOfTransactions}}{{/decl_rouble}}</span>
+				<span class="scene-content__val">483&nbsp;744</span>
+				<span class="scene-content__val-desc">рубля</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -139,38 +138,45 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{#expensesByCategory.length}}
-		<section class="scene scene--costs">
+		<section class="scene scene--costs" style="background-image: url('assets/i/costs-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-slider">
-					{{#expensesByCategory}}
 					<div class="scene-slider-item">
-						<div class="scene-content__top-title scene-content__top-title--bold-sm">В {{categoryName}} вы
+						<div class="scene-content__top-title scene-content__top-title--bold-sm">В путешествиях вы
 						                                                                        потратили:
 						</div>
-						<span class="scene-content__val">{{#spaced_number}}{{totalExpenses}}{{/spaced_number}}</span>
+						<span class="scene-content__val">102 580</span>
 						<span class="scene-content__val-desc">рублей</span>
 						<div class="cost-right">
-									<div class="cost__diagram" data-percent="{{relativeExpenses_val}}">
-										<div  class="cost__percent">на<span class="cost__percent-val">{{relativeExpenses_val}}%</span></div>
-										<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
-											<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
-											<circle class="diagram-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
-										</svg>
+							<div class="cost__diagram" data-percent="65">
+								<div  class="cost__percent cost__percent--val">65%</div>
+								<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+									<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
+									<circle class="diagram-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
+								</svg>
 
-									</div>
-									<div class="cost__desc">Это на&nbsp;{{relativeExpenses}},
-									                        чем&nbsp;большинство клиентов
-									                        Райффайзенбанка</div>
+							</div>
+							<div class="cost__desc">Только&nbsp;65% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы</div>
 						</div>
 
-						<div class="cost-note">Это на {{relativeExpenses}},чем большинство
-						                       клиентов Райффайзенбанк
+						<div class="cost-note">Только&nbsp;65% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы
 						</div>
 					</div>
-					{{/expensesByCategory}}
+					<div class="scene-slider-item">
+						<div class="scene-content__top-title scene-content__top-title--bold-sm">В супермаркетах вы
+						                                                                        потратили:
+						</div>
+						<span class="scene-content__val">102 580</span>
+						<span class="scene-content__val-desc">рублей</span>
+						<div class="cost-right">
+							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы</div>
+						</div>
+
+						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы
+						</div>
 					</div>
+				</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -184,18 +190,16 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/expensesByCategory.length}}
-		{{#largestExpense}}
-		<section class="scene scene--largest-purchase">
+		<section class="scene scene--largest-purchase" style=" background-image: url('assets/i/largest-purchase-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
-				<span class="scene-content__val">{{#spaced_number}}{{sum}}{{/spaced_number}}</span>
-				<span class="scene-content__val-desc">{{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
+				<span class="scene-content__val">103 440</span>
+				<span class="scene-content__val-desc">рублей</span>
 				<div class="scene-content__top-title">Составила ваша самая
 				                                      крупная&nbsp;покупка
 				</div>
 				<hr class="light-line">
-				<div class="scene-content__detail">{{#date_DnumMtxt}}{{date}}{{/date_DnumMtxt}} — {{outletName}}</div>
+				<div class="scene-content__detail">15 августа — S7 Airlines</div>
 				<hr class="bold-line">
 				</div>
 			</div>
@@ -210,18 +214,15 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/largestExpense}}
-		{{#monthWithMinPayments}}
-		<section class="scene scene--econom-month">
+		<section class="scene scene--econom-month" style="background-image: url('assets/i/econom-month-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold-sm">Ваш самый экономный месяц был
 				</div>
-				<span class="scene-content__val">{{name}}</span>
-				<div class="scene-content__top-title">Тогда вы&nbsp;совершили 
-					<span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction}}{{transactionsCount}}{{/decl_transaction}}</span><br>
-					на&nbsp;сумму <span class="value">{{#spaced_number}}{{sum}}{{/spaced_number}} {{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
-				</div>
+				<span class="scene-content__val">сентябрь</span>
+				<div class="scene-content__top-title">Тогда вы&nbsp;совершили <span
+							class="value">30&nbsp;транзакций</span><br>
+				                                      на&nbsp;сумму <span class="value">19&nbsp;403 рубля</span></div>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -235,19 +236,16 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/monthWithMinPayments}}
-		{{#monthWithMaxPayments}}
-		<section class="scene scene--hot-month">
+		<section class="scene scene--hot-month" style="background-image: url('assets/i/hot-month-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold-sm">А вот самый «горячий» месяц
 				                                                                        был
 				</div>
-				<span class="scene-content__val">{{name}}</span>
-				<div class="scene-content__top-title">Тогда вы&nbsp;совершили 
-					<span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction}}{{transactionsCount}}{{/decl_transaction}}</span><br>
-						на&nbsp;сумму <span class="value">{{#spaced_number}}{{sum}}{{/spaced_number}} {{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
-				</div>
+				<span class="scene-content__val">август</span>
+				<div class="scene-content__top-title">Тогда вы&nbsp;совершили <span
+							class="value">25&nbsp;транзакций</span><br>
+				                                      на&nbsp;сумму <span class="value">142&nbsp;254 рубля</span></div>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -261,16 +259,14 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/monthWithMaxPayments}}
-		{{#percentsFromTDAndSA}}
-		<section class="scene scene--deposits">
+		<section class="scene scene--deposits" style="background-image: url('assets/i/deposits-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Ваши накопительные счета
 				                                      и&nbsp;депозиты <br>принесли вам за&nbsp;год
 				</div>
-				<span class="scene-content__val">{{#spaced_number}}{{percentsFromTDAndSA}}{{/spaced_number}}</span>
-				<span class="scene-content__val-desc">{{#decl_rouble}}{{percentsFromTDAndSA}}{{/decl_rouble}}</span>
+				<span class="scene-content__val">27 340</span>
+				<span class="scene-content__val-desc">рублей</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -284,16 +280,13 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/percentsFromTDAndSA}}
-		{{#growthOfDepositsWithoutPercents}}
-		<section class="scene scene--contribution">
+		<section class="scene scene--contribution" style="background-image: url('assets/i/contribution-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
-				<div class="scene-content__top-title">За&nbsp;2017&nbsp;год ваши вклады
-				                                      подросли&nbsp;на
+				<div class="scene-content__top-title">За&nbsp;2017 год вы&nbsp;пополнили свои вклады&nbsp;на
 				</div>
-				<span class="scene-content__val">{{#spaced_number}}{{growthOfDepositsWithoutPercents}}{{/spaced_number}}</span>
-				<span class="scene-content__val-desc">{{#decl_rouble}}{{growthOfDepositsWithoutPercents}}{{/decl_rouble}}</span>
+				<span class="scene-content__val">340 000</span>
+				<span class="scene-content__val-desc">рублей</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -307,16 +300,14 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/growthOfDepositsWithoutPercents}}
-		{{#cashBackProgram}}
-		<section class="scene scene--cashback">
+		<section class="scene scene--cashback" style="background-image: url('assets/i/cashback-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Ваш кэшбек по&nbsp;пакету<br>
 				                                      услуг &laquo;Золотой&raquo; составил
 				</div>
-				<span class="scene-content__val">{{#spaced_number}}{{sum}}{{/spaced_number}}</span>
-				<span class="scene-content__val-desc">{{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
+				<span class="scene-content__val">3 500</span>
+				<span class="scene-content__val-desc">рублей</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -330,24 +321,38 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/cashBackProgram}}
-		{{#visitedCountries.length}}
-		<section class="scene scene--countries">
+		<section class="scene scene--countries" style="background-image: url('assets/i/countries-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="countries-slider__title">Страны, которые вы&nbsp;посетили
 				                                     в&nbsp;этом&nbsp;году
 				</div>
 				<div class="countries-slider">
-					{{#visitedCountries}}
 					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">{{countryName}}</div>
-						<p class="countries-slider-item__note">
-							Туда {{#decl_visited}}{{otherClientsPercent}}{{/decl_visited}} также
-							{{otherClientsPercent}}%&nbsp;наших клиентов
-						</p>
+						<div class="countries-slider-item__title">Грузия</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
 					</div>
-					{{/visitedCountries}}
+					<div class="countries-slider-item">
+						<div class="countries-slider-item__title">Великобритания</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
+					</div>
+					<div class="countries-slider-item">
+						<div class="countries-slider-item__title">Северные Марианские Острова</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
+					</div>
+					<div class="countries-slider-item">
+						<div class="countries-slider-item__title">Сент-Винсент и Гренадины</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
+					</div>
+					<div class="countries-slider-item">
+						<div class="countries-slider-item__title">Остров Херд и острова Макдональд</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
+					</div>
 				</div>
 				</div>
 			</div>
@@ -362,21 +367,21 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/visitedCountries.length}}
-		{{#totalSumOfLoansPaid}}
-		<section class="scene scene--credit">
+		<section class="scene scene--credit" style="background-image: url('assets/i/credit-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
-				<div class="scene-content__top-title">В&nbsp;этом году завершился<br>
-				                                      ваш&nbsp;кредит на&nbsp;сумму
+				<div class="scene-content__top-title">
+
+					<!--В&nbsp;2017&nbsp;году вы&nbsp;закрыли<br> свой кредит на&nbsp;сумму-->
+					В&nbsp;2017 году вы&nbsp;закрыли свои кредиты на&nbsp;общую сумму
+
 				</div>
-				<span class="scene-content__val">{{#spaced_number}}{{totalSumOfLoansPaid}}{{/spaced_number}}</span>
-				<span class="scene-content__val-desc">{{#decl_rouble}}{{totalSumOfLoansPaid}}{{/decl_rouble}}</span>
-				</div>
+				<span class="scene-content__val">1&nbsp;500&nbsp;000</span>
+				<span class="scene-content__val-desc">рублей</span>
+			</div>
 			</div>
 			<div class="scene-bottom">
 				<img class="scene-bottom__img visible-xs" src="assets/i/credit.png" alt="">
-			</div>
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -386,15 +391,13 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/totalSumOfLoansPaid}}
-		{{#coBrandStats}}
-		<section class="scene scene--points">
+		<section class="scene scene--points" style="background-image: url('assets/i/points-bg.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold">А еще вы накопили</div>
-				<span class="scene-content__val">{{#spaced_number}}{{sum}}{{/spaced_number}}</span>
-				<span class="scene-content__val-desc">{{#decl_bonus}}{{sum}}{{/decl_bonus}}</span>
-				<div class="scene-content__top-title">В программе {{brandName}}</div>
+				<span class="scene-content__val">5 325</span>
+				<span class="scene-content__val-desc">баллов</span>
+				<div class="scene-content__top-title">В программе #ВСЕСРАЗУ</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
@@ -408,7 +411,6 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		{{/coBrandStats}}
 		<section class="scene scene--finish">
 			<div class="scene-content">
 				<div class="content-animation">
@@ -421,8 +423,8 @@
 				<div class="btn-container-bottom">
 					<div class="btn-container-bottom__content">
 						<h3 class="btn-container-bottom__title">Нам удалось вас удивить? :)</h3>
-						<button type="button" data-action="vote-yes" class="btn btn-inverted">Да, не ожидал!</button>
-						<button type="button" data-action="vote-no" class="btn btn-inverted">Предсказуемо!</button>
+						<button type="button" data-action="result" class="btn btn-inverted">Да, не ожидал!</button>
+						<button type="button" data-action="result" class="btn btn-inverted">Предсказуемо!</button>
 					</div>
 					<div class="btn-container-bottom__content result">
 						<h3 class="btn-container-bottom__title">Благодарим за ваш ответ!</h3>
@@ -440,7 +442,6 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		</script>
 	</div>
 </main>
 </body>

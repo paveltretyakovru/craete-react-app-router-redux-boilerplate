@@ -15,7 +15,7 @@
     background-size: 150%;
   }
   @media (max-width: @screen-xs-max) {
-    background-image: none;
+    background-image: none !important;
     height: 100vh;
   }
   @media (orientation: landscape) and (max-width: @screen-xs-max) {
@@ -27,7 +27,7 @@
     .scene-content {
       @media (min-width: @screen-sm-min) {
         text-align: center;
-        padding-top: 100px;
+        padding-top: 11vh;
         top: 0;
         transform: translateY(0);
         opacity: 0;
@@ -52,38 +52,33 @@
   }
   &--time {
     background-color: #9247b3;
-    background-image: url("../i/time-bg.png");
   }
   &--operation {
     background-color: #9b59b6;
-    background-image: url("../i/operation-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 46%;
+        top: 45vh;
       }
     }
   }
   &--mobile-operation {
     background-color: #32a3f1;
-    background-image: url("../i/mobile-operation-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 51%;
+        top: 51vh;
       }
     }
   }
   &--total-sum {
     background-color: #3598db;
-    background-image: url("../i/total-sum-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 46%;
+        top: 46vh;
       }
     }
   }
   &--costs {
     background-color: #2d82df;
-    background-image: url("../i/costs-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
         top: 0;
@@ -93,10 +88,9 @@
   }
   &--largest-purchase {
     background-color: #4c90d9;
-    background-image: url("../i/largest-purchase-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 46%;
+        top: 46vh;
         .scene-content__top-title {
           margin-bottom: 0;
         }
@@ -105,10 +99,9 @@
   }
   &--econom-month {
     background-color: #2fb569;
-    background-image: url("../i/econom-month-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 47%;
+        top: 47vh;
         .scene-content__val {
           margin-bottom: 70px;
         }
@@ -117,10 +110,9 @@
   }
   &--hot-month {
     background-color: #54c483;
-    background-image: url("../i/hot-month-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 47%;
+        top: 47vh;
         .scene-content__val {
           margin-bottom: 70px;
         }
@@ -129,7 +121,6 @@
   }
   &--deposits {
     background-color: #16a086;
-    background-image: url("../i/deposits-bg.png");
     .scene-content {
       .scene-content__top-title {
         br {
@@ -139,7 +130,7 @@
     }
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 44%;
+        top: 44vh;
         .scene-content__top-title {
           br {
             display: block;
@@ -151,14 +142,12 @@
   }
   &--contribution {
     background-color: #1bbc9b;
-    background-image: url("../i/contribution-bg.png");
     @media (min-width: @screen-sm-min) {
 
     }
   }
   &--cashback {
     background-color: #de503a;
-    background-image: url("../i/cashback-bg.png");
     .scene-content {
       .scene-content__top-title {
         br {
@@ -168,7 +157,7 @@
     }
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 44%;
+        top: 44vh;
         .scene-content__top-title {
           br {
             display: none;
@@ -179,10 +168,9 @@
   }
   &--countries {
     background-color: #f05648;
-    background-image: url("../i/countries-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 27%;
+        top: 27vh;
         height: 65%;
         transform: translateY(0);
         .content-animation {
@@ -193,7 +181,6 @@
   }
   &--credit {
     background-color: #f08930;
-    background-image: url("../i/credit-bg.png");
     .scene-content {
       .scene-content__top-title {
         br {
@@ -203,7 +190,7 @@
     }
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 44%;
+        top: 44vh;
         .scene-content__top-title {
           br {
             display: none;
@@ -214,10 +201,9 @@
   }
   &--points {
     background-color: #faa419;
-    background-image: url("../i/points-bg.png");
     @media (min-width: @screen-sm-min) {
       .scene-content {
-        top: 51%;
+        top: 51vh;
       }
     }
   }
@@ -227,7 +213,7 @@
       @media (min-width: @screen-sm-min) {
         text-align: center;
         //padding-top: 6%;
-        top: 15%;
+        top: 15vh;
         transform: translateY(0);
       }
     }
@@ -308,7 +294,7 @@
     margin: 0 auto;
     text-align: left;
     @media (min-width: @screen-sm-min) {
-      top: 45%;
+      top: 45vh;
       transform: translateY(-50%);
     }
     @media (max-width: @screen-md-max) {
