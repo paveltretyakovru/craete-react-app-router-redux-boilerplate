@@ -36,9 +36,7 @@
 			</div>
 			<div class="scene-content">
 				<div class="content-animation">
-					<h1>Константин
-					    Константинович,
-					    здравствуйте!</h1>
+					<h1><span class="scene-content__welcome">&nbsp;</span></h1>
 					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
 					                                   новогодние праздники, а&nbsp;значит
 					                                   самое время подвести итоги
@@ -56,17 +54,18 @@
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
 			</footer>
 		</section>
-		<section class="scene scene--time" id="top-scroll" style=" background-image: url('assets/i/time-bg.png');">
+		<script id="page_template" type="text/template">
+		<section class="scene scene--time" id="top-scroll" style=" background-image: url('assets/i/time-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 					<div class="scene-content__top-title">Вы с Райффайзенбанком уже</div>
-					<span class="scene-content__val">36</span>
-					<span class="scene-content__val-desc">месяцев</span>
+					<span class="scene-content__val">{{timeWithBank_val}}</span>
+					<span class="scene-content__val-desc">{{timeWithBank_unit}}</span>
 				</div>
 
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/time.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/time{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -76,18 +75,18 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--operation" style="background-image: url('assets/i/operation-bg.png');">
+		<section class="scene scene--operation" style="background-image: url('assets/i/operation-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Вы&nbsp;совершили за&nbsp;2017&nbsp;год<br>
 				                                      по&nbsp;своим&nbsp;картам
 				</div>
-				<span class="scene-content__val">208</span>
-				<span class="scene-content__val-desc">операции</span>
+				<span class="scene-content__val">{{numberOfTransactionsByCard}}</span>
+				<span class="scene-content__val-desc">{{#decl_operations}}{{numberOfTransactionsByCard}}{{/decl_operations}}</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/operation.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/operation{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -97,17 +96,18 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--mobile-operation" style="background-image: url('assets/i/mobile-operation-bg.png');">
+		{{#numberOfTransactionsByNFC}}
+		<section class="scene scene--mobile-operation" style="background-image: url('assets/i/mobile-operation-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold">В том числе</div>
-				<span class="scene-content__val">53</span>
-				<span class="scene-content__val-desc">операции</span>
+				<span class="scene-content__val">{{numberOfTransactionsByNFC}}</span>
+				<span class="scene-content__val-desc">{{#decl_operations}}{{numberOfTransactionsByNFC}}{{/decl_operations}}</span>
 				<div class="scene-content__top-title">С помошью вашего мобильного устройства</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/mobile-operation.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/mobile-operation{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -117,18 +117,19 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--total-sum" style="background-image: url('assets/i/total-sum-bg.png');">
+		{{/numberOfTransactionsByNFC}}
+		<section class="scene scene--total-sum" style="background-image: url('assets/i/total-sum-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Общая сумма ваших операций<br>
 				                                      за&nbsp;2017&nbsp;год составила
 				</div>
-				<span class="scene-content__val">483&nbsp;744</span>
-				<span class="scene-content__val-desc">рубля</span>
+				<span class="scene-content__val">{{#spaced_number}}{{totalSumOfTransactions}}{{/spaced_number}}</span>
+				<span class="scene-content__val-desc">{{#decl_rouble}}{{totalSumOfTransactions}}{{/decl_rouble}}</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/total-sum.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/total-sum{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -138,49 +139,49 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--costs" style="background-image: url('assets/i/costs-bg.png');">
+		{{#expensesByCategory.length}}
+		<section class="scene scene--costs" style="background-image: url('assets/i/costs-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-slider">
+					{{#expensesByCategory}}
 					<div class="scene-slider-item">
-						<div class="scene-content__top-title scene-content__top-title--bold-sm">В путешествиях вы
+						<div class="scene-content__top-title scene-content__top-title--bold-sm">В {{categoryName}} вы
 						                                                                        потратили:
 						</div>
-						<span class="scene-content__val">102 580</span>
-						<span class="scene-content__val-desc">рублей</span>
+						<span class="scene-content__val">{{#spaced_number}}{{totalExpenses}}{{/spaced_number}}</span>
+						<span class="scene-content__val-desc">{{#decl_rouble}}{{totalExpenses}}{{/decl_rouble}}</span>
+
+						{{#clientsSpendMore_exists}}
 						<div class="cost-right">
-							<div class="cost__diagram" data-percent="65">
-								<div  class="cost__percent cost__percent--val">65%</div>
+							<div class="cost__diagram" data-percent="{{clientsSpendMore}}">
+								<div  class="cost__percent cost__percent--val">{{clientsSpendMore}}%</div>
 								<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
 									<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
 									<circle class="diagram-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
 								</svg>
 
 							</div>
-							<div class="cost__desc">Только&nbsp;65% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы</div>
+							<div class="cost__desc">Только&nbsp;{{clientsSpendMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы</div>
 						</div>
-
-						<div class="cost-note">Только&nbsp;65% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы
+						<div class="cost-note">Только&nbsp;{{clientsSpendMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы
 						</div>
-					</div>
-					<div class="scene-slider-item">
-						<div class="scene-content__top-title scene-content__top-title--bold-sm">В супермаркетах вы
-						                                                                        потратили:
-						</div>
-						<span class="scene-content__val">102 580</span>
-						<span class="scene-content__val-desc">рублей</span>
+						{{/clientsSpendMore_exists}}
+						{{^clientsSpendMore_exists}}
 						<div class="cost-right">
-							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы</div>
+							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы</div>
 						</div>
 
-						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;супермаркетах в&nbsp;среднем так же, как и&nbsp;вы
+						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы
 						</div>
+						{{/clientsSpendMore_exists}}
 					</div>
+					{{/expensesByCategory}}
 				</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/costs.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/costs{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -190,21 +191,23 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--largest-purchase" style=" background-image: url('assets/i/largest-purchase-bg.png');">
+		{{/expensesByCategory.length}}
+		{{#largestExpense}}
+		<section class="scene scene--largest-purchase" style=" background-image: url('assets/i/largest-purchase-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
-				<span class="scene-content__val">103 440</span>
-				<span class="scene-content__val-desc">рублей</span>
+				<span class="scene-content__val">{{#spaced_number}}{{sum}}{{/spaced_number}}</span>
+				<span class="scene-content__val-desc">{{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
 				<div class="scene-content__top-title">Составила ваша самая
 				                                      крупная&nbsp;покупка
 				</div>
 				<hr class="light-line">
-				<div class="scene-content__detail">15 августа — S7 Airlines</div>
+				<div class="scene-content__detail">{{#date_DnumMtxt}}{{date}}{{/date_DnumMtxt}} — {{outletName}}</div>
 				<hr class="bold-line">
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/largest-purchase.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/largest-purchase{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -214,19 +217,22 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--econom-month" style="background-image: url('assets/i/econom-month-bg.png');">
+		{{/largestExpense}}
+		{{#monthWithMinPayments}}
+		<section class="scene scene--econom-month" style="background-image: url('assets/i/econom-month-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold-sm">Ваш самый экономный месяц был
 				</div>
-				<span class="scene-content__val">сентябрь</span>
-				<div class="scene-content__top-title">Тогда вы&nbsp;совершили <span
-							class="value">30&nbsp;транзакций</span><br>
-				                                      на&nbsp;сумму <span class="value">19&nbsp;403 рубля</span></div>
+				<span class="scene-content__val">{{name}}</span>
+				<div class="scene-content__top-title">Тогда вы&nbsp;совершили 
+					<span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction}}{{transactionsCount}}{{/decl_transaction}}</span><br>
+					на&nbsp;сумму <span class="value">{{#spaced_number}}{{sum}}{{/spaced_number}} {{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
+				</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/econom-month.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/econom-month{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -236,20 +242,23 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--hot-month" style="background-image: url('assets/i/hot-month-bg.png');">
+		{{/monthWithMinPayments}}
+		{{#monthWithMaxPayments}}
+		<section class="scene scene--hot-month" style="background-image: url('assets/i/hot-month-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title scene-content__top-title--bold-sm">А вот самый «горячий» месяц
 				                                                                        был
 				</div>
-				<span class="scene-content__val">август</span>
-				<div class="scene-content__top-title">Тогда вы&nbsp;совершили <span
-							class="value">25&nbsp;транзакций</span><br>
-				                                      на&nbsp;сумму <span class="value">142&nbsp;254 рубля</span></div>
+				<span class="scene-content__val">{{name}}</span>
+				<div class="scene-content__top-title">Тогда вы&nbsp;совершили 
+					<span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction}}{{transactionsCount}}{{/decl_transaction}}</span><br>
+						на&nbsp;сумму <span class="value">{{#spaced_number}}{{sum}}{{/spaced_number}} {{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
+				</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/hot-month.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/hot-month{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -259,18 +268,20 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--deposits" style="background-image: url('assets/i/deposits-bg.png');">
+		{{/monthWithMaxPayments}}
+		{{#percentsFromTDAndSA}}
+		<section class="scene scene--deposits" style="background-image: url('assets/i/deposits-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Ваши накопительные счета
 				                                      и&nbsp;депозиты <br>принесли вам за&nbsp;год
 				</div>
-				<span class="scene-content__val">27 340</span>
-				<span class="scene-content__val-desc">рублей</span>
+				<span class="scene-content__val">{{#spaced_number}}{{percentsFromTDAndSA}}{{/spaced_number}}</span>
+				<span class="scene-content__val-desc">{{#decl_rouble}}{{percentsFromTDAndSA}}{{/decl_rouble}}</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/deposits.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/deposits{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -280,17 +291,19 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--contribution" style="background-image: url('assets/i/contribution-bg.png');">
+		{{/percentsFromTDAndSA}}
+		{{#growthOfDepositsWithoutPercents}}
+		<section class="scene scene--contribution" style="background-image: url('assets/i/contribution-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">За&nbsp;2017 год вы&nbsp;пополнили свои вклады&nbsp;на
 				</div>
-				<span class="scene-content__val">340 000</span>
-				<span class="scene-content__val-desc">рублей</span>
+				<span class="scene-content__val">{{#spaced_number}}{{growthOfDepositsWithoutPercents}}{{/spaced_number}}</span>
+				<span class="scene-content__val-desc">{{#decl_rouble}}{{growthOfDepositsWithoutPercents}}{{/decl_rouble}}</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/contribution.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/contribution{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -300,18 +313,20 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--cashback" style="background-image: url('assets/i/cashback-bg.png');">
+		{{/growthOfDepositsWithoutPercents}}
+		{{#cashBackProgram}}
+		<section class="scene scene--cashback" style="background-image: url('assets/i/cashback-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">Ваш кэшбек по&nbsp;пакету<br>
 				                                      услуг &laquo;Золотой&raquo; составил
 				</div>
-				<span class="scene-content__val">3 500</span>
-				<span class="scene-content__val-desc">рублей</span>
+				<span class="scene-content__val">{{#spaced_number}}{{sum}}{{/spaced_number}}</span>
+				<span class="scene-content__val-desc">{{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/cashback.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/cashback{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -321,43 +336,29 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--countries" style="background-image: url('assets/i/countries-bg.png');">
+		{{/cashBackProgram}}
+		{{#visitedCountries.length}}
+		<section class="scene scene--countries" style="background-image: url('assets/i/countries-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="countries-slider__title">Страны, которые вы&nbsp;посетили
 				                                     в&nbsp;этом&nbsp;году
 				</div>
 				<div class="countries-slider">
+					{{#visitedCountries}}
 					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">Грузия</div>
-						<p class="countries-slider-item__note">Туда отправились также
-						                                       3%&nbsp;наших клиентов</p>
+						<div class="countries-slider-item__title">{{countryName}}</div>
+						<p class="countries-slider-item__note">
+							Туда {{#decl_visited}}{{otherClientsPercent}}{{/decl_visited}} также
+							{{otherClientsPercent}}%&nbsp;наших клиентов
+						</p>
 					</div>
-					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">Великобритания</div>
-						<p class="countries-slider-item__note">Туда отправились также
-						                                       3%&nbsp;наших клиентов</p>
-					</div>
-					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">Северные Марианские Острова</div>
-						<p class="countries-slider-item__note">Туда отправились также
-						                                       3%&nbsp;наших клиентов</p>
-					</div>
-					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">Сент-Винсент и Гренадины</div>
-						<p class="countries-slider-item__note">Туда отправились также
-						                                       3%&nbsp;наших клиентов</p>
-					</div>
-					<div class="countries-slider-item">
-						<div class="countries-slider-item__title">Остров Херд и острова Макдональд</div>
-						<p class="countries-slider-item__note">Туда отправились также
-						                                       3%&nbsp;наших клиентов</p>
-					</div>
+					{{/visitedCountries}}
 				</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/countries.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/countries{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -367,7 +368,9 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
-		<section class="scene scene--credit" style="background-image: url('assets/i/credit-bg.png');">
+		{{/visitedCountries.length}}
+		{{#totalSumOfLoansPaid}}
+		<section class="scene scene--credit" style="background-image: url('assets/i/credit-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">
 				<div class="scene-content__top-title">
@@ -376,32 +379,12 @@
 					В&nbsp;2017 году вы&nbsp;закрыли свои кредиты на&nbsp;общую сумму
 
 				</div>
-				<span class="scene-content__val">1&nbsp;500&nbsp;000</span>
-				<span class="scene-content__val-desc">рублей</span>
-			</div>
-			</div>
-			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/credit.png" alt="">
-			</div>
-			<footer class="footer">
-				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
-				<span class="footer__center"><svg class="footer__mouse">
-					<use xlink:href="#spr-mouse"></use>
-				</svg></span>
-				<span class="footer__note">Итоги 2017 года</span>
-			</footer>
-		</section>
-		<section class="scene scene--points" style="background-image: url('assets/i/points-bg.png');">
-			<div class="scene-content">
-				<div class="content-animation">
-				<div class="scene-content__top-title scene-content__top-title--bold">А еще вы накопили</div>
-				<span class="scene-content__val">5 325</span>
-				<span class="scene-content__val-desc">баллов</span>
-				<div class="scene-content__top-title">В программе #ВСЕСРАЗУ</div>
+				<span class="scene-content__val">{{#spaced_number}}{{totalSumOfLoansPaid}}{{/spaced_number}}</span>
+				<span class="scene-content__val-desc">{{#decl_rouble}}{{totalSumOfLoansPaid}}{{/decl_rouble}}</span>
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/points.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/credit{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -411,6 +394,29 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
+		{{/totalSumOfLoansPaid}}
+		{{#coBrandStats}}
+		<section class="scene scene--points" style="background-image: url('assets/i/points-bg{{imgmod}}.png');">
+			<div class="scene-content">
+				<div class="content-animation">
+				<div class="scene-content__top-title scene-content__top-title--bold">А еще вы накопили</div>
+				<span class="scene-content__val">{{#spaced_number}}{{sum}}{{/spaced_number}}</span>
+				<span class="scene-content__val-desc">{{#decl_bonus}}{{sum}}{{/decl_bonus}}</span>
+				<div class="scene-content__top-title">В программе {{brandName}}</div>
+				</div>
+			</div>
+			<div class="scene-bottom">
+				<img class="scene-bottom__img visible-xs" src="assets/i/points{{imgmod}}.png" alt="">
+			</div>
+			<footer class="footer">
+				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
+				<span class="footer__center"><svg class="footer__mouse">
+					<use xlink:href="#spr-mouse"></use>
+				</svg></span>
+				<span class="footer__note">Итоги 2017 года</span>
+			</footer>
+		</section>
+		{{/coBrandStats}}
 		<section class="scene scene--finish">
 			<div class="scene-content">
 				<div class="content-animation">
@@ -423,8 +429,8 @@
 				<div class="btn-container-bottom">
 					<div class="btn-container-bottom__content">
 						<h3 class="btn-container-bottom__title">Нам удалось вас удивить? :)</h3>
-						<button type="button" data-action="result" class="btn btn-inverted">Да, не ожидал!</button>
-						<button type="button" data-action="result" class="btn btn-inverted">Предсказуемо!</button>
+						<button type="button" data-action="vote-yes" class="btn btn-inverted">Да, не ожидал{{verbsuffix}}!</button>
+						<button type="button" data-action="vote-no" class="btn btn-inverted">Предсказуемо!</button>
 					</div>
 					<div class="btn-container-bottom__content result">
 						<h3 class="btn-container-bottom__title">Благодарим за ваш ответ!</h3>
@@ -442,6 +448,7 @@
 				<span class="footer__note">Итоги 2017 года</span>
 			</footer>
 		</section>
+		</script>
 	</div>
 </main>
 </body>

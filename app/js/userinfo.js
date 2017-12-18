@@ -50,10 +50,14 @@ export var UserInfo = {
         context.timeWithBank_val  = context.timeWithBank.split(' ')[0];
         context.timeWithBank_unit = context.timeWithBank.split(' ')[1];
 
+        context.imgmod             = (userdata.sex == 'F') ? '-girl' : '';
+        context.verbsuffix         = (userdata.sex == 'F') ? 'а' : '';
+
         for (var i = 0; i < context.expensesByCategory.length; i++) {
             var dest = context.expensesByCategory[i];
-            dest.relativeExpenses_val = Number(dest.relativeExpenses.split(' ')[0].replace('%', ''));
+            dest.clientsSpendMore_exists = dest.hasOwnProperty('clientsSpendMore');
         }
+
         for (var i = 0; i < context.visitedCountries.length; i++) {
             var dest = context.visitedCountries[i];
             dest.otherClientsPercent = Number(dest.otherClientsPercent.replace('%', ''));

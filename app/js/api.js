@@ -2,7 +2,7 @@ export var API = {
     getInfo: function () {
         com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : this.getLinkID()}));
         return $.ajax({
-            url: '/webapi-1/info/' + this.getLinkID(),
+            url: '/ny2018/webapi-1/info/' + this.getLinkID(),
             dataType: 'json'
         });
     },
@@ -13,7 +13,7 @@ export var API = {
 
         return $.ajax({
             type: 'PUT',
-            url: '/webapi-1/feedbacks/' + this.getLinkID(),
+            url: '/ny2018/webapi-1/feedbacks/' + this.getLinkID(),
             data: JSON.stringify({ "vote": vote }),
             contentType: "application/json",
             dataType: 'json'
