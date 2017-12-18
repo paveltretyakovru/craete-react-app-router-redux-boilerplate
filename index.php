@@ -134,7 +134,7 @@
 				<div class="scene-content__top-title scene-content__top-title--bold">В том числе</div>
 				<span class="scene-content__val">{{numberOfTransactionsByNFC}}</span>
 				<span class="scene-content__val-desc">{{#decl_operations}}{{numberOfTransactionsByNFC}}{{/decl_operations}}</span>
-				<div class="scene-content__top-title">С помошью вашего мобильного устройства</div>
+				<div class="scene-content__top-title">С помощью вашего мобильного устройства</div>
 				</div>
 			</div>
 			<div class="scene-bottom">
