@@ -1,6 +1,6 @@
 export var stubResponse0 = {
     "linkId": "cchgnf9uxk7t",
-    "clientName": "Константин",
+    "clientName": "Елена",
     "timeWithBank": "3 года",
     "sex": "F",
     "numberOfTransactionsByCard": 785,

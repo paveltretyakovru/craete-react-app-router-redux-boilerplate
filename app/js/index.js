@@ -4,8 +4,8 @@ import './collapse';
 import './../vendor/slick.min';
 import './../vendor/jquery.onepage-scroll';
 import { API } from './api';
-import { stubResponse0 } from './api_stub';
 import { UserInfo } from './userinfo';
+import Mustache from 'mustache';
 import './statistics';
 
 var userdataReq  = API.getInfo();
@@ -22,7 +22,7 @@ $.when(userdataReq, docReady)
     .fail(function (jqXHR) {
         $.when(docReady)
             .done(function () {
-                initDOM(stubResponse0);
+                initDOM(null);
             });
     });
 
@@ -40,12 +40,17 @@ $.fn.extend({
 });
 
 function initDOM(userdata) {
-    // fill the first screen
-    $('.scene-content__welcome').html( userdata.clientName + ', здравствуйте!');
+    if (userdata) {
+        // fill the first screen
+        $('.scene-content__welcome').html( userdata.clientName + ', здравствуйте!');
 
-    // render the rest of the page
-    var template = $("#page_template").html();
-    $('.scene--intro').after(UserInfo.render(template, userdata));
+        // render the rest of the page
+        var template = $("#page_template").html();
+        $('.scene--intro').after(UserInfo.render(template, userdata));
+    } else {
+        var template = $("#page_error_template").html();
+        $('.wrapper').html( Mustache.to_html(template) );
+    }
 
     $(window).scroll(function() {
 

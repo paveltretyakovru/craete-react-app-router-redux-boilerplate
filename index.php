@@ -54,6 +54,37 @@
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
 			</footer>
 		</section>
+
+		<script id="page_error_template" type="text/template">
+		<section class="scene scene--intro visible">
+			<div class="scene-logos">
+				<div class="scene-logos__item">
+					<a href="http://raiffeisen.ru" target="_blank">
+						<svg class="raiff-logo">
+							<use xlink:href="#spr-raiff-logo-rus"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="scene-content">
+				<div class="content-animation">
+					<h1>Упс</h1>
+					<p class="scene-content__subtitle">Запрашиваемая вами страница не существует или у вас оказалась неверная ссылка. Проверьте, пожалуйста, ссылку</p>
+				</div>
+				<div class="container-btn">
+					<a href="http://raiffeisen.ru" class="btn btn-default">На главную</a>
+				</div>
+			</div>
+			<div class="scene-bottom">
+				<img class="scene-bottom__img hidden-xs" src="assets/i/intro.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/intro_m.png" alt="">
+			</div>
+			<footer class="footer">
+				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
+			</footer>
+		</section>
+		</script>
+
 		<script id="page_template" type="text/template">
 		<section class="scene scene--time" id="top-scroll" style=" background-image: url('assets/i/time-bg{{imgmod}}.png');">
 			<div class="scene-content">
