@@ -2,6 +2,7 @@ export var stubResponse0 = {
     "linkId": "cchgnf9uxk7t",
     "clientName": "Константин",
     "timeWithBank": "3 года",
+    "sex": "F",
     "numberOfTransactionsByCard": 785,
     "numberOfTransactionsByNFC": 55,
     "totalSumOfTransactions": 1483745,
@@ -9,17 +10,16 @@ export var stubResponse0 = {
         {
             "totalExpenses": 122863,
             "categoryName": "путешествиях",
-            "relativeExpenses": "24% больше"
+            "clientsSpendMore": 24
         },
         {
             "totalExpenses": 62169,
             "categoryName": "супермаркетах",
-            "relativeExpenses": "5% меньше"
+            "clientsSpendMore": 0
         },
         {
             "totalExpenses": 59169,
-            "categoryName": "кино, театры, концерты",
-            "relativeExpenses": "15% больше"
+            "categoryName": "кино, театры, концерты"
         }
     ],
     "largestExpense": {
@@ -54,6 +54,5 @@ export var stubResponse0 = {
     "coBrandStats": [{
         "sum": 5326,
         "brandName": "#ВСЕСРАЗУ"
-    }],
-    "sex": "M"
+    }]
 }
