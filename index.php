@@ -91,7 +91,7 @@
 				<div class="content-animation">
 					<div class="scene-content__top-title">Вы с Райффайзенбанком уже</div>
 					<span class="scene-content__val">{{timeWithBank_val}}</span>
-					<span class="scene-content__val-desc">{{timeWithBank_unit}}</span>
+					<span class="scene-content__val-desc">{{timeWithBank_desc}}</span>
 				</div>
 
 			</div>
@@ -194,9 +194,9 @@
 								</svg>
 
 							</div>
-							<div class="cost__desc">Только&nbsp;{{clientsSpentMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы</div>
+							<div class="cost__desc">Только&nbsp;{{clientsSpentMore}}% клиентов Райффайзенбанка {{#decl_spent}}{{clientsSpentMore}}{{/decl_spent}} в&nbsp;этой категории больше, чем&nbsp;вы</div>
 						</div>
-						<div class="cost-note">Только&nbsp;{{clientsSpentMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы
+						<div class="cost-note">Только&nbsp;{{clientsSpentMore}}% клиентов Райффайзенбанка {{#decl_spent}}{{clientsSpentMore}}{{/decl_spent}} в&nbsp;этой категории больше, чем&nbsp;вы
 						</div>
 						{{/clientsSpentMore}}
 						{{/clientsSpentAlike}}

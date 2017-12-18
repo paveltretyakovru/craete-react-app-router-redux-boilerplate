@@ -1,7 +1,7 @@
 export var stubResponse0 = {
     "linkId": "cchgnf9uxk7t",
     "clientName": "Елена",
-    "timeWithBank": "3 года",
+    "monthsAsBankClient": 26,
     "sex": "F",
     "numberOfTransactionsByCard": 785,
     "numberOfTransactionsByNFC": 55,
@@ -9,17 +9,27 @@ export var stubResponse0 = {
     "expensesByCategory": [
         {
             "totalExpenses": 122863,
-            "categoryName": "путешествиях",
+            "categoryName": "путешествия",
+            "clientsSpentAlike": 0,
             "clientsSpentMore": 24
         },
         {
             "totalExpenses": 62169,
-            "categoryName": "супермаркетах",
-            "clientsSpentAlike": 1
+            "categoryName": "продукты",
+            "clientsSpentAlike": 0,
+            "clientsSpentMore": 1
         },
         {
             "totalExpenses": 59169,
-            "categoryName": "кино, театры, концерты"
+            "categoryName": "красота и здоровье",
+            "clientsSpentAlike": 1,
+            "clientsSpentMore": 0
+        },
+        {
+            "totalExpenses": 31245,
+            "categoryName": "рестораны, бары и кафе",
+            "clientsSpentAlike": 0,
+            "clientsSpentMore": 0
         }
     ],
     "largestExpense": {
@@ -45,10 +55,16 @@ export var stubResponse0 = {
     },
     "visitedCountries": [{
         "countryName": "Сент-Винсент и Гренадины",
-        "otherClientsPercent": "15%"
+        "otherClientsPercent": 15
     }, {
-        "countryName": "Венгрия",
-        "otherClientsPercent": "3%"
+        "countryName": "Лихтенштейн",
+        "otherClientsPercent": 10
+    }, {
+        "countryName": "Казахстан",
+        "otherClientsPercent": 3
+    }, {
+        "countryName": "Чад",
+        "otherClientsPercent": 2
     }],
     "totalSumOfLoansPaid": 1500005,
     "coBrandStats": [{

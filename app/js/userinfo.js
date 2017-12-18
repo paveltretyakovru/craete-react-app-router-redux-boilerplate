@@ -42,21 +42,56 @@ export var UserInfo = {
         context.decl_rouble      = this.mustache_lambda(this.numDeclension(['рубль', 'рубля', 'рублей']));
         context.decl_transaction = this.mustache_lambda(this.numDeclension(['транзакцию', 'транзакции', 'транзакций']));
         context.decl_visited     = this.mustache_lambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
-        context.decl_visited     = this.mustache_lambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
         context.decl_bonus       = this.mustache_lambda(this.numDeclension(['балл', 'балла', 'баллов']));
+        context.decl_spent       = this.mustache_lambda(this.numDeclension(['тратит', 'тратят', 'тратят']));
 
         context.spaced_number    = this.mustache_lambda(this.numberWithSpaces);
         context.date_DnumMtxt    = this.mustache_lambda(this.date_DnumMtxt);
-        context.timeWithBank_val  = context.timeWithBank.split(' ')[0];
-        context.timeWithBank_unit = context.timeWithBank.split(' ')[1];
+
+        {
+            var decl_months = this.numDeclension(['месяц', 'месяца', 'месяцев']);
+            var decl_years = this.numDeclension(['год', 'года', 'лет']);
+
+            if (true) {
+                var years = (context.monthsAsBankClient/12 >> 0);
+                // opt A
+                if (context.monthsAsBankClient == 0)  {
+                    context.timeWithBank_val  = 1;
+                    context.timeWithBank_desc = decl_months(1);
+                } else if (context.monthsAsBankClient >= 24) {
+                    // exact number of years
+                    context.timeWithBank_val  = years;
+                    context.timeWithBank_desc = decl_years(years);
+                } else {
+                    // total number of months
+                    context.timeWithBank_val  = context.monthsAsBankClient;
+                    context.timeWithBank_desc = decl_months(context.monthsAsBankClient);
+                }
+            } else {
+                var years = (context.monthsAsBankClient/12 >> 0);
+                var month = context.monthsAsBankClient - 12*years;
+
+                // optB
+                if (month == 0 && years == 0)  {
+                    context.timeWithBank_val  = 1;
+                    context.timeWithBank_desc = decl_months(1);
+                } else if (years == 0) {
+                    // exact number of monthes
+                    context.timeWithBank_val  = years;
+                    context.timeWithBank_desc = decl_years(years);
+                } else if (month == 0) {
+                    // exact number of years
+                    context.timeWithBank_val  = month;
+                    context.timeWithBank_desc = decl_months(month);
+                } else {
+                    context.timeWithBank_val  = ''.concat(years, ' ', decl_years(years));
+                    context.timeWithBank_desc = ''.concat(month, ' ', decl_months(month));
+                }
+            }
+        }
 
         context.imgmod             = (userdata.sex == 'F') ? '-girl' : '';
         context.verbsuffix         = (userdata.sex == 'F') ? 'а' : '';
-
-        for (var i = 0; i < context.visitedCountries.length; i++) {
-            var dest = context.visitedCountries[i];
-            dest.otherClientsPercent = Number(dest.otherClientsPercent.replace('%', ''));
-        }
 
         return Mustache.to_html(template, context);
     }
