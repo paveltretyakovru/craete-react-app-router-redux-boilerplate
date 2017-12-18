@@ -12294,11 +12294,6 @@ var UserInfo = exports.UserInfo = {
         context.imgmod = userdata.sex == 'F' ? '-girl' : '';
         context.verbsuffix = userdata.sex == 'F' ? 'а' : '';
 
-        for (var i = 0; i < context.expensesByCategory.length; i++) {
-            var dest = context.expensesByCategory[i];
-            dest.clientsSpendMore_exists = dest.hasOwnProperty('clientsSpendMore');
-        }
-
         for (var i = 0; i < context.visitedCountries.length; i++) {
             var dest = context.visitedCountries[i];
             dest.otherClientsPercent = Number(dest.otherClientsPercent.replace('%', ''));
@@ -12639,11 +12634,11 @@ var stubResponse0 = exports.stubResponse0 = {
     "expensesByCategory": [{
         "totalExpenses": 122863,
         "categoryName": "путешествиях",
-        "clientsSpendMore": 24
+        "clientsSpentMore": 24
     }, {
         "totalExpenses": 62169,
         "categoryName": "супермаркетах",
-        "clientsSpendMore": 0
+        "clientsSpentAlike": 1
     }, {
         "totalExpenses": 59169,
         "categoryName": "кино, театры, концерты"
