@@ -53,11 +53,6 @@ export var UserInfo = {
         context.imgmod             = (userdata.sex == 'F') ? '-girl' : '';
         context.verbsuffix         = (userdata.sex == 'F') ? 'а' : '';
 
-        for (var i = 0; i < context.expensesByCategory.length; i++) {
-            var dest = context.expensesByCategory[i];
-            dest.clientsSpendMore_exists = dest.hasOwnProperty('clientsSpendMore');
-        }
-
         for (var i = 0; i < context.visitedCountries.length; i++) {
             var dest = context.visitedCountries[i];
             dest.otherClientsPercent = Number(dest.otherClientsPercent.replace('%', ''));

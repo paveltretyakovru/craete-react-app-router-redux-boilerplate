@@ -183,29 +183,31 @@
 						<span class="scene-content__val">{{#spaced_number}}{{totalExpenses}}{{/spaced_number}}</span>
 						<span class="scene-content__val-desc">{{#decl_rouble}}{{totalExpenses}}{{/decl_rouble}}</span>
 
-						{{#clientsSpendMore_exists}}
+						{{^clientsSpentAlike}}
+						{{#clientsSpentMore}}
 						<div class="cost-right">
-							<div class="cost__diagram" data-percent="{{clientsSpendMore}}">
-								<div  class="cost__percent cost__percent--val">{{clientsSpendMore}}%</div>
+							<div class="cost__diagram" data-percent="{{clientsSpentMore}}">
+								<div  class="cost__percent cost__percent--val">{{clientsSpentMore}}%</div>
 								<svg class="diagram-svg" width="100" height="100" viewPort="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg">
 									<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
 									<circle class="diagram-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.74" stroke-dashoffset="0"></circle>
 								</svg>
 
 							</div>
-							<div class="cost__desc">Только&nbsp;{{clientsSpendMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы</div>
+							<div class="cost__desc">Только&nbsp;{{clientsSpentMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы</div>
 						</div>
-						<div class="cost-note">Только&nbsp;{{clientsSpendMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы
+						<div class="cost-note">Только&nbsp;{{clientsSpentMore}}% клиентов Райффайзенбанка тратят в&nbsp;этой категории больше, чем&nbsp;вы
 						</div>
-						{{/clientsSpendMore_exists}}
-						{{^clientsSpendMore_exists}}
+						{{/clientsSpentMore}}
+						{{/clientsSpentAlike}}
+						{{#clientsSpentAlike}}
 						<div class="cost-right">
 							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы</div>
 						</div>
 
 						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы
 						</div>
-						{{/clientsSpendMore_exists}}
+						{{/clientsSpentAlike}}
 					</div>
 					{{/expensesByCategory}}
 				</div>

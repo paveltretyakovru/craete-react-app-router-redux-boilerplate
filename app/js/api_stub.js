@@ -10,12 +10,12 @@ export var stubResponse0 = {
         {
             "totalExpenses": 122863,
             "categoryName": "путешествиях",
-            "clientsSpendMore": 24
+            "clientsSpentMore": 24
         },
         {
             "totalExpenses": 62169,
             "categoryName": "супермаркетах",
-            "clientsSpendMore": 0
+            "clientsSpentAlike": 1
         },
         {
             "totalExpenses": 59169,
