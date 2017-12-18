@@ -11893,10 +11893,10 @@ var API = exports.API = {
     getInfo: function getInfo() {
         com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId": this.getLinkID() }));
         var linkId = this.getLinkID();
-        if (linkId == 'index.html' || linkId == 'index.php' || linkId == 'test1') return ajax_response(_api_stub.stubResponse0);
+        if (linkId == 'index.html' || linkId == 'index.php' || linkId == 'test0') return ajax_response(_api_stub.stubResponse0);
 
         return $.ajax({
-            url: '/ny2018/webapi-1/info/' + linkId,
+            url: '/ny2018/webapi-1/info/' + linkId + '/',
             dataType: 'json'
         });
     },
@@ -11907,7 +11907,7 @@ var API = exports.API = {
 
         return $.ajax({
             type: 'PUT',
-            url: '/ny2018/webapi-1/feedbacks/' + this.getLinkID(),
+            url: '/ny2018/webapi-1/feedbacks/' + this.getLinkID() + '/',
             data: JSON.stringify({ "vote": vote }),
             contentType: "application/json",
             dataType: 'json'
@@ -12132,26 +12132,7 @@ requireContext.keys().map(requireContext);
 
 __webpack_require__(18);
 
-com.rooxteam.statistic.updateConfiguration(com.rooxteam.config.statistic, {
-    "ENABLED": true,
-    "LIC_ENABLED": false,
-    "TRANSPORT": "POST",
-    "CREDENTIALS_SYNC_ENABLED": true,
-    "SERVER_ADDRESS": 'https://www.raiffeisen.ru/ny2018/pushreport',
-    "LIC_SERVER_ADDRESS": 'https://lic.rooxcloud.com/pushreport',
-    "IO_EVENTS_ENABLED": true,
-    "VIEW_EVENTS_ENABLED": true,
-    "DOM_EVENTS_ENABLED": true,
-    "AUTO_GENERATE_UIID": true,
-    "AUTO_GENERATE_IID": true,
-    "ACCUMULATE_TIME": 30000,
-    "ACCUMULATE_OPERATION_LIMIT": 1,
-    "OPERATOR_ID": "RAIF",
-    "WRAP_LINKS": true,
-    "JQUERY_AJAX_WRAP": true,
-    "USE_LS_WITH_MUTEX": true,
-    "USE_ELECTION": false
-}, "", "raif-ny");
+com.rooxteam.statistic.updateConfiguration(com.rooxteam.config.statistic, {}, "", "raif-ny");
 
 /***/ }),
 /* 10 */
@@ -12283,21 +12264,56 @@ var UserInfo = exports.UserInfo = {
         context.decl_rouble = this.mustache_lambda(this.numDeclension(['рубль', 'рубля', 'рублей']));
         context.decl_transaction = this.mustache_lambda(this.numDeclension(['транзакцию', 'транзакции', 'транзакций']));
         context.decl_visited = this.mustache_lambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
-        context.decl_visited = this.mustache_lambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
         context.decl_bonus = this.mustache_lambda(this.numDeclension(['балл', 'балла', 'баллов']));
+        context.decl_spent = this.mustache_lambda(this.numDeclension(['тратит', 'тратят', 'тратят']));
 
         context.spaced_number = this.mustache_lambda(this.numberWithSpaces);
         context.date_DnumMtxt = this.mustache_lambda(this.date_DnumMtxt);
-        context.timeWithBank_val = context.timeWithBank.split(' ')[0];
-        context.timeWithBank_unit = context.timeWithBank.split(' ')[1];
+
+        {
+            var decl_months = this.numDeclension(['месяц', 'месяца', 'месяцев']);
+            var decl_years = this.numDeclension(['год', 'года', 'лет']);
+
+            if (true) {
+                var years = context.monthsAsBankClient / 12 >> 0;
+                // opt A
+                if (context.monthsAsBankClient == 0) {
+                    context.timeWithBank_val = 1;
+                    context.timeWithBank_desc = decl_months(1);
+                } else if (context.monthsAsBankClient >= 24) {
+                    // exact number of years
+                    context.timeWithBank_val = years;
+                    context.timeWithBank_desc = decl_years(years);
+                } else {
+                    // total number of months
+                    context.timeWithBank_val = context.monthsAsBankClient;
+                    context.timeWithBank_desc = decl_months(context.monthsAsBankClient);
+                }
+            } else {
+                var years = context.monthsAsBankClient / 12 >> 0;
+                var month = context.monthsAsBankClient - 12 * years;
+
+                // optB
+                if (month == 0 && years == 0) {
+                    context.timeWithBank_val = 1;
+                    context.timeWithBank_desc = decl_months(1);
+                } else if (years == 0) {
+                    // exact number of monthes
+                    context.timeWithBank_val = years;
+                    context.timeWithBank_desc = decl_years(years);
+                } else if (month == 0) {
+                    // exact number of years
+                    context.timeWithBank_val = month;
+                    context.timeWithBank_desc = decl_months(month);
+                } else {
+                    context.timeWithBank_val = ''.concat(years, ' ', decl_years(years));
+                    context.timeWithBank_desc = ''.concat(month, ' ', decl_months(month));
+                }
+            }
+        }
 
         context.imgmod = userdata.sex == 'F' ? '-girl' : '';
         context.verbsuffix = userdata.sex == 'F' ? 'а' : '';
-
-        for (var i = 0; i < context.visitedCountries.length; i++) {
-            var dest = context.visitedCountries[i];
-            dest.otherClientsPercent = Number(dest.otherClientsPercent.replace('%', ''));
-        }
 
         return _mustache2.default.to_html(template, context);
     }
@@ -12626,22 +12642,31 @@ Object.defineProperty(exports, "__esModule", {
 var stubResponse0 = exports.stubResponse0 = {
     "linkId": "cchgnf9uxk7t",
     "clientName": "Елена",
-    "timeWithBank": "3 года",
+    "monthsAsBankClient": 26,
     "sex": "F",
     "numberOfTransactionsByCard": 785,
     "numberOfTransactionsByNFC": 55,
     "totalSumOfTransactions": 1483745,
     "expensesByCategory": [{
         "totalExpenses": 122863,
-        "categoryName": "путешествиях",
+        "categoryName": "путешествия",
+        "clientsSpentAlike": 0,
         "clientsSpentMore": 24
     }, {
         "totalExpenses": 62169,
-        "categoryName": "супермаркетах",
-        "clientsSpentAlike": 1
+        "categoryName": "продукты",
+        "clientsSpentAlike": 0,
+        "clientsSpentMore": 1
     }, {
         "totalExpenses": 59169,
-        "categoryName": "кино, театры, концерты"
+        "categoryName": "красота и здоровье",
+        "clientsSpentAlike": 1,
+        "clientsSpentMore": 0
+    }, {
+        "totalExpenses": 31245,
+        "categoryName": "рестораны, бары и кафе",
+        "clientsSpentAlike": 0,
+        "clientsSpentMore": 0
     }],
     "largestExpense": {
         "date": "2017-03-13T15:12:44.316Z",
@@ -12666,10 +12691,16 @@ var stubResponse0 = exports.stubResponse0 = {
     },
     "visitedCountries": [{
         "countryName": "Сент-Винсент и Гренадины",
-        "otherClientsPercent": "15%"
+        "otherClientsPercent": 15
     }, {
-        "countryName": "Венгрия",
-        "otherClientsPercent": "3%"
+        "countryName": "Лихтенштейн",
+        "otherClientsPercent": 10
+    }, {
+        "countryName": "Казахстан",
+        "otherClientsPercent": 3
+    }, {
+        "countryName": "Чад",
+        "otherClientsPercent": 2
     }],
     "totalSumOfLoansPaid": 1500005,
     "coBrandStats": [{
@@ -12684,6 +12715,8 @@ var stubResponse0 = exports.stubResponse0 = {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(9);
 
 __webpack_require__(8);
 
@@ -12702,8 +12735,6 @@ var _userinfo = __webpack_require__(11);
 var _mustache = __webpack_require__(1);
 
 var _mustache2 = _interopRequireDefault(_mustache);
-
-__webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14408,34 +14439,38 @@ com.rooxteam.statistic = com.rooxteam.statistic || {};
 com.rooxteam.config.statistic = {
     "ENABLED": true,
     "LIC_ENABLED": false,
-    "LIC_SERVER_ADDRESS": 'http://rcmlic.roox.ru/YA/PushReport/',
+    "LIC_SERVER_ADDRESS": 'https://lic.rooxcloud.com/pushreport',
     "LIC_OBFUSCATED_DATA": ["userid", "msisdn", "^pn$", "authentication_token"], //Regexp as string
-    "TRANSPORT": "GET",
+    "TRANSPORT": "POST",
     "DISABLE_IN_ROAMING": false,
-    "SERVER_ADDRESS": 'http://rcmlic.roox.ru/YA/PushReport/',
+    "SERVER_ADDRESS": 'https://www.raiffeisen.ru/ny2018/pushreport/',
+    "OPERATOR_ID": "RAIF",
     "SERVICE_TYPE_PARAMETER": 'YA_REPORT_SERVICE',
     "CHECKSUM_PARAMETER": 'YA_REPORT_CHECKSUM',
     "SENDING_TIME_PARAMETER": 'YA_REPORT_SENDING_TIME',
     "FILTERING_ERROR_PARAMETER": 'filtering_error',
     "COUNTER_SERVICE_TYPE": 'counter',
-    "ACCUMULATE_TIME": 60000,
+    "ACCUMULATE_TIME": 20000,
     'TIMER_UPDATE_INTERVAL': 5000,
-    "ACCUMULATE_OPERATION_LIMIT": 20, //after this accumulate operation limit - try send to server report
+    "ACCUMULATE_OPERATION_LIMIT": 1, //after this accumulate operation limit - try send to server report
     "OVER_ACCUMULATE_OPERATION_LIMIT": 100, //max over accumulation limit if can't send report
-    "COUNT_OF_IMMEDIATE_SENDING": 3,
+    "COUNT_OF_IMMEDIATE_SENDING": 10,
     "MAX_URL_LENGTH": 2000,
     "TRACEKIT_ENABLED": false,
     "IO_EVENTS_ENABLED": true,
     "VIEW_EVENTS_ENABLED": true,
     "DOM_EVENTS_ENABLED": true,
-    "USE_LS_WITH_MUTEX": false,
+    "USE_LS_WITH_MUTEX": true,
     "USE_ELECTION": false,
+    "WRAP_LINKS": true,
     "IS_SLAVE": false,
-    "JQUERY_AJAX_WRAP": false,
+    "JQUERY_AJAX_WRAP": true,
     "AJAX_WRAP": false,
     "PERFORMANCE_TIMING_ENABLED": false,
     "EXTERNAL_LINKS_LOG_ENABLED": false,
     "LINKS_LOG_REDIRECT_TIMEOUT": 100,
+    "AUTO_GENERATE_UIID": true,
+    "AUTO_GENERATE_IID": true,
     "DOM_EVENTS": {
         "click": {
             "verbose": 4,
@@ -14450,7 +14485,7 @@ com.rooxteam.config.statistic = {
             "LOADED": null
         }
     },
-    "CREDENTIALS_SYNC_ENABLED": false,
+    "CREDENTIALS_SYNC_ENABLED": true,
     "CREDENTIALS_COOKIE_DOMAIN": "",
     "CREDENTIALS_SYNC_MAP": {
         "roox_uiid": "com.roox.cm.Common.App.Properties.unit.UserInstallationId"
@@ -14598,7 +14633,6 @@ com.rooxteam.config.statistic = {
 })(window.gadgets, com.rooxteam.statistic.utils, com.rooxteam.statistic.utils.getConsole());
 ;
 /*global com */
-com.rooxteam.config.statistic.LIC_ENABLED = true;;
 
 com.rooxteam.statistic = com.rooxteam.statistic || {};
 
@@ -16210,44 +16244,24 @@ com.rooxteam.statistic = com.rooxteam.statistic || {};
     };
 
     // setup io request logging
-    (function () {
-        if ($ && $.ajax && $.fn.ajaxComplete) {
-            $(document).ajaxComplete(function (ev, jqxhr, options) {
-                if (com.rooxteam.config.statistic.JQUERY_AJAX_WRAP) {
-                    try {
-                        com.rooxteam.statistic.client.logAjaxRequest({
-                            'url': options.url,
-                            'mthd': options.type,
-                            'et': 'na'
-                        }, jqxhr);
-                    } catch (ex) {
-                        if (gadgets && gadgets.log) {
-                            gadgets.log('An error during logAjaxRequestwas occured');
-                            gadgets.log(ex.message);
-                        }
+    if ($ && $.ajax && $.fn.ajaxComplete) {
+        $(document).ajaxComplete(function (ev, jqxhr, options) {
+            if (com.rooxteam.config.statistic.JQUERY_AJAX_WRAP && !/pushreport(\/)?$/.test(options.url)) {
+                try {
+                    com.rooxteam.statistic.client.logAjaxRequest({
+                        'url': options.url,
+                        'mthd': options.type,
+                        'et': 'na'
+                    }, jqxhr);
+                } catch (ex) {
+                    if (gadgets && gadgets.log) {
+                        gadgets.log('An error during logAjaxRequestwas occured');
+                        gadgets.log(ex.message);
                     }
                 }
-            });
-        }
-        if (window.xhook) {
-            window.xhook.after(function (request, response) {
-                if (com.rooxteam.config.statistic.AJAX_WRAP) {
-                    try {
-                        com.rooxteam.statistic.client.logAjaxRequest({
-                            'url': request.url,
-                            'mthd': request.method,
-                            'et': 'na'
-                        }, request.xhr);
-                    } catch (ex) {
-                        if (gadgets && gadgets.log) {
-                            gadgets.log('An error during logAjaxRequestwas occured');
-                            gadgets.log(ex.message);
-                        }
-                    }
-                }
-            });
-        }
-    })();
+            }
+        });
+    }
 })(window.gadgets, __webpack_provided_window_dot_jQuery, window.WinJS, window.document, window.TraceKit);
 ;
 
