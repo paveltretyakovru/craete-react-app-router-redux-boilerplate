@@ -12274,41 +12274,23 @@ var UserInfo = exports.UserInfo = {
             var decl_months = this.numDeclension(['месяц', 'месяца', 'месяцев']);
             var decl_years = this.numDeclension(['год', 'года', 'лет']);
 
-            if (true) {
-                var years = context.monthsAsBankClient / 12 >> 0;
-                // opt A
-                if (context.monthsAsBankClient == 0) {
-                    context.timeWithBank_val = 1;
-                    context.timeWithBank_desc = decl_months(1);
-                } else if (context.monthsAsBankClient >= 24) {
-                    // exact number of years
-                    context.timeWithBank_val = years;
-                    context.timeWithBank_desc = decl_years(years);
-                } else {
-                    // total number of months
-                    context.timeWithBank_val = context.monthsAsBankClient;
-                    context.timeWithBank_desc = decl_months(context.monthsAsBankClient);
-                }
-            } else {
-                var years = context.monthsAsBankClient / 12 >> 0;
-                var month = context.monthsAsBankClient - 12 * years;
+            var years = context.monthsAsBankClient / 12 >> 0;
+            var month = context.monthsAsBankClient - 12 * years;
 
-                // optB
-                if (month == 0 && years == 0) {
-                    context.timeWithBank_val = 1;
-                    context.timeWithBank_desc = decl_months(1);
-                } else if (years == 0) {
-                    // exact number of monthes
-                    context.timeWithBank_val = years;
-                    context.timeWithBank_desc = decl_years(years);
-                } else if (month == 0) {
-                    // exact number of years
-                    context.timeWithBank_val = month;
-                    context.timeWithBank_desc = decl_months(month);
-                } else {
-                    context.timeWithBank_val = ''.concat(years, ' ', decl_years(years));
-                    context.timeWithBank_desc = ''.concat(month, ' ', decl_months(month));
-                }
+            if (month == 0 && years == 0) {
+                context.timeWithBank_val = 1;
+                context.timeWithBank_desc = decl_months(1);
+            } else if (month == 0) {
+                //only years
+                context.timeWithBank_val = years;
+                context.timeWithBank_desc = decl_years(years);
+            } else if (years == 0) {
+                // only months
+                context.timeWithBank_val = month;
+                context.timeWithBank_desc = decl_months(month);
+            } else {
+                context.timeWithBank_val = ''.concat(years, ' ', decl_years(years));
+                context.timeWithBank_desc = 'и '.concat(month, ' ', decl_months(month));
             }
         }
 
