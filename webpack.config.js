@@ -43,8 +43,8 @@ var config = {
         path: assetsPath,
         filename: "[name]" + fileSuffix + ".js",
         sourceMapFilename: "[file].map",
-        chunkFilename: "[name].[id].js",
-        publicPath: './'
+        chunkFilename: "[name].[id].js"
+        // ,publicPath: './'
     },
     module: {
         rules: [
