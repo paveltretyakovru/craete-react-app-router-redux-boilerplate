@@ -19,3 +19,6 @@ robots.txt
 /test
 /composer.phar
 /git-hooks
+/assets
+widget-ver.json
+index.html
