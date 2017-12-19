@@ -53,18 +53,6 @@
 				</div>
 			</noscript>
 
-			<div class="scene-content">
-				<div class="content-animation">
-					<h1><span class="scene-content__welcome">&nbsp;</span></h1>
-					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
-					                                   новогодние праздники, а&nbsp;значит
-					                                   самое время подвести итоги
-					                                   уходящего 2017&nbsp;года.</p>
-				</div>
-				<div class="container-btn">
-					<a href="" class="btn btn-default" data-action="top-scroll">Поехали?</a>
-				</div>
-			</div>
 			<div class="scene-bottom">
 				<img class="scene-bottom__img hidden-xs" src="assets/i/intro.png" alt="">
 				<img class="scene-bottom__img visible-xs" src="assets/i/intro_m.png" alt="">
@@ -105,6 +93,38 @@
 		</script>
 
 		<script id="page_template" type="text/template">
+		<section class="scene scene--intro visible">
+			<div class="scene-logos">
+				<div class="scene-logos__item">
+					<a href="https://www.raiffeisen.ru" target="_blank">
+						<svg class="raiff-logo">
+							<use xlink:href="#spr-raiff-logo-rus"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="scene-content">
+				<div class="content-animation">
+					<h1><span class="scene-content__welcome">{{clientName}}, здравствуйте!</span></h1>
+					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
+					                                   новогодние праздники, а&nbsp;значит
+					                                   самое время подвести итоги
+					                                   уходящего 2017&nbsp;года.</p>
+				</div>
+				<div class="container-btn">
+					<a href="" class="btn btn-default" data-action="top-scroll">Поехали?</a>
+				</div>
+			</div>
+			<div class="scene-bottom">
+				<img class="scene-bottom__img hidden-xs" src="assets/i/intro.png" alt="">
+				<img class="scene-bottom__img visible-xs" src="assets/i/intro_m.png" alt="">
+			</div>
+			<footer class="footer">
+				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
+			</footer>
+		</section>
+
 		<section class="scene scene--time" id="top-scroll" style=" background-image: url('assets/i/time-bg{{imgmod}}.png');">
 			<div class="scene-content">
 				<div class="content-animation">

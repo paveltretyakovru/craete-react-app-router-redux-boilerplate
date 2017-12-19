@@ -42,12 +42,8 @@ $.fn.extend({
 
 function initDOM(userdata) {
     if (userdata) {
-        // fill the first screen
-        $('.scene-content__welcome').html( userdata.clientName + ', здравствуйте!');
-
-        // render the rest of the page
         var template = $("#page_template").html();
-        $('.scene--intro').after(UserInfo.render(template, userdata));
+        $('.wrapper').html(UserInfo.render(template, userdata));
     } else {
         var template = $("#page_error_template").html();
         $('.wrapper').html( Mustache.to_html(template) );
