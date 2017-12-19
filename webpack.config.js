@@ -27,6 +27,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var GenerateJsonPlugin = require('generate-json-webpack-plugin');
+var HtmlCriticalPlugin = require("html-critical-webpack-plugin");
 
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
@@ -176,6 +177,17 @@ var config = {
                         browsers: ['last 3 version']
                     })];
                 }
+            }
+        }),
+        new HtmlCriticalPlugin({
+            base: path.resolve(__dirname),
+            src: 'index.html',
+            dest: 'index.html',
+            inline: true,
+            minify: true,
+            extract: true,
+            penthouse: {
+                blockJSRequests: false,
             }
         }),
         new CopyWebpackPlugin([
