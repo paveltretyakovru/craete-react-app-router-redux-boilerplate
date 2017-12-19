@@ -7,6 +7,7 @@ import './../vendor/jquery.onepage-scroll';
 import { API } from './api';
 import { UserInfo } from './userinfo';
 import Mustache from 'mustache';
+require("./../less/styles.less");
 
 var userdataReq  = API.getInfo();
 var docReady = $.Deferred();

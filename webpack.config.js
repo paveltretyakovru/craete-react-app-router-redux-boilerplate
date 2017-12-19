@@ -36,7 +36,6 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 var config = {
     context: entryPath,
     entry: {
-        styles: './js/styles.js',
         bundle: './js/index.js'
     },
     output: {
@@ -158,7 +157,7 @@ var config = {
             template: path.join(__dirname, 'index.php'),
             filename: path.join(__dirname, 'index.html'),
             inject: 'head',
-            chunks: ['bundle','styles']
+            chunks: ['bundle']
         }),
         new GenerateJsonPlugin('../widget-ver.json', {
             jobName: process.env.JOB_NAME,
