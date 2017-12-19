@@ -339,6 +339,11 @@
 						                                       3%&nbsp;наших клиентов</p>
 					</div>
 					<div class="countries-slider-item">
+						<div class="countries-slider-item__title">Лихтенштейн</div>
+						<p class="countries-slider-item__note">Туда отправились также
+						                                       3%&nbsp;наших клиентов</p>
+					</div>
+					<div class="countries-slider-item">
 						<div class="countries-slider-item__title">Великобритания</div>
 						<p class="countries-slider-item__note">Туда отправились также
 						                                       3%&nbsp;наших клиентов</p>
