@@ -27,7 +27,7 @@
 <header class="header">
 	<div class="header-logos">
 		<div class="header-logos__item">
-			<a href="http://raiffeisen.ru" target="_blank">
+			<a href="https://www.raiffeisen.ru" target="_blank">
 				<svg class="raiff-logo">
 					<use xlink:href="#spr-raiff-logo-rus"></use>
 				</svg>
@@ -40,7 +40,7 @@
 		<section class="scene scene--intro visible">
 			<div class="scene-logos">
 				<div class="scene-logos__item">
-					<a href="http://raiffeisen.ru" target="_blank">
+					<a href="https://www.raiffeisen.ru" target="_blank">
 						<svg class="raiff-logo">
 							<use xlink:href="#spr-raiff-logo-rus"></use>
 						</svg>
@@ -72,7 +72,7 @@
 		<section class="scene scene--intro visible">
 			<div class="scene-logos">
 				<div class="scene-logos__item">
-					<a href="http://raiffeisen.ru" target="_blank">
+					<a href="https://www.raiffeisen.ru" target="_blank">
 						<svg class="raiff-logo">
 							<use xlink:href="#spr-raiff-logo-rus"></use>
 						</svg>
@@ -85,7 +85,7 @@
 					<p class="scene-content__subtitle">Запрашиваемая вами страница не существует или у вас оказалась неверная ссылка. Проверьте, пожалуйста, ссылку</p>
 				</div>
 				<div class="container-btn">
-					<a href="http://raiffeisen.ru" class="btn btn-default">На главную</a>
+					<a href="https://www.raiffeisen.ru" class="btn btn-default">На главную</a>
 				</div>
 			</div>
 			<div class="scene-bottom">
