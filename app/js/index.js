@@ -42,7 +42,6 @@ $.fn.extend({
 
 function initDOM(userdata) {
     if (userdata) {
-        $('.scene-content').show();
         // fill the first screen
         $('.scene-content__welcome').html( userdata.clientName + ', здравствуйте!');
 
