@@ -160,7 +160,7 @@ var config = {
             inject: false,
             chunks: ['bundle','styles']
         }),
-        new GenerateJsonPlugin('widget-ver.json', {
+        new GenerateJsonPlugin('../widget-ver.json', {
             jobName: process.env.JOB_NAME,
             buildNumber: process.env.BUILD_NUMBER,
             gitBranch: process.env.GIT_BRANCH,
