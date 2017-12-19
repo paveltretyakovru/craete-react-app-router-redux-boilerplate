@@ -12641,7 +12641,7 @@ var stubResponse0 = exports.stubResponse0 = {
         "clientsSpentMore": 1
     }, {
         "totalExpenses": 59169,
-        "categoryName": "красота и здоровье",
+        "categoryName": "красоту и здоровье",
         "clientsSpentAlike": 1,
         "clientsSpentMore": 0
     }, {
