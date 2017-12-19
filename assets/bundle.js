@@ -12673,7 +12673,7 @@ var stubResponse0 = exports.stubResponse0 = {
     },
     "visitedCountries": [{
         "countryName": "Сент-Винсент и Гренадины",
-        "otherClientsPercent": 15
+        "otherClientsPercent": 0
     }, {
         "countryName": "Лихтенштейн",
         "otherClientsPercent": 10
