@@ -215,10 +215,10 @@
 						{{/clientsSpentAlike}}
 						{{#clientsSpentAlike}}
 						<div class="cost-right">
-							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;этой категории в&nbsp;среднем так же, как и&nbsp;вы</div>
+							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят на&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы</div>
 						</div>
 
-						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;этой категории в&nbsp;среднем так же, как и&nbsp;вы
+						<div class="cost-note">Клиенты Райффайзенбанка тратят на&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы
 						</div>
 						{{/clientsSpentAlike}}
 					</div>
