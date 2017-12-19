@@ -202,10 +202,10 @@
 						{{/clientsSpentAlike}}
 						{{#clientsSpentAlike}}
 						<div class="cost-right">
-							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы</div>
+							<div class="cost__desc no-diagram">Клиенты Райффайзенбанка тратят в&nbsp;этой категории в&nbsp;среднем так же, как и&nbsp;вы</div>
 						</div>
 
-						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;{{categoryName}} в&nbsp;среднем так же, как и&nbsp;вы
+						<div class="cost-note">Клиенты Райффайзенбанка тратят в&nbsp;этой категории в&nbsp;среднем так же, как и&nbsp;вы
 						</div>
 						{{/clientsSpentAlike}}
 					</div>
@@ -381,10 +381,12 @@
 					{{#visitedCountries}}
 					<div class="countries-slider-item">
 						<div class="countries-slider-item__title">{{countryName}}</div>
+						{{#otherClientsPercent}}
 						<p class="countries-slider-item__note">
 							Туда {{#decl_visited}}{{otherClientsPercent}}{{/decl_visited}} также
 							{{otherClientsPercent}}%&nbsp;наших клиентов
 						</p>
+						{{/otherClientsPercent}}
 					</div>
 					{{/visitedCountries}}
 				</div>
