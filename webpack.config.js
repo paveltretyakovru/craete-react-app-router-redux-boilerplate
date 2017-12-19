@@ -25,7 +25,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+var GenerateJsonPlugin = require('generate-json-webpack-plugin');
 
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
@@ -158,6 +159,12 @@ var config = {
             filename: path.join(__dirname, 'index.html'),
             inject: false,
             chunks: ['bundle','styles']
+        }),
+        new GenerateJsonPlugin('widget-ver.json', {
+            jobName: process.env.JOB_NAME,
+            buildNumber: process.env.BUILD_NUMBER,
+            gitBranch: process.env.GIT_BRANCH,
+            gitCommit: process.env.GIT_COMMIT
         }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
