@@ -1,5 +1,7 @@
 var NODE_ENV = process.env.NODE_ENV;
 
+// const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+
 var sourceMaps, minimize, consoleMessage, fileSuffix;
 if (NODE_ENV == 'production') {
     //sourceMaps = false;
@@ -22,6 +24,8 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
@@ -149,6 +153,12 @@ var config = {
     },
     plugins: [
         new ExtractTextPlugin('[name]' + fileSuffix + '.css'),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'index.php'),
+            filename: path.join(__dirname, 'index.html'),
+            inject: false,
+            chunks: ['bundle','styles']
+        }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery',
@@ -168,6 +178,10 @@ var config = {
             {from: 'i', to: 'i'}
         ]),
         new SpriteLoaderPlugin()
+        // ,new FaviconsWebpackPlugin({
+        //     logo: 'icon.png',
+        //     prefix: 'i/',
+        // })
     ],
     watch: false
 };
@@ -179,11 +193,23 @@ if (NODE_ENV == 'production') {
         mangle: false,
         sourceMap: false
     }));
+
+
+    //pregzip enabled
+    const ZopfliPlugin = require("zopfli-webpack-plugin");
+    config.plugins.push(new ZopfliPlugin({
+        asset: "[path].gz[query]",
+        algorithm: "zopfli",
+        test: /\.(js|html|css|svg|json|woff|woff2|eot|ttf|map|png)$/,
+        threshold: 5120,
+        minRatio: 0.8
+    }));
+
     //minimization enabled
     config.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }));
 
 } else {
-    //config.devtool = "source-map";
+    // config.devtool = "source-map";
 }
 
 module.exports = config;
