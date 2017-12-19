@@ -177,7 +177,7 @@
 				<div class="scene-slider">
 					{{#expensesByCategory}}
 					<div class="scene-slider-item">
-						<div class="scene-content__top-title scene-content__top-title--bold-sm">В {{categoryName}} вы
+						<div class="scene-content__top-title scene-content__top-title--bold-sm">На {{categoryName}} вы
 						                                                                        потратили:
 						</div>
 						<span class="scene-content__val">{{#spaced_number}}{{totalExpenses}}{{/spaced_number}}</span>
