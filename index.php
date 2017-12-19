@@ -17,9 +17,6 @@
 
       gtag('config', 'UA-111419738-1');
     </script>
-
-	<link rel="stylesheet" href="assets/styles.css">
-
 </head>
 
 <body>
@@ -498,6 +495,5 @@
 		</script>
 	</div>
 </main>
-<script src="assets/bundle.js"></script>
 </body>
 </html>
