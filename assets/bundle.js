@@ -12824,10 +12824,10 @@ function initDOM(userdata) {
     if ($(window).width() > 1200) {
         $('.countries-slider-item__title').each(function () {
             var simbolCount = $(this).text().length;
-            if (simbolCount > 7 && simbolCount < 13) {
+            if (simbolCount > 7 && simbolCount < 11) {
                 $(this).css({ 'font-size': '110px', 'line-height': '110px' });
             }
-            if (simbolCount > 12 && simbolCount < 20) {
+            if (simbolCount > 10 && simbolCount < 20) {
                 $(this).css({ 'font-size': '80px', 'line-height': '80px' });
             }
             if (simbolCount > 20) {
@@ -12839,10 +12839,13 @@ function initDOM(userdata) {
     if ($(window).width() > 1024 && $(window).width() < 1200) {
         $('.countries-slider-item__title').each(function () {
             var simbolCount = $(this).text().length;
-            if (simbolCount > 7 && simbolCount < 13) {
+            if (simbolCount > 7 && simbolCount < 11) {
                 $(this).css({ 'font-size': '90px', 'line-height': '90px' });
             }
-            if (simbolCount > 12 && simbolCount < 20) {
+            if (simbolCount > 10 && simbolCount < 14) {
+                $(this).css({ 'font-size': '70px', 'line-height': '70px' });
+            }
+            if (simbolCount > 13 && simbolCount < 20) {
                 $(this).css({ 'font-size': '60px', 'line-height': '60px' });
             }
             if (simbolCount > 20) {
@@ -12854,7 +12857,7 @@ function initDOM(userdata) {
         $('.countries-slider-item__title').each(function () {
             var simbolCount = $(this).text().length;
             if (simbolCount > 7 && simbolCount < 13) {
-                $(this).css({ 'font-size': '70px', 'line-height': '70px' });
+                $(this).css({ 'font-size': '60px', 'line-height': '60px' });
             }
             if (simbolCount > 12) {
                 $(this).css({ 'font-size': '50px', 'line-height': '50px' });
