@@ -40,7 +40,7 @@ var config = {
     },
     output: {
         path: assetsPath,
-        filename: 'roox_vf_[hash]/[name]' + fileSuffix + '.js',
+        filename: '[name].[hash]' + fileSuffix + '.js',
         sourceMapFilename: "[file].map"
     },
     module: {
@@ -150,7 +150,7 @@ var config = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('roox_vf_[hash]/[name]' + fileSuffix + '.css'),
+        new ExtractTextPlugin('[name].[hash]' + fileSuffix + '.css'),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.php'),
             filename: path.join(__dirname, 'index.html'),
