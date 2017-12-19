@@ -156,7 +156,7 @@ var config = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.php'),
             filename: path.join(__dirname, 'index.html'),
-            inject: 'head',
+            inject: 'body',
             chunks: ['bundle']
         }),
         new GenerateJsonPlugin('../widget-ver.json', {

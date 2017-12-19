@@ -43,7 +43,17 @@
 					</a>
 				</div>
 			</div>
-			<div class="scene-content">
+
+			<noscript>
+				<div class="scene-content" style="display:none;">
+					<div class="content-animation">
+						<h1><span class="scene-content__welcome">&nbsp;</span></h1>
+						<p class="scene-content__subtitle">Ваш браузер не поддерживается</p>
+					</div>
+				</div>
+			</noscript>
+
+			<div class="scene-content" style="display:none;">
 				<div class="content-animation">
 					<h1><span class="scene-content__welcome">&nbsp;</span></h1>
 					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
