@@ -51,6 +51,8 @@ function initDOM(userdata) {
     }
 
     var images = Array.prototype.slice.call(document.querySelectorAll(".scene-bottom__img")).reverse();
+    // var scenes = Array.prototype.slice.call(document.querySelectorAll(".scene")).reverse();
+
     lazyload(images);
 
     function loadNextImage() {
@@ -63,7 +65,7 @@ function initDOM(userdata) {
             setTimeout(function(){
                 loadNextImage()
             },500);
-        } else {
+        } else if (images.length > 0) {
             loadNextImage();
         }
     }
