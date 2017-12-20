@@ -50,6 +50,7 @@
     "zopfli-webpack-plugin": "^0.1.0"
   },
   "devDependencies": {
-    "html-critical-webpack-plugin": "^1.0.1"
+    "html-critical-webpack-plugin": "^1.0.1",
+    "webpack-cleanup-plugin": "^0.5.1"
   }
 }

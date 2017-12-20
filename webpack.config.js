@@ -29,6 +29,9 @@ var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var GenerateJsonPlugin = require('generate-json-webpack-plugin');
 var HtmlCriticalPlugin = require("html-critical-webpack-plugin");
 
+var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+
+
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
 
@@ -162,6 +165,7 @@ var config = {
         ]
     },
     plugins: [
+        new WebpackCleanupPlugin(),
         new ExtractTextPlugin('[name].[hash]' + fileSuffix + '.css'),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.php'),
