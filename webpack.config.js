@@ -109,27 +109,6 @@ var config = {
                 test: /\.svg$/,
                 use: 'url-loader?limit=30000&mimetype=image/svg+xml&name=[name].[ext]'
             },
-            // {
-            //     test: /\.svg$/,
-            //     include: [
-            //         path.join(entryPath, '/i/sprite'),
-            //     ],
-            //     use: [{
-            //         loader: 'svg-url-loader',
-            //         options: {
-            //             iesafe: true,
-            //             encoding: 'base64',
-            //             stripdeclarations: true
-            //         }
-            //     },{
-            //         loader: 'svg-sprite-loader',
-            //         options: {
-            //             symbolId: 'spr-[name]'
-            //             //extract: true
-            //         }
-            //     },
-            //     'svgo-loader']
-            // },
             {
                 test: /\.woff|woff2|eot|ttf|otf$/,
                 use: [{
@@ -143,22 +122,6 @@ var config = {
                 test: /\.html$/,
                 loader: 'mustache-loader?minify'
             },
-            // {
-            //     test: /\.woff$/,
-            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/font-woff&name=[name].[ext]'
-            // },
-            // {
-            //     test: /\.woff2$/,
-            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/font-woff2&name=[name].[ext]'
-            // },
-            // {
-            //     test: /\.eot$/,
-            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/vnd.ms-fontobject&name=[name].[ext]'
-            // },
-            // {
-            //     test: /\.(ttf|otf)$/,
-            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/octet-stream&name=[name].[ext]'
-            // },
             {
                 test: /\.(js|es6)$/ ,
                 exclude: /(node_modules|\.font\.|\.min\.js)/,
@@ -167,8 +130,7 @@ var config = {
         ]
     },
     plugins: [
-        // new WebpackCleanupPlugin(),
-        new ExtractTextPlugin('[name].[hash]' + fileSuffix + '.css'),
+        new ExtractTextPlugin({ filename: '[name].[hash]' + fileSuffix + '.css', disable: false, allChunks: true }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.php'),
             filename: path.join(__dirname, 'index.html'),
