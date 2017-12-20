@@ -179,17 +179,17 @@ var config = {
                 }
             }
         }),
-        new HtmlCriticalPlugin({
-            base: path.resolve(__dirname),
-            src: 'index.html',
-            dest: 'index.html',
-            inline: true,
-            minify: true,
-            extract: true,
-            penthouse: {
-                blockJSRequests: false,
-            }
-        }),
+        // new HtmlCriticalPlugin({
+        //     base: path.resolve(__dirname),
+        //     src: 'index.html',
+        //     dest: 'index.html',
+        //     inline: true,
+        //     minify: true,
+        //     extract: true,
+        //     penthouse: {
+        //         blockJSRequests: false,
+        //     }
+        // }),
         new CopyWebpackPlugin([
             {from: 'i', to: 'i'}
         ]),
