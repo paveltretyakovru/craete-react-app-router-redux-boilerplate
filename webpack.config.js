@@ -14,9 +14,7 @@ if (NODE_ENV == 'production') {
     consoleMessage = "Dev mode";
     fileSuffix = '';
 }
-console.info("\x1b[37m", "\x1b[40m");
-console.info("\x1b[35m", "\x1b[40m", consoleMessage);
-console.info("\x1b[37m", "\x1b[40m");
+console.info(consoleMessage);
 
 var webpack = require('webpack');
 var path = require('path');
