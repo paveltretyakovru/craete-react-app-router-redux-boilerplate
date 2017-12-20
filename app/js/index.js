@@ -6,7 +6,6 @@ import './../vendor/slick.min';
 import './../vendor/jquery.onepage-scroll';
 import { API } from './api';
 import { UserInfo } from './userinfo';
-import Mustache from 'mustache';
 import './lazyload';
 require("./../less/styles.less");
 
@@ -43,11 +42,12 @@ $.fn.extend({
 
 function initDOM(userdata) {
     if (userdata) {
-        var template = $("#page_template").html();
+        var template = require("../templates/page_template.html");
+
         $('.wrapper').html(UserInfo.render(template, userdata));
     } else {
-        var template = $("#page_error_template").html();
-        $('.wrapper').html( Mustache.to_html(template) );
+        var template = require("../templates/page_error_template.html");
+        $('.wrapper').html( template() );
     }
 
     var images = Array.prototype.slice.call(document.querySelectorAll(".scene-bottom__img")).reverse();

@@ -139,6 +139,10 @@ var config = {
                     }
                 }]
             },
+            {
+                test: /\.html$/,
+                loader: 'mustache-loader?minify'
+            },
             // {
             //     test: /\.woff$/,
             //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/font-woff&name=[name].[ext]'

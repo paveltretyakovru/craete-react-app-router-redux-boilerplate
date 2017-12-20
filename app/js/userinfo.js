@@ -1,5 +1,3 @@
-import Mustache from 'mustache';
-
 export var UserInfo = {
     numDeclension: function(titles) {
         if (titles === undefined || titles.constructor !== Array) throw new Error('Invalid Argument: Array is expected');
@@ -27,26 +25,30 @@ export var UserInfo = {
         return date.getDate() + ' ' + months[date.getMonth()];
     },
 
-    mustache_lambda: function (outsideRender) {
-        return function () {
-            return function (text, render) {
-                return outsideRender(render(text));
-            };
-        };
-    },
-
     render: function (template, userdata) {
 
-        var context = jQuery.extend(true, {}, userdata);
-        context.decl_operations  = this.mustache_lambda(this.numDeclension(['операцию', 'операции', 'операций']));
-        context.decl_rouble      = this.mustache_lambda(this.numDeclension(['рубль', 'рубля', 'рублей']));
-        context.decl_transaction = this.mustache_lambda(this.numDeclension(['транзакцию', 'транзакции', 'транзакций']));
-        context.decl_visited     = this.mustache_lambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
-        context.decl_bonus       = this.mustache_lambda(this.numDeclension(['балл', 'балла', 'баллов']));
-        context.decl_spent       = this.mustache_lambda(this.numDeclension(['тратит', 'тратят', 'тратят']));
+        var Hogan = require('hogan.js');
+        var createLambda = function (lambda) {
+            return function () {
+                return function (text) {
+                    var rendered = Hogan.compile(text).render(this);
+                    return lambda.call(null, rendered);
+                };
+            };
+        };
 
-        context.spaced_number    = this.mustache_lambda(this.numberWithSpaces);
-        context.date_DnumMtxt    = this.mustache_lambda(this.date_DnumMtxt);
+
+        var context = jQuery.extend(true, {}, userdata);
+        context.decl_operations  = createLambda(this.numDeclension(['операцию', 'операции', 'операций']));
+        context.decl_rouble      = createLambda(this.numDeclension(['рубль', 'рубля', 'рублей']));
+        context.decl_transaction = createLambda(this.numDeclension(['транзакцию', 'транзакции', 'транзакций']));
+        context.decl_visited     = createLambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
+        context.decl_bonus       = createLambda(this.numDeclension(['балл', 'балла', 'баллов']));
+        context.decl_spent       = createLambda(this.numDeclension(['тратит', 'тратят', 'тратят']));
+
+        context.spaced_number    = createLambda(this.numberWithSpaces);
+
+        context.date_DnumMtxt    = createLambda(this.date_DnumMtxt);
 
         {
             var decl_months = this.numDeclension(['месяц', 'месяца', 'месяцев']);
@@ -75,7 +77,7 @@ export var UserInfo = {
         context.imgmod             = (userdata.sex == 'F') ? '-girl' : '';
         context.verbsuffix         = (userdata.sex == 'F') ? 'а' : '';
 
-        return Mustache.to_html(template, context);
+        return template(context);
     }
 
 }
