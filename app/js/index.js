@@ -7,6 +7,7 @@ import './../vendor/jquery.onepage-scroll';
 import { API } from './api';
 import { UserInfo } from './userinfo';
 import Mustache from 'mustache';
+import './lazyload';
 require("./../less/styles.less");
 
 var userdataReq  = API.getInfo();
@@ -48,6 +49,26 @@ function initDOM(userdata) {
         var template = $("#page_error_template").html();
         $('.wrapper').html( Mustache.to_html(template) );
     }
+
+    var images = Array.prototype.slice.call(document.querySelectorAll(".scene-bottom__img")).reverse();
+    lazyload(images);
+
+    function loadNextImage() {
+        var image = images.pop();
+        var src = $(image).attr('src');
+        var dataSrc = $(image).attr('data-src');
+
+        if (dataSrc && src !== dataSrc) {
+            $(image).attr('src', dataSrc);
+            setTimeout(function(){
+                loadNextImage()
+            },500);
+        } else {
+            loadNextImage();
+        }
+    }
+    // force load all after timeout
+    setTimeout(loadNextImage, 500);
 
     $(window).scroll(function() {
 

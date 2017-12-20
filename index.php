@@ -26,9 +26,7 @@
 	<div class="header-logos">
 		<div class="header-logos__item">
 			<a href="https://www.raiffeisen.ru" target="_blank">
-				<svg class="raiff-logo">
-					<use xlink:href="#spr-raiff-logo-rus"></use>
-				</svg>
+				<div class="raiff-logo"></div>
 			</a>
 		</div>
 	</div>
@@ -39,9 +37,7 @@
 			<div class="scene-logos">
 				<div class="scene-logos__item">
 					<a href="https://www.raiffeisen.ru" target="_blank">
-						<svg class="raiff-logo">
-							<use xlink:href="#spr-raiff-logo-rus"></use>
-						</svg>
+						<div class="raiff-logo"></div>
 					</a>
 				</div>
 			</div>
@@ -54,8 +50,19 @@
 					</div>
 				</div>
 			</noscript>
-
-			<div class="scene-bottom">
+			<div class="scene-content initial-load">
+				<div class="content-animation">
+					<h1><span class="scene-content__welcome">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
+					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
+						новогодние праздники, а&nbsp;значит
+						самое время подвести итоги
+						уходящего 2017&nbsp;года.</p>
+				</div>
+				<div class="container-btn" style="visibility: hidden">
+					<a href="" class="btn btn-default" data-action="top-scroll">Поехали?</a>
+				</div>
+			</div>
+			<div class="scene-bottom initial-load">
 				<img class="scene-bottom__img hidden-xs" src="assets/i/intro.png" alt="">
 				<img class="scene-bottom__img visible-xs" src="assets/i/intro_m.png" alt="">
 			</div>
@@ -69,9 +76,7 @@
 			<div class="scene-logos">
 				<div class="scene-logos__item">
 					<a href="https://www.raiffeisen.ru" target="_blank">
-						<svg class="raiff-logo">
-							<use xlink:href="#spr-raiff-logo-rus"></use>
-						</svg>
+						<div class="raiff-logo"></div>
 					</a>
 				</div>
 			</div>
@@ -85,8 +90,8 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img hidden-xs" src="assets/i/intro.png" alt="">
-				<img class="scene-bottom__img visible-xs" src="assets/i/intro_m.png" alt="">
+				<img class="scene-bottom__img hidden-xs" data-src="assets/i/intro.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/intro_m.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -99,9 +104,7 @@
 			<div class="scene-logos">
 				<div class="scene-logos__item">
 					<a href="https://www.raiffeisen.ru" target="_blank">
-						<svg class="raiff-logo">
-							<use xlink:href="#spr-raiff-logo-rus"></use>
-						</svg>
+						<div class="raiff-logo"></div>
 					</a>
 				</div>
 			</div>
@@ -119,8 +122,8 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img hidden-xs" src="assets/i/intro.png" alt="">
-				<img class="scene-bottom__img visible-xs" src="assets/i/intro_m.png" alt="">
+				<img class="scene-bottom__img hidden-xs" data-src="assets/i/intro.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/intro_m.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -137,7 +140,7 @@
 
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/time{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/time{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -158,7 +161,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/operation{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/operation{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -179,7 +182,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/mobile-operation{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/mobile-operation{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -201,7 +204,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/total-sum{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/total-sum{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -255,7 +258,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/costs{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/costs{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -281,7 +284,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/largest-purchase{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/largest-purchase{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -306,7 +309,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/econom-month{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/econom-month{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -332,7 +335,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/hot-month{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/hot-month{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -355,7 +358,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/deposits{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/deposits{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -377,7 +380,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/contribution{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/contribution{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -400,7 +403,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/cashback{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/cashback{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -434,7 +437,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/countries{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/countries{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -460,7 +463,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/credit{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/credit{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -482,7 +485,7 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img visible-xs" src="assets/i/points{{imgmod}}.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/points{{imgmod}}.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
@@ -516,8 +519,8 @@
 				</div>
 			</div>
 			<div class="scene-bottom">
-				<img class="scene-bottom__img hidden-xs" src="assets/i/finish.png" alt="">
-				<img class="scene-bottom__img visible-xs" src="assets/i/finish_m.png" alt="">
+				<img class="scene-bottom__img hidden-xs" data-src="assets/i/finish.png" alt="">
+				<img class="scene-bottom__img visible-xs" data-src="assets/i/finish_m.png" alt="">
 			</div>
 			<footer class="footer">
 				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>

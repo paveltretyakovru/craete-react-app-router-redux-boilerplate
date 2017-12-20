@@ -32,8 +32,6 @@ var HtmlCriticalPlugin = require("html-critical-webpack-plugin");
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
 
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-
 var config = {
     context: entryPath,
     entry: {
@@ -108,41 +106,54 @@ var config = {
             },
             {
                 test: /\.svg$/,
-                exclude: [
-                    path.join(entryPath, '/i/sprite'),
-                ],
                 use: 'url-loader?limit=30000&mimetype=image/svg+xml&name=[name].[ext]'
             },
+            // {
+            //     test: /\.svg$/,
+            //     include: [
+            //         path.join(entryPath, '/i/sprite'),
+            //     ],
+            //     use: [{
+            //         loader: 'svg-url-loader',
+            //         options: {
+            //             iesafe: true,
+            //             encoding: 'base64',
+            //             stripdeclarations: true
+            //         }
+            //     },{
+            //         loader: 'svg-sprite-loader',
+            //         options: {
+            //             symbolId: 'spr-[name]'
+            //             //extract: true
+            //         }
+            //     },
+            //     'svgo-loader']
+            // },
             {
-                test: /\.svg$/,
-                include: [
-                    path.join(entryPath, '/i/sprite'),
-                ],
+                test: /\.woff|woff2|eot|ttf|otf$/,
                 use: [{
-                    loader: 'svg-sprite-loader',
+                    loader: 'file-loader',
                     options: {
-                        symbolId: 'spr-[name]'
-                        //extract: true
+                        name: process.env.NODE_ENV === 'production' ? '[name]-[hash].[ext]' : '[name].[ext]'
                     }
-                },
-                'svgo-loader']
+                }]
             },
-            {
-                test: /\.woff$/,
-                use: 'url-loader?prefix=font/&limit=30000&mimetype=application/font-woff&name=[name].[ext]'
-            },
-            {
-                test: /\.woff2$/,
-                use: 'url-loader?prefix=font/&limit=30000&mimetype=application/font-woff2&name=[name].[ext]'
-            },
-            {
-                test: /\.eot$/,
-                use: 'url-loader?prefix=font/&limit=30000&mimetype=application/vnd.ms-fontobject&name=[name].[ext]'
-            },
-            {
-                test: /\.(ttf|otf)$/,
-                use: 'url-loader?prefix=font/&limit=30000&mimetype=application/octet-stream&name=[name].[ext]'
-            },
+            // {
+            //     test: /\.woff$/,
+            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/font-woff&name=[name].[ext]'
+            // },
+            // {
+            //     test: /\.woff2$/,
+            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/font-woff2&name=[name].[ext]'
+            // },
+            // {
+            //     test: /\.eot$/,
+            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/vnd.ms-fontobject&name=[name].[ext]'
+            // },
+            // {
+            //     test: /\.(ttf|otf)$/,
+            //     use: 'url-loader?prefix=font/&limit=30000&mimetype=application/octet-stream&name=[name].[ext]'
+            // },
             {
                 test: /\.(js|es6)$/ ,
                 exclude: /(node_modules|\.font\.|\.min\.js)/,
@@ -179,21 +190,20 @@ var config = {
                 }
             }
         }),
-        // new HtmlCriticalPlugin({
-        //     base: path.resolve(__dirname),
-        //     src: 'index.html',
-        //     dest: 'index.html',
-        //     inline: true,
-        //     minify: true,
-        //     extract: true,
-        //     penthouse: {
-        //         blockJSRequests: false,
-        //     }
-        // }),
+        new HtmlCriticalPlugin({
+            base: path.resolve(__dirname),
+            src: 'index.html',
+            dest: 'index.html',
+            inline: true,
+            minify: process.env.NODE_ENV === 'production' ? true : false,
+            extract: true,
+            penthouse: {
+                blockJSRequests: false,
+            }
+        }),
         new CopyWebpackPlugin([
             {from: 'i', to: 'i'}
         ]),
-        new SpriteLoaderPlugin()
         // ,new FaviconsWebpackPlugin({
         //     logo: 'icon.png',
         //     prefix: 'i/',
