@@ -53,7 +53,7 @@
 			<div class="scene-content initial-load">
 				<div class="content-animation">
 					<h1><span class="scene-content__welcome">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
-					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
+					<p class="scene-content__subtitle" style="visibility: hidden">За&nbsp;окном морозный декабрь,близятся
 						новогодние праздники, а&nbsp;значит
 						самое время подвести итоги
 						уходящего 2017&nbsp;года.</p>
@@ -62,8 +62,8 @@
 					<a href="" class="btn btn-default" data-action="top-scroll">Поехали?</a>
 				</div>
 			</div>
-			<div class="scene-bottom initial-load">
-				<img class="scene-bottom__img hidden-xs" src="assets/i/intro.png" alt="">
+			<div class="scene-bottom initial-load" style="visibility: hidden">
+				<img class="scene-bottom__img hidden-xs" data-src="assets/i/intro.png" alt="">
 				<img class="scene-bottom__img visible-xs" src="assets/i/intro_m.png" alt="">
 			</div>
 			<footer class="footer">
