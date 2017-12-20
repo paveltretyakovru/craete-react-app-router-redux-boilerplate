@@ -165,7 +165,7 @@ var config = {
         ]
     },
     plugins: [
-        new WebpackCleanupPlugin(),
+        // new WebpackCleanupPlugin(),
         new ExtractTextPlugin('[name].[hash]' + fileSuffix + '.css'),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.php'),
@@ -239,7 +239,7 @@ if (NODE_ENV == 'production') {
     config.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }));
 
 } else {
-    // config.devtool = "source-map";
+    config.devtool = "source-map";
 }
 
 module.exports = config;
