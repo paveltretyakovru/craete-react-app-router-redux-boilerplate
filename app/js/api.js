@@ -14,9 +14,10 @@ function ajax_response(response) {
 
 export var API = {
     getInfo: function () {
-        com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : this.getLinkID()}));
+        window.currentLink = this.getLinkID();
+        com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : window.currentLink}));
         var linkId = this.getLinkID();
-        if (linkId == 'test0')
+        if (linkId == 'test0' || (linkId == 'index.html' && window.location.search == '?test0'))
             return ajax_response(stubResponse0);
 
         return $.ajax({

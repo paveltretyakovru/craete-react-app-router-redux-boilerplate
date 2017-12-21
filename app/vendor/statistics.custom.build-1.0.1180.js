@@ -1360,7 +1360,7 @@ com.rooxteam.config.statistic = {
     "DOM_EVENTS": {
         "click": {
             "verbose": 4,
-            "selector": "a, button"
+            "selector": "a, button, .raiff-logo"
         }
     },
     META: {

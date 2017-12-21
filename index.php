@@ -30,7 +30,7 @@
 <header class="header">
 	<div class="header-logos">
 		<div class="header-logos__item">
-			<a href="https://www.raiffeisen.ru" target="_blank">
+			<a href="https://www.raiffeisen.ru" target="_blank" data-stat-action="logo">
 				<div class="raiff-logo"></div>
 			</a>
 		</div>
@@ -64,7 +64,7 @@
 						уходящего 2017&nbsp;года.</p>
 				</div>
 				<div class="container-btn" style="visibility: hidden">
-					<a href="" class="btn btn-default" data-action="top-scroll">Поехали?</a>
+					<a href="" class="btn btn-default" data-action="top-scroll" data-stat-action="go">Поехали?</a>
 				</div>
 			</div>
 			<div class="scene-bottom initial-load" style="visibility: hidden">

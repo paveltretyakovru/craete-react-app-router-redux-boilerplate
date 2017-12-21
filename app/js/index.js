@@ -138,6 +138,15 @@ function initDOM(userdata) {
         ]
     });
 
+// On before slide change
+    $('.scene-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        com.rooxteam.statistic.client.logOperation("slide.change", com.rooxteam.statistic.getContext({ "slider": "costs", "linkId" : window.currentLink, "nextSlide": nextSlide}));
+    });
+
+    $('.countries-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        com.rooxteam.statistic.client.logOperation("slide.change", com.rooxteam.statistic.getContext({ "slider": "countries", "linkId" : window.currentLink, "nextSlide": nextSlide}));
+    });
+
     var changeCircle = function (curCircle, percent) {
         if (isNaN(percent)) {
             percent = 100;
@@ -222,7 +231,6 @@ function initDOM(userdata) {
     }
 
     $('.countries-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-
     });
 
     if ($('.scene-slider').hasClass('slick-slider') && $(window).width() > 480) {
@@ -290,16 +298,52 @@ function initDOM(userdata) {
             animationTime: 1000,
             pagination: true,
             updateURL: false,
-            beforeMove: function (index) {
-            },
             afterMove: function (index) {
-                console.log(index);
+                com.rooxteam.statistic.client.logOperation("scroll.page", com.rooxteam.statistic.getContext({ "index": index, "linkId" : window.currentLink}));
             },
             loop: true,
-            keyboard: false,
+            keyboard: true,
             responsiveFallback: false,
             direction: "vertical"
         });
+    } else {
+        // Returns a function, that, as long as it continues to be invoked, will not
+        // be triggered. The function will be called after it stops being called for
+        // N milliseconds. If `immediate` is passed, trigger the function on the
+        // leading edge, instead of the trailing.
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        };
+        $(window).scroll(debounce(function(ev) {
+            var lastVisibleIndex = false;
+            $("section").each(function(){
+
+                var elem = this;
+                var docViewTop = $(window).scrollTop();
+                var docViewBottom = docViewTop + $(window).height();
+
+                var elemTop = $(elem).offset().top;
+                var elemBottom = elemTop + $(elem).height();
+
+                if (((elemBottom - 300) <= docViewBottom) && (elemTop >= docViewTop)){
+                    lastVisibleIndex = $("section").index(elem);
+                }
+            });
+            if (lastVisibleIndex) {
+                com.rooxteam.statistic.client.logOperation("scroll.mobile", com.rooxteam.statistic.getContext({ "index": lastVisibleIndex, "linkId" : window.currentLink}));
+            }
+        }, 500));
     }
 
 
