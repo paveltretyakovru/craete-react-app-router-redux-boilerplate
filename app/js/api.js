@@ -26,7 +26,11 @@ export var API = {
     },
 
     sendVote: function (vote) {
-        ga('send', 'event', '2017results', 'vote', '', vote);
+        ga('send', 'event', {
+            'eventCategory': '2017results',
+            'eventAction': 'vote',
+            'eventValue': vote
+          });
         com.rooxteam.statistic.client.logOperation("sendVote", com.rooxteam.statistic.getContext({ "vote": vote, "linkId" : this.getLinkID()}));
 
         return $.ajax({
