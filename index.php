@@ -10,6 +10,9 @@
 	<script>
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
         ga('create', 'UA-111419738-1', 'auto');
+
+        var urlWithoutLastSection = window.location.pathname.replace(/\/[^/]+\/*$/, '/');
+        ga('set', 'page', urlWithoutLastSection);
         ga('send', 'pageview');
 	</script>
 	<script async src='https://www.google-analytics.com/analytics.js'></script>
