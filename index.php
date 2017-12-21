@@ -6,6 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+
+	<meta property="og:title" content="Итоги уходящего 2017 года от РайффайзенБанк"/>
+	<meta property="og:url" content="https://www.raiffeisen.ru/"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="assets/i/icon.png"/>
+	<meta property="og:site_name" content="РайффайзенБанк - ипотека, потребительские кредиты, кредитные карты, банковские услуги"/>
+
 	<!-- Google Analytics -->
 	<script>
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
