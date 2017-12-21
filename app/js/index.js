@@ -43,9 +43,11 @@ $.fn.extend({
 function initDOM(userdata) {
     if (userdata) {
         var template = require("../templates/page_template.html");
-
         $('.wrapper').html(UserInfo.render(template, userdata));
     } else {
+        ga('set', 'page', 'error');
+        ga('send', 'pageview');
+
         var template = require("../templates/page_error_template.html");
         $('.wrapper').html( template() );
     }
