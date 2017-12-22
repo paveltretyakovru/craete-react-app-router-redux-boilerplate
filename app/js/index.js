@@ -74,25 +74,28 @@ function initDOM(userdata) {
     // force load all after timeout
     setTimeout(loadNextImage, 1000);
 
-    $('body').on('mousedown touchstart', '.scene-content__val', function (e) {
-        var scene = $(".scene--largest-purchase").get(0);
+    if (false) {
+        // 22.12: disable alt demo
+        $('body').on('mousedown touchstart', '.scene-content__val', function (e) {
+            var scene = $(".scene--largest-purchase").get(0);
 
-        if(/.*_alt.*/.test(scene.style.backgroundImage)) {
-            scene.style.backgroundImage = scene.style.backgroundImage.replace("_alt.png", ".png");
-        } else {
-            scene.style.backgroundImage = scene.style.backgroundImage.replace(".png", "_alt.png");
-        }
-        $(".scene--largest-purchase .scene-bottom__img").each(function(){
-            var img = $(this);
-            if(/.*_alt.*/.test(img.attr("src"))) {
-                img.attr("src", img.attr("src").replace("_alt.png", ".png"));
+            if(/.*_alt.*/.test(scene.style.backgroundImage)) {
+                scene.style.backgroundImage = scene.style.backgroundImage.replace("_alt.png", ".png");
             } else {
-                img.attr("src", img.attr("src").replace(".png", "_alt.png"));
+                scene.style.backgroundImage = scene.style.backgroundImage.replace(".png", "_alt.png");
             }
+            $(".scene--largest-purchase .scene-bottom__img").each(function(){
+                var img = $(this);
+                if(/.*_alt.*/.test(img.attr("src"))) {
+                    img.attr("src", img.attr("src").replace("_alt.png", ".png"));
+                } else {
+                    img.attr("src", img.attr("src").replace(".png", "_alt.png"));
+                }
+            });
+            e.stopPropagation();
+            e.preventDefault();
         });
-        e.stopPropagation();
-        e.preventDefault();
-    });
+    }
     $(window).scroll(function() {
 
 
