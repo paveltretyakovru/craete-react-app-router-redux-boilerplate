@@ -164,7 +164,7 @@ var config = {
             dest: 'index.html',
             inline: true,
             minify: process.env.NODE_ENV === 'production' ? true : false,
-            extract: true,
+            extract: false,
             penthouse: {
                 blockJSRequests: false,
             }
