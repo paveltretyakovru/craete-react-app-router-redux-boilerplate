@@ -264,7 +264,7 @@ function initDOM(userdata) {
         switch (action) {
             case 'top-scroll' :
                 e.preventDefault();
-                if ($(window).width() > 480) {
+                if ($.isFunction($(".wrapper").moveDown)) {
                     $(".wrapper").moveDown();
                 } else {
                     $("body,html").animate({
