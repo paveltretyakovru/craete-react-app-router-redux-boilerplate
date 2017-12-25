@@ -1096,6 +1096,21 @@ p {
     top: 51vh;
   }
 }
+@media (max-width: 767px) {
+  .scene--mobile-operation .scene-content {
+    padding: 36px 20px 0;
+  }
+  .scene--mobile-operation .scene-content .content-animation .scene-content__top-title.scene-content__top-title--bold {
+    margin-bottom: 18px;
+  }
+  .scene--mobile-operation .scene-content .content-animation .scene-content__val {
+    line-height: 64px;
+  }
+  .scene--mobile-operation .scene-content .content-animation .scene-content__val-desc {
+    margin-bottom: 10px;
+    line-height: 42px;
+  }
+}
 .scene--total-sum {
   background-color: #3598db;
 }
@@ -1112,6 +1127,11 @@ p {
     top: 0;
     -ms-transform: translateY(0);
         transform: translateY(0);
+  }
+}
+@media (max-width: 767px) {
+  .scene--costs .scene-content {
+    padding: 36px 20px 0;
   }
 }
 .scene--largest-purchase {
@@ -1570,6 +1590,11 @@ hr.bold-line {
     margin-bottom: 30px;
   }
 }
+@media (max-width: 767px) {
+  .scene-slider-item .scene-content__val-desc {
+    margin-bottom: 20px;
+  }
+}
 .scene-slider-item .scene-content__top-title--bold-sm {
   margin-bottom: 84px;
 }
@@ -1658,8 +1683,8 @@ hr.bold-line {
 @media (max-width: 767px) {
   .scene-slider .slick-arrow.slick-prev,
   .scene-slider .slick-arrow.slick-next {
-    width: 33px;
-    height: 33px;
+    width: 34px;
+    height: 34px;
     top: 146px;
   }
 }
@@ -1890,8 +1915,8 @@ hr.bold-line {
 @media (max-width: 767px) {
   .countries-slider .slick-arrow.slick-prev,
   .countries-slider .slick-arrow.slick-next {
-    width: 33px;
-    height: 33px;
+    width: 34px;
+    height: 34px;
     top: 50%;
     bottom: auto;
   }
@@ -1985,7 +2010,7 @@ hr.bold-line {
     font-size: 22px;
     font-weight: 400;
     line-height: 24px;
-    margin-bottom: 34px;
+    margin-bottom: 20px;
   }
 }
 /*#countries-svg {
@@ -2088,6 +2113,7 @@ hr.bold-line {
   position: relative;
   height: 100px;
   width: 100px;
+  padding-top: 39px;
 }
 .cost__desc {
   display: table-cell;
@@ -2108,12 +2134,8 @@ hr.bold-line {
   }
 }
 .cost__percent {
-  position: absolute;
-  top: 50%;
   width: 100%;
   text-align: center;
-  -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
   color: #ffffff;
   font-size: 15px;
   font-weight: 400;
@@ -2123,8 +2145,6 @@ hr.bold-line {
   font-size: 26px;
   font-weight: 400;
   line-height: 26px;
-  -ms-transform: translateY(-40%);
-      transform: translateY(-40%);
 }
 .cost__percent-val {
   display: block;

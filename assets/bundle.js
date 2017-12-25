@@ -11886,7 +11886,7 @@ $(function () {
             if (percent < 0) {
                 percent = 0;
             }
-            if (percent > 96) {
+            if (percent > 99) {
                 percent = 100;
             }
 
