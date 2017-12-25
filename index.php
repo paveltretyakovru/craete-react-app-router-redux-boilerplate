@@ -13,6 +13,9 @@
 	<meta property="og:image" content="assets/i/icon.png"/>
 	<meta property="og:site_name" content="РайффайзенБанк - ипотека, потребительские кредиты, кредитные карты, банковские услуги"/>
 
+	<meta name="web_author" content="RooX Solutions LTD, roox@rooxteam.com" />
+	<meta name="designer" content="CreativePeople" />
+
 	<!-- Google Analytics -->
 	<script>
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
