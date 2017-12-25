@@ -28,7 +28,7 @@ var GenerateJsonPlugin = require('generate-json-webpack-plugin');
 var HtmlCriticalPlugin = require("html-critical-webpack-plugin");
 
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
-
+var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
@@ -42,6 +42,18 @@ var config = {
         path: assetsPath,
         filename: '[name].[hash]' + fileSuffix + '.js',
         sourceMapFilename: "[file].map"
+    },
+    devServer: {
+        contentBase: __dirname,
+        publicPath: '/assets/',
+        https: true,
+        open: true,
+        openPage: 'index.html?test0',
+        compress: true, //similar to prod
+        port: 8181,
+        proxy: {
+            "/ny2018/pushreport": "https://www.raiffeisen.ru/"
+        }
     },
     module: {
         rules: [
@@ -135,8 +147,10 @@ var config = {
             template: path.join(__dirname, 'index.php'),
             filename: path.join(__dirname, 'index.html'),
             inject: 'body',
+            alwaysWriteToDisk: true,
             chunks: ['bundle']
         }),
+        new HtmlWebpackHarddiskPlugin(),
         new GenerateJsonPlugin('../widget-ver.json', {
             jobName: process.env.JOB_NAME,
             buildNumber: process.env.BUILD_NUMBER,
@@ -158,17 +172,6 @@ var config = {
                 }
             }
         }),
-        new HtmlCriticalPlugin({
-            base: path.resolve(__dirname),
-            src: 'index.html',
-            dest: 'index.html',
-            inline: true,
-            minify: process.env.NODE_ENV === 'production' ? true : false,
-            extract: false,
-            penthouse: {
-                blockJSRequests: false,
-            }
-        }),
         new CopyWebpackPlugin([
             {from: 'i', to: 'i'}
         ]),
@@ -188,6 +191,18 @@ if (NODE_ENV == 'production') {
         sourceMap: false
     }));
 
+
+    config.plugins.push(new HtmlCriticalPlugin({
+        base: path.resolve(__dirname),
+        src: 'index.html',
+        dest: 'index.html',
+        inline: true,
+        minify: process.env.NODE_ENV === 'production' ? true : false,
+        extract: false,
+        penthouse: {
+            blockJSRequests: false,
+        }
+    }),);
 
     //pregzip enabled
     const ZopfliPlugin = require("zopfli-webpack-plugin");
