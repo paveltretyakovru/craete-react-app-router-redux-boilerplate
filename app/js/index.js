@@ -160,7 +160,7 @@ function initDOM(userdata) {
             var c = Math.PI*(r*2);
 
             if (percent < 0) { percent = 0;}
-            if (percent > 96) {percent = 100;}
+            if (percent > 99) {percent = 100;}
 
             var pct = ((100-percent)/100)*c;
 

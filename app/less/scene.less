@@ -68,6 +68,23 @@
         top: 51vh;
       }
     }
+    @media (max-width: @screen-xs-max) {
+      .scene-content {
+        padding: 36px 20px 0;
+        .content-animation {
+          .scene-content__top-title.scene-content__top-title--bold {
+            margin-bottom: 18px;
+          }
+          .scene-content__val {
+            line-height: 64px;
+          }
+          .scene-content__val-desc {
+            margin-bottom: 10px;
+            line-height: 42px;
+          }
+        }
+      }
+    }
   }
   &--total-sum {
     background-color: #3598db;
@@ -83,6 +100,11 @@
       .scene-content {
         top: 0;
         transform: translateY(0);
+      }
+    }
+    @media (max-width: @screen-xs-max) {
+      .scene-content {
+        padding: 36px 20px 0;
       }
     }
   }
