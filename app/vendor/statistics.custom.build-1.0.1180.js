@@ -1329,7 +1329,7 @@ com.rooxteam.config.statistic = {
     "LIC_OBFUSCATED_DATA": ["userid", "msisdn", "^pn$", "authentication_token"], //Regexp as string
     "TRANSPORT": "POST",
     "DISABLE_IN_ROAMING": false,
-    "SERVER_ADDRESS": 'https://www.raiffeisen.ru/ny2018/pushreport/',
+    "SERVER_ADDRESS": '/ny2018/pushreport/',
     "OPERATOR_ID": "RAIF",
     "SERVICE_TYPE_PARAMETER" : 'YA_REPORT_SERVICE',
     "CHECKSUM_PARAMETER" : 'YA_REPORT_CHECKSUM',
