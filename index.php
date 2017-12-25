@@ -30,7 +30,7 @@
 <header class="header">
 	<div class="header-logos">
 		<div class="header-logos__item">
-			<a href="https://www.raiffeisen.ru" target="_blank" data-stat-action="logo">
+			<a href="https://www.raiffeisen.ru" target="_blank" data-stat-action="logo" rel="noopener noreferrer">
 				<div class="raiff-logo"></div>
 			</a>
 		</div>
