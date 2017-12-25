@@ -1119,6 +1119,11 @@ p {
     top: 46vh;
   }
 }
+@media (max-width: 767px) {
+  .scene--total-sum .scene-content .content-animation .scene-content__val {
+    font-size: 64px;
+  }
+}
 .scene--costs {
   background-color: #2d82df;
 }
