@@ -1124,6 +1124,11 @@ p {
     font-size: 64px;
   }
 }
+@media (max-width: 370px) {
+  .scene--total-sum .scene-content .content-animation .scene-content__val {
+    font-size: 52px;
+  }
+}
 .scene--costs {
   background-color: #2d82df;
 }
