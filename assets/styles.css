@@ -1096,6 +1096,11 @@ p {
     top: 51vh;
   }
 }
+@media (max-width: 1199px) {
+  .scene--mobile-operation .scene-content .content-animation .scene-content__top-title {
+    max-width: 330px;
+  }
+}
 @media (max-width: 767px) {
   .scene--mobile-operation .scene-content {
     padding: 36px 20px 0;
