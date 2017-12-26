@@ -24,13 +24,11 @@ export var API = {
             var deferred = $.Deferred();
             preloadInfo.then(
                 function(response) {
-                    if (response.status !== 200) {
-                        deferred.reject(response.status)
-                        return;
+                    if(response !== null) {
+                        deferred.resolve([response]);
+                    } else {
+                        deferred.reject()
                     }
-                    response.json().then(function(data) {
-                        deferred.resolve([data]);
-                    });
                 }
             ).catch(function(err) {
                 deferred.reject();
