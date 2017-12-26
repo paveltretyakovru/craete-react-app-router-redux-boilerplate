@@ -51,7 +51,9 @@
                     $this.bind('touchmove', touchmove);
                     $this.bind('touchend', touchend);
                 }
-                event.preventDefault();
+                if (!$(event.target).is(".raiff-logo") && !$(event.target).is("a, button, circle")) {
+                    event.preventDefault();
+                }
             }
 
             function touchmove(event) {
@@ -77,12 +79,12 @@
                         $this.unbind('touchend', touchend);
                     }
                 }
-                event.preventDefault();
+                // event.preventDefault();
             }
 
             function touchend(event) {
                 $this.unbind('touchmove', touchmove);
-                event.preventDefault();
+                // event.preventDefault();
             }
 
         });
@@ -201,7 +203,7 @@
 
         $.fn.moveTo = function(page_index) {
             var current = $(settings.sectionContainer + ".active"),
-            next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
+                next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
             if(next.length > 0) {
                 if (typeof settings.beforeMove == 'function') settings.beforeMove(next.data("index"));
                 current.removeClass("active")
@@ -245,7 +247,7 @@
             if (valForTest) {
                 $("body").addClass("disabled-onepage-scroll");
                 $(document).unbind('mousewheel DOMMouseScroll MozMousePixelScroll');
-                $(document).swipeEvents().unbind("swipeDown swipeUp");
+                el.parents("body").swipeEvents().unbind("swipeDown swipeUp");
             } else {
                 if($("body").hasClass("disabled-onepage-scroll")) {
                     $("body").removeClass("disabled-onepage-scroll");
@@ -253,7 +255,7 @@
                 }
 
 
-                $(document).swipeEvents().bind("swipeDown",  function(event){
+                el.parents("body").swipeEvents().bind("swipeDown",  function(event){
                     if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
                     el.moveUp();
                 }).bind("swipeUp", function(event){
@@ -318,7 +320,7 @@
             }
         });
 
-        $(document).swipeEvents().bind("swipeDown",  function(event){
+        el.parents("body").swipeEvents().bind("swipeDown",  function(event){
             if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
             el.moveUp();
         }).bind("swipeUp", function(event){
