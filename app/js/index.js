@@ -185,7 +185,7 @@ function initDOM(userdata) {
         });
     }
 
-    if (($(window).width() > 1024) && ($(window).width() < 1200)){
+    if (($(window).width() > 1024) && ($(window).width() <= 1200)){
         $('.countries-slider-item__title').each(function () {
             let simbolCount = $(this).text().length;
             if ((simbolCount > 7) && (simbolCount < 11)) {
@@ -203,7 +203,7 @@ function initDOM(userdata) {
 
         });
     }
-    if (($(window).width() > 480) && ($(window).width() < 1024)){
+    if (($(window).width() > 480) && ($(window).width() <= 1024)){
         $('.countries-slider-item__title').each(function () {
             let simbolCount = $(this).text().length;
             if ((simbolCount > 7) && (simbolCount < 13)) {
