@@ -5,7 +5,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="robots" content="noindex">
+	<meta name="robots" content="noindex">
+
+	<link rel="preload" href="assets/FuturaDemiC.woff2" as="font" type="font/woff2" crossorigin/>
+	<link rel="preload" href="assets/FuturaBookC.woff2" as="font" type="font/woff2" crossorigin/>
+	<link rel="preload" href="assets/i/intro.png" as="image" media="(min-width: 767px)"/>
+	<link rel="preload" href="assets/i/intro_m.png" as="image" media="(max-width: 767px)"/>
+    <script>
+        var pathParts = window.location.pathname.split('/');
+        var lastSegment = pathParts.pop() || pathParts.pop();
+        var preload = document.createElement("link");
+        preload.href = '/ny2018/webapi-1/info/' + lastSegment + '/';
+        preload.rel = "preload";
+        preload.as = "fetch";
+        preload.crossorigin = true;
+        document.head.appendChild(preload);
+    </script>
 
 	<meta property="og:title" content="Итоги уходящего 2017 года от РайффайзенБанк"/>
 	<meta property="og:url" content="https://www.raiffeisen.ru/"/>
@@ -15,6 +30,7 @@
 
 	<meta name="web_author" content="RooX Solutions LTD, roox@rooxteam.com" />
 	<meta name="designer" content="CreativePeople" />
+
 
 	<!-- Google Analytics -->
 	<script>
