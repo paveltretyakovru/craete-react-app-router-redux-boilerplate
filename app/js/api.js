@@ -20,6 +20,24 @@ export var API = {
         if (linkId == 'test0' || (linkId == 'index.html' && window.location.search == '?test0'))
             return ajax_response(stubResponse0);
 
+        if (preloadInfo != null) {
+            var deferred = $.Deferred();
+            preloadInfo.then(
+                function(response) {
+                    if (response.status !== 200) {
+                        deferred.reject(response.status)
+                        return;
+                    }
+                    response.json().then(function(data) {
+                        deferred.resolve(data);
+                    });
+                }
+            ).catch(function(err) {
+                deferred.reject();
+            });
+            return deferred.promise();
+        }
+
         return $.ajax({
             url: '/ny2018/webapi-1/info/' + linkId + '/',
             dataType: 'json'
