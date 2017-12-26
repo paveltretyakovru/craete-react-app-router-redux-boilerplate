@@ -56,7 +56,7 @@
                 по&nbsp;своим&nbsp;картам
             </div>
             <span class="scene-content__val">{{numberOfTransactionsByCard}}</span>
-            <span class="scene-content__val-desc">{{#decl_operations}}{{numberOfTransactionsByCard}}{{/decl_operations}}</span>
+            <span class="scene-content__val-desc">{{#decl_operations_i}}{{numberOfTransactionsByCard}}{{/decl_operations_i}}</span>
         </div>
     </div>
     <div class="scene-bottom">
@@ -76,7 +76,7 @@
         <div class="content-animation">
             <div class="scene-content__top-title scene-content__top-title--bold">В том числе</div>
             <span class="scene-content__val">{{numberOfTransactionsByNFC}}</span>
-            <span class="scene-content__val-desc">{{#decl_operations}}{{numberOfTransactionsByNFC}}{{/decl_operations}}</span>
+            <span class="scene-content__val-desc">{{#decl_operations_i}}{{numberOfTransactionsByNFC}}{{/decl_operations_i}}</span>
             <div class="scene-content__top-title">С помощью вашего мобильного устройства</div>
         </div>
     </div>
@@ -202,7 +202,7 @@
             </div>
             <span class="scene-content__val">{{name}}</span>
             <div class="scene-content__top-title">Тогда вы&nbsp;совершили
-                <span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction}}{{transactionsCount}}{{/decl_transaction}}</span><br>
+                <span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction_i}}{{transactionsCount}}{{/decl_transaction_i}}</span><br>
                 на&nbsp;сумму <span class="value">{{#spaced_number}}{{sum}}{{/spaced_number}} {{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
             </div>
         </div>
@@ -228,7 +228,7 @@
             </div>
             <span class="scene-content__val">{{name}}</span>
             <div class="scene-content__top-title">Тогда вы&nbsp;совершили
-                <span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction}}{{transactionsCount}}{{/decl_transaction}}</span><br>
+                <span class="value">{{transactionsCount}}&nbsp;{{#decl_transaction_i}}{{transactionsCount}}{{/decl_transaction_i}}</span><br>
                 на&nbsp;сумму <span class="value">{{#spaced_number}}{{sum}}{{/spaced_number}} {{#decl_rouble}}{{sum}}{{/decl_rouble}}</span>
             </div>
         </div>
