@@ -202,7 +202,7 @@ if (NODE_ENV == 'production') {
         penthouse: {
             blockJSRequests: false,
         }
-    }),);
+    }));
 
     //pregzip enabled
     const ZopfliPlugin = require("zopfli-webpack-plugin");
