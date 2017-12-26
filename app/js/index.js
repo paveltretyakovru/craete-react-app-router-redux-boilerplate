@@ -51,28 +51,58 @@ function initDOM(userdata) {
         var template = require("../templates/page_error_template.html");
         $('.wrapper').html( template() );
     }
+    var loaded = {};
 
-    var images = Array.prototype.slice.call(document.querySelectorAll(".scene-bottom__img")).reverse();
-    // var scenes = Array.prototype.slice.call(document.querySelectorAll(".scene")).reverse();
+    function loadNextImage(index) {
 
-    lazyload(images);
+        //save loaded images
+        if (loaded[index] === true) {
+            return false;
+        }
 
-    function loadNextImage() {
-        var image = images.pop();
-        var src = $(image).attr('src');
+
+        var image = images[index-1];
+        if (image == null) {
+            return false;
+        }
+
         var dataSrc = $(image).attr('data-src');
-
-        if (dataSrc && src !== dataSrc) {
-            $(image).attr('src', dataSrc);
-            setTimeout(function(){
-                loadNextImage()
-            },500);
-        } else if (images.length > 0) {
-            loadNextImage();
+        if ("img" === image.tagName.toLowerCase()) {
+            var src = $(image).attr('src');
+            if (dataSrc && src !== dataSrc) {
+                $(image).attr('src', dataSrc);
+                setTimeout(function(){
+                    loadNextImage(index+1)
+                },1000);
+            } else if (images.length > 0) {
+                loadNextImage(index+1);
+            }
+        } else {
+            var src =image.style.backgroundImage;
+            if (dataSrc && src !== dataSrc) {
+                image.style.backgroundImage = "url(" + dataSrc + ")";
+                loaded[index] = true;
+                setTimeout(function(){
+                    loadNextImage(index+1);
+                },1000);
+            } else if (images.length > 0) {
+                loadNextImage(index+1);
+            }
         }
     }
-    // force load all after timeout
-    setTimeout(loadNextImage, 1000);
+
+    var images;
+    if ($(window).width() <= 767) {
+        images = $(".scene-bottom__img").not(".hidden-xs").toArray();
+    } else {
+        var scenes = $(".scene").not(".scene--intro").not(".scene--finish").toArray();
+        // add intro and finish images
+        images = [$(".scene--intro img.hidden-xs").get(0)].concat(scenes).concat($(".scene--finish img.hidden-xs").get(0));
+    }
+    // force load all images after timeout
+    setTimeout(function(){loadNextImage(1)}, 1000);
+
+    lazyload(images);
 
     if (false) {
         // 22.12: disable alt demo
@@ -302,9 +332,10 @@ function initDOM(userdata) {
             pagination: true,
             updateURL: false,
             afterMove: function (index) {
+                loadNextImage(index);
                 com.rooxteam.statistic.client.logOperation("scroll.page", com.rooxteam.statistic.getContext({ "index": index, "linkId" : window.currentLink}));
             },
-            loop: true,
+            loop: false,
             keyboard: true,
             responsiveFallback: false,
             direction: "vertical"

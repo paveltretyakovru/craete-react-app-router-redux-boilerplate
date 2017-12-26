@@ -29,6 +29,7 @@ var HtmlCriticalPlugin = require("html-critical-webpack-plugin");
 
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+var ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin');
 
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
@@ -148,8 +149,11 @@ var config = {
             filename: path.join(__dirname, 'index.html'),
             inject: 'body',
             alwaysWriteToDisk: true,
-            chunks: ['bundle']
+            chunks: ['bundle'],
+            prefetch: ['**/*.*'],
+            preload: ['**/*.*']
         }),
+        // new ResourceHintWebpackPlugin(),
         new HtmlWebpackHarddiskPlugin(),
         new GenerateJsonPlugin('../widget-ver.json', {
             jobName: process.env.JOB_NAME,
