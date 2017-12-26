@@ -51,7 +51,7 @@
                     $this.bind('touchmove', touchmove);
                     $this.bind('touchend', touchend);
                 }
-                event.preventDefault();
+                // event.preventDefault();
             }
 
             function touchmove(event) {
@@ -77,12 +77,12 @@
                         $this.unbind('touchend', touchend);
                     }
                 }
-                event.preventDefault();
+                // event.preventDefault();
             }
 
             function touchend(event) {
                 $this.unbind('touchmove', touchmove);
-                event.preventDefault();
+                // event.preventDefault();
             }
 
         });
@@ -373,7 +373,7 @@
         }
 
         if(settings.pagination == true)  {
-            $(".onepage-pagination li a").bind("click touchstart", function (){
+            $(".onepage-pagination li a").bind("click", function (){
                 var page_index = $(this).data("index");
                 el.moveTo(page_index);
             });

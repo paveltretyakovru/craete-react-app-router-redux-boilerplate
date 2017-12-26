@@ -262,7 +262,7 @@ function initDOM(userdata) {
         changeCircle($circle, percent);
     });
 
-    $('[data-action]').bind("click touchstart", function (e) {
+    $('[data-action]').on("click", function (e) {
         var action = $(this).data('action');
         switch (action) {
             case 'top-scroll' :
@@ -304,7 +304,7 @@ function initDOM(userdata) {
             afterMove: function (index) {
                 com.rooxteam.statistic.client.logOperation("scroll.page", com.rooxteam.statistic.getContext({ "index": index, "linkId" : window.currentLink}));
             },
-            loop: true,
+            loop: false,
             keyboard: true,
             responsiveFallback: false,
             direction: "vertical"
