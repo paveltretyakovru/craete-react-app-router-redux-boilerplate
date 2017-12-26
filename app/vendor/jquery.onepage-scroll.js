@@ -245,7 +245,7 @@
             if (valForTest) {
                 $("body").addClass("disabled-onepage-scroll");
                 $(document).unbind('mousewheel DOMMouseScroll MozMousePixelScroll');
-                el.swipeEvents().unbind("swipeDown swipeUp");
+                el.parents("body").swipeEvents().unbind("swipeDown swipeUp");
             } else {
                 if($("body").hasClass("disabled-onepage-scroll")) {
                     $("body").removeClass("disabled-onepage-scroll");
@@ -253,7 +253,7 @@
                 }
 
 
-                el.swipeEvents().bind("swipeDown",  function(event){
+                el.parents("body").swipeEvents().bind("swipeDown",  function(event){
                     if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
                     el.moveUp();
                 }).bind("swipeUp", function(event){
@@ -318,7 +318,7 @@
             }
         });
 
-        el.swipeEvents().bind("swipeDown",  function(event){
+        el.parents("body").swipeEvents().bind("swipeDown",  function(event){
             if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
             el.moveUp();
         }).bind("swipeUp", function(event){
@@ -373,7 +373,7 @@
         }
 
         if(settings.pagination == true)  {
-            $(".onepage-pagination li a").click(function (){
+            $(".onepage-pagination li a").bind("click touchstart", function (){
                 var page_index = $(this).data("index");
                 el.moveTo(page_index);
             });

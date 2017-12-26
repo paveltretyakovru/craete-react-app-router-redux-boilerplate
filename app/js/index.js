@@ -262,7 +262,7 @@ function initDOM(userdata) {
         changeCircle($circle, percent);
     });
 
-    $('[data-action]').on('click', function (e) {
+    $('[data-action]').bind("click touchstart", function (e) {
         var action = $(this).data('action');
         switch (action) {
             case 'top-scroll' :
