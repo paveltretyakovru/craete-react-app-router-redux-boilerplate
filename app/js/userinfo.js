@@ -39,9 +39,9 @@ export var UserInfo = {
 
 
         var context = jQuery.extend(true, {}, userdata);
-        context.decl_operations  = createLambda(this.numDeclension(['операцию', 'операции', 'операций']));
+        context.decl_operations  = createLambda(this.numDeclension(['покупка', 'покупки', 'покупок']));
         context.decl_rouble      = createLambda(this.numDeclension(['рубль', 'рубля', 'рублей']));
-        context.decl_transaction = createLambda(this.numDeclension(['транзакцию', 'транзакции', 'транзакций']));
+        context.decl_transaction = createLambda(this.numDeclension(['покупка', 'покупки', 'покупок']));
         context.decl_visited     = createLambda(this.numDeclension(['отправился', 'отправилось', 'отправились']));
         context.decl_bonus       = createLambda(this.numDeclension(['балл', 'балла', 'баллов']));
         context.decl_spent       = createLambda(this.numDeclension(['тратит', 'тратят', 'тратят']));
