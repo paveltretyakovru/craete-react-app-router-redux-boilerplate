@@ -29,7 +29,7 @@ export var API = {
                         return;
                     }
                     response.json().then(function(data) {
-                        deferred.resolve(data);
+                        deferred.resolve([data]);
                     });
                 }
             ).catch(function(err) {
