@@ -12,20 +12,7 @@
 	<link rel="preload" href="assets/i/intro.png" as="image" media="(min-width: 767px)"/>
 	<link rel="preload" href="assets/i/intro_m.png" as="image" media="(max-width: 767px)"/>
     <script>
-        try {
-            var pathParts = window.location.pathname.split("/"),
-                lastSegment = pathParts.pop() || pathParts.pop(),
-                preloadInfo = fetch && "function" == typeof fetch && fetch("/ny2018/webapi-1/info/" + lastSegment + "/").then(function(response){
-                    if (response.status == 200) {
-                        return response.json();
-                    } else {
-                        return null;
-					}
-				}).then(function(data) {
-                    document.getElementsByClassName("scene-content__welcome")[0].innerText = data.data.jsonBody.clientName + ", здравствуйте!";
-				    return data;
-				})
-        } catch (t) {}
+        try{var pathParts=window.location.pathname.split("/"),lastSegment=pathParts.pop()||pathParts.pop(),preloadInfo=fetch&&"function"==typeof fetch&&fetch("/ny2018/webapi-1/info/"+lastSegment+"/").then(function(t){return 200==t.status?t.json():null}).then(function(t){return document.getElementsByClassName("scene-content__welcome")[0].innerText=t.data.jsonBody.clientName+", здравствуйте!",t})}catch(t){}
     </script>
 
 	<meta property="og:title" content="Итоги уходящего 2017 года от РайффайзенБанк"/>
@@ -86,7 +73,7 @@
 			<div class="scene-content initial-load">
 				<div class="content-animation">
 					<h1><span class="scene-content__welcome">&nbsp;</span></h1>
-					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
+					<p class="scene-content__subtitle" style="visibility: hidden">За&nbsp;окном морозный декабрь,близятся
 						новогодние праздники, а&nbsp;значит
 						самое время подвести итоги
 						уходящего 2017&nbsp;года.</p>
