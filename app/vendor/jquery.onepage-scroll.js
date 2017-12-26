@@ -49,7 +49,9 @@
                     startX = touches[0].pageX;
                     startY = touches[0].pageY;
                     $this.bind('touchmove', touchmove);
+                    $this.bind('touchend', touchend);
                 }
+                event.preventDefault();
             }
 
             function touchmove(event) {
@@ -72,8 +74,15 @@
                     }
                     if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
                         $this.unbind('touchmove', touchmove);
+                        $this.unbind('touchend', touchend);
                     }
                 }
+                event.preventDefault();
+            }
+
+            function touchend(event) {
+                $this.unbind('touchmove', touchmove);
+                event.preventDefault();
             }
 
         });
