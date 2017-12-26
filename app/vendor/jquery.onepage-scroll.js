@@ -51,7 +51,7 @@
                     $this.bind('touchmove', touchmove);
                     $this.bind('touchend', touchend);
                 }
-                // event.preventDefault();
+                event.preventDefault();
             }
 
             function touchmove(event) {
@@ -77,12 +77,12 @@
                         $this.unbind('touchend', touchend);
                     }
                 }
-                // event.preventDefault();
+                event.preventDefault();
             }
 
             function touchend(event) {
                 $this.unbind('touchmove', touchmove);
-                // event.preventDefault();
+                event.preventDefault();
             }
 
         });
@@ -245,7 +245,7 @@
             if (valForTest) {
                 $("body").addClass("disabled-onepage-scroll");
                 $(document).unbind('mousewheel DOMMouseScroll MozMousePixelScroll');
-                el.parents("body").swipeEvents().unbind("swipeDown swipeUp");
+                $(document).swipeEvents().unbind("swipeDown swipeUp");
             } else {
                 if($("body").hasClass("disabled-onepage-scroll")) {
                     $("body").removeClass("disabled-onepage-scroll");
@@ -253,7 +253,7 @@
                 }
 
 
-                el.parents("body").swipeEvents().bind("swipeDown",  function(event){
+                $(document).swipeEvents().bind("swipeDown",  function(event){
                     if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
                     el.moveUp();
                 }).bind("swipeUp", function(event){
@@ -318,7 +318,7 @@
             }
         });
 
-        el.parents("body").swipeEvents().bind("swipeDown",  function(event){
+        $(document).swipeEvents().bind("swipeDown",  function(event){
             if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
             el.moveUp();
         }).bind("swipeUp", function(event){
