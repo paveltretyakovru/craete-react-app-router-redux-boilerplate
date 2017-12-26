@@ -11,16 +11,6 @@
 	<link rel="preload" href="assets/FuturaBookC.woff2" as="font" type="font/woff2" crossorigin/>
 	<link rel="preload" href="assets/i/intro.png" as="image" media="(min-width: 767px)"/>
 	<link rel="preload" href="assets/i/intro_m.png" as="image" media="(max-width: 767px)"/>
-    <script>
-        var pathParts = window.location.pathname.split('/');
-        var lastSegment = pathParts.pop() || pathParts.pop();
-        var preload = document.createElement("link");
-        preload.href = '/ny2018/webapi-1/info/' + lastSegment + '/';
-        preload.rel = "preload";
-        preload.as = "fetch";
-        preload.crossorigin = true;
-        document.head.appendChild(preload);
-    </script>
 
 	<meta property="og:title" content="Итоги уходящего 2017 года от РайффайзенБанк"/>
 	<meta property="og:url" content="https://www.raiffeisen.ru/"/>
