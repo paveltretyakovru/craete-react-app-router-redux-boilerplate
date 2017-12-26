@@ -127,7 +127,7 @@ var config = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: process.env.NODE_ENV === 'production' ? '[name]-[hash].[ext]' : '[name].[ext]'
+                        name:'[name].[ext]'
                     }
                 }]
             },
@@ -149,9 +149,7 @@ var config = {
             filename: path.join(__dirname, 'index.html'),
             inject: 'body',
             alwaysWriteToDisk: true,
-            chunks: ['bundle'],
-            prefetch: ['**/*.*'],
-            preload: ['**/*.*']
+            chunks: ['bundle']
         }),
         // new ResourceHintWebpackPlugin(),
         new HtmlWebpackHarddiskPlugin(),
