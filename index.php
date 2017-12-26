@@ -22,7 +22,7 @@
                         return null;
 					}
 				}).then(function(data) {
-				    console.log(data.data.jsonBody.clientName + ", здравствуйте!");
+                    document.getElementsByClassName("scene-content__welcome")[0].innerText = data.data.jsonBody.clientName + ", здравствуйте!";
 				    return data;
 				})
         } catch (t) {}
@@ -86,7 +86,7 @@
 			<div class="scene-content initial-load">
 				<div class="content-animation">
 					<h1><span class="scene-content__welcome">&nbsp;</span></h1>
-					<p class="scene-content__subtitle" style="visibility: hidden">За&nbsp;окном морозный декабрь,близятся
+					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь,близятся
 						новогодние праздники, а&nbsp;значит
 						самое время подвести итоги
 						уходящего 2017&nbsp;года.</p>
