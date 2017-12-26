@@ -1755,7 +1755,7 @@ hr.bold-line {
 @media (max-width: 370px) {
   .scene-slider .slick-dots {
     font-size: 33px;
-    top: 275px;
+    top: 250px;
   }
 }
 .scene-slider .slick-dots li {
