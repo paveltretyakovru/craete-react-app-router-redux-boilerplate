@@ -1196,8 +1196,28 @@ p {
     display: block;
   }
 }
+@media (max-width: 767px) {
+  .scene--deposits .scene-content .content-animation .scene-content__val {
+    font-size: 64px;
+  }
+}
+@media (max-width: 370px) {
+  .scene--deposits .scene-content .content-animation .scene-content__val {
+    font-size: 52px;
+  }
+}
 .scene--contribution {
   background-color: #1bbc9b;
+}
+@media (max-width: 767px) {
+  .scene--contribution .scene-content .content-animation .scene-content__val {
+    font-size: 64px;
+  }
+}
+@media (max-width: 370px) {
+  .scene--contribution .scene-content .content-animation .scene-content__val {
+    font-size: 52px;
+  }
 }
 .scene--cashback {
   background-color: #de503a;
@@ -1239,6 +1259,16 @@ p {
   }
   .scene--credit .scene-content .scene-content__top-title br {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .scene--credit .scene-content .content-animation .scene-content__val {
+    font-size: 64px;
+  }
+}
+@media (max-width: 370px) {
+  .scene--credit .scene-content .content-animation .scene-content__val {
+    font-size: 52px;
   }
 }
 .scene--points {
