@@ -30,6 +30,7 @@ var HtmlCriticalPlugin = require("html-critical-webpack-plugin");
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 var ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin');
+var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
@@ -37,10 +38,12 @@ var assetsPath = path.join(__dirname, 'assets');    //path to output dir
 var config = {
     context: entryPath,
     entry: {
+        fonts: './js/fonts.js',
         bundle: './js/index.js'
     },
     output: {
         path: assetsPath,
+        publicPath: 'assets/',
         filename: '[name].[hash]' + fileSuffix + '.js',
         sourceMapFilename: "[file].map"
     },
@@ -131,18 +134,18 @@ var config = {
                 options: {
                     limit: 50000,
                     mimetype: "application/font-woff",
-                    name: "[name].[ext]", // Output below ./fonts
-                    publicPath: "../", // Take the directory into account
+                    name: "[name].[ext]"
                 },
             },
             {
                 test: /\.woff2|woff|eot|ttf|otf$/,
-                // include: /(fonts)/,
+                include: /(fonts)/,
                 exclude: /(FuturaDemiC.woff|FuturaBookC.woff)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name:'[name].[ext]'
+                        name:'[name].[ext]',
+                        // publicPath: "assets/", // Take the directory into account
                     }
                 }]
             },
@@ -164,9 +167,10 @@ var config = {
             filename: path.join(__dirname, 'index.html'),
             inject: 'body',
             alwaysWriteToDisk: true,
-            chunks: ['bundle']
+            chunks: ['fonts', 'bundle']
         }),
         // new ResourceHintWebpackPlugin(),
+        new StyleExtHtmlWebpackPlugin({chunks: ['fonts']}),
         new HtmlWebpackHarddiskPlugin(),
         new GenerateJsonPlugin('../widget-ver.json', {
             jobName: process.env.JOB_NAME,
@@ -213,6 +217,7 @@ if (NODE_ENV == 'production') {
         base: path.resolve(__dirname),
         src: 'index.html',
         dest: 'index.html',
+        ignore: ['font-face'],
         inline: true,
         minify: process.env.NODE_ENV === 'production' ? true : false,
         extract: false,

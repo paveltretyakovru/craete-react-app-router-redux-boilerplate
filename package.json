@@ -64,6 +64,7 @@
     "html-webpack-harddisk-plugin": "^0.1.0",
     "http-proxy-middleware": "^0.17.4",
     "resource-hints-webpack-plugin": "0.0.1",
+    "style-ext-html-webpack-plugin": "^3.4.5",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dev-middleware": "^2.0.3",
     "webpack-dev-server": "^2.9.7",
