@@ -31,6 +31,7 @@ var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 var ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin');
 var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+var HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 
 var entryPath = path.join(__dirname, 'app');        //path to input dir
 var assetsPath = path.join(__dirname, 'assets');    //path to output dir
@@ -38,7 +39,7 @@ var assetsPath = path.join(__dirname, 'assets');    //path to output dir
 var config = {
     context: entryPath,
     entry: {
-        fonts: './js/fonts.js',
+        fonts: '././less/fonts.less',
         bundle: './js/index.js'
     },
     output: {
@@ -167,9 +168,10 @@ var config = {
             filename: path.join(__dirname, 'index.html'),
             inject: 'body',
             alwaysWriteToDisk: true,
-            chunks: ['fonts', 'bundle']
+            chunks: ['fonts', 'bundle'],
+            excludeAssets: [/fonts.*.js/]
         }),
-        // new ResourceHintWebpackPlugin(),
+        new HtmlWebpackExcludeAssetsPlugin(),
         new StyleExtHtmlWebpackPlugin({chunks: ['fonts']}),
         new HtmlWebpackHarddiskPlugin(),
         new GenerateJsonPlugin('../widget-ver.json', {

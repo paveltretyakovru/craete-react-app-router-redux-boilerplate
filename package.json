@@ -61,6 +61,7 @@
     "fancy-log": "^1.3.2",
     "gulp": "^3.9.1",
     "html-critical-webpack-plugin": "^1.0.1",
+    "html-webpack-exclude-assets-plugin": "0.0.5",
     "html-webpack-harddisk-plugin": "^0.1.0",
     "http-proxy-middleware": "^0.17.4",
     "resource-hints-webpack-plugin": "0.0.1",
