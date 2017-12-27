@@ -7,8 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="robots" content="noindex">
 
-	<link rel="preload" href="assets/FuturaDemiC.woff2" as="font" type="font/woff2" crossorigin/>
-	<link rel="preload" href="assets/FuturaBookC.woff2" as="font" type="font/woff2" crossorigin/>
 	<link rel="preload" href="assets/i/intro.png" as="image" media="(min-width: 767px)"/>
 	<link rel="preload" href="assets/i/intro_m.png" as="image" media="(max-width: 767px)"/>
 

@@ -123,12 +123,22 @@ var config = {
                 test: /\.svg$/,
                 use: 'url-loader?limit=30000&mimetype=image/svg+xml&name=[name].[ext]'
             },
-            // {
-            //     test: /\.woff$/,
-            //     use: 'url-loader?prefix=font/&limit=100000&mimetype=application/font-woff&name=[name].[ext]'
-            // },
+            {
+                // Match woff2 and patterns like .woff?v=1.1.1.
+                test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+                include: /(FuturaDemiC.woff|FuturaBookC.woff)/,
+                loader: "url-loader",
+                options: {
+                    limit: 50000,
+                    mimetype: "application/font-woff",
+                    name: "[name].[ext]", // Output below ./fonts
+                    publicPath: "../", // Take the directory into account
+                },
+            },
             {
                 test: /\.woff2|woff|eot|ttf|otf$/,
+                // include: /(fonts)/,
+                exclude: /(FuturaDemiC.woff|FuturaBookC.woff)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
