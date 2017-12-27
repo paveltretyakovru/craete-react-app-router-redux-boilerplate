@@ -11,9 +11,7 @@
 	<link rel="preload" href="assets/FuturaBookC.woff2" as="font" type="font/woff2" crossorigin/>
 	<link rel="preload" href="assets/i/intro.png" as="image" media="(min-width: 767px)"/>
 	<link rel="preload" href="assets/i/intro_m.png" as="image" media="(max-width: 767px)"/>
-    <script>
-        try{var pathParts=window.location.pathname.split("/"),lastSegment=pathParts.pop()||pathParts.pop(),preloadInfo=fetch&&"function"==typeof fetch&&fetch("/ny2018/webapi-1/info/"+lastSegment+"/").then(function(t){return 200==t.status?t.json():null}).then(function(t){return document.getElementsByClassName("scene-content__welcome")[0].innerText=t.data.jsonBody.clientName+", здравствуйте!",t})}catch(t){}
-    </script>
+
 
 	<meta property="og:title" content="Итоги уходящего 2017 года от РайффайзенБанк"/>
 	<meta property="og:url" content="https://www.raiffeisen.ru/"/>
@@ -70,17 +68,33 @@
 					<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
 				</footer>
 			</noscript>
-			<div class="scene-content initial-load">
+			<div class="scene-content initial-load" style="visibility: hidden">
 				<div class="content-animation">
 					<h1><span class="scene-content__welcome">&nbsp;</span></h1>
-					<p class="scene-content__subtitle" style="visibility: hidden">За&nbsp;окном морозный декабрь,близятся
+					<p class="scene-content__subtitle">За&nbsp;окном морозный декабрь, близятся
 						новогодние праздники, а&nbsp;значит
 						самое время подвести итоги
 						уходящего 2017&nbsp;года.</p>
 				</div>
+				<div class="container-btn">
+					<a href="" class="btn btn-default" data-action="top-scroll">Поехали?</a>
+				</div>
 			</div>
+			<div class="scene-bottom">
+				<picture>
+					<source class="scene-bottom__img" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" media="(min-width: 767px)">
+					<source class="scene-bottom__img" srcset="assets/i/intro_m.png" media="(max-width: 767px)">
+					<img class="scene-bottom__img" src="assets/i/intro.png">
+				</picture>
+			</div>
+			<footer class="footer">
+				<span class="copyright">© 2003–2017 АО «Райффайзенбанк». </span>
+			</footer>
 		</section>
 	</div>
 </main>
+<script>
+    try{var pathParts=window.location.pathname.split("/"),lastSegment=pathParts.pop()||pathParts.pop(),preloadInfo=fetch&&"function"==typeof fetch&&fetch("/ny2018/webapi-1/info/"+lastSegment+"/").then(function(t){return 200==t.status?t.json():null}).then(function(t){return null!==t&&(document.getElementsByClassName("scene-content__welcome")[0].innerText=t.data.jsonBody.clientName+", здравствуйте!",document.getElementsByClassName("initial-load")[0].style.visibility="visible"),t})}catch(t){}
+</script>
 </body>
 </html>

@@ -1234,7 +1234,7 @@ com.rooxteam.statistic.utils = com.rooxteam.statistic.utils || {};
             // cookie has high priority
             cookieItem = docCookies.getItem(cookieKey);
             utils.setStorageItem(storageKey, cookieItem, true);
-            logger.warn('localStorage CREDENTIAL:' + storageKey + ' was overriden by cookie CREDENTIAL:' + cookieKey);
+            // logger.warn('localStorage CREDENTIAL:' + storageKey + ' was overriden by cookie CREDENTIAL:' + cookieKey);
         } else {
             storageItem = utils.getStorageItem(storageKey, true);
             if (storageItem) {

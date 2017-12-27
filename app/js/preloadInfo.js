@@ -8,7 +8,12 @@ try {
                 return null;
             }
         }).then(function(data) {
-            document.getElementsByClassName("scene-content__welcome")[0].innerText = data.data.jsonBody.clientName + ", здравствуйте!";
+            if (data !== null) {
+                document.getElementsByClassName("scene-content__welcome")[0].innerText = data.data.jsonBody.clientName + ", здравствуйте!";
+                document.getElementsByClassName("initial-load")[0].style.visibility = "visible";
+                // for desktop
+                // document.getElementsByClassName("initial-load")[0].style.opacity = "1";
+            }
             return data;
         })
 } catch (t) {}

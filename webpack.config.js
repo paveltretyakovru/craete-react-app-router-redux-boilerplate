@@ -53,7 +53,8 @@ var config = {
         compress: true, //similar to prod
         port: 8181,
         proxy: {
-            "/ny2018/pushreport": "https://www.raiffeisen.ru/"
+            "/ny2018/pushreport": "https://www.raiffeisen.ru/",
+            "/ny2018/webapi-1/info/index.html/": "http://raif.demo.rooxteam.com:8080/ny2018/s/test1"
         }
     },
     module: {
@@ -122,8 +123,12 @@ var config = {
                 test: /\.svg$/,
                 use: 'url-loader?limit=30000&mimetype=image/svg+xml&name=[name].[ext]'
             },
+            // {
+            //     test: /\.woff$/,
+            //     use: 'url-loader?prefix=font/&limit=100000&mimetype=application/font-woff&name=[name].[ext]'
+            // },
             {
-                test: /\.woff|woff2|eot|ttf|otf$/,
+                test: /\.woff2|woff|eot|ttf|otf$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
