@@ -143,11 +143,15 @@ function initDOM(userdata) {
 
 // On before slide change
     $('.scene-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        com.rooxteam.statistic.client.logOperation("slide.change", com.rooxteam.statistic.getContext({ "slider": "costs", "linkId" : window.currentLink, "nextSlide": nextSlide}));
+        try{
+            com.rooxteam.statistic.client.logOperation("slide.change", com.rooxteam.statistic.getContext({ "slider": "costs", "linkId" : window.currentLink, "nextSlide": nextSlide}));
+        } catch (error) {}
     });
 
     $('.countries-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        com.rooxteam.statistic.client.logOperation("slide.change", com.rooxteam.statistic.getContext({ "slider": "countries", "linkId" : window.currentLink, "nextSlide": nextSlide}));
+        try {
+            com.rooxteam.statistic.client.logOperation("slide.change", com.rooxteam.statistic.getContext({ "slider": "countries", "linkId" : window.currentLink, "nextSlide": nextSlide}));
+        } catch (error) {}
     });
 
     var changeCircle = function (curCircle, percent) {
@@ -302,7 +306,9 @@ function initDOM(userdata) {
             pagination: true,
             updateURL: false,
             afterMove: function (index) {
-                com.rooxteam.statistic.client.logOperation("scroll.page", com.rooxteam.statistic.getContext({ "index": index, "linkId" : window.currentLink}));
+                try {
+                    com.rooxteam.statistic.client.logOperation("scroll.page", com.rooxteam.statistic.getContext({ "index": index, "linkId" : window.currentLink}));
+                } catch (error) {}
             },
             loop: false,
             keyboard: true,
@@ -344,7 +350,9 @@ function initDOM(userdata) {
                 }
             });
             if (lastVisibleIndex) {
-                com.rooxteam.statistic.client.logOperation("scroll.mobile", com.rooxteam.statistic.getContext({ "index": lastVisibleIndex, "linkId" : window.currentLink}));
+                try{
+                    com.rooxteam.statistic.client.logOperation("scroll.mobile", com.rooxteam.statistic.getContext({ "index": lastVisibleIndex, "linkId" : window.currentLink}));
+                } catch (error) {}
             }
         }, 500));
     }

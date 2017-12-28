@@ -15,7 +15,10 @@ function ajax_response(response) {
 export var API = {
     getInfo: function () {
         window.currentLink = this.getLinkID();
-        com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : window.currentLink}));
+        try {
+            com.rooxteam.statistic.client.logOperation("getInfo", com.rooxteam.statistic.getContext({ "linkId" : window.currentLink}));
+        } catch (error) {}
+
         var linkId = this.getLinkID();
         if (linkId == 'test0' || (linkId == 'index.html' && window.location.search == '?test0'))
             return ajax_response(stubResponse0);
@@ -48,7 +51,9 @@ export var API = {
             'eventAction': 'vote',
             'eventValue': vote
           });
-        com.rooxteam.statistic.client.logOperation("sendVote", com.rooxteam.statistic.getContext({ "vote": vote, "linkId" : this.getLinkID()}));
+        try{
+            com.rooxteam.statistic.client.logOperation("sendVote", com.rooxteam.statistic.getContext({ "vote": vote, "linkId" : this.getLinkID()}));
+        } catch (error) {}
 
         return $.ajax({
             type: 'PUT',
