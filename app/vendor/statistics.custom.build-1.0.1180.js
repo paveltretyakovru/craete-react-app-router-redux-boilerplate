@@ -36,13 +36,31 @@ com.rooxteam.sharedcontext = com.rooxteam.sharedcontext || {};
     function DataContext(isPersistent) {
         var listeners = [];
 
-        var _storage;
-        if (isPersistent) {
-            _storage = window.localStorage;
-        } else {
-            _storage = window.sessionStorage;
+        try {
+            var _storage;
+            if (isPersistent) {
+                _storage = window.localStorage;
+            } else {
+                _storage = window.sessionStorage;
+            }
+        } catch(error) {
+            var localStorageObj = {};
+            _storage = {
+                getItem: function (key) {
+                    return localStorageObj[key] || null;
+                },
+                setItem: function (key, name) {
+                    localStorageObj[key] = name;
+                },
+                removeItem: function(key) {
+                    localStorageObj[key] = null;
+                    delete localStorageObj[key];
+                }
+            };
         }
+
 //  var dataSets = {};
+
 
         /**
          * Puts a data set into the global DataContext object. Fires listeners
@@ -1174,12 +1192,16 @@ com.rooxteam.statistic.utils = com.rooxteam.statistic.utils || {};
 
     utils.getStorage = function (isPersistent) {
         var _storage;
-        if (isPersistent) {
-            _storage = window.localStorage;
-        } else {
-            _storage = window.sessionStorage;
+        try {
+            if (isPersistent) {
+                _storage = window.localStorage;
+            } else {
+                _storage = window.sessionStorage;
+            }
+            return _storage;
+        } catch (error) {
+            return false;
         }
-        return _storage;
     };
 
     utils.getStorageItem = function (name, isPersistent) {
@@ -1539,11 +1561,24 @@ com.rooxteam.statistic = com.rooxteam.statistic || {};
     var utils = com.rooxteam.statistic.utils;
     var config = com.rooxteam.config.statistic;
 
+    function isLocalStorageNameSupported() {
+        try {
+            var testKey = 'test', lStorage = window.localStorage, SStorage = window.sessionStorage;
+            lStorage.setItem(testKey, '1');
+            lStorage.removeItem(testKey);
+            SStorage.setItem(testKey, '1');
+            SStorage.removeItem(testKey);
+
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
 
     function StatisticDao(storage_statistic, init_context) {
 
         //There is no MUTEX for LS in IE
-        if (!utils.isIE() && config.USE_LS_WITH_MUTEX) {
+        if (!utils.isIE() && config.USE_LS_WITH_MUTEX && isLocalStorageNameSupported()) {
             this.storage = com.rooxteam.sharedcontext.getPersistentDataContext();
         } else {
             var localStorageObj = {};
