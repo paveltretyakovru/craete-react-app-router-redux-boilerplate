@@ -3,14 +3,17 @@
 pipeline {
   agent {
     node {
-      label 'hpe_centos7||aws-builder||builder2a'
+      label 'builder2a'
     }
   }
   stages {
     stage('Install deps') {
       steps {
           ansiColor('xterm') {
-            sh 'yarn install'
+            sh '''
+                source /opt/rh/devtoolset-2/enable
+                yarn install
+            '''
           }
       }
     }
