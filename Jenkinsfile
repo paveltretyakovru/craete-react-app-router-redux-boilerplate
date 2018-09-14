@@ -12,7 +12,7 @@ pipeline {
           ansiColor('xterm') {
             sh '''
                 source /opt/rh/devtoolset-2/enable
-                yarn install
+                npm install
             '''
           }
       }
