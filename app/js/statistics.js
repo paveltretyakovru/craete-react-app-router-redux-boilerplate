@@ -4,5 +4,5 @@ com.rooxteam.statistic.updateConfiguration(
     com.rooxteam.config.statistic,
     {},
     "",
-    "raif-ny"
+    "gbp-leader-ny"
 );

@@ -66,7 +66,8 @@ const apiProxy = proxy('/ny2018/pushreport', {
     logLevel: 'debug'
 });
 
-gulp.task('browser-sync', ['clean:tmp'], function() {
+// gulp.task('browser-sync', ['clean:tmp'], function() {
+gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
             baseDir: "./"

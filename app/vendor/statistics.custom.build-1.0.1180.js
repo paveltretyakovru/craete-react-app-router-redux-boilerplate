@@ -1352,7 +1352,7 @@ com.rooxteam.config.statistic = {
     "TRANSPORT": "POST",
     "DISABLE_IN_ROAMING": false,
     "SERVER_ADDRESS": '/ny2018/pushreport/',
-    "OPERATOR_ID": "RAIF",
+    "OPERATOR_ID": "GPB-LEADER",
     "SERVICE_TYPE_PARAMETER" : 'YA_REPORT_SERVICE',
     "CHECKSUM_PARAMETER" : 'YA_REPORT_CHECKSUM',
     "SENDING_TIME_PARAMETER" : 'YA_REPORT_SENDING_TIME',
@@ -1382,7 +1382,7 @@ com.rooxteam.config.statistic = {
     "DOM_EVENTS": {
         "click": {
             "verbose": 4,
-            "selector": "a, button, .raiff-logo"
+            "selector": "a, button, .logo"
         }
     },
     META: {

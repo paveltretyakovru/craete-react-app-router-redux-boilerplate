@@ -50,7 +50,7 @@
 			<div class="scene-logos">
 				<div class="scene-logos__item">
 					<a href="https://www.raiffeisen.ru" target="_blank">
-						<div class="raiff-logo"></div>
+						<div class="logo"></div>
 					</a>
 				</div>
 			</div>

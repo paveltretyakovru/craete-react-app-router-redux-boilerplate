@@ -51,7 +51,7 @@
                     $this.bind('touchmove', touchmove);
                     $this.bind('touchend', touchend);
                 }
-                if (!$(event.target).is(".raiff-logo") && !$(event.target).is("a, button, circle")) {
+                if (!$(event.target).is(".logo") && !$(event.target).is("a, button, circle")) {
                     event.preventDefault();
                 }
             }
