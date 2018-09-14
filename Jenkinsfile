@@ -84,7 +84,7 @@ pipeline {
               mvn deploy:deploy-file -B -DgroupId=com.rooxteam.widgets \
                   -DartifactId="${ARTIFACT_NAME}" \
                   -Dversion=${ARTIFACT_VERSION} -Dclassifier=rpm \
-                  -Dfile=packages/"${ARTIFACT_FILE_NAME}".noarch.rpm \
+                  -Dfile=build/"${ARTIFACT_FILE_NAME}".noarch.rpm \
                   -Dpackaging=rpm -DrepositoryId="roox-releases" \
                   -Durl=http://nexus.rooxintra.net/content/repositories/releases/ \
                   -Drelease=true -DgeneratePom=false -DupdateReleaseInfo=true
