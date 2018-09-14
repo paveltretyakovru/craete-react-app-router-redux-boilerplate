@@ -18,7 +18,22 @@ pipeline {
       steps {
         dir(path: 'spa') {
           ansiColor('xterm') {
-            sh 'yarn build'
+            sh '''
+              PROJECT_DIR="$(pwd)"
+
+              rm -rf "$PROJECT_DIR/dist"
+              mkdir -p "$PROJECT_DIR/dist"
+
+              rm -rf "$PROJECT_DIR/assets"
+              npm run build:prod
+
+              cp -r -v "$PROJECT_DIR/assets" "$PROJECT_DIR/dist/"
+              cp -r -v "$PROJECT_DIR/index.html" "$PROJECT_DIR/dist/"
+              cp -r -v "$PROJECT_DIR/widget-ver.json" "$PROJECT_DIR/dist/"
+
+              npx zopfli "$PROJECT_DIR"/dist/index.html
+              npx zopfli "$PROJECT_DIR"/dist/assets/i/*
+            '''
           }
         }
       }
@@ -34,20 +49,6 @@ pipeline {
               PROJECT_DIR="$(pwd)"
               rm -rf "$PROJECT_DIR/build"
               mkdir -p "$PROJECT_DIR/build"
-
-              rm -rf "$PROJECT_DIR/dist"
-              mkdir -p "$PROJECT_DIR/dist"
-
-              rm -rf "$PROJECT_DIR/assets"
-              npm run build:prod
-
-              cp -r -v "$PROJECT_DIR/assets" "$PROJECT_DIR/dist/"
-              cp -r -v "$PROJECT_DIR/index.html" "$PROJECT_DIR/dist/"
-              cp -r -v "$PROJECT_DIR/widget-ver.json" "$PROJECT_DIR/dist/"
-
-              npx zopfli "$PROJECT_DIR"/dist/index.html
-              npx zopfli "$PROJECT_DIR"/dist/assets/i/*
-
 
               ARTIFACT_NAME="widgets-gpb-leader-landing"
               RPMVER="1.1.${BUILD_NUMBER:-0}"
@@ -119,10 +120,11 @@ pipeline {
         echo "Sending message to Slack"
         script {
           def authors = currentBuild.changeSets.collectMany { it.toList().collect { it.author } }.unique().toString()
+          slackSend (color: "#818284",
+                             channel: "management",
+                             message: "*ABORTED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${authors}\n More info at: ${env.BUILD_URL}")
         }
-        slackSend (color: "#818284",
-                   channel: "management",
-                   message: "*ABORTED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${authors}\n More info at: ${env.BUILD_URL}")
+
       } // aborted
 
       failure {
@@ -130,10 +132,11 @@ pipeline {
         echo "Sending message to Slack"
         script {
           def authors = currentBuild.changeSets.collectMany { it.toList().collect { it.author } }.unique().toString()
+          slackSend (color: "#d13c06",
+                             channel: "management",
+                             message: "*FAILED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${authors}\n More info at: ${env.BUILD_URL}")
         }
-        slackSend (color: "#d13c06",
-                   channel: "management",
-                   message: "*FAILED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${authors}\n More info at: ${env.BUILD_URL}")
+
       } // failure
 
       success {
