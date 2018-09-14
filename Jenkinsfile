@@ -16,7 +16,6 @@ pipeline {
     }
     stage('Build project') {
       steps {
-        dir(path: 'spa') {
           ansiColor('xterm') {
             sh '''
               PROJECT_DIR="$(pwd)"
@@ -35,7 +34,6 @@ pipeline {
               npx zopfli "$PROJECT_DIR"/dist/assets/i/*
             '''
           }
-        }
       }
     }
     stage('Make rpm') {
@@ -43,7 +41,6 @@ pipeline {
         branch 'master'
       }
       steps {
-        dir(path: 'spa') {
           ansiColor('xterm') {
             sh '''
               PROJECT_DIR="$(pwd)"
@@ -66,7 +63,6 @@ pipeline {
                     "."
             '''
           }
-        }
       }
     }
     stage('Publish rpm') {
@@ -74,7 +70,6 @@ pipeline {
          branch 'master'
       }
       steps {
-        dir(path: 'spa') {
           ansiColor('xterm') {
             sh '''
               ARTIFACT_NAME="widgets-gpb-leader-landing"
@@ -92,7 +87,6 @@ pipeline {
                   -Drelease=true -DgeneratePom=false -DupdateReleaseInfo=true
             '''
           }
-        }
       }
     }
     stage('Deploy') {
