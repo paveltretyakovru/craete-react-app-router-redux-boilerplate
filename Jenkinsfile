@@ -59,7 +59,7 @@ pipeline {
               INSTALL_TO_DIR=/opt/nginx/www/widgets/ny2018
 
               fpm --verbose -s dir -t rpm -a all --name "${ARTIFACT_NAME}" --version "${RPMVER}" --iteration "${RPMREL}" \
-                    --prefix "${INSTALL_TO_DIR}" -C "build/" \
+                    --prefix "${INSTALL_TO_DIR}" -C "dist/" \
                     --vendor "RooX Solutions" --license "Proprietary Software" --url "http://rooxteam.com" --description "gpn-leader-landing" \
                     --package "${PROJECT_DIR}/build/" \
                     --rpm-user nginx --rpm-group nginx --directories "${INSTALL_TO_DIR}" \
