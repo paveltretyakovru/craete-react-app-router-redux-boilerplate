@@ -46,6 +46,11 @@
 </header>
 <main>
 	<div class="wrapper">
+        <div class="scene-content">
+            <div class="content-animation">
+                <h1><span class="scene-content__welcome"></span></h1>
+            </div>
+        </div>
 	</div>
 </main>
 <script>
