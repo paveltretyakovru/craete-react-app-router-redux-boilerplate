@@ -46,7 +46,7 @@
 </header>
 <main>
 	<div class="wrapper">
-        <div class="scene-content">
+        <div class="scene-content initial-load">
             <div class="content-animation">
                 <h1><span class="scene-content__welcome"></span></h1>
             </div>
