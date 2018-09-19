@@ -20,6 +20,18 @@
 	<meta name="web_author" content="RooX Solutions LTD, roox@rooxteam.com" />
 	<meta name="designer" content="RooX" />
 
+    <!-- Google Analytics -->
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-126134239-1', 'auto');
+
+        var urlWithoutLastSection = window.location.pathname.replace(/\/[^/]+\/*$/, '/');
+        ga('set', 'page', urlWithoutLastSection);
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+
 </head>
 
 <body>
