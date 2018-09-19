@@ -57,8 +57,8 @@ var config = {
         compress: true, //similar to prod
         port: 8181,
         proxy: {
-            "/ny2018/pushreport": "https://www.raiffeisen.ru/",
-            "/ny2018/webapi-1/info/index.html/": "http://raif.demo.rooxteam.com:8080/ny2018/s/test1"
+            "/ny2018/pushreport": "https://гпн-лидеры-россии.рф",
+            "/ny2018/webapi-1/info/index.html/": "https://гпн-лидеры-россии.рф/ny2018/s/test1"
         }
     },
     module: {

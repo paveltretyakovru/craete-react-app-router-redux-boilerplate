@@ -61,7 +61,7 @@ var compress = require('compression');
 // gulp.task('default', ['webpack']);
 const proxy = require('http-proxy-middleware');
 const apiProxy = proxy('/ny2018/pushreport', {
-    target: 'https://www.raiffeisen.ru/',
+    target: 'https://гпн-лидеры-россии.рф/',
     changeOrigin: true,
     logLevel: 'debug'
 });
