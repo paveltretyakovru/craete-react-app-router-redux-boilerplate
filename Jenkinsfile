@@ -11,7 +11,6 @@ pipeline {
       steps {
           ansiColor('xterm') {
             sh '''
-                source /opt/rh/devtoolset-2/enable
                 npm install
             '''
           }
@@ -23,32 +22,24 @@ pipeline {
             sh '''
               PROJECT_DIR="$(pwd)"
 
-              rm -rf "$PROJECT_DIR/dist"
-              mkdir -p "$PROJECT_DIR/dist"
+              rm -rf "$PROJECT_DIR/package"
+              mkdir -p "$PROJECT_DIR/package"
 
-              rm -rf "$PROJECT_DIR/assets"
-              npm run build:prod
-
-              cp -r -v "$PROJECT_DIR/assets" "$PROJECT_DIR/dist/"
-              cp -r -v "$PROJECT_DIR/index.html" "$PROJECT_DIR/dist/"
-              cp -r -v "$PROJECT_DIR/widget-ver.json" "$PROJECT_DIR/dist/"
-
-              npx zopfli "$PROJECT_DIR"/dist/index.html
-              npx zopfli "$PROJECT_DIR"/dist/assets/i/*
+              npm run build
             '''
           }
       }
     }
     stage('Make rpm') {
       when {
-        branch 'develop'
+        branch 'master'
       }
       steps {
           ansiColor('xterm') {
             sh '''
               PROJECT_DIR="$(pwd)"
-              rm -rf "$PROJECT_DIR/build"
-              mkdir -p "$PROJECT_DIR/build"
+              rm -rf "$PROJECT_DIR/package"
+              mkdir -p "$PROJECT_DIR/package"
 
               ARTIFACT_NAME="widgets-gpb-leader-landing"
               RPMVER="1.1.${BUILD_NUMBER:-0}"
@@ -59,9 +50,9 @@ pipeline {
               INSTALL_TO_DIR=/opt/nginx/www/widgets/ny2018
 
               fpm --verbose -s dir -t rpm -a all --name "${ARTIFACT_NAME}" --version "${RPMVER}" --iteration "${RPMREL}" \
-                    --prefix "${INSTALL_TO_DIR}" -C "dist/" \
+                    --prefix "${INSTALL_TO_DIR}" -C "build/" \
                     --vendor "RooX Solutions" --license "Proprietary Software" --url "http://rooxteam.com" --description "gpn-leader-landing" \
-                    --package "${PROJECT_DIR}/build/" \
+                    --package "${PROJECT_DIR}/package/" \
                     --rpm-user nginx --rpm-group nginx --directories "${INSTALL_TO_DIR}" \
                     "."
             '''
@@ -70,7 +61,7 @@ pipeline {
     }
     stage('Publish rpm') {
       when {
-         branch 'develop'
+         branch 'master'
       }
       steps {
           ansiColor('xterm') {
@@ -84,7 +75,7 @@ pipeline {
               mvn deploy:deploy-file -B -DgroupId=com.rooxteam.widgets \
                   -DartifactId="${ARTIFACT_NAME}" \
                   -Dversion=${ARTIFACT_VERSION} -Dclassifier=rpm \
-                  -Dfile=build/"${ARTIFACT_FILE_NAME}".noarch.rpm \
+                  -Dfile=package/"${ARTIFACT_FILE_NAME}".noarch.rpm \
                   -Dpackaging=rpm -DrepositoryId="roox-releases" \
                   -Durl=http://nexus.rooxintra.net/content/repositories/releases/ \
                   -Drelease=true -DgeneratePom=false -DupdateReleaseInfo=true
@@ -94,7 +85,7 @@ pipeline {
     }
     stage('Deploy') {
         when {
-           branch 'develop'
+           branch 'master'
         }
         steps {
           milestone(1)
@@ -139,7 +130,7 @@ pipeline {
       success {
         script {
 
-          if (env.BRANCH_NAME == 'develop') {
+          if (env.BRANCH_NAME == 'master') {
               echo 'I only executed on the develop branch'
               echo "Sending message to Slack"
               def commits = currentBuild.changeSets.collectMany { it.toList().collect {  it.msg + " - _" + it.author + "_" } }.unique().join('\n')
