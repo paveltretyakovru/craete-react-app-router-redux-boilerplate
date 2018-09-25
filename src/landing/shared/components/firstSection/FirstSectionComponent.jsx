@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
 import {Section} from 'react-fullpage';
 
-import './firstSectionComponent.css';
+import './firstSectionComponent.scss';
 
 export class FirstSectionComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Section className="first-section-component__wrapper" verticalAlign="true" color="#69D2E7">
