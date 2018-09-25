@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import portal from './portal/portalReducer';
+
+export default combineReducers({ portal });
