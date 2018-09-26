@@ -7,7 +7,7 @@ export class DeminReviewSectionComponent extends Component {
   render() {
     return (
       <Section className="section demin-review-section__wrapper">
-       Demin Review Section
+        Demin Review Section
       </Section>
     )
   }

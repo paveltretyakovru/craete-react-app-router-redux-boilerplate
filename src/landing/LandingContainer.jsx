@@ -2,7 +2,11 @@ import React from 'react';
 import {push} from 'connected-react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
 import {SectionsContainer, Section} from 'react-fullpage';
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
 import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
@@ -10,7 +14,7 @@ import {DukovReviewSectionComponent} from './shared/components/sections/DukovRev
 import {DeminReviewSectionComponent} from './shared/components/sections/DeminReview/DeminReviewSectionComponent';
 import {CallToActionSectionComponent} from './shared/components/sections/CallToAction/CallToActionSectionComponent';
 
-let options = {
+const fullpageOptions = {
   anchors: [
     'dukovAppealSection',
     'informationSection',
@@ -18,15 +22,29 @@ let options = {
     'deminReviewSection',
     'callToActionSection',
   ],
+  navigation: false,
   sectionClassName: 'section',
 };
 
+const carouselOptions = {
+  showArrows: false,
+  showThumbs: false,
+  showStatus: false,
+  emulateTouch: true, 
+}
+
 const LandingComponent = props => (
-  <SectionsContainer className="sections__wrapper" {...options}>
+  <SectionsContainer {...fullpageOptions}>
     <DukovAppealSectionComponent />
     <InformationSectionComponent />
-    <DukovReviewSectionComponent />
-    <DeminReviewSectionComponent />
+
+    <Section>
+      <Carousel {...carouselOptions}>
+        <DukovReviewSectionComponent />
+        <DeminReviewSectionComponent />
+      </Carousel>
+    </Section>
+
     <CallToActionSectionComponent />
   </SectionsContainer>
 );
