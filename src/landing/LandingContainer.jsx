@@ -4,30 +4,32 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {SectionsContainer, Section} from 'react-fullpage';
 
-import {FirstSectionComponent} from './shared/components/firstSection/FirstSectionComponent';
+import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
+import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
+import {DukovReviewSectionComponent} from './shared/components/sections/DukovReview/DukovReviewSectionComponent';
+import {DeminReviewSectionComponent} from './shared/components/sections/DeminReview/DeminReviewSectionComponent';
+import {CallToActionSectionComponent} from './shared/components/sections/CallToAction/CallToActionSectionComponent';
 
 let options = {
-  sectionClassName:     'section',
-  anchors:              ['sectionOne', 'sectionTwo', 'sectionThree'],
-  scrollBar:            false,
-  navigation:           true,
-  verticalAlign:        false,
-  sectionPaddingTop:    '0',
-  sectionPaddingBottom: '0',
-  arrowNavigation:      true
+  anchors: [
+    'dukovAppealSection',
+    'informationSection',
+    'dukovReviewSection',
+    'deminReviewSection',
+    'callToActionSection',
+  ],
+  sectionClassName: 'section',
 };
 
 const LandingComponent = props => (
-  <div>
-    <SectionsContainer className="container" {...options}>
-      <FirstSectionComponent changePage={() => { props.changePage() }} />
-      <Section color="#A7DBD8">Page 2</Section>
-      <Section color="#E0E4CC">Page 3</Section>
-    </SectionsContainer>
-  </div>
+  <SectionsContainer className="sections__wrapper" {...options}>
+    <DukovAppealSectionComponent />
+    <InformationSectionComponent />
+    <DukovReviewSectionComponent />
+    <DeminReviewSectionComponent />
+    <CallToActionSectionComponent />
+  </SectionsContainer>
 );
-
-// export default LandingComponent;
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   changePage: () => push('/portal')
