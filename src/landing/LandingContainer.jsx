@@ -1,25 +1,25 @@
 import React from 'react';
 import {push} from 'connected-react-router';
 import {connect} from 'react-redux';
+import {Carousel} from 'react-responsive-carousel';
 import {bindActionCreators} from 'redux';
-
-import {SectionsContainer, Section} from 'react-fullpage';
-
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import {SectionsContainer} from 'react-fullpage';
 
 import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
 import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
 import {DukovReviewSectionComponent} from './shared/components/sections/DukovReview/DukovReviewSectionComponent';
 import {DeminReviewSectionComponent} from './shared/components/sections/DeminReview/DeminReviewSectionComponent';
 import {CallToActionSectionComponent} from './shared/components/sections/CallToAction/CallToActionSectionComponent';
+import {WinnerElbrusSectionComponent} from './shared/components/sections/WinnerElbrus/WinnerElbrusSectionComponent';
+import {WinnerInterviewSectionComponent} from './shared/components/sections/WinnerInterview/WinnerInterviewSectionComponent';
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const fullpageOptions = {
   anchors: [
     'dukovAppealSection',
     'informationSection',
-    'dukovReviewSection',
-    'deminReviewSection',
+    'carouselSection',
     'callToActionSection',
   ],
   navigation: false,
@@ -38,12 +38,12 @@ const LandingComponent = props => (
     <DukovAppealSectionComponent />
     <InformationSectionComponent />
 
-    <Section>
-      <Carousel {...carouselOptions}>
-        <DukovReviewSectionComponent />
-        <DeminReviewSectionComponent />
-      </Carousel>
-    </Section>
+    <Carousel {...carouselOptions}>
+      <DukovReviewSectionComponent />
+      <DeminReviewSectionComponent />
+      <WinnerInterviewSectionComponent />
+      <WinnerElbrusSectionComponent />
+    </Carousel>
 
     <CallToActionSectionComponent />
   </SectionsContainer>
