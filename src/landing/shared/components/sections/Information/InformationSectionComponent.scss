@@ -1,5 +1,62 @@
 .information-section {
   &__wrapper {
-    background-color: #E5E5E5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #ffffff;
+  }
+
+  &__title {
+    width: 450px;
+    color: #2E2E2E;
+    font-size: 40px;
+    font-family: HeliosCond;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 50px;  
+  }
+
+  &__description {
+    color: #706F6F;
+    display: flex;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: DIN Pro;
+
+    &-text {
+      width: 450px;
+    }
+
+    p {
+      margin-top: 12px;
+    }
+  }
+
+  &__items {
+    margin-left: 140px;
+
+    &-item {
+      color: #2E2E2E;
+      display: flex;
+      font-size: 13px;
+      margin-top: 20px;
+      font-family: DIN Pro;
+      line-height: normal;
+    }
+    
+    &-image {
+      width: 20px;
+      display: flex;
+      margin-right: 20px;
+      
+      img {
+        width: 20px;
+      }
+    }
+
+    &-text {
+      width: 315px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 export const fullpageOptions = {
   anchors: [
-    'dukovAppealSection',
+    // 'dukovAppealSection',
     'informationSection',
     'carouselSection',
     'callToActionSection',
