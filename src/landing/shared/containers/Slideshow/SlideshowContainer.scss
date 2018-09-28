@@ -1,0 +1,24 @@
+﻿.gpb-slideshow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+
+  &__arrow {
+    &-left, &-right {
+      cursor: pointer;
+      display: flex;
+      padding: 50px;
+      align-items: center;
+  
+      &:hover {
+        background-color: #f3fafd;
+      }
+    }
+  }
+
+  &__acontent {
+
+  }
+}

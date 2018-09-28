@@ -5,8 +5,9 @@ import {bindActionCreators} from 'redux';
 import {SectionsContainer, Section} from 'react-fullpage';
 
 // Components
-import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
-import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
+import SlideshowContainer from './shared/containers/Slideshow/SlideshowContainer';
+// import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
+// import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
 import {DukovReviewSectionComponent} from './shared/components/sections/DukovReview/DukovReviewSectionComponent';
 import {DeminReviewSectionComponent} from './shared/components/sections/DeminReview/DeminReviewSectionComponent';
 import {CallToActionSectionComponent} from './shared/components/sections/CallToAction/CallToActionSectionComponent';
@@ -16,26 +17,33 @@ import {WinnerInterviewSectionComponent} from './shared/components/sections/Winn
 // Constants
 import {fullpageOptions} from './LandingConstants';
 
-// Styles
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 class LandingComponent extends Component {
   render() {
     return (
-      <SectionsContainer {...fullpageOptions}>
-        <Section>
+      <SectionsContainer
+        {...fullpageOptions}
+        anchors= {[
+          // 'dukovAppealSection',
+          // 'informationSection',
+          'slideshowSection',
+          'callToActionSection',
+        ]}
+      >
+        {/* <Section>
           <DukovAppealSectionComponent />
-        </Section>
+        </Section> */}
 
-        <Section>
+        {/* <Section>
           <InformationSectionComponent />
-        </Section>
+        </Section> */}
         
         <Section>
-          <DukovReviewSectionComponent />
-          <DeminReviewSectionComponent />
-          <WinnerInterviewSectionComponent />
-          <WinnerElbrusSectionComponent />
+          <SlideshowContainer>
+            <DukovReviewSectionComponent />
+            <DeminReviewSectionComponent />
+            <WinnerInterviewSectionComponent />
+            <WinnerElbrusSectionComponent />
+          </SlideshowContainer>
         </Section>
 
         <Section>
