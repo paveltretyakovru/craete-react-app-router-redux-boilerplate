@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {push} from 'connected-react-router';
 import {connect} from 'react-redux';
-import {Carousel} from 'react-responsive-carousel';
 import {bindActionCreators} from 'redux';
-import {SectionsContainer} from 'react-fullpage';
+import {SectionsContainer, Section} from 'react-fullpage';
 
 // Components
-import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
-import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
+import SlideshowContainer from './shared/containers/Slideshow/SlideshowContainer';
+// import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
+// import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
 import {DukovReviewSectionComponent} from './shared/components/sections/DukovReview/DukovReviewSectionComponent';
 import {DeminReviewSectionComponent} from './shared/components/sections/DeminReview/DeminReviewSectionComponent';
 import {CallToActionSectionComponent} from './shared/components/sections/CallToAction/CallToActionSectionComponent';
@@ -15,26 +15,40 @@ import {WinnerElbrusSectionComponent} from './shared/components/sections/WinnerE
 import {WinnerInterviewSectionComponent} from './shared/components/sections/WinnerInterview/WinnerInterviewSectionComponent';
 
 // Constants
-import {fullpageOptions, carouselOptions} from './LandingConstants';
-
-// Styles
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {fullpageOptions} from './LandingConstants';
 
 class LandingComponent extends Component {
   render() {
     return (
-      <SectionsContainer {...fullpageOptions}>
-        <DukovAppealSectionComponent />
-        <InformationSectionComponent />
-    
-        <Carousel {...carouselOptions}>
-          <DukovReviewSectionComponent />
-          <DeminReviewSectionComponent />
-          <WinnerInterviewSectionComponent />
-          <WinnerElbrusSectionComponent />
-        </Carousel>
-    
-        <CallToActionSectionComponent />
+      <SectionsContainer
+        {...fullpageOptions}
+        anchors= {[
+          // 'dukovAppealSection',
+          // 'informationSection',
+          'slideshowSection',
+          'callToActionSection',
+        ]}
+      >
+        {/* <Section>
+          <DukovAppealSectionComponent />
+        </Section> */}
+
+        {/* <Section>
+          <InformationSectionComponent />
+        </Section> */}
+        
+        <Section>
+          <SlideshowContainer>
+            <DukovReviewSectionComponent />
+            <DeminReviewSectionComponent />
+            <WinnerInterviewSectionComponent />
+            <WinnerElbrusSectionComponent />
+          </SlideshowContainer>
+        </Section>
+
+        <Section>
+          <CallToActionSectionComponent />
+        </Section>
       </SectionsContainer>
     );
   }
