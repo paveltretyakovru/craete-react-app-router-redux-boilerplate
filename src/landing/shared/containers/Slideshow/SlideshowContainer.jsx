@@ -17,13 +17,6 @@ class SlideshowContainer extends Component {
   render() {
     const toBack = () => this.updateActive(false);
     const toFront = () => this.updateActive(true);
-    const children = this.props.children.map((child) => {
-      return (
-        <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-          {child}
-        </Animated>
-      );
-    })
 
     return(
       <div className="gpb-slideshow">
@@ -35,10 +28,12 @@ class SlideshowContainer extends Component {
           {
             this.props.children.map((child, index) => {
               return (
-                <div style={{display: (this.props.slideshow.active === index) ? 'block' : 'none'}}>
-                  <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={this.props.slideshow.active === index}>
-                    {child}
-                  </Animated>
+                <div key={`slideshow-page-${index}`} style={{display: (this.props.slideshow.active === index) ? 'block' : 'none'}}>
+                  <Animated
+                    animationIn="fadeIn"
+                    animationOut="fadeOut"
+                    isVisible={this.props.slideshow.active === index}
+                  >{child}</Animated>
                 </div>
               );
             })

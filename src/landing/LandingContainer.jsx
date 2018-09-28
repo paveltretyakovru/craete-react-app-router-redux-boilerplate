@@ -39,7 +39,7 @@ class LandingComponent extends Component {
         
         <Section>
           <SlideshowContainer>
-            <DukovReviewSectionComponent />
+            {/* <DukovReviewSectionComponent /> */}
             <DeminReviewSectionComponent />
             <WinnerInterviewSectionComponent />
             <WinnerElbrusSectionComponent />
