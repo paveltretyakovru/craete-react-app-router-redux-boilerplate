@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Section} from 'react-fullpage';
 import {Animated} from 'react-animated-css';
 
 // Constants
@@ -20,69 +19,67 @@ import rightFiguresImage from './shared/images/right-figures.svg';
 export class DukovAppealSectionComponent extends Component {
   render() {
     return (
-      <Section>
-        <div className="dukov-appeal-section__wrapper">
+      <div className="dukov-appeal-section__wrapper">
 
-          {/* Left side elements */}
-          <div className="dukov-appeal-section__left-side">
-            <div className="dukov-appeal-section__left-side-figures">
-              <Animated animationIn="slideInLeft" animationOut="fadeOut" isVisible={true}>
-                <img src={leftFiguresImage} alt=""/>
-              </Animated>
-            </div>
-            <div className="dukov-appeal-section__left-side-logo">
-              <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-                <img src={logoImage} alt="" />
-              </Animated>
-            </div>
+        {/* Left side elements */}
+        <div className="dukov-appeal-section__left-side">
+          <div className="dukov-appeal-section__left-side-figures">
+            <Animated animationIn="slideInLeft" animationOut="fadeOut" isVisible={true}>
+              <img src={leftFiguresImage} alt=""/>
+            </Animated>
           </div>
-          
-            <div className="dukov-appeal-section__right-side">
-              <div className="dukov-appeal-section__right-side-figures">
-                <Animated animationIn="slideInRight" animationOut="fadeOut" isVisible={true}>
-                  <img src={rightFiguresImage} alt=""/>
-                </Animated>
-              </div>
-            </div>
-          
-          <div className="dukov-appeal-section__content">
-              <div className="dukov-photo">
-                <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-                  <img src={dukovPhotoImage} alt=""/>
-                </Animated>
-              </div>
-            <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>            
-              <div className="text-block">
-                <p className="text-block__name">
-                  {DUKOV_APPEAL_NAME}
-                </p>
-
-                <p className="text-block__title">
-                  {DUKOV_APPEAL_TITLE}
-                </p>
-
-                <p className="text-block__letter">
-                  <span>{DUKOV_APPEAL_TEXT[0]}</span>
-                  <br /><br />
-                  <span>{DUKOV_APPEAL_TEXT[1]}</span>
-                </p>
-
-                <button className="text-block__button">
-                  {DUKOV_APPEAL_BUTTONN_VALUE}
-                </button>
-
-                <p className="text-block__signature-name">
-                  {DUKOV_APPEAL_FULL_NAME}
-                </p>
-
-                <p className="text-block__signature-position">
-                  {DUKOV_APPEAL_POSITION}
-                </p>
-              </div>
+          <div className="dukov-appeal-section__left-side-logo">
+            <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
+              <img src={logoImage} alt="" />
             </Animated>
           </div>
         </div>
-      </Section>
+        
+          <div className="dukov-appeal-section__right-side">
+            <div className="dukov-appeal-section__right-side-figures">
+              <Animated animationIn="slideInRight" animationOut="fadeOut" isVisible={true}>
+                <img src={rightFiguresImage} alt=""/>
+              </Animated>
+            </div>
+          </div>
+        
+        <div className="dukov-appeal-section__content">
+            <div className="dukov-photo">
+              <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
+                <img src={dukovPhotoImage} alt=""/>
+              </Animated>
+            </div>
+          <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>            
+            <div className="text-block">
+              <p className="text-block__name">
+                {DUKOV_APPEAL_NAME}
+              </p>
+
+              <p className="text-block__title">
+                {DUKOV_APPEAL_TITLE}
+              </p>
+
+              <p className="text-block__letter">
+                <span>{DUKOV_APPEAL_TEXT[0]}</span>
+                <br /><br />
+                <span>{DUKOV_APPEAL_TEXT[1]}</span>
+              </p>
+
+              <button className="text-block__button">
+                {DUKOV_APPEAL_BUTTONN_VALUE}
+              </button>
+
+              <p className="text-block__signature-name">
+                {DUKOV_APPEAL_FULL_NAME}
+              </p>
+
+              <p className="text-block__signature-position">
+                {DUKOV_APPEAL_POSITION}
+              </p>
+            </div>
+          </Animated>
+        </div>
+      </div>
     );
   }
 }

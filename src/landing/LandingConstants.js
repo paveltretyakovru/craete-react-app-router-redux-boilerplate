@@ -1,17 +1,10 @@
 export const fullpageOptions = {
   anchors: [
-    // 'dukovAppealSection',
+    'dukovAppealSection',
     'informationSection',
-    'carouselSection',
+    'reviewsSection',
     'callToActionSection',
   ],
   navigation: false,
   sectionClassName: 'section',
 };
-
-export const carouselOptions = {
-  showArrows: false,
-  showThumbs: false,
-  showStatus: false,
-  emulateTouch: true, 
-}
