@@ -1,5 +1,98 @@
 .winner-interview-section {
   &__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ffffff;
+  }
+
+  &__content {
+
+  }
+
+  &__title {
+    width: 410px;
+    color: #2E2E2E;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: normal;
+    font-family: HeliosCond;
+  }
+
+  &__sides {
+    display: flex;
+  }
+
+  &__sides-left {
+    width: 410px;
+    margin-right: 140px;
+  }
+
+  &__description {
+    font-family: DIN Pro;
+    line-height: 18px;
+    font-size: 13px;
+    color: #706F6F;
+    margin: 40px 0px;
+  }
+
+  &__questions {
+    font-family: DIN Pro;
+    line-height: normal;
+    font-size: 13px;
+    color: #2E2E2E;
+  }
+
+  &__questions-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  &__questions-item-num {
+    width: 30px;
+    margin-right: 18px;
+
+    & > div {
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      font-size: 16px;
+      line-height: 23px;
+      font-family: DIN Pro;
+      align-items: center;
+      border-radius: 20px;
+      justify-content: center;
+      background-color: #0097D8;
+    }
+  }
+
+  &__questions-item-text {
+    width: 360px;
+  }
+
+  &__sides-right {
+    width: 410px;
+  }
+  
+  &__quote {
+    margin-top: 40px;
+    font-style: italic;
+    font-family: DIN Pro;
+    line-height: 28px;
+    font-size: 20px;
+    color: #2E2E2E;
+  }
+
+  &__quote-signature {
+    font-style: italic;
+    font-family: DIN Pro;
+    line-height: 18px;
+    font-size: 13px;
+    text-decoration-line: underline;
+    margin-top: 20px;
+    width: 213px;
   }
 }

@@ -1,5 +1,58 @@
 .winner-elbrus-section {
   &__wrapper {
-    background: #ffffff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+
+  &__side-left {
+    width: 410px;
+    margin-right: 140px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-family: HeliosCond;
+    line-height: normal;
+    font-size: 32px;
+    color: #2E2E2E;
+  }
+
+  &__description-left {
+    font-family: DIN Pro;
+    line-height: 18px;
+    font-size: 13px;
+    color: #706F6F;
+    margin: 40px 0px;
+
+    p {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+
+  }
+
+  &__side-right {
+    width: 410px;
+  }
+
+  &__image {
+
+  }
+
+  &__description-right {
+    margin-top: 26px;
+    font-family: DIN Pro;
+    line-height: 18px;
+    font-size: 13px;
+    color: #706F6F;
+
+    p {
+      margin-bottom: 16px;
+    }
   }
 }
