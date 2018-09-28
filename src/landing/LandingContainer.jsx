@@ -25,7 +25,7 @@ class LandingComponent extends Component {
         anchors= {[
           // 'dukovAppealSection',
           // 'informationSection',
-          'slideshowSection',
+          // 'slideshowSection',
           'callToActionSection',
         ]}
       >
@@ -37,13 +37,13 @@ class LandingComponent extends Component {
           <InformationSectionComponent />
         </Section> */}
         
-        <Section>
+        {/* <Section>
           <SlideshowContainer>
             <DeminReviewSectionComponent />
             <WinnerInterviewSectionComponent />
             <WinnerElbrusSectionComponent />
           </SlideshowContainer>
-        </Section>
+        </Section> */}
 
         <Section>
           <CallToActionSectionComponent />
