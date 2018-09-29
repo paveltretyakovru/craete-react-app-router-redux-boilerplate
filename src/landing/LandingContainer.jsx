@@ -6,8 +6,8 @@ import {SectionsContainer, Section} from 'react-fullpage';
 
 // Components
 import SlideshowContainer from './shared/containers/Slideshow/SlideshowContainer';
-// import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
-// import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
+import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
+import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
 import {DukovReviewSectionComponent} from './shared/components/sections/DukovReview/DukovReviewSectionComponent';
 import {DeminReviewSectionComponent} from './shared/components/sections/DeminReview/DeminReviewSectionComponent';
 import {CallToActionSectionComponent} from './shared/components/sections/CallToAction/CallToActionSectionComponent';
@@ -23,27 +23,27 @@ class LandingComponent extends Component {
       <SectionsContainer
         {...fullpageOptions}
         anchors= {[
-          // 'dukovAppealSection',
-          // 'informationSection',
-          // 'slideshowSection',
+          'dukovAppealSection',
+          'informationSection',
+          'slideshowSection',
           'callToActionSection',
         ]}
       >
-        {/* <Section>
+        <Section>
           <DukovAppealSectionComponent />
-        </Section> */}
+        </Section>
 
-        {/* <Section>
+        <Section>
           <InformationSectionComponent />
-        </Section> */}
+        </Section>
         
-        {/* <Section>
+        <Section>
           <SlideshowContainer>
             <DeminReviewSectionComponent />
             <WinnerInterviewSectionComponent />
             <WinnerElbrusSectionComponent />
           </SlideshowContainer>
-        </Section> */}
+        </Section>
 
         <Section>
           <CallToActionSectionComponent />
