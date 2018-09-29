@@ -41,7 +41,9 @@ class LandingComponent extends Component {
           </Section>
 
           <Section>
-            <InformationSectionComponent />
+            <InformationSectionComponent
+              active={this.props.landing.activeSection === 1}
+            />
           </Section>
           
           <Section>
@@ -53,7 +55,9 @@ class LandingComponent extends Component {
           </Section>
 
           <Section>
-            <CallToActionSectionComponent />
+            <CallToActionSectionComponent
+              active={this.props.landing.activeSection === 3}
+            />
           </Section>
         </SectionsContainer>
       </div>
