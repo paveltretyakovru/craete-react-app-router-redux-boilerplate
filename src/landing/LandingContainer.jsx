@@ -37,7 +37,9 @@ class LandingComponent extends Component {
           activeSection={this.props.landing.activeSection}
         >
           <Section>
-            <DukovAppealSectionComponent />
+            <DukovAppealSectionComponent
+              active={this.props.landing.activeSection === 0}
+            />
           </Section>
 
           <Section>
@@ -47,7 +49,9 @@ class LandingComponent extends Component {
           </Section>
           
           <Section>
-            <SlideshowContainer>
+            <SlideshowContainer
+              active={this.props.landing.activeSection === 2}
+            >
               <DeminReviewSectionComponent />
               <WinnerInterviewSectionComponent />
               <WinnerElbrusSectionComponent />

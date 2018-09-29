@@ -24,12 +24,22 @@ export class DukovAppealSectionComponent extends Component {
         {/* Left side elements */}
         <div className="dukov-appeal-section__left-side">
           <div className="dukov-appeal-section__left-side-figures">
-            <Animated animationIn="slideInLeft" animationOut="fadeOut" isVisible={true}>
+            <Animated
+              isVisible={this.props.active}
+              animationIn="slideInLeft"
+              animationOut="fadeOut"
+              animationInDelay={800}
+            >
               <img src={leftFiguresImage} alt=""/>
             </Animated>
           </div>
           <div className="dukov-appeal-section__left-side-logo">
-            <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
+            <Animated
+              isVisible={this.props.active}
+              animationIn="fadeIn"
+              animationOut="fadeOut"
+              animationInDelay={800}
+            >
               <img src={logoImage} alt="" />
             </Animated>
           </div>
@@ -37,19 +47,34 @@ export class DukovAppealSectionComponent extends Component {
         
           <div className="dukov-appeal-section__right-side">
             <div className="dukov-appeal-section__right-side-figures">
-              <Animated animationIn="slideInRight" animationOut="fadeOut" isVisible={true}>
+              <Animated
+                isVisible={this.props.active}
+                animationIn="slideInRight"
+                animationOut="fadeOut"
+                animationInDelay={1500}
+              >
                 <img src={rightFiguresImage} alt=""/>
               </Animated>
             </div>
           </div>
         
         <div className="dukov-appeal-section__content">
-            <div className="dukov-photo">
-              <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-                <img src={dukovPhotoImage} alt=""/>
-              </Animated>
-            </div>
-          <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>            
+          <div className="dukov-photo">
+            <Animated
+              isVisible={this.props.active}
+              animationIn="fadeIn"
+              animationOut="fadeOut"
+              animationInDelay={800}
+            >
+              <img src={dukovPhotoImage} alt=""/>
+            </Animated>
+          </div>
+          <Animated
+            isVisible={this.props.active}
+            animationIn="fadeIn"
+            animationOut="fadeOut"
+            animationInDelay={800}
+          >            
             <div className="text-block">
               <p className="text-block__name">
                 {DUKOV_APPEAL_NAME}
