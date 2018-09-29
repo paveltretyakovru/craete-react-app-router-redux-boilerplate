@@ -2,13 +2,12 @@ import React, {Component} from 'react';
 import {push} from 'connected-react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {SectionsContainer, Section} from 'react-fullpage';
+import {SectionsContainer, Section } from 'react-fullpage';
 
 // Components
 import SlideshowContainer from './shared/containers/Slideshow/SlideshowContainer';
 import {DukovAppealSectionComponent} from './shared/components/sections/DukovAppeal/DukovAppealSectionComponent';
 import {InformationSectionComponent} from './shared/components/sections/Information/InformationSectionComponent';
-import {DukovReviewSectionComponent} from './shared/components/sections/DukovReview/DukovReviewSectionComponent';
 import {DeminReviewSectionComponent} from './shared/components/sections/DeminReview/DeminReviewSectionComponent';
 import {CallToActionSectionComponent} from './shared/components/sections/CallToAction/CallToActionSectionComponent';
 import {WinnerElbrusSectionComponent} from './shared/components/sections/WinnerElbrus/WinnerElbrusSectionComponent';
@@ -17,44 +16,62 @@ import {WinnerInterviewSectionComponent} from './shared/components/sections/Winn
 // Constants
 import {fullpageOptions} from './LandingConstants';
 
+// Actions
+import {updateActiveSection} from './LandingActions';
+
 class LandingComponent extends Component {
+  onScroll(p) {
+    if (this.props.landing.activeSection !== p.activeSection) {
+      this.props.updateActiveSection(p.activeSection);
+    }
+  }
+
   render() {
+    const onScroll = this.onScroll.bind(this);
+
     return (
-      <SectionsContainer
-        {...fullpageOptions}
-        anchors= {[
-          'dukovAppealSection',
-          'informationSection',
-          'slideshowSection',
-          'callToActionSection',
-        ]}
-      >
-        <Section>
-          <DukovAppealSectionComponent />
-        </Section>
+      <div>
+        <SectionsContainer
+          {...fullpageOptions}
+          scrollCallback={onScroll}
+          activeSection={this.props.landing.activeSection}
+        >
+          <Section>
+            <DukovAppealSectionComponent />
+          </Section>
 
-        <Section>
-          <InformationSectionComponent />
-        </Section>
-        
-        <Section>
-          <SlideshowContainer>
-            <DeminReviewSectionComponent />
-            <WinnerInterviewSectionComponent />
-            <WinnerElbrusSectionComponent />
-          </SlideshowContainer>
-        </Section>
+          <Section>
+            <InformationSectionComponent />
+          </Section>
+          
+          <Section>
+            <SlideshowContainer>
+              <DeminReviewSectionComponent />
+              <WinnerInterviewSectionComponent />
+              <WinnerElbrusSectionComponent />
+            </SlideshowContainer>
+          </Section>
 
-        <Section>
-          <CallToActionSectionComponent />
-        </Section>
-      </SectionsContainer>
+          <Section>
+            <CallToActionSectionComponent />
+          </Section>
+        </SectionsContainer>
+      </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  goToPortal: () => push('/portal')
-}, dispatch);
+const mapStateToProps = (state) => {
+  return {
+    landing: state.landing,
+  };
+};
 
-export default connect(null, mapDispatchToProps)(LandingComponent);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    updateActiveSection,
+    goToPortal: () => push('/portal'),
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingComponent);

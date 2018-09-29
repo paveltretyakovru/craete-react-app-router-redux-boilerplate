@@ -22,7 +22,7 @@ export class CallToActionSectionComponent extends Component {
               {CALL_TO_ACTION_LINK_DESCRIPTION}
             </div>
 
-            <a href="#" className="big-link">{CALL_TO_ACTION_LINK}</a>
+            <a href="/" className="big-link">{CALL_TO_ACTION_LINK}</a>
           </div>
         </div>
 

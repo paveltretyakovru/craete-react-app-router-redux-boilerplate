@@ -21,7 +21,7 @@ export class InformationSectionComponent extends Component {
             return(
               <div className="information-section__items-item" key={`infitems${index}`}>
                 <div className="information-section__items-image">
-                  <img src={vectorImage} />
+                  <img src={vectorImage} alt="✓" />
                 </div>
                 <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
                   <div className="information-section__items-text">

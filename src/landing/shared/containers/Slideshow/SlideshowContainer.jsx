@@ -55,6 +55,10 @@ class SlideshowContainer extends Component {
       this.props.updateActive(active + 1);
     } else if (!next && (active !== 0)) {
       this.props.updateActive(active - 1);
+    } else if (next && ((active + 1) > max)) {
+      this.props.updateActive(0);
+    } else if (!next && (active === 0)) {
+      this.props.updateActive(max);
     }
   }
 }

@@ -27,7 +27,7 @@ export class DeminReviewSectionComponent extends Component {
           </div>
         </aside>
         <aside className="demin-review-section__side-right">
-          <a href="#" className="big-link">{BIG_LINK_TEXT}</a>
+          <a href="/" className="big-link">{BIG_LINK_TEXT}</a>
           <div className="demin-review-section__letter">
             { DEMIN_LETTER_TEXT.map((p, i) => <p key={`letter-${i}`}>{p}</p>) }
           </div>

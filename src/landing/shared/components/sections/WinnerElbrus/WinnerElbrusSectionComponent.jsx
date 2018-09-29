@@ -33,7 +33,7 @@ export class WinnerElbrusSectionComponent extends Component {
           </div>
 
           <div className="winner-elbrus-section__link">
-            <a href="#" className="big-link">
+            <a href="/" className="big-link">
               {WINNER_ELBRUS_LINK}
             </a>
           </div>
@@ -41,7 +41,7 @@ export class WinnerElbrusSectionComponent extends Component {
 
         <div className="winner-elbrus-section__side-right">
           <div className="winner-elbrus-section__image">
-            <img src={winnerElbrusImage} alt="Elburs winners photo"/>
+            <img src={winnerElbrusImage} alt="Elburs winners"/>
           </div>
 
           <div className="winner-elbrus-section__description-right">

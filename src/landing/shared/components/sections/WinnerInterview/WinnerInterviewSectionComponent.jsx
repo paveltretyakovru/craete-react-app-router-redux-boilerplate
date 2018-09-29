@@ -51,7 +51,7 @@ export class WinnerInterviewSectionComponent extends Component {
               </div>
 
               <div className="winner-interview-section__quote-signature">
-                <a href="#">{QUOTE_SIGNATURE_LINK_TEXT}</a> {QUOTE_SIGNATURE_TEXT}
+                <a href="/">{QUOTE_SIGNATURE_LINK_TEXT}</a> {QUOTE_SIGNATURE_TEXT}
               </div>
 
             </div>
