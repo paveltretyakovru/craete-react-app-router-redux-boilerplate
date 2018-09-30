@@ -64,7 +64,7 @@ export class DukovAppealSectionComponent extends Component {
               isVisible={this.props.active}
               animationIn="fadeIn"
               animationOut="fadeOut"
-              animationInDelay={800}
+              animationInDelay={0}
             >
               <img src={dukovPhotoImage} alt=""/>
             </Animated>
@@ -73,7 +73,7 @@ export class DukovAppealSectionComponent extends Component {
             isVisible={this.props.active}
             animationIn="fadeIn"
             animationOut="fadeOut"
-            animationInDelay={800}
+            animationInDelay={400}
           >            
             <div className="text-block">
               <p className="text-block__name">

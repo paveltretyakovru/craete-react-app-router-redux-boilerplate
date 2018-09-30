@@ -70,7 +70,7 @@ export class InformationSectionComponent extends Component {
                 animationIn="fadeInRight"
                 animationOut="fadeOut"
                 isVisible={this.props.active}
-                animationInDelay={2000}
+                animationInDelay={1800}
               >
                 <div className="information-section__items-item">
                   <div className="information-section__items-image">
@@ -86,7 +86,7 @@ export class InformationSectionComponent extends Component {
                 animationIn="fadeInRight"
                 animationOut="fadeOut"
                 isVisible={this.props.active}
-                animationInDelay={2500}
+                animationInDelay={2100}
               >
                 <div className="information-section__items-item">
                   <div className="information-section__items-image">

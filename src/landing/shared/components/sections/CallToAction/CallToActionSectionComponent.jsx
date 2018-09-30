@@ -1,3 +1,4 @@
+import {Animated} from 'react-animated-css';
 import React, {Component} from 'react';
 
 import './CallToActionSectionComponent.scss';
@@ -7,7 +8,13 @@ export class CallToActionSectionComponent extends Component {
   render() {
     return (
       <div className="call-to-action-section__wrapper">
-        <div className="call-to-action-section__side-left">
+        <Animated
+          isVisible={this.props.active}
+          animationIn="slideInLeft"
+          animationOut="fadeOut"
+          animationInDelay={300}
+          className="call-to-action-section__side-left"
+        >
           <div className="call-to-action-section__title">
             <span className="blue-text">{CALL_TO_ACTION_TITLE_SPECIAL}</span>
             &nbsp;{CALL_TO_ACTION_TITLE}
@@ -24,7 +31,7 @@ export class CallToActionSectionComponent extends Component {
 
             <a href="/" className="big-link">{CALL_TO_ACTION_LINK}</a>
           </div>
-        </div>
+        </Animated>
 
         <div className="call-to-action-section__side-right">
           <div className="call-to-action-section__copyright">

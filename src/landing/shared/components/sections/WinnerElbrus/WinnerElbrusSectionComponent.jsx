@@ -1,3 +1,4 @@
+import {Animated} from 'react-animated-css';
 import React, {Component} from 'react';
 
 // Constants
@@ -22,7 +23,13 @@ export class WinnerElbrusSectionComponent extends Component {
     return (
       <div className="winner-elbrus-section__wrapper">
         
-        <div className="winner-elbrus-section__side-left">
+        <Animated
+          isVisible={this.props.active}
+          animationIn="fadeInLeft"
+          animationOut="fadeOut"
+          animationInDelay={300}
+          className="winner-elbrus-section__side-left"
+        >
           <div className="winner-elbrus-section__title">
             <span className="blue-text">{WINNER_ELBRUS_TITLE_WINNERS}</span>
             &nbsp;{WINNER_ELBRUS_TITLE}
@@ -37,9 +44,15 @@ export class WinnerElbrusSectionComponent extends Component {
               {WINNER_ELBRUS_LINK}
             </a>
           </div>
-        </div>
+        </Animated>
 
-        <div className="winner-elbrus-section__side-right">
+        <Animated
+          isVisible={this.props.active}
+          animationIn="fadeInRight"
+          animationOut="fadeOut"
+          animationInDelay={300}
+          className="winner-elbrus-section__side-right"
+        >
           <div className="winner-elbrus-section__image">
             <img src={winnerElbrusImage} alt="Elburs winners"/>
           </div>
@@ -47,7 +60,7 @@ export class WinnerElbrusSectionComponent extends Component {
           <div className="winner-elbrus-section__description-right">
             {descriptionRight}
           </div>
-        </div>
+        </Animated>
 
       </div>
     );

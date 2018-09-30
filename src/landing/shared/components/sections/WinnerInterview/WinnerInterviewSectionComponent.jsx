@@ -1,3 +1,4 @@
+import {Animated} from 'react-animated-css';
 import React, {Component} from 'react';
 
 import './WinnerInterviewSectionComponent.scss';
@@ -12,8 +13,15 @@ export class WinnerInterviewSectionComponent extends Component {
 
           <div className="winner-interview-section__title-wrapper">
             <div className="winner-interview-section__title">
-              <span className="blue-text">{TITLE_WIN_TEXT}</span>
-              &nbsp;{TITLE_TEXT}
+              <Animated
+                isVisible={this.props.active}
+                animationIn="fadeInDown"
+                animationOut="fadeOut"
+                animationInDelay={300}
+              >
+                <span className="blue-text">{TITLE_WIN_TEXT}</span>
+                &nbsp;{TITLE_TEXT}
+              </Animated>
             </div>
           </div>
 
@@ -21,25 +29,71 @@ export class WinnerInterviewSectionComponent extends Component {
             <div className="winner-interview-section__sides-left">
               
               <div className="winner-interview-section__description">
-                {DESCRIPTION_TEXT}
+                <Animated
+                  isVisible={this.props.active}
+                  animationIn="fadeInLeft"
+                  animationOut="fadeOut"
+                  animationInDelay={300}
+                >
+                  {DESCRIPTION_TEXT}
+                </Animated>
               </div>
 
               <div className="winner-interview-section__questions">
-                {QUESTIONS_TEXT.map((item, index) => {
-                  return (<div
-                      key={`winner-interview-question-${index}`}
-                      className="winner-interview-section__questions-item"
-                    >
-                    <div className="winner-interview-section__questions-item-num">
-                      <div>
-                        {index + 1}
+
+                  <Animated
+                    isVisible={this.props.active}
+                    animationIn="fadeInLeft"
+                    animationOut="fadeOut"
+                    animationInDelay={2000}
+                  >
+                    <div className="winner-interview-section__questions-item">
+                      <div className="winner-interview-section__questions-item-num">
+                        <div>
+                          1
+                        </div>
+                      </div>
+                      <div className="winner-interview-section__questions-item-text">
+                        {QUESTIONS_TEXT[0]}
                       </div>
                     </div>
-                    <div className="winner-interview-section__questions-item-text">
-                      {item}
+                  </Animated>
+
+                  <Animated
+                    isVisible={this.props.active}
+                    animationIn="fadeInLeft"
+                    animationOut="fadeOut"
+                    animationInDelay={2500}
+                  >
+                    <div className="winner-interview-section__questions-item">
+                      <div className="winner-interview-section__questions-item-num">
+                        <div>
+                          2
+                        </div>
+                      </div>
+                      <div className="winner-interview-section__questions-item-text">
+                        {QUESTIONS_TEXT[1]}
+                      </div>
                     </div>
-                  </div>)
-                })}
+                  </Animated>
+
+                  <Animated
+                    isVisible={this.props.active}
+                    animationIn="fadeInLeft"
+                    animationOut="fadeOut"
+                    animationInDelay={3000}
+                  >
+                    <div className="winner-interview-section__questions-item">
+                      <div className="winner-interview-section__questions-item-num">
+                        <div>
+                          3
+                        </div>
+                      </div>
+                      <div className="winner-interview-section__questions-item-text">
+                        {QUESTIONS_TEXT[2]}
+                      </div>
+                    </div>
+                  </Animated>
               </div>
 
             </div>
@@ -47,11 +101,25 @@ export class WinnerInterviewSectionComponent extends Component {
             <div className="winner-interview-section__sides-right">
               
               <div className="winner-interview-section__quote">
-                {QUOTE_TEXT}
+                <Animated
+                  isVisible={this.props.active}
+                  animationIn="fadeInRight"
+                  animationOut="fadeOut"
+                  animationInDelay={1500}
+                >
+                  {QUOTE_TEXT}
+                </Animated>
               </div>
 
               <div className="winner-interview-section__quote-signature">
-                <a href="/">{QUOTE_SIGNATURE_LINK_TEXT}</a> {QUOTE_SIGNATURE_TEXT}
+                <Animated
+                  isVisible={this.props.active}
+                  animationIn="fadeInRight"
+                  animationOut="fadeOut"
+                  animationInDelay={1500}
+                >
+                  <a href="/">{QUOTE_SIGNATURE_LINK_TEXT}</a> {QUOTE_SIGNATURE_TEXT}
+                </Animated>
               </div>
 
             </div>

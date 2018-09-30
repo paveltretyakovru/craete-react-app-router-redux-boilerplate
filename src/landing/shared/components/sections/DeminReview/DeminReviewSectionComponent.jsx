@@ -1,3 +1,4 @@
+import {Animated} from 'react-animated-css';
 import React, {Component} from 'react';
 
 // Constants
@@ -16,17 +17,40 @@ export class DeminReviewSectionComponent extends Component {
   render() {
     return (
       <div className="demin-review-section__wrapper">
+
         <aside className="demin-review-section__side-left">
           <div className="demin-review-section__title">
-            <span className="blue-text">{WINNERS_TITLE_TEXT}&nbsp;</span>
-            {TITLE_TEXT}
+            <Animated
+              isVisible={this.props.active}
+              animationIn="fadeInDown"
+              animationOut="fadeOut"
+              animationInDelay={300}
+            >
+              <span className="blue-text">{WINNERS_TITLE_TEXT}&nbsp;</span>
+              {TITLE_TEXT}
+            </Animated>
           </div>
 
           <div className="demin-review-section__description">
-            { DESCRIPTION_TEXT.map((p, i) => <p key={`desc-${i}`}>{p}</p>) }
+            <Animated
+                animationIn="fadeInUp"
+                animationOut="fadeOut"
+                isVisible={this.props.active}
+            >
+              { DESCRIPTION_TEXT.map((p, i) => <p key={`desc-${i}`}>{p}</p>) }
+            </Animated>
           </div>
         </aside>
+
         <aside className="demin-review-section__side-right">
+          <Animated
+            animationIn="fadeInRight"
+            animationOut="fadeOut"
+            isVisible={this.props.active}
+            style={{
+              display: 'flex', flexDirection: 'column', justifyContent: 'center'
+            }}
+          >
           <a href="/" className="big-link">{BIG_LINK_TEXT}</a>
           <div className="demin-review-section__letter">
             { DEMIN_LETTER_TEXT.map((p, i) => <p key={`letter-${i}`}>{p}</p>) }
@@ -45,6 +69,7 @@ export class DeminReviewSectionComponent extends Component {
               </p>
             </div>
           </div>
+          </Animated>
         </aside>
       </div>
     )

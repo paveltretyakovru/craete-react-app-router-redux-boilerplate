@@ -8,7 +8,8 @@
   }
 
   &__side-left {
-    width: 410px;
+    width: 410px !important;
+    height: auto !important;
     margin-right: 140px;
   }
 
@@ -32,16 +33,9 @@
     }
   }
 
-  &__link {
-
-  }
-
   &__side-right {
-    width: 410px;
-  }
-
-  &__image {
-
+    width: 410px !important;
+    height: auto !important;
   }
 
   &__description-right {

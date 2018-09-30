@@ -52,9 +52,18 @@ class LandingComponent extends Component {
             <SlideshowContainer
               active={this.props.landing.activeSection === 2}
             >
-              <DeminReviewSectionComponent />
-              <WinnerInterviewSectionComponent />
-              <WinnerElbrusSectionComponent />
+              <DeminReviewSectionComponent
+                active={
+                  this.props.slideshow.active === 0
+                  && this.props.landing.activeSection === 2
+                }
+              />
+              <WinnerInterviewSectionComponent
+                active={this.props.slideshow.active === 1}
+              />
+              <WinnerElbrusSectionComponent
+                active={this.props.slideshow.active === 2}
+              />
             </SlideshowContainer>
           </Section>
 
@@ -72,6 +81,7 @@ class LandingComponent extends Component {
 const mapStateToProps = (state) => {
   return {
     landing: state.landing,
+    slideshow: state.slideshow,
   };
 };
 
