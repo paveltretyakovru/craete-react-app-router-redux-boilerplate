@@ -1,7 +1,7 @@
 import { UPDATE_ACTIVE_SECTION } from "./LandingConstants";
 
 const initialState = {
-  activeSection: null,
+  activeSection: 0,
 };
 
 export default function(state = initialState, action) {
