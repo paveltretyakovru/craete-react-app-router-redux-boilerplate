@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'HeliosCond';
+    src: url('HeliosCond-Bold.eot');
+    src: local('HeliosCond Bold'), local('HeliosCond-Bold'),
+        url('HeliosCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('HeliosCond-Bold.woff') format('woff'),
+        url('HeliosCond-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HeliosCond';
+    src: url('HeliosCond-Bold-Italic.eot');
+    src: local('HeliosCond Bold Italic'), local('HeliosCond-Bold-Italic'),
+        url('HeliosCond-Bold-Italic.eot?#iefix') format('embedded-opentype'),
+        url('HeliosCond-Bold-Italic.woff') format('woff'),
+        url('HeliosCond-Bold-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HeliosCond';
+    src: url('HeliosCond-Italic.eot');
+    src: local('HeliosCond Italic'), local('HeliosCond-Italic'),
+        url('HeliosCond-Italic.eot?#iefix') format('embedded-opentype'),
+        url('HeliosCond-Italic.woff') format('woff'),
+        url('HeliosCond-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'HeliosCond';
+    src: url('HeliosCond.eot');
+    src: local('HeliosCond Regular'), local('HeliosCond'),
+        url('HeliosCond.eot?#iefix') format('embedded-opentype'),
+        url('HeliosCond.woff') format('woff'),
+        url('HeliosCond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

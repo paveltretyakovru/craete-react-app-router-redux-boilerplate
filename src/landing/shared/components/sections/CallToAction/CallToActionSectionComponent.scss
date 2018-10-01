@@ -1,0 +1,64 @@
+.call-to-action-section {
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    background: url('./shared/assets/images/call-to-action-bg.png');
+    background-size: cover;
+    justify-content: space-between;
+  }
+
+  &__side-left {
+    width: 50% !important;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff70;
+  }
+
+  &__title {
+    width: 410px;
+    color: #2E2E2E;
+    font-size: 32px;
+    line-height: normal;
+    font-family: HeliosCond;
+  }
+
+  &__description {
+    width: 410px;
+    color: #706F6F;
+    margin: 40px 0px;
+    font-size: 13px;
+    font-family: DIN Pro;
+    line-height: 18px;
+  }
+
+  &__link {
+    width: 410px;
+  }
+
+  &__link-description {
+    color: #2E2E2E;
+    width: 180px;
+    font-size: 20px;
+    font-family: DIN Pro;
+    line-height: normal;
+    margin-bottom: 18px;
+  }
+
+  &__side-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  &__copyright {
+    width: 220px;
+    color: #0070BA;
+    font-family: DIN Pro;
+    line-height: 23px;
+    margin-right: 100px;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+}

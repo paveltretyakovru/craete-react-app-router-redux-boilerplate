@@ -1,0 +1,115 @@
+.dukov-appeal-section {
+  &__wrapper {
+    height: 100%;
+    position: relative;
+    background-color: #2E2E2E;
+  }
+
+  &__left-side {
+    bottom: 75px;
+    z-index: 1;
+    position: absolute;
+
+    &-figures {
+      margin-bottom: 50px;
+    }
+
+    &-logo {
+      margin-left: 75px;
+    }
+  }
+
+  &__right-side {
+    right: 0;
+    bottom: 25px;
+    position: absolute;
+
+    &-figures {
+
+    }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dukov-photo {
+      height: 100%;
+      display: flex;
+      margin-right: 100px;
+      align-items: flex-end;
+
+      & > div {
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      img {
+        height: 98%;
+      }
+    }
+
+    .text-block {
+      max-width: 410px;
+
+      &__name {
+        font-family: HeliosCond;
+        line-height: normal;
+        font-size: 50px;
+        color: #009DDC;
+      }
+
+      &__title {
+        color: #FFFFFF;
+        margin: 10px 0px 23px 0px;
+        font-size: 13px;
+        font-family: DIN Pro;
+        line-height: normal;
+      }
+
+      &__letter {
+        font-family: DIN Pro;
+        line-height: normal;
+        font-size: 13px;
+        color: #FFFFFF;
+      }
+
+      &__button {
+        color: #FFFFFF;
+        width: 190px;
+        border: none;
+        margin: 25px 0px;
+        padding: 15px 40px;
+        font-size: 15px;
+        line-height: normal;
+        font-family: DIN Pro;
+        background-color: #0079C1;
+
+        &:hover {
+          background-color: #009ddc;
+        }
+      }
+
+      &__signature {
+        
+        &-name {
+          color: #B2B2B2;
+          font-size: 16px;
+          font-family: DIN Pro;
+          line-height: normal;
+        }
+
+        &-position {
+          color: #B2B2B2;
+          font-size: 13px;
+          margin-top: 5px;
+          font-family: DIN Pro;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
