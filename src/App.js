@@ -14,6 +14,11 @@ class App extends Component {
         <Route exact path={``} component={Landing} className="app-landing" />
         <Route exact path={`/`} component={Landing} className="app-landing" />
         <Route exact path={`/:id`} component={Portal} className="app-portal" />
+
+        <Route exact path={`s/JB764F50C1`} component={Landing} className="app-landing" />
+        <Route exact path={`/s/JB764F50C1/`} component={Landing} className="app-landing" />
+        <Route exact path={`/s/JB764F50C1/:id`} component={Portal} className="app-portal" />
+
         {/* <Route exact path={`${process.env.PUBLIC_URL}/`} component={Landing} className="app-landing" />
         <Route exact path={`${process.env.PUBLIC_URL}/portal`} component={Portal} className="app-portal" /> */}
       </div>
