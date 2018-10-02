@@ -1,5 +1,4 @@
 ﻿import {connect} from 'react-redux';
-import {Animated} from 'react-animated-css';
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 
@@ -29,14 +28,6 @@ class SlideshowContainer extends Component {
             this.props.children.map((child, index) => {
               return (
                 <div key={`slideshow-page-${index}`} style={{display: (this.props.slideshow.active === index) ? 'block' : 'none'}}>
-                  {/* <Animated
-                    animationIn="fadeIn"
-                    animationOut="fadeOut"
-                    isVisible={
-                      this.props.slideshow.active === index
-                      && this.props.active
-                    }
-                  ></Animated> */}
                   {child}
                 </div>
               );
