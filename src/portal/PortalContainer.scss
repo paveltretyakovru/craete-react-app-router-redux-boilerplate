@@ -1,0 +1,32 @@
+.portal {
+  height: 100%;
+  display: grid;
+  padding-top: 11px;
+  grid-row-gap: 14px;
+  justify-content: center;
+  grid-column-gap: 30px;
+  background-color: #f2efeb;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 300px 630px 300px;
+
+  grid-template-areas:
+    "left-side header header"
+    "left-side content right-side"
+    "left-side content right-side";
+  
+  &__left-side {
+    grid-area: left-side;
+  }
+
+  &__right-side {
+    grid-area: right-side;
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__content {
+    grid-area: content;
+  }
+}
