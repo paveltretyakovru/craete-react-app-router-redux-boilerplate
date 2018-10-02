@@ -19,6 +19,7 @@
   }
 
   &__right-side {
+    position: relative;
     grid-area: right-side;
   }
 
@@ -28,5 +29,36 @@
 
   &__content {
     grid-area: content;
+  }
+
+  &__blue-block {
+    color: #fff;
+    padding: 40px;
+    background: #0070BA;
+    margin-top: 14px;
+    font-family: DIN Pro;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-label {
+      line-height: 19px;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    &-link {
+      display: block;
+      width: fit-content;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 4px;
+    }
+
+    &-elements {
+      position: absolute;
+    }
   }
 }

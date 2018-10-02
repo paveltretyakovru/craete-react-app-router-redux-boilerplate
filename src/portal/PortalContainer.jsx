@@ -6,11 +6,15 @@ import {bindActionCreators} from 'redux';
 // Actions
 import {updateTabIndex} from './portalActions';
 
-
 // Styles
 import './PortalContainer.scss';
 import { PortalChecklistComponent } from './shared/components/checklist/PortalChecklistComponent';
 import { PortalHeaderComponent } from './shared/components/header/PortalHeaderComponent';
+import { PortalTimerComponent } from './shared/components/timer/PortalTimerComponent';
+import { PORTAL_BLUE_BLOCK_LABEL, PORTAL_BLUE_BLOCK_LINK_LABEL } from './portalConstants';
+
+// Images
+import blueBlockElementsImage from './shared/assets/images/elements.svg';
 
 const PortalContainer = props => (
   <div className="portal">
@@ -19,7 +23,20 @@ const PortalContainer = props => (
     </aside>
 
     <aside className="portal__right-side">
-      Right side
+      <PortalTimerComponent />
+      <div className="portal__blue-block">
+        <div className="portal__blue-block-label">
+          {PORTAL_BLUE_BLOCK_LABEL}
+        </div>
+        <a href="./" className="portal__blue-block-link">
+          {PORTAL_BLUE_BLOCK_LINK_LABEL}
+        </a>
+
+        <img
+          src={blueBlockElementsImage}
+          alt="elements"
+          className="portal__blue-block-elements" />
+      </div>
     </aside>
 
     <header className="portal__header">
