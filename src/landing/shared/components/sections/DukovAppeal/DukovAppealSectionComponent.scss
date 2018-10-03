@@ -3,6 +3,10 @@
     height: 100%;
     position: relative;
     background-color: #2E2E2E;
+
+    & .animated {
+      height: 100%;
+    }
   }
 
   &__left-side {
