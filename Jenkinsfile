@@ -41,7 +41,7 @@ pipeline {
               rm -rf "$PROJECT_DIR/package"
               mkdir -p "$PROJECT_DIR/package"
 
-              ARTIFACT_NAME="widgets-gpb-leader-landing"
+              ARTIFACT_NAME="widgets-gpn-leader-landing"
               RPMVER="1.1.${BUILD_NUMBER:-0}"
               RPMREL="1"
               ARTIFACT_VERSION="${RPMVER}-${RPMREL}"
@@ -66,7 +66,7 @@ pipeline {
       steps {
           ansiColor('xterm') {
             sh '''
-              ARTIFACT_NAME="widgets-gpb-leader-landing"
+              ARTIFACT_NAME="widgets-gpn-leader-landing"
               RPMVER="1.1.${BUILD_NUMBER:-0}"
               RPMREL="1"
               ARTIFACT_VERSION="${RPMVER}-${RPMREL}"
@@ -90,14 +90,14 @@ pipeline {
         steps {
           milestone(1)
           sh '''
-            ARTIFACT_NAME="widgets-gpb-leader-landing"
+            ARTIFACT_NAME="widgets-gpn-leader-landing"
             RPMVER="1.1.${BUILD_NUMBER:-0}"
             RPMREL="1"
             ARTIFACT_VERSION="${RPMVER}-${RPMREL}"
             ARTIFACT_FILE_NAME="${ARTIFACT_NAME}-${ARTIFACT_VERSION}"
             RPM_URL="http://nexus.rooxintra.net/content/repositories/releases/com/rooxteam/widgets/${ARTIFACT_NAME}/${ARTIFACT_VERSION}/${ARTIFACT_FILE_NAME}-rpm.rpm"
 
-            ssh -o StrictHostKeyChecking=no -i /home/jenkins/vagrant-aws/slack-backup.pem centos@gpb-leader.demo.rooxteam.com sudo yum install -y --disablerepo=roox* $RPM_URL
+            ssh -o StrictHostKeyChecking=no -i /home/jenkins/vagrant-aws/slack-backup.pem centos@gpn-leader.demo.rooxteam.com sudo yum install -y --disablerepo=roox* $RPM_URL
           '''
         }
      }
@@ -138,8 +138,8 @@ pipeline {
               def authors = currentBuild.changeSets.collectMany { it.toList().collect { it.author } }.unique().join(',')
 
               slackSend (color: "#397f3e",
-                   channel: "gpb-leader-management",
-                   message: ":zap: *Frontend обновлен на стенде* :zap: \n\n:pr: ${commits}\n\n:package: widgets-znt-spa-1.1.${env.BUILD_ID} :github: <https://github.com/rooxteam/widgets-znt/commits/develop|Github> | :jenkins: <${env.BUILD_URL}|Jenkins> | :znt: <https://sso-znt.demo.rooxteam.com/|ZNT-DBO>")
+                   channel: "gpn-leader-general",
+                   message: ":zap: *Frontend обновлен на стенде* :zap: \n\n:pr: ${commits}\n\n:package: widgets-gpn-leader-landing-1.0.${env.BUILD_ID} :github: <https://bitbucket.org/rooxteam/widgets-gpn-leader-landing/commits/develop|Bitbucket> | :jenkins: <${env.BUILD_URL}|Jenkins> | :znt: <https://gpn-leader.demo.rooxteam.com/|GPN Leader>")
 
 
           } else {

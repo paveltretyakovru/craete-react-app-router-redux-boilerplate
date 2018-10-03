@@ -18,12 +18,12 @@ class SlideshowContainer extends Component {
     const toFront = () => this.updateActive(true);
 
     return(
-      <div className="gpb-slideshow">
-        <div className="gpb-slideshow__arrow-left" onClick={toBack}>
+      <div className="gpn-slideshow">
+        <div className="gpn-slideshow__arrow-left" onClick={toBack}>
           <img src={arrowLeftImage} alt="←" />
         </div>
 
-        <div className="gpb-slideshow__content">
+        <div className="gpn-slideshow__content">
           {
             this.props.children.map((child, index) => {
               return (
@@ -35,7 +35,7 @@ class SlideshowContainer extends Component {
           }
         </div>
 
-        <div className="gpb-slideshow__arrow-right" onClick={toFront}>
+        <div className="gpn-slideshow__arrow-right" onClick={toFront}>
           <img src={arrowRightImage} alt="→" />
         </div>
       </div>
