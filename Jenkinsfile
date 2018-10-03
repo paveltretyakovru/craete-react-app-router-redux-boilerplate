@@ -109,7 +109,7 @@ pipeline {
         script {
           def authors = currentBuild.changeSets.collectMany { it.toList().collect { it.author } }.unique().toString()
           slackSend (color: "#818284",
-                             channel: "management",
+                             channel: "gpn-leader-general",
                              message: "*ABORTED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${authors}\n More info at: ${env.BUILD_URL}")
         }
 
@@ -121,7 +121,7 @@ pipeline {
         script {
           def authors = currentBuild.changeSets.collectMany { it.toList().collect { it.author } }.unique().toString()
           slackSend (color: "#d13c06",
-                             channel: "management",
+                             channel: "gpn-leader-general",
                              message: "*FAILED:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} by ${authors}\n More info at: ${env.BUILD_URL}")
         }
 
@@ -139,7 +139,7 @@ pipeline {
 
               slackSend (color: "#397f3e",
                    channel: "gpn-leader-general",
-                   message: ":zap: *Frontend обновлен на стенде* :zap: \n\n:pr: ${commits}\n\n:package: widgets-gpn-leader-landing-1.0.${env.BUILD_ID} :github: <https://bitbucket.org/rooxteam/widgets-gpn-leader-landing/commits/develop|Bitbucket> | :jenkins: <${env.BUILD_URL}|Jenkins> | :znt: <https://gpn-leader.demo.rooxteam.com/|GPN Leader>")
+                   message: ":zap: *Frontend обновлен на стенде* :zap: \n\n:pr: ${commits}\n\n:package: widgets-gpn-leader-landing-1.1.${env.BUILD_ID} :github: <https://bitbucket.org/rooxteam/widgets-gpn-leader-landing/commits/develop|Bitbucket> | :jenkins: <${env.BUILD_URL}|Jenkins> | :znt: <https://gpn-leader.demo.rooxteam.com/|GPN Leader>")
 
 
           } else {
