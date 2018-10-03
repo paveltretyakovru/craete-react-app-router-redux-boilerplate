@@ -30,7 +30,7 @@ class LandingComponent extends Component {
     const onScroll = this.onScroll.bind(this);
 
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <SectionsContainer
           {...fullpageOptions}
           scrollCallback={onScroll}

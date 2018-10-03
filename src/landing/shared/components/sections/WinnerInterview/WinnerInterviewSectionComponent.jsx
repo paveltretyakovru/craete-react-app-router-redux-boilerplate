@@ -31,7 +31,7 @@ export class WinnerInterviewSectionComponent extends Component {
               <div className="winner-interview-section__description">
                 <Animated
                   isVisible={this.props.active}
-                  animationIn="fadeInLeft"
+                  animationIn="fadeIn"
                   animationOut="fadeOut"
                   animationInDelay={300}
                 >
@@ -43,7 +43,7 @@ export class WinnerInterviewSectionComponent extends Component {
 
                   <Animated
                     isVisible={this.props.active}
-                    animationIn="fadeInLeft"
+                    animationIn="fadeIn"
                     animationOut="fadeOut"
                     animationInDelay={2000}
                   >
@@ -61,7 +61,7 @@ export class WinnerInterviewSectionComponent extends Component {
 
                   <Animated
                     isVisible={this.props.active}
-                    animationIn="fadeInLeft"
+                    animationIn="fadeIn"
                     animationOut="fadeOut"
                     animationInDelay={2500}
                   >
@@ -79,7 +79,7 @@ export class WinnerInterviewSectionComponent extends Component {
 
                   <Animated
                     isVisible={this.props.active}
-                    animationIn="fadeInLeft"
+                    animationIn="fadeIn"
                     animationOut="fadeOut"
                     animationInDelay={3000}
                   >
