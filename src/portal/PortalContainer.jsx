@@ -23,30 +23,35 @@ const PortalContainer = props => (
     </aside>
 
     <aside className="portal__right-side">
-      <PortalTimerComponent />
-      <div className="portal__blue-block">
-        <div className="portal__blue-block-label">
-          {PORTAL_BLUE_BLOCK_LABEL}
-        </div>
-        <a href="./" className="portal__blue-block-link">
-          {PORTAL_BLUE_BLOCK_LINK_LABEL}
-        </a>
+      <div className="portal__header">
+        <PortalHeaderComponent />
+      </div>
 
-        <img
-          src={blueBlockElementsImage}
-          alt="elements"
-          className="portal__blue-block-elements" />
+      <div className="portal__content">
+
+        <main className="portal__main">
+          Main content
+        </main>
+
+        <aside className="portal__right-blocks">
+          <PortalTimerComponent />
+          <div className="portal__blue-block">
+            <div className="portal__blue-block-label">
+              {PORTAL_BLUE_BLOCK_LABEL}
+            </div>
+            <a href="./" className="portal__blue-block-link">
+              {PORTAL_BLUE_BLOCK_LINK_LABEL}
+            </a>
+
+          </div>
+          <img
+            src={blueBlockElementsImage}
+            alt="elements"
+            className="portal__blue-block-elements" />
+        </aside>
+
       </div>
     </aside>
-
-    <header className="portal__header">
-      <PortalHeaderComponent />
-    </header>
-
-    <main className="portal__content">
-      Main content
-    </main>
-
   </div>
 );
 

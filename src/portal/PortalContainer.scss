@@ -1,35 +1,27 @@
 .portal {
   height: 100%;
-  display: grid;
+  display: flex;
   padding-top: 11px;
-  grid-row-gap: 14px;
   justify-content: center;
-  grid-column-gap: 30px;
   background-color: #f2efeb;
-  grid-template-rows: 50px 1fr;
-  grid-template-columns: 300px 630px 300px;
 
-  grid-template-areas:
-    "left-side header header"
-    "left-side content right-side"
-    "left-side content right-side";
-  
   &__left-side {
-    grid-area: left-side;
-  }
-
-  &__right-side {
-    position: relative;
-    grid-area: right-side;
-  }
-
-  &__header {
-    grid-area: header;
+    margin-right: 30px;
   }
 
   &__content {
-    grid-area: content;
+    display: flex;
+    margin-top: 11px;
   }
+
+  &__main {
+    width: 630px;
+  }
+
+  &__right-blocks {
+    width: 300px;
+  }
+
 
   &__blue-block {
     color: #fff;
@@ -48,7 +40,7 @@
     }
 
     &-link {
-      display: block;
+      display: table;
       width: fit-content;
       color: #fff;
       font-weight: bold;
@@ -59,6 +51,8 @@
 
     &-elements {
       position: absolute;
+      margin-left: 246px;
+      margin-top: -41px;
     }
   }
 }

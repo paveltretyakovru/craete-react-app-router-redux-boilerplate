@@ -67,6 +67,8 @@
     a {
       width: fit-content;
       display: block;
+      float:left;
+      clear:left;
       margin-bottom: 10px;
       padding-bottom: 1px;
       text-decoration: none;
