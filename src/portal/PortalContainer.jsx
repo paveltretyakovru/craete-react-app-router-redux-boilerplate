@@ -16,6 +16,7 @@ import { PORTAL_BLUE_BLOCK_LABEL, PORTAL_BLUE_BLOCK_LINK_LABEL } from './portalC
 // Images
 import blueBlockElementsImage from './shared/assets/images/elements.svg';
 import { NewsComponent } from './shared/components/contents/news/NewsComponent';
+import { HowRegisterComponent } from './shared/components/contents/how-register/HowRegisterComponent';
 
 class PortalContainer extends Component {
   render() {
@@ -44,6 +45,7 @@ class PortalContainer extends Component {
                 (() => {
                   switch (this.props.tabIndex) {
                     case 0: return <NewsComponent />;
+                    case 1: return <HowRegisterComponent />;
                     default: return <p>Main containt default value</p>;
                   }
                 })()  

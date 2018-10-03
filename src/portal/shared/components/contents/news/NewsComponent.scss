@@ -2,7 +2,8 @@
   &__block {
     padding: 20px 50px 122px 31px;
     background: #FFFFFF;
-    border: 1px solid #E9E9E9; 
+    border: 1px solid #E9E9E9;
+    margin-bottom: 24px; 
   }
 
   &__label {
@@ -10,6 +11,11 @@
     line-height: 18px;
     font-size: 13px;
     color: #B2B2B2;
+    margin-right: 27px;
+
+    &-block {
+      display: flex;
+    }
   }
 
   &__title {
@@ -49,6 +55,13 @@
     
     &-small {
       font-size: 16px;
+    }
+  }
+
+  &__elbrus-winners {
+    img {
+      margin-top: 26px;
+      width: 100%;
     }
   }
 }
