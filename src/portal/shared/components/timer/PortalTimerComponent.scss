@@ -1,0 +1,51 @@
+.portal-timer {
+  padding: 50px;
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  box-sizing: border-box;
+
+  &__label {
+    margin-top: 14px;
+    font-family: DIN Pro;
+    font-size: 13px;
+    color: #706F6F;
+    line-height: 15px;
+  }
+
+  &__link {
+    margin-top: 18px;
+  }
+
+  &__counter {
+    display: flex;
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      
+      &:first-child {
+        margin-right: 18px;
+      }
+
+      &:last-child {
+        margin-left: 9px;
+      }
+    }
+
+    &-number {
+      font-family: HeliosCond;
+      line-height: normal;
+      font-size: 40px;
+      color: #2E2E2E;
+      font-weight: bold;
+    }
+
+    &-string {
+      font-family: HeliosCond;
+      line-height: normal;
+      font-size: 13px;
+      color: #004077;
+      font-weight: bold;
+    }
+  }
+}

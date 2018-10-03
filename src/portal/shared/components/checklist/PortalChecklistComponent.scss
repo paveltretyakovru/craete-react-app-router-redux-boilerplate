@@ -1,0 +1,80 @@
+.portal-checklist {
+  height: 100%;
+  
+  &__logo, &__list, &__links {
+    border: 1px solid #E9E9E9;
+    background: #FFFFFF;
+  }
+
+  &__logo {
+    padding: 15px 46px;
+  }
+
+  &__list {
+    padding: 35px 48px;
+
+    &-title {
+      color: #2E2E2E;
+      font-size: 16px;
+      font-family: DIN Pro;
+      line-height: 23px;
+    }
+
+    &-items {
+      margin-top: 25px;
+    }
+
+    &-item { 
+      color: #706F6F;  
+      cursor: pointer;
+      display: flex;
+      margin-bottom: 13px;
+
+      &-image {
+        width: 19px;
+        height: 19px;
+
+        margin-right: 10px;
+      }
+
+      &-value {
+        width: 175px;
+        font-family: DIN Pro;
+        line-height: 15px;
+        font-size: 13px;
+      }
+
+      &_checked {
+        color: #B2B2B2;
+        text-decoration: line-through;
+      }
+
+      &_unchecked {
+        &:hover {
+          color: #004077;
+        }
+      }
+    }
+  }
+
+  &__links {
+    font-family: DIN Pro;
+    line-height: normal;
+    font-size: 13px;
+    color: #004077;
+    padding: 22px 48px 24px 48px;
+
+    a {
+      width: fit-content;
+      display: table;
+      margin-bottom: 10px;
+      padding-bottom: 1px;
+      text-decoration: none;
+      border-bottom:1px solid #004077;
+
+      &:visited {
+        color: #004077;
+      } 
+    }
+  }
+}

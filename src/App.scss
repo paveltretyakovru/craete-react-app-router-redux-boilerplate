@@ -1,12 +1,23 @@
+.App, #root {
+  height: 100%;
+}
+
 .blue-text {
   color: #0079c1;
 }
 
 .big-link {
-  font-weight: bold;
   color: #0070BA;
+  width: fit-content;
+  display: table;
   font-size: 20px;
   line-height: 28px;
+  font-weight: bold;
   font-family: DIN Pro;
-  text-decoration-line: underline;
+  text-decoration: none;
+  border-bottom: 3px solid #0070BA;
+}
+
+.animated {
+  overflow: hidden;
 }

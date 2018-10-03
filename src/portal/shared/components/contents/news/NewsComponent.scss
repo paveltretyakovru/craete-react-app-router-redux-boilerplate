@@ -1,0 +1,95 @@
+﻿.portal-news {
+  &__block {
+    padding: 20px 50px 122px 31px;
+    background: #FFFFFF;
+    border: 1px solid #E9E9E9;
+    margin-bottom: 24px; 
+  }
+
+  &__label {
+    font-family: DIN Pro;
+    line-height: 18px;
+    font-size: 13px;
+    color: #B2B2B2;
+    margin-right: 27px;
+
+    &-block {
+      display: flex;
+    }
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-family: DIN Pro;
+    line-height: 21px;
+    font-size: 18px;
+    color: #2E2E2E;
+    width: 411px;
+  }
+  
+  &__text {
+    margin-top: 24px;
+    font-family: DIN Pro;
+    line-height: 18px;
+    font-size: 13px;
+    color: #2E2E2E;
+
+    p:last-child {
+      margin-top: 24px;
+    }
+  }
+
+  &__quote, &__quote-small {
+    font-style: italic;
+    font-family: DIN Pro;
+    line-height: 23px;
+    color: #2E2E2E;
+    
+    width: 410px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  &__quote {
+    font-size: 20px;
+    
+    &-small {
+      font-size: 16px;
+    }
+  }
+
+  &__elbrus-winners {
+    img {
+      margin-top: 26px;
+      width: 100%;
+    }
+  }
+}
+
+.demin-signature {
+  width: 400px;
+  display: flex;
+  margin: auto;
+  margin-top: 75px;
+  align-items: center;
+
+  &__avatar {
+    width: 50px;
+    margin-right: 17px;
+  }
+
+  &__fullname {
+    font-family: DIN Pro;
+    line-height: normal;
+    font-size: 13px;
+    color: #2E2E2E;
+  }
+
+  &__position {
+    color: #706F6F;
+    font-size: 11px;
+    font-family: DIN Pro;
+    line-height: normal;
+    margin-top: 5px;
+  }
+}

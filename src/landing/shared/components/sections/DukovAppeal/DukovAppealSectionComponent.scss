@@ -3,6 +3,10 @@
     height: 100%;
     position: relative;
     background-color: #2E2E2E;
+
+    & .animated {
+      height: 100%;
+    }
   }
 
   &__left-side {
@@ -46,20 +50,17 @@
         display: flex;
         align-items: flex-end;
       }
-
-      img {
-        height: 98%;
-      }
     }
 
     .text-block {
       max-width: 410px;
 
       &__name {
+        color: #009DDC;
+        font-size: 50px;
+        font-weight: 700;
         font-family: HeliosCond;
         line-height: normal;
-        font-size: 50px;
-        color: #009DDC;
       }
 
       &__title {
@@ -71,10 +72,11 @@
       }
 
       &__letter {
-        font-family: DIN Pro;
-        line-height: normal;
-        font-size: 13px;
         color: #FFFFFF;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 15px;
+        font-family: DIN Pro;
       }
 
       &__button {

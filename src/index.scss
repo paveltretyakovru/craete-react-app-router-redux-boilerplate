@@ -51,8 +51,10 @@ table {
 }
 
 // ============ end of reset
-* { overflow: hidden; }
+body {
+  background-color: #f2efeb;
+}
 
 body, html {
-  overflow: hidden;
+	height: 100%;
 }
