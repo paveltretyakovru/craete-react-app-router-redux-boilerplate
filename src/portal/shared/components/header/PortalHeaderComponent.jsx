@@ -15,11 +15,12 @@ export class PortalHeaderComponent extends Component {
       <div className="portal-header">
         <div className="portal-header__menu">
           {
-            PORTAL_HEADER_ITEMS.map((item) => {
+            PORTAL_HEADER_ITEMS.map((item, index) => {
               if (item.secret) {
                 return (
                   <div
                     key={`portal-header-item-key-${item.id}`}
+                    onClick={() => this.props.updateTabIndex(index)}
                     className="portal-header__menu-item portal-header__menu-item_locked"
                   >
                     <img src={lockImage} alt="Lock section"/>
@@ -30,8 +31,9 @@ export class PortalHeaderComponent extends Component {
                 return (
                   <div
                     key={`portal-header-item-key-${item.id}`}
+                    onClick={() => this.props.updateTabIndex(index)}
                     className={
-                      item.active
+                      this.props.tabIndex === index
                         ? 'portal-header__menu-item portal-header__menu-item_active'
                         : 'portal-header__menu-item'
                     }
