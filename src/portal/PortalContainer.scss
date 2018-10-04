@@ -1,0 +1,59 @@
+.portal {
+  height: 100%;
+  display: flex;
+  padding-top: 11px;
+  justify-content: center;
+  background-color: #f2efeb;
+
+  &__left-side {
+    margin-right: 30px;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: 11px;
+  }
+
+  &__main {
+    width: 630px;
+    margin-right: 30px;
+  }
+
+  &__right-blocks {
+    width: 300px;
+  }
+
+
+  &__blue-block {
+    color: #fff;
+    padding: 40px;
+    background: #0070BA;
+    margin-top: 14px;
+    font-family: DIN Pro;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-label {
+      line-height: 19px;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    &-link {
+      display: table;
+      width: fit-content;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 4px;
+    }
+
+    &-elements {
+      position: absolute;
+      margin-left: 246px;
+      margin-top: -41px;
+    }
+  }
+}

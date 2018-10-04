@@ -1,0 +1,59 @@
+.portal-header {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #E4E4E4;
+  display: flex;
+  justify-content: space-between;
+  background: #FFFFFF;
+
+  &__menu {
+    display: flex;
+  }
+
+  &__menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: DIN Pro;
+    line-height: normal;
+    font-size: 13px;
+    color: #706F6F;
+    font-weight: 500;
+    padding: 15px 0px;
+    border-bottom: 3px solid #FFFFFF;
+
+    &:not(:first-child) {
+      margin-left: 24px;
+    }
+
+    &:first-child {
+      margin-left: 31px;
+    }
+
+    &_active {
+      color: #0070BA;
+      border-bottom: 3px solid #0079C1;
+    }
+
+    &_locked {
+      color: #B2B2B2;
+
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__account {
+    display: flex;
+    padding-right: 21px;
+
+    .portal-header__menu-item {
+      color: #004077;
+      
+      span {
+        margin-right: 6px;
+      }
+    }
+  }
+}

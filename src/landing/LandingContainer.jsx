@@ -42,7 +42,7 @@ class LandingComponent extends Component {
     }
 
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <SectionsContainer
           {...fullpageOptions}
           scrollCallback={onScroll}

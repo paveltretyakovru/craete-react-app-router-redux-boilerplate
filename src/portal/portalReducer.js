@@ -3,7 +3,7 @@ import {
 } from './portalConstants';
 
 const initialState = {
-  tabIndex: 0,
+  tabIndex: 1,
 }
 
 export default (state = initialState, action) => {
@@ -12,5 +12,3 @@ export default (state = initialState, action) => {
     default: return { ...state };
   }
 }
-
-
