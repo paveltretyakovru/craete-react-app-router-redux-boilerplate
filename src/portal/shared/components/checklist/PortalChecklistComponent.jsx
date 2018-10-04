@@ -17,7 +17,7 @@ export class PortalChecklistComponent extends Component {
       <div className="portal-checklist">
 
         <div className="portal-checklist__logo">
-          <img src={portalLogoImage} alt=""/>
+          <img src={portalLogoImage} alt="Gasprom Logo"/>
         </div>
 
         <div className="portal-checklist__list">
@@ -39,9 +39,11 @@ export class PortalChecklistComponent extends Component {
                       {
                         checkbox.checked
                           ? <img
+                              alt="✓"
                               src={portalCheckboxCheckedImage}
                               className="portal-checklist__list-item-image" />
                           : <img
+                              alt="✓"
                               src={portalCheckboxImage}
                               className="portal-checklist__list-item-image" />
                       }

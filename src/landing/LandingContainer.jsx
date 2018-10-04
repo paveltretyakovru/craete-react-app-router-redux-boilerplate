@@ -13,6 +13,9 @@ import {CallToActionSectionComponent} from './shared/components/sections/CallToA
 import {WinnerElbrusSectionComponent} from './shared/components/sections/WinnerElbrus/WinnerElbrusSectionComponent';
 import {WinnerInterviewSectionComponent} from './shared/components/sections/WinnerInterview/WinnerInterviewSectionComponent';
 
+// Images
+import logoImage from './shared/components/sections/DukovAppeal/shared/images/logo.svg';
+
 // Constants
 import {fullpageOptions} from './LandingConstants';
 
@@ -37,8 +40,17 @@ class LandingComponent extends Component {
     const { loading, client, activeSection } = this.props;
     const onScroll = this.onScroll.bind(this);
 
+    const loaderStyle = {
+      width: '100%', height: '100%', display: 'flex', position: 'absolute',
+      alignItems: 'center', justifyContent: 'center', backgroundColor: '#2f2f2f',
+    }
+
     if (loading) {
-      return <p>Loading... {this.props.match.params.id}</p>;
+      return (
+        <div style={loaderStyle} className="fadeInEffect">
+          <img src={logoImage} alt="Gasprom logo"/>
+        </div>
+      )
     }
 
     return (
