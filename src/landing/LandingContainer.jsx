@@ -17,45 +17,58 @@ import {WinnerInterviewSectionComponent} from './shared/components/sections/Winn
 import {fullpageOptions} from './LandingConstants';
 
 // Actions
-import {updateActiveSection} from './LandingActions';
+import {updateActiveSection, fetchLandingData} from './LandingActions';
 
 class LandingComponent extends Component {
   onScroll(p) {
-    if (this.props.landing.activeSection !== p.activeSection) {
+    const { activeSection } = this.props;
+
+    if (activeSection !== p.activeSection) {
       this.props.updateActiveSection(p.activeSection);
     }
   }
 
+  componentDidMount() {
+    const userId = this.props.match.params.id;
+    this.props.fetchLandingData(userId);
+  }
+
   render() {
+    const { loading, client, activeSection } = this.props;
     const onScroll = this.onScroll.bind(this);
+
+    if (loading) {
+      return <p>Loading... {this.props.match.params.id}</p>;
+    }
 
     return (
       <div style={{overflow: 'hidden'}}>
         <SectionsContainer
           {...fullpageOptions}
           scrollCallback={onScroll}
-          activeSection={this.props.landing.activeSection}
+          activeSection={activeSection}
         >
           <Section>
             <DukovAppealSectionComponent
-              active={this.props.landing.activeSection === 0}
+              client={client}
+              active={activeSection === 0}
             />
           </Section>
 
           <Section>
             <InformationSectionComponent
-              active={this.props.landing.activeSection === 1}
+              active={activeSection === 1}
             />
           </Section>
           
           <Section>
             <SlideshowContainer
-              active={this.props.landing.activeSection === 2}
+              active={activeSection === 2}
             >
               <DeminReviewSectionComponent
                 active={
                   this.props.slideshow.active === 0
-                  && this.props.landing.activeSection === 2
+                  && activeSection === 2
                 }
               />
               <WinnerInterviewSectionComponent
@@ -69,7 +82,7 @@ class LandingComponent extends Component {
 
           <Section>
             <CallToActionSectionComponent
-              active={this.props.landing.activeSection === 3}
+              active={activeSection === 3}
             />
           </Section>
         </SectionsContainer>
@@ -80,13 +93,16 @@ class LandingComponent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    landing: state.landing,
+    client: state.landing.client,
+    loading: state.landing.loading,
     slideshow: state.slideshow,
+    activeSection: state.landing.activeSection,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
+    fetchLandingData,
     updateActiveSection,
     goToPortal: () => push('/portal'),
   }, dispatch);

@@ -45,11 +45,11 @@ export class DukovAppealSectionComponent extends Component {
         <div className="dukov-appeal-section__content">
           <div className="dukov-photo">
               <img src={dukovPhotoImage} alt=""/>
-          </div>
-          <div className="text-block">
-            <p className="text-block__name">
-              {DUKOV_APPEAL_NAME}
-            </p>
+          </div>     
+            <div className="text-block">
+              <p className="text-block__name">
+                {this.props.client.clientName}
+              </p>
 
             <p className="text-block__title">
               {DUKOV_APPEAL_TITLE}
