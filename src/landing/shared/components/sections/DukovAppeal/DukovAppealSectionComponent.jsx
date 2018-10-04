@@ -77,7 +77,7 @@ export class DukovAppealSectionComponent extends Component {
           >            
             <div className="text-block">
               <p className="text-block__name">
-                {DUKOV_APPEAL_NAME}
+                {this.props.client.clientName}
               </p>
 
               <p className="text-block__title">

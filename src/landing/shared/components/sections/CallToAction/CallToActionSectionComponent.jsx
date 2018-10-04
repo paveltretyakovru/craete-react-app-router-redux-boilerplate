@@ -21,7 +21,7 @@ export class CallToActionSectionComponent extends Component {
           </div>
 
           <div className="call-to-action-section__description">
-            {CALL_TO_ACTION_DESCRIPTION.map(desc => <p>{desc}</p>)}
+            {CALL_TO_ACTION_DESCRIPTION.map((d, i) => <p key={`qta-${i}`}>{d}</p>)}
           </div>
 
           <div className="call-to-action-section__link">
