@@ -6,7 +6,6 @@ import {
 export const fetchLandingDataBegin = () => ({type: FETCH_LANDING_DATA_START});
 
 export const fetchLandingDataSuccess = (client) => {
-  console.log('Test');
   return dispatch => dispatch({type: FETCH_LANDING_DATA_SUCCESS, payload: client});
 }
 

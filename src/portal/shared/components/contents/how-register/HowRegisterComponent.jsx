@@ -34,7 +34,7 @@ export class HowRegisterComponent extends Component {
 
           <ul className="portal-how-register__list">
             <li className="portal-how-register__list-item">
-              <div> <img src={vectorImage} al t="vector"/> </div>
+              <div> <img src={vectorImage} alt="vector"/> </div>
               <div>Возраст до 55 лет включительно;</div>
             </li>
             <li className="portal-how-register__list-item">
@@ -63,22 +63,22 @@ export class HowRegisterComponent extends Component {
 
           <ul className="portal-how-register__list">
             <li className="portal-how-register__list-item">
-              <div> <img src={vectorImage} al t="vector"/> </div>
+              <div> <img src={vectorImage} alt="vector"/> </div>
               <div>Опыт на руководящих должностях по текущему и предыдущим местам работы;</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={vectorImage} al t="vector"/> </div>
+              <div> <img src={vectorImage} alt="vector"/> </div>
               <div>Функциональное руководство сотрудниками;</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={vectorImage} al t="vector"/> </div>
+              <div> <img src={vectorImage} alt="vector"/> </div>
               <div>Ведение социальных проектов;</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={vectorImage} al t="vector"/> </div>
+              <div> <img src={vectorImage} alt="vector"/> </div>
               <div>Лидерство в студенческих и волонтерских активностях.</div>
             </li>
           </ul>
@@ -96,42 +96,42 @@ export class HowRegisterComponent extends Component {
 
           <ul className="portal-how-register__list">
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Психологический портрет, психотип, характер, открытость/закрытость </div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Ценности, моральные установки, уровень культуры и воспитания, восприятие мира, мотивация, жизненные приоритеты</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Хобби, увлечения и интересы, досуг, ритм жизни, круг общения</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Эмоциональное состояние, настроение</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Уровень агрессии, конфликтности</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Общественная жизнь, гражданская позиция, политические взгляды </div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Профессиональные навыки, достижения</div>
             </li>
 
             <li className="portal-how-register__list-item">
-              <div> <img src={simpleVectorImage} al t="vector"/> </div>
+              <div> <img src={simpleVectorImage} alt="vector"/> </div>
               <div>Репутация</div>
             </li>
           </ul>

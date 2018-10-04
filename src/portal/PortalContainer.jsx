@@ -19,6 +19,10 @@ import { NewsComponent } from './shared/components/contents/news/NewsComponent';
 import { HowRegisterComponent } from './shared/components/contents/how-register/HowRegisterComponent';
 
 class PortalContainer extends Component {
+  componentDidMount() {
+    document.body.classList.add('light-background');
+  }
+
   render() {
     const updTabIndex = (index) => {
       this.props.updateTabIndex(index);
