@@ -139,7 +139,7 @@ pipeline {
 
               slackSend (color: "#397f3e",
                    channel: "gpn-leader-general",
-                   message: ":zap: *Frontend обновлен на стенде* :zap: \n\n:pr: ${commits}\n\n:package: widgets-gpn-leader-landing-1.1.${env.BUILD_ID} :github: <https://bitbucket.org/rooxteam/widgets-gpn-leader-landing/commits/develop|Bitbucket> | :jenkins: <${env.BUILD_URL}|Jenkins> | :znt: <https://gpn-leader.demo.rooxteam.com/|GPN Leader>")
+                   message: ":zap: *Frontend обновлен на стенде* :zap: \n\n:pr: ${commits}\n\n:package: widgets-gpn-leader-landing-1.1.${env.BUILD_ID} :github: <https://bitbucket.org/rooxteam/gpn-leader-landing/commits/develop|Bitbucket> | :jenkins: <${env.BUILD_URL}|Jenkins> | :znt: <https://gpn-leader.demo.rooxteam.com/|GPN Leader>")
 
 
           } else {
