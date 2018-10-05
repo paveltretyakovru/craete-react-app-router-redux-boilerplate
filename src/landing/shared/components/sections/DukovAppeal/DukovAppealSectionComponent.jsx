@@ -16,6 +16,10 @@ import dukovPhotoImage from './shared/images/dukov-photo.png';
 import leftFiguresImage from './shared/images/left-figures.svg';
 import rightFiguresImage from './shared/images/right-figures.svg';
 
+/*
+  {this.props.client.clientName}
+*/
+
 export class DukovAppealSectionComponent extends Component {
   render() {
     return (
@@ -26,54 +30,23 @@ export class DukovAppealSectionComponent extends Component {
         animationInDelay={500}
         className="dukov-appeal-section__wrapper"
       >
-
-        {/* Left side elements */}
-        <div className="dukov-appeal-section__left-side">
-          <div className="dukov-appeal-section__left-side-figures">
-            <img src={leftFiguresImage} alt=""/>
-          </div>
-          <div className="dukov-appeal-section__left-side-logo">
-            <img src={logoImage} alt="" />
-          </div>
-        </div>
+        <img src={leftFiguresImage} alt="" className="dukov-appeal-section__left-figures"/>
         
-        <div className="dukov-appeal-section__right-side">
-          <div className="dukov-appeal-section__right-side-figures">
-            <img src={rightFiguresImage} alt=""/>
-          </div>
-        </div>
+        <img src={logoImage} alt="" className="dukov-appeal-section__logo"/>
+
+        <img src={dukovPhotoImage} alt="" className="dukov-appeal-section__photo"/>
+        
         <div className="dukov-appeal-section__content">
-          <div className="dukov-photo">
-              <img src={dukovPhotoImage} alt=""/>
-          </div>     
-            <div className="text-block">
-              <p className="text-block__name">
-                {this.props.client.clientName}
-              </p>
-
-            <p className="text-block__title">
-              {DUKOV_APPEAL_TITLE}
-            </p>
-
-            <p className="text-block__letter">
-              <span>{DUKOV_APPEAL_TEXT[0]}</span>
-              <br /><br />
-              <span>{DUKOV_APPEAL_TEXT[1]}</span>
-            </p>
-
-            <button className="text-block__button">
-              {DUKOV_APPEAL_BUTTONN_VALUE}
-            </button>
-
-            <p className="text-block__signature-name">
-              {DUKOV_APPEAL_FULL_NAME}
-            </p>
-
-            <p className="text-block__signature-position">
-              {DUKOV_APPEAL_POSITION}
-            </p>
+          <div className="dukov-appeal-section__name">{this.props.client.clientName}</div>
+          <div className="dukov-appeal-section__title">{DUKOV_APPEAL_TITLE}</div>
+          <div className="dukov-appeal-section__text">{DUKOV_APPEAL_TEXT}</div>
+          <div className="dukov-appeal-section__button">{DUKOV_APPEAL_BUTTONN_VALUE}</div>
+          <div className="dukov-appeal-section__signature">
+            <div className="dukov-appeal-section__signature-name">{DUKOV_APPEAL_FULL_NAME}</div>
+            <div className="dukov-appeal-section__signature-position">{DUKOV_APPEAL_POSITION}</div>
           </div>
         </div>
+        <img src={rightFiguresImage} alt="" className="dukov-appeal-section__right-figures"/>
       </Animated>
     );
   }
