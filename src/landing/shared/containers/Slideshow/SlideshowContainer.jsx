@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 
 // Images
-import arrowLeftImage from './shared/assets/images/arrow-left.svg';
-import arrowRightImage from './shared/assets/images/arrow-right.svg';
+import arrowLeftImage from './shared/assets/images/arrow-left.png';
+import arrowRightImage from './shared/assets/images/arrow-right.png';
 
 // Actions
 import { updateActive } from './SlideshowActions';
@@ -29,6 +29,7 @@ class SlideshowContainer extends Component {
               return (
                 <div key={`slideshow-page-${index}`} style={{display: (this.props.slideshow.active === index) ? 'block' : 'none'}}>
                   {child}
+                  {/* test content */}
                 </div>
               );
             })
