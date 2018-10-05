@@ -1,4 +1,6 @@
 .portal-how-register {
+  width: 630px;
+
   &__block {
     padding: 20px 50px 52px 31px;
     background: #FFFFFF;
@@ -85,6 +87,10 @@
       div:first-child {
         width: 13px;
         margin-right: 9px;
+      }
+
+      div:last-child {
+        width: 100%;
       }
     }
 
