@@ -16,10 +16,6 @@ import dukovPhotoImage from './shared/images/dukov-photo.png';
 import leftFiguresImage from './shared/images/left-figures.svg';
 import rightFiguresImage from './shared/images/right-figures.svg';
 
-/*
-  {this.props.client.clientName}
-*/
-
 export class DukovAppealSectionComponent extends Component {
   render() {
     return (
