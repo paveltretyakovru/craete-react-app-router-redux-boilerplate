@@ -16,6 +16,7 @@
   }
 
   &__right-figures {
+    display: block;
     position: absolute;
     width: 312px;
     height: 217px;
@@ -105,4 +106,16 @@
     }
   }
 }
-    
+
+// Hiding right figure to exclude hovering content
+@media (max-width: 1152px) {
+  .dukov-appeal-section__right-figures {
+    display: none;
+  }
+}
+
+@media (max-height: 815px) {
+  .dukov-appeal-section__right-figures {
+    display: none;
+  }
+}
