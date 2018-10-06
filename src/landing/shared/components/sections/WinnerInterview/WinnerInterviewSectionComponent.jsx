@@ -118,7 +118,8 @@ export class WinnerInterviewSectionComponent extends Component {
                   animationOut="fadeOut"
                   animationInDelay={1500}
                 >
-                  <a href="/">{QUOTE_SIGNATURE_LINK_TEXT}</a> {QUOTE_SIGNATURE_TEXT}
+                  <a href="/">{QUOTE_SIGNATURE_LINK_TEXT}</a>
+                  <span>{QUOTE_SIGNATURE_TEXT}</span>
                 </Animated>
               </div>
 
