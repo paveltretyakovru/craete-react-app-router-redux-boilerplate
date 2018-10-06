@@ -39,11 +39,12 @@ export class WinnerElbrusSectionComponent extends Component {
             {descriptionLeft}
           </div>
 
-          <div className="winner-elbrus-section__link">
+          {/* <div className="winner-elbrus-section__link">
             <a href="/" className="big-link">
               {WINNER_ELBRUS_LINK}
             </a>
-          </div>
+          </div> */}
+
         </Animated>
 
         <Animated
