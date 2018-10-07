@@ -26,6 +26,7 @@ import {fullpageOptions} from './LandingConstants';
 // Actions
 import {updateActiveSection, fetchLandingData} from './LandingActions';
 import { DukovAppealMobileComponent } from './shared/components/mobile/dukovAppeal/DukovAppealMobileComponent';
+import { InformationMobileComponent } from './shared/components/mobile/information/InformationMobileComponent';
 
 
 const Mobile = props => <Responsive {...props} maxWidth={768} />;
@@ -114,6 +115,10 @@ class LandingComponent extends Component {
               scrollCallback={onScroll}
               activeSection={activeSection}
             >
+              <Section>
+                <InformationMobileComponent />
+              </Section>
+
               <Section>
                 <DukovAppealMobileComponent
                   client={client}
