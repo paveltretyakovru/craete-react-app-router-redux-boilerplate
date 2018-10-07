@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import './DukovAppealMobileComponent.scss';
-import { DUKOV_APPEAL_TITLE, DUKOV_APPEAL_TEXT, DUKOV_APPEAL_NAME, DUKOV_APPEAL_FULL_NAME, DUKOV_APPEAL_POSITION, DUKOV_APPEAL_BUTTONN_VALUE } from '../../sections/DukovAppeal/dukovAppealSectionComponentConstants';
+import { DUKOV_APPEAL_TITLE, DUKOV_APPEAL_TEXT, DUKOV_APPEAL_FULL_NAME, DUKOV_APPEAL_POSITION, DUKOV_APPEAL_BUTTONN_VALUE } from '../../sections/DukovAppeal/dukovAppealSectionComponentConstants';
 
 import logoImage from '../../sections/DukovAppeal/shared/images/logo.svg';
 import dukovPhotoImage from '../../sections/DukovAppeal/shared/images/dukov-photo.svg';

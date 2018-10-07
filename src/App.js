@@ -8,7 +8,6 @@ import './App.scss';
 
 class App extends Component {
   render() {
-    console.log('Variables', process.env);
     return (
       <div className="App">
         <Route exact path={`/s/`} component={Portal} className="app-portal" />

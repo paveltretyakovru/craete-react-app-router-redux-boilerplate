@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 
 // Constants
 import {
-  BIG_LINK_TEXT, DEMIN_FULLNAME_TEXT, TITLE_TEXT,
+  DEMIN_FULLNAME_TEXT, TITLE_TEXT,
   WINNERS_TITLE_TEXT, DEMIN_LETTER_TEXT, DESCRIPTION_TEXT, DEMIN_POSITION_TEXT
 } from './DeminReviewSectionConstants';
 
