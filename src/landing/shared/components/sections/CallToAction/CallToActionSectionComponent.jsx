@@ -6,6 +6,8 @@ import { CALL_TO_ACTION_TITLE_SPECIAL, CALL_TO_ACTION_TITLE, CALL_TO_ACTION_DESC
 
 export class CallToActionSectionComponent extends Component {
   render() {
+    const {confirmInvite} = this.props;
+
     return (
       <div className="call-to-action-section__wrapper">
         <Animated
@@ -29,7 +31,12 @@ export class CallToActionSectionComponent extends Component {
               {CALL_TO_ACTION_LINK_DESCRIPTION}
             </div>
 
-            <a href="/" className="big-link">{CALL_TO_ACTION_LINK}</a>
+            <a
+              className="big-link"
+              onClick={confirmInvite}
+            >
+              {CALL_TO_ACTION_LINK}
+            </a>
           </div>
         </Animated>
 

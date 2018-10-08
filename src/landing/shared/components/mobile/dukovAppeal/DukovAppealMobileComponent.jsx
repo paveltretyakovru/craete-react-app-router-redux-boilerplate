@@ -9,6 +9,8 @@ import rightFiguresImage from '../../sections/DukovAppeal/shared/images/right-fi
 
 export class DukovAppealMobileComponent extends Component {
   render() {
+    const {confirmInvite} = this.props;
+
     return (
       <div className="dukov-appeal-mobile">
         <img src={rightFiguresImage} alt="abstract figures" className="dukov-appeal-mobile__right-figures"/>
@@ -16,7 +18,13 @@ export class DukovAppealMobileComponent extends Component {
         <div className="dukov-appeal-mobile__name">{this.props.client.clientName}</div>
         <div className="dukov-appeal-mobile__title">{DUKOV_APPEAL_TITLE}</div>
         <div className="dukov-appeal-mobile__text">{DUKOV_APPEAL_TEXT}</div>
-        <div className="dukov-appeal-mobile__button">{DUKOV_APPEAL_BUTTONN_VALUE}</div>
+        
+        <div
+          onClick={confirmInvite}
+          className="dukov-appeal-mobile__button"
+        >
+          {DUKOV_APPEAL_BUTTONN_VALUE}
+        </div>
 
         <div className="dukov-appeal-mobile__footer">
 
