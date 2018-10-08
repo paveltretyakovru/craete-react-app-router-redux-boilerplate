@@ -5,6 +5,7 @@ import { CALL_TO_ACTION_DESCRIPTION, CALL_TO_ACTION_LINK_DESCRIPTION, CALL_TO_AC
 
 export class CallToActionMobileComponent extends Component {
   render() {
+    const {confirmInvite} = this.props;
     const description = CALL_TO_ACTION_DESCRIPTION.map(
       (d, i) => {
         return <p key={`qta-${i}`}>{d}</p>
@@ -31,7 +32,12 @@ export class CallToActionMobileComponent extends Component {
           </div>
 
           <div className="call-to-action-mobile__link-block">
-            <a href="/" className="big-link">{CALL_TO_ACTION_LINK}</a>
+            <a
+              className="big-link"
+              onClick={confirmInvite}
+            >
+              {CALL_TO_ACTION_LINK}
+            </a>
           </div>
         </div>
 

@@ -39,6 +39,10 @@
 
   &__link {
     width: 410px;
+
+    a {
+      cursor: pointer;
+    }
   }
 
   &__link-description {
