@@ -11,6 +11,8 @@ import rectangleImage from './shared/assets/images/rectangle.svg';
 
 export class PortalHeaderComponent extends Component {
   render() {
+    const {clientName} = this.props.client;
+
     return (
       <div className="portal-header">
         <div className="portal-header__menu">
@@ -47,7 +49,7 @@ export class PortalHeaderComponent extends Component {
         </div>
         <div className="portal-header__account">
           <div className="portal-header__menu-item">
-            <span>Игорь</span>
+            <span>{clientName}</span>
             <img src={rectangleImage} alt="rectangle"/>
           </div>
           <div className="portal-header__menu-item">
