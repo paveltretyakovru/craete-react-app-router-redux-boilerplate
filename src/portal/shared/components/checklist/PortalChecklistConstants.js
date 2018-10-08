@@ -7,11 +7,6 @@ export const PORTAL_CHECKLIST_ITEMS = [
   { id: 5, value: 'Прошел тест на числовые и вербальные способности', checked: true},
   { id: 6, value: 'Прошел опрос на управленческие способности', checked: true},
 ]
-export const PORTAL_CHECKLIST_LINKS = [
-  { id: 0, src: './', value: 'Правила участия в конкурсе' },
-  { id: 1, src: './', value: 'Как правильно подать документы' },
-  { id: 2, src: './', value: 'Как правильно подать документы' },
-];
 
 export const PORTAL_HEADER_ITEMS = [
   { id: 0, value: 'Новости', active: true, secret: false },

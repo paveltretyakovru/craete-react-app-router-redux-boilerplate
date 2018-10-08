@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 // Constants
-import { PORTAL_CHECKLIST_LINKS, PORTAL_CHECKLIST_TITLE, PORTAL_CHECKLIST_ITEMS } from './PortalChecklistConstants';
+import { PORTAL_CHECKLIST_TITLE, PORTAL_CHECKLIST_ITEMS } from './PortalChecklistConstants';
 
 // Styles
 import './PortalChecklistComponent.scss';
@@ -56,17 +56,6 @@ export class PortalChecklistComponent extends Component {
             }
           </ul>
         </div>
-
-        <div className="portal-checklist__links">
-          {PORTAL_CHECKLIST_LINKS.map((link) => {
-            return (
-              <a href={link.src} key={`portal-checklist-links-${link.id}`}>
-                {link.value}
-              </a>
-            )
-          })}
-        </div>
-
       </div>
     )
   }

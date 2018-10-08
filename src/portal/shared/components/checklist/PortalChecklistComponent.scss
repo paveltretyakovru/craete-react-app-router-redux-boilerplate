@@ -56,25 +56,4 @@
       }
     }
   }
-
-  &__links {
-    font-family: DIN Pro;
-    line-height: normal;
-    font-size: 13px;
-    color: #004077;
-    padding: 22px 48px 24px 48px;
-
-    a {
-      width: fit-content;
-      display: table;
-      margin-bottom: 10px;
-      padding-bottom: 1px;
-      text-decoration: none;
-      border-bottom:1px solid #004077;
-
-      &:visited {
-        color: #004077;
-      } 
-    }
-  }
 }
