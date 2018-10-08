@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {push} from 'connected-react-router';
 import {connect} from 'react-redux';
+import Responsive from 'react-responsive';
 import {bindActionCreators} from 'redux';
 import {SectionsContainer, Section } from 'react-fullpage';
 
@@ -24,6 +25,16 @@ import {fullpageOptions} from './LandingConstants';
 
 // Actions
 import {updateActiveSection, fetchLandingData} from './LandingActions';
+import { DukovAppealMobileComponent } from './shared/components/mobile/dukovAppeal/DukovAppealMobileComponent';
+import { InformationMobileComponent } from './shared/components/mobile/information/InformationMobileComponent';
+import { DeminReviewMobileComponent } from './shared/components/mobile/DeminReview/DeminReviewMobileComponent';
+import { WinnerInterviewMobileComponent } from './shared/components/mobile/WinnerInterview/WinnerInterviewMobileComponent';
+import { WinnerElbrusMobileComponent } from './shared/components/mobile/WinnerElbrus/WinnerElbrusMobileComponent';
+import { CallToActionMobileComponent } from './shared/components/mobile/CallToAction/CallToActionMobileComponent';
+
+
+const Mobile = props => <Responsive {...props} maxWidth={768} />;
+const Default = props => <Responsive {...props} minWidth={768} />;
 
 class LandingComponent extends Component {
   onScroll(p) {
@@ -53,49 +64,103 @@ class LandingComponent extends Component {
 
     return (
       <div style={{overflow: 'hidden'}}>
-        <SectionsContainer
-          {...fullpageOptions}
-          scrollCallback={onScroll}
-          activeSection={activeSection}
-        >
-          <Section>
-            <DukovAppealSectionComponent
-              client={client}
-              active={activeSection === 0}
-            />
-          </Section>
 
-          <Section>
-            <InformationSectionComponent
-              active={activeSection === 1}
-            />
-          </Section>
-          
-          <Section>
-            <SlideshowContainer
-              active={activeSection === 2}
+        {/* Default view */}
+        <Default>
+          <SectionsContainer
+            {...fullpageOptions}
+            scrollCallback={onScroll}
+            activeSection={activeSection}
+          >
+            <Section>
+              <DukovAppealSectionComponent
+                client={client}
+                active={activeSection === 0}
+              />
+            </Section>
+
+            <Section>
+              <InformationSectionComponent
+                active={activeSection === 1}
+              />
+            </Section>
+            
+            <Section>
+              <SlideshowContainer
+                active={activeSection === 2}
+              >
+                <DeminReviewSectionComponent
+                  active={
+                    this.props.slideshow.active === 0
+                    && activeSection === 2
+                  }
+                />
+                <WinnerInterviewSectionComponent
+                  active={this.props.slideshow.active === 1}
+                />
+                <WinnerElbrusSectionComponent
+                  active={this.props.slideshow.active === 2}
+                />
+              </SlideshowContainer>
+            </Section>
+
+            <Section>
+              <CallToActionSectionComponent
+                active={activeSection === 3}
+              />
+            </Section>
+          </SectionsContainer>
+        </Default>
+
+        {/* Mobile View */}
+        <Mobile>
+          <SectionsContainer
+              {...fullpageOptions}
+              scrollCallback={onScroll}
+              activeSection={activeSection}
             >
-              <DeminReviewSectionComponent
-                active={
-                  this.props.slideshow.active === 0
-                  && activeSection === 2
-                }
-              />
-              <WinnerInterviewSectionComponent
-                active={this.props.slideshow.active === 1}
-              />
-              <WinnerElbrusSectionComponent
-                active={this.props.slideshow.active === 2}
-              />
-            </SlideshowContainer>
-          </Section>
+              <Section>
+                <DukovAppealMobileComponent
+                  client={client}
+                  active={activeSection === 0}
+                />
+              </Section>
 
-          <Section>
-            <CallToActionSectionComponent
-              active={activeSection === 3}
-            />
-          </Section>
-        </SectionsContainer>
+              <Section>
+                <InformationMobileComponent
+                  active={activeSection === 0}
+                />
+              </Section>
+            
+              <Section>
+                <SlideshowContainer
+                  active={activeSection === 2}
+                >
+                  <DeminReviewMobileComponent
+                    active={
+                      this.props.slideshow.active === 0
+                      && activeSection === 2
+                    }
+                  />
+
+                  <WinnerInterviewMobileComponent
+                    active={this.props.slideshow.active === 1}
+                  />
+
+                  <WinnerElbrusMobileComponent
+                    active={this.props.slideshow.active === 3}
+                  />
+                </SlideshowContainer>
+              </Section>
+
+              <Section>
+                <CallToActionMobileComponent 
+                  active={activeSection === 3}
+                />
+              </Section>
+            </SectionsContainer>
+        </Mobile>
+
       </div>
     );
   }

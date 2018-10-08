@@ -1,0 +1,52 @@
+.information-mobile {
+  height: 100%;
+  display: flex;
+  padding: 0px 21px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+
+  &__title {    
+    color: #323232;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: HeliosCond;
+    line-height: 23px;
+
+    &-blue {
+      color: #0079C1;
+    }
+  }
+
+  &__text {
+    color: #706F6F;
+    font-size: 11px;
+    line-height: 15px;
+    font-family: DIN Pro;
+    margin-top: 15px;
+
+    p:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__list {
+    margin-top: 12px;
+  }
+
+  &__item {
+    display: flex;
+    margin-top: 17px;
+
+    &-image {
+      margin-right: 19px;
+    }
+
+    &-text {
+      color: #2E2E2E;
+      font-size: 13px;
+      font-family: DIN Pro;
+      line-height: 15px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.winner-interview-mobile {
+  padding: 19px;
+
+  &__text {
+    margin-top: 9px;
+  }
+  
+  &__list {
+    margin-top: 12px;
+  }
+
+  &__item {
+    display: flex;
+    margin-top: 17px;
+    align-items: center;
+
+    &-number {
+      margin-right: 19px;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      font-size: 16px;
+      line-height: 23px;
+      font-family: DIN Pro;
+      align-items: center;
+      border-radius: 20px;
+      justify-content: center;
+      background-color: #0097D8;
+    }
+
+    &-text {
+      color: #2E2E2E;
+      font-family: DIN Pro;
+      line-height: 15px;
+      font-size: 11px;
+      width: 90%;
+    }
+  }
+
+  &__quote {
+    color: #2E2E2E;
+    margin-top: 12px;
+    font-style: italic;
+
+    &-signature {
+      margin-top: 8px;
+      font-style: italic;
+    }
+  }
+}
