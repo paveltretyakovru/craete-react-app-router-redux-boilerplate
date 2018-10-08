@@ -28,8 +28,11 @@ export const fetchLandingData = (userId = '') => {
           return json;
         } else {
 
+          // state=0 initital
+          // state=1 button press
+          // state=2 page visited
           // Если пользователь нажимал стать лидером
-          if (json.data.state) {
+          if (json.data.state === 1) {
             console.log('Пользователь нажимал на стать лидером');
 
             // Сохраняем полученные данные
