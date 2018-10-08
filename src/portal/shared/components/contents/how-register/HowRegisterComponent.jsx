@@ -25,8 +25,9 @@ export class HowRegisterComponent extends Component {
           </p>
 
           <p className="portal-how-register__title">
-            Для участия в конкурсе необходимо в период с 10 по 25 октября подать заявку на официальном сайте “Лидеры России
+            Для участия в конкурсе необходимо в период <b>с 10 по 25 октября</b> подать заявку на официальном сайте “Лидеры России
           </p>
+          <p className="portal-how-register__sub-title">Для участников прошлого конкурса сохранена информация в <a href="https://лидерыроссии.рф" target="_blank" rel="noopener noreferrer">личных кабинетах</a>, необходимо актуализировать</p>
 
           <p className="portal-how-register__subtitle">
             УСЛОВИЯ УЧАСТИЯ В КОНКУРСЕ:
@@ -42,8 +43,8 @@ export class HowRegisterComponent extends Component {
               <div>Опыт управления* не менее двух лет для участников в возрасте до 35 лет включительно и опыт управления не менее 5 лет для участников в возрасте от 36 до 55 лет включительно.</div>
             </li>
             <li className="portal-how-register__list-item portal-how-register__list-star-item ">
-              <div className="portal-how-register__list-star">*</div>
-              <div>
+              <div className="portal-how-register__list-star"></div>
+              <div className="portal-how-register__list-description">
               В новом потоке конкурса смогут принять участие иностранные граждане, готовые жить и работать в России и зарубежных подразделениях органах власти, коммерческих и некоммерческих структурах.
               </div>
             </li>
@@ -52,15 +53,12 @@ export class HowRegisterComponent extends Component {
 
         {/* Second block */}
         <div className="portal-how-register__block">
+        <p className="portal-how-register__subtitle">
+            ПРИ РЕГИСТРАЦИИ НА КОНКУРС НЕОБХОДИМО ЗАПОЛНИТЬ АНКЕТУ С УКАЗАНИЕМ ВАШЕГО ЛИДЕРСКОГО ОПЫТА
+          </p>
           <p className="portal-how-register__uptitle">
             По практике прошлого года, в качестве лидерского опыта засчитывались:
           </p>
-
-
-          <p className="portal-how-register__subtitle">
-            ПРИ РЕГИСТРАЦИИ НА КОНКУРС НЕОБХОДИМО ЗАПОЛНИТЬ АНКЕТУ С УКАЗАНИЕМ ВАШЕГО ЛИДЕРСКОГО ОПЫТА
-          </p>
-
           <ul className="portal-how-register__list">
             <li className="portal-how-register__list-item">
               <div> <img src={vectorImage} alt="vector"/> </div>
@@ -146,7 +144,8 @@ export class HowRegisterComponent extends Component {
                   Фото на аватаре
                 </div>
                 <div className="need-element__description-text">
-                  Эксперты обращают внимание на то, что изображено на аватаре: фотография самого участника, посторонняя символика или другие популярные личности. Презентабельное фото всегда смотрится выигрышно.
+                  Эксперты обращают внимание на то, что изображено на аватаре: фотография самого участника, посторонняя символика или другие популярные личности.<br/>
+                  <b>Презентабельное фото всегда смотрится выигрышно.</b>
                 </div>
               </div>
             </div>
