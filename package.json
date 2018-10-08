@@ -41,6 +41,7 @@
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.5.2",
     "react-fullpage": "^0.1.18",
+    "react-ga": "^2.5.3",
     "react-redux": "^5.0.7",
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.3.1",
@@ -59,7 +60,6 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-
     "start:windows": "set PUBLIC_URL=https://gpn-leader.demo.rooxteam.com&&npm start"
   },
   "devDependencies": {

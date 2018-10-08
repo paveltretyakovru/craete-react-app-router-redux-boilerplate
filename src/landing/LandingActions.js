@@ -1,4 +1,5 @@
 import {push} from 'connected-react-router';
+import ReactGA from 'react-ga';
 
 import {
   UPDATE_ACTIVE_SECTION, FETCH_LANDING_DATA_START, FETCH_LANDING_DATA_SUCCESS,
@@ -15,6 +16,11 @@ export const fetchLandingDataSuccess = (client) => {
 export const fetchLandingData = (userId = '') => {
   return (dispatch) => {
     dispatch(fetchLandingDataBegin());
+
+    ReactGA.event({
+        category: 'User',
+        action: 'Click on button'
+    });
 
     // return fetch(`${process.env.PUBLIC_URL}${FETCH_USER_URL}/${userId}`)
     return fetch(`${FETCH_USER_URL}/${userId}`)
