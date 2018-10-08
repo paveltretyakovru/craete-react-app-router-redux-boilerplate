@@ -35,7 +35,7 @@ export class InformationMobileComponent extends Component {
           <span className="information-mobile__title-blue">
             {INFORMATION_LEADERS}
           </span>
-          {INFORMATION_TITLE}
+          &nbsp;{INFORMATION_TITLE}
         </div>
         <div className="information-mobile__text">
           {informationPageText}
