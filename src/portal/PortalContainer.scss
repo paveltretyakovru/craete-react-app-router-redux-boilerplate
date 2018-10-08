@@ -59,3 +59,25 @@
     }
   }
 }
+
+@media screen and (max-width: 739px) {
+  .portal {
+    padding-top: 0;
+    display: block;
+  }
+  .portal__left-side {
+    display: none;
+  }
+  .portal__content {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .portal__right-blocks {
+    order: -1;
+    margin-left: 0;
+    width: 100%;
+  }
+  .portal__main {
+    width: 100%;
+  }
+}

@@ -57,3 +57,9 @@
     }
   }
 }
+
+@media screen and (max-width: 739px) {
+  .portal-header {
+    display: none;
+  }
+}
