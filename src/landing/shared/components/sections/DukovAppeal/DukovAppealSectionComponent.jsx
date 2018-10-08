@@ -18,6 +18,8 @@ import rightFiguresImage from './shared/images/right-figures.svg';
 
 export class DukovAppealSectionComponent extends Component {
   render() {
+    const {confirmInvite} = this.props;
+
     return (
       <Animated
         isVisible={this.props.active}
@@ -36,7 +38,11 @@ export class DukovAppealSectionComponent extends Component {
           <div className="dukov-appeal-section__name">{this.props.client.clientName}</div>
           <div className="dukov-appeal-section__title">{DUKOV_APPEAL_TITLE}</div>
           <div className="dukov-appeal-section__text">{DUKOV_APPEAL_TEXT}</div>
-          <div className="dukov-appeal-section__button">{DUKOV_APPEAL_BUTTONN_VALUE}</div>
+
+          <div className="dukov-appeal-section__button" onClick={confirmInvite}>
+            {DUKOV_APPEAL_BUTTONN_VALUE}
+          </div>
+
           <div className="dukov-appeal-section__signature">
             <div className="dukov-appeal-section__signature-name">{DUKOV_APPEAL_FULL_NAME}</div>
             <div className="dukov-appeal-section__signature-position">{DUKOV_APPEAL_POSITION}</div>

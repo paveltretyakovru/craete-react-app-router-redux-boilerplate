@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://xn-----glcffqdavsretbqa9n.xn--p1ai/widgets/ny2018",
+  "proxy": "https://gpn-leader.demo.rooxteam.com/",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -57,7 +58,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+
+    "start:windows": "set PUBLIC_URL=https://gpn-leader.demo.rooxteam.com&&npm start"
   },
   "devDependencies": {
     "node-sass": "^4.9.3",

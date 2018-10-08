@@ -3,7 +3,7 @@ import {
 } from "./LandingConstants";
 
 const initialState = {
-  client: {sex: '', clientName: ''},
+  client: {sex: '', clientName: '', id: '', state: 0},
   loading: false,
   activeSection: 0,
 };

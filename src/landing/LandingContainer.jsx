@@ -24,7 +24,7 @@ import logoImage from './shared/components/sections/DukovAppeal/shared/images/lo
 import {fullpageOptions} from './LandingConstants';
 
 // Actions
-import {updateActiveSection, fetchLandingData} from './LandingActions';
+import {updateActiveSection, fetchLandingData, confirmInvite} from './LandingActions';
 import { DukovAppealMobileComponent } from './shared/components/mobile/dukovAppeal/DukovAppealMobileComponent';
 import { InformationMobileComponent } from './shared/components/mobile/information/InformationMobileComponent';
 import { DeminReviewMobileComponent } from './shared/components/mobile/DeminReview/DeminReviewMobileComponent';
@@ -51,8 +51,10 @@ class LandingComponent extends Component {
   }
 
   render() {
-    const { loading, client, activeSection } = this.props;
     const onScroll = this.onScroll.bind(this);
+    const { loading, client, activeSection } = this.props;
+
+    const confirmInvite = () => { this.props.confirmInvite(this.props.client.id) }
 
     if (loading) {
       return (
@@ -76,6 +78,7 @@ class LandingComponent extends Component {
               <DukovAppealSectionComponent
                 client={client}
                 active={activeSection === 0}
+                confirmInvite={confirmInvite}
               />
             </Section>
 
@@ -177,6 +180,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
+    confirmInvite,
     fetchLandingData,
     updateActiveSection,
     goToPortal: () => push('/portal'),
