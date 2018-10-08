@@ -11,6 +11,17 @@
     padding: 19px;
   }
 
+  &__bgimage {
+    background: url('../../sections/CallToAction/shared/assets/images/call-to-action-bg.png');
+    background-size: 240%;
+    background-position: -100px;
+  }
+
+  &__bgwhite {
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
   &__text {
     p:last-child {
       margin-top: 18px;
@@ -18,7 +29,7 @@
   }
 
   &__link {
-    margin-top: 38px;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -29,7 +40,8 @@
       font-size: 20px;
       font-family: DIN Pro;
       line-height: 23px;
-      margin-bottom: 18px;
+      margin-bottom: 3px;
+      margin-top: 13px;
     }
 
     &-block {
@@ -49,5 +61,20 @@
 
   .big-link {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .portal-timer__link > .big-link {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: normal;
+    border-bottom: none;
+    padding: 18px;
+    color: #ffffff;
+    background-color: #0070BA;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
 }

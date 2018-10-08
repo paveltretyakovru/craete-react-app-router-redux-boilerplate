@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 
 import './CallToActionMobileComponent.scss';
-import { WINNER_ELBRUS_TITLE_WINNERS, WINNER_ELBRUS_TITLE } from '../../sections/WinnerElbrus/WinnerElbrusSectionConstants';
-import { CALL_TO_ACTION_DESCRIPTION, CALL_TO_ACTION_LINK_DESCRIPTION, CALL_TO_ACTION_LINK, CALL_TO_ACTION_COPYRIGHT } from '../../sections/CallToAction/CallToActionConstants';
+import { CALL_TO_ACTION_DESCRIPTION, CALL_TO_ACTION_LINK_DESCRIPTION, CALL_TO_ACTION_LINK, CALL_TO_ACTION_COPYRIGHT, CALL_TO_ACTION_TITLE_SPECIAL, CALL_TO_ACTION_TITLE } from '../../sections/CallToAction/CallToActionConstants';
 
 export class CallToActionMobileComponent extends Component {
   render() {
@@ -14,13 +13,16 @@ export class CallToActionMobileComponent extends Component {
 
     return (
       <div className="call-to-action-mobile">
-
-        <div className="call-to-action-mobile__title gpn-slideshow-mobile__title">
-          <span className="blue-text">{WINNER_ELBRUS_TITLE_WINNERS}</span>
-          &nbsp;{WINNER_ELBRUS_TITLE}
-        </div>
-        <div className="call-to-action-mobile__text gpn-slideshow-mobile__text">
-          {description}
+        <div className="call-to-action-mobile__bgimage">
+          <div className="call-to-action-mobile__bgwhite">
+            <div className="call-to-action-mobile__title gpn-slideshow-mobile__title">
+              <span className="blue-text">{CALL_TO_ACTION_TITLE_SPECIAL}</span>
+              &nbsp;{CALL_TO_ACTION_TITLE}
+            </div>
+            <div className="call-to-action-mobile__text gpn-slideshow-mobile__text">
+              {description}
+            </div>
+          </div>
         </div>
 
         <div className="call-to-action-mobile__link">

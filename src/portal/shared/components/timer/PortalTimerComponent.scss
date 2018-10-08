@@ -49,3 +49,20 @@
     }
   }
 }
+
+@media screen and (max-width: 739px) {
+  .portal-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 21px 22px 21px;
+  }
+  .portal-timer__label {
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 17px;
+  }
+  .portal-timer__link {
+    width: 100%
+  }
+}
