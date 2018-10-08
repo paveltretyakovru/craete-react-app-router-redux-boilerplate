@@ -97,7 +97,7 @@ pipeline {
             ARTIFACT_FILE_NAME="${ARTIFACT_NAME}-${ARTIFACT_VERSION}"
             RPM_URL="http://nexus.rooxintra.net/content/repositories/releases/com/rooxteam/widgets/${ARTIFACT_NAME}/${ARTIFACT_VERSION}/${ARTIFACT_FILE_NAME}-rpm.rpm"
 
-            ssh -o StrictHostKeyChecking=no -i /home/jenkins/vagrant-aws/slack-backup.pem centos@xn-----glcffqdavsretbqa9n.xn--p1ai sudo yum install -y --disablerepo=roox* $RPM_URL
+            ssh -o StrictHostKeyChecking=no -i /home/jenkins/vagrant-aws/slack-backup.pem centos@gpn-leader.demo.rooxteam.com sudo yum install -y --disablerepo=roox* $RPM_URL
           '''
         }
      }
