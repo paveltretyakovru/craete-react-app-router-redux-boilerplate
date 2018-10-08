@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 // Styles
 import './PortalTimerComponent.scss';
 import { PORTAL_TIMER_LABEL, PORTAL_TIMER_BIG_LINK_VALUE } from './PortalTimerConstants';
+import declint from 'declint-ru';
 
 export class PortalTimerComponent extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export class PortalTimerComponent extends Component {
   }
 
    componentDidMount() {
-      const endDate = new Date(2018, 9, 10, 9, 0, 0);
+      const endDate = new Date(2018, 9, 10, 18, 0, 0);
       this.calculatedTime(endDate);
       
       this.intervalId = setInterval(() => {
@@ -32,7 +33,6 @@ export class PortalTimerComponent extends Component {
 
     if (now < endDate) {
       const remainTime = endDate.getTime() - now.getTime();
-      debugger;
 
       const millisecondsInDay = 1000 * 3600 * 24;
       const secondsInDay = 1000 * 3600;
@@ -65,7 +65,7 @@ export class PortalTimerComponent extends Component {
               {this.state.remainTime.days}
             </div>
             <div className="portal-timer__counter-string">
-              дня
+              {declint(this.state.remainTime.days || 0, ['день', 'дня', 'дней'])}
             </div>
           </div>
 
@@ -74,7 +74,7 @@ export class PortalTimerComponent extends Component {
               {this.state.remainTime.hours}
             </div>
             <div className="portal-timer__counter-string">
-              часов
+              {declint(this.state.remainTime.hours || 0, ['час', 'часа', 'часов'])}
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export class PortalTimerComponent extends Component {
               : {this.state.remainTime.minutes}
             </div>
             <div className="portal-timer__counter-string">
-              минут
+              {declint(this.state.remainTime.minutes || 0, ['минута', 'минуты', 'минут'])}
             </div>
           </div>
         </div>
