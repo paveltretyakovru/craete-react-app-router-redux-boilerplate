@@ -113,6 +113,7 @@
       font-size: 20px;
       color: #2E2E2E;
       margin: 60px 0px;
+      font-style: italic;
     }
 
     .need-element {
@@ -147,10 +148,32 @@
       }
     }
   }
-
+  &__blue-block {
+    margin-top: 18px;
+    background-color: #0070BA;
+    .need-element__description-text, h3, .need-element__description-title  {
+      color: #ffffff;
+    }
+    .need-element {
+      &__description-title{
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      &__margin-right {
+        > img {
+          margin-right: 36px;
+        }
+      }
+    }
+    .margin-right {
+      margin-right: 36px;
+    }
+  }
 }
+
 @media screen and (max-width: 739px) {
   .portal-how-register__title, .portal-how-register, .portal-how-register__centered-block{
     width: 100%;
   }
 }
+

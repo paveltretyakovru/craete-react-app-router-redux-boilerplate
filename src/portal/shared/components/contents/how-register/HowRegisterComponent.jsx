@@ -3,12 +3,12 @@ import React, {Component} from 'react';
 // Images
 import elementAvatarImage from './shared/assets/images/element-avatar.svg';
 import elementCurriculumImage from './shared/assets/images/element-curriculum.svg';
-import elementEmployeeImage from './shared/assets/images/element-employee.svg';
+import elementEmployeeImage from './shared/assets/images/element-employee-white.svg';
 import elementGroupImage from './shared/assets/images/element-group.svg';
-import elementListImage from './shared/assets/images/element-list.svg';
+import elementListImage from './shared/assets/images/element-list-white.svg';
 import elementPhotoCameraImage from './shared/assets/images/element-photo-camera.svg';
 import elementReportImage from './shared/assets/images/element-report.svg';
-import elementSearchImage from './shared/assets/images/element-search.svg';
+import elementSearchImage from './shared/assets/images/element-search-white.svg';
 import simpleVectorImage from './shared/assets/images/vector.svg';
 import vectorImage from '../../../../../landing/shared/components/sections/Information/shared/images/vector.svg';
 
@@ -201,15 +201,16 @@ export class HowRegisterComponent extends Component {
           </div>
         </div>
 
-        <div className="portal-how-register__block">
+        <div className="portal-how-register__block portal-how-register__blue-block">
           <div className="portal-how-register__centered-block">
-              <h3>Элементы аккаунта, на которые нужно обратить внимание:</h3>
+              <h3>Что можно сделать в рамках подготовки к конкурсу:</h3>
 
               <div className="need-element">
                 <img src={elementListImage} alt="avatar"/>
                 <div className="need-element__description">
+                  <h4 className="need-element__description-title">Укажите настоящее имя, заполните разделы с работой и образованием</h4>
                   <div className="need-element__description-text">
-                    Укажите настоящее имя, заполните разделы с работой и образованием, внесите Ваши личные и профессиональные интересы, поставьте на профиль хорошую фотографию — сделайте Ваш социальный портрет понятным для всех, кто вас не знает; 
+                    Внесите Ваши личные и профессиональные интересы, поставьте на профиль хорошую фотографию — сделайте Ваш социальный портрет понятным для всех, кто вас не знает; 
                   </div>
                 </div>
               </div>
@@ -217,17 +218,19 @@ export class HowRegisterComponent extends Component {
               <div className="need-element">
                 <img src={elementSearchImage} alt="avatar"/>
                 <div className="need-element__description">
+                  <h4 className="need-element__description-title">Уточните настройки видимости</h4>
                   <div className="need-element__description-text">
-                    Уточните настройки видимости: все откровенно личные фотографии и записи лучше скрыть от широкой аудитории. Внимательно посмотрите все, что осталось открытым для широкой аудитории: нет ли там расхождений с официальной информацией, которую Вы планируете указать в анкете участника.
+                    Все откровенно личные фотографии и записи лучше скрыть от широкой аудитории. Внимательно посмотрите все, что осталось открытым для широкой аудитории: нет ли там расхождений с официальной информацией, которую Вы планируете указать в анкете участника.
                   </div>
                 </div>
               </div>
 
-              <div className="need-element">
+              <div className="need-element  need-element__margin-right">
                 <img src={elementEmployeeImage} alt="avatar"/>
                 <div className="need-element__description">
+                <h4 className="need-element__description-title">Проанализируйте свои публикации</h4>
                   <div className="need-element__description-text">
-                    Проанализируйте свои публикации и оцените, насколько они соответствуют имиджу, который Вы хотите сформировать. Регулярно пишите о своей профессиональной сфере: человек, который готов делиться новостями о своей профессии и уделяет этому время, вызывает уважение и интерес.
+                    Оцените, насколько они соответствуют имиджу, который Вы хотите сформировать. Регулярно пишите о своей профессиональной сфере: человек, который готов делиться новостями о своей профессии и уделяет этому время, вызывает уважение и интерес.
                   </div>
                 </div>
               </div>

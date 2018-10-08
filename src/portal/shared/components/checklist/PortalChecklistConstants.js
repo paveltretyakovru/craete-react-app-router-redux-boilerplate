@@ -16,8 +16,8 @@ export const PORTAL_CHECKLIST_LINKS = [
 export const PORTAL_HEADER_ITEMS = [
   { id: 0, value: 'Новости', active: true, secret: false },
   { id: 1, value: 'Как пройти регистрацию', active: false, secret: false },
-  { id: 2, value: 'Видео-визитка', active: false, secret: false },
-  { id: 3, value: 'Тесты', active: false, secret: false },
+  { id: 2, value: 'Видео-визитка', active: false, secret: true },
+  { id: 3, value: 'Тесты', active: false, secret: true },
   { id: 4, value: 'Секретный раздел', active: false, secret: true },
 
 ]
