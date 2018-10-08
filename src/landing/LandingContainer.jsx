@@ -110,6 +110,7 @@ class LandingComponent extends Component {
             <Section>
               <CallToActionSectionComponent
                 active={activeSection === 3}
+                confirmInvite={confirmInvite}
               />
             </Section>
           </SectionsContainer>
@@ -126,6 +127,7 @@ class LandingComponent extends Component {
                 <DukovAppealMobileComponent
                   client={client}
                   active={activeSection === 0}
+                  confirmInvite={confirmInvite}
                 />
               </Section>
 
@@ -159,6 +161,7 @@ class LandingComponent extends Component {
               <Section>
                 <CallToActionMobileComponent 
                   active={activeSection === 3}
+                  confirmInvite={confirmInvite}
                 />
               </Section>
             </SectionsContainer>
