@@ -49,7 +49,7 @@ export class PortalHeaderComponent extends Component {
         </div>
         <div className="portal-header__account">
           <div className="portal-header__menu-item">
-            <span>{clientName}</span>
+            <span>Здравствуйте,{clientName}</span>
             {/* <img src={rectangleImage} alt="rectangle"/> */}
           </div>
           <div className="portal-header__menu-item">
