@@ -29,6 +29,7 @@ import { DukovAppealMobileComponent } from './shared/components/mobile/dukovAppe
 import { InformationMobileComponent } from './shared/components/mobile/information/InformationMobileComponent';
 import { DeminReviewMobileComponent } from './shared/components/mobile/DeminReview/DeminReviewMobileComponent';
 import { WinnerInterviewMobileComponent } from './shared/components/mobile/WinnerInterview/WinnerInterviewMobileComponent';
+import { WinnerElbrusMobileComponent } from './shared/components/mobile/WinnerElbrus/WinnerElbrusMobileComponent';
 
 
 const Mobile = props => <Responsive {...props} maxWidth={768} />;
@@ -121,6 +122,10 @@ class LandingComponent extends Component {
                 <SlideshowContainer
                   active={activeSection === 2}
                 >
+                  <WinnerElbrusMobileComponent
+                    active={this.props.slideshow.active === 3}
+                  />
+
                   <WinnerInterviewMobileComponent
                     active={this.props.slideshow.active === 1}
                   />

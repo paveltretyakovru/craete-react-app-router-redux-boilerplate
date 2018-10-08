@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { TITLE_WIN_TEXT, TITLE_TEXT, DESCRIPTION_TEXT, QUESTIONS_TEXT, QUOTE_TEXT, QUOTE_SIGNATURE_LINK_TEXT, QUOTE_SIGNATURE_TEXT } from '../../sections/WinnerInterview/WinnerInterviewSectionConstants';
 
 import './WinnerInterviewMobileComponent.scss';
-
 export class WinnerInterviewMobileComponent extends Component {
   render() {
     const questions = QUESTIONS_TEXT.map((item, i) => {
