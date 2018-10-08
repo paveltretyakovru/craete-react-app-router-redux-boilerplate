@@ -30,3 +30,41 @@
     align-items: center;
   }
 }
+
+.gpn-slideshow-mobile {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #ffffff;
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+
+    &-left, &-right {
+      padding: 0px 19px;
+      padding-bottom: 19px;
+      background-color: #ffffff;
+    }
+  }
+
+  &__title {
+    font-family: HeliosCond;
+    line-height: 23px;
+    font-size: 20px;
+    color: #323232;
+    font-weight: bold;
+  }
+
+  &__text {
+    font-family: DIN Pro;
+    line-height: 15px;
+    font-size: 11px;
+    color: #706F6F;
+
+    p {
+      margin-bottom: 9px;
+    }
+  }
+}

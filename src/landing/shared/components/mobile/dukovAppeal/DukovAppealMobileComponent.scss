@@ -1,0 +1,85 @@
+.dukov-appeal-mobile {
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+
+  &__right-figures {
+    top: -3px;
+    right: 0px;
+    height: 45px;
+    position: absolute;
+  }
+
+  &__name {
+    color: #009DDC;
+    font-size: 30px;
+    margin-top: 12px;
+    font-weight: bold;
+    line-height: 35px;
+    font-family: HeliosCond;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 13px;
+    font-family: DIN Pro;
+    margin-bottom: 7px;
+  }
+
+  &__text {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-family: DIN Pro;
+    line-height: 13px;
+    margin-bottom: 14px;
+  }
+
+  &__button {
+    top: 445px;
+    left: 20px;
+    width: 280px;
+    color: #FFFFFF;
+    padding: 14px 0px; 
+    height: 50px;
+    display: flex;
+    font-size: 15px;
+    background: #0079C1;
+    font-weight: bold;
+    align-items: center;
+    font-family: DIN Pro;
+    justify-content: center;
+  }
+
+  &__footer {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__signature {
+    margin-right: 30px;
+
+    &-fullname, &-position {
+      font-family: DIN Pro;
+      line-height: 13px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: #B2B2B2;
+    }
+  }
+
+  &__logo {
+    height: 33px;
+    margin-top: 16px;
+  }
+
+  &__photo {
+    height: 150px;
+    margin-top: auto;
+  }
+}

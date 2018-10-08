@@ -2,7 +2,7 @@ import {Animated} from 'react-animated-css';
 import React, {Component} from 'react';
 
 // Constants
-import { WINNER_ELBRUS_TITLE_WINNERS, WINNER_ELBRUS_TITLE, WINNER_ELBRUS_DESCRIPTION_LEFT, WINNER_ELBRUS_DESCRIPTION_RIGHT, WINNER_ELBRUS_LINK } from './WinnerElbrusSectionConstants';
+import { WINNER_ELBRUS_TITLE_WINNERS, WINNER_ELBRUS_TITLE, WINNER_ELBRUS_DESCRIPTION_LEFT, WINNER_ELBRUS_DESCRIPTION_RIGHT } from './WinnerElbrusSectionConstants';
 
 // Images
 import winnerElbrusImage from './shared/assets/images/elbrus-winner-photo.png';

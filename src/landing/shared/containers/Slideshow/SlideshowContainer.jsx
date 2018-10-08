@@ -1,4 +1,5 @@
 ﻿import {connect} from 'react-redux';
+import MediaQuery from 'react-responsive';
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 
@@ -17,29 +18,68 @@ class SlideshowContainer extends Component {
     const toBack = () => this.updateActive(false);
     const toFront = () => this.updateActive(true);
 
+    const children = this.props.children.map((child, index) => {
+      return (
+        <div
+          key={`slideshow-page-${index}`}
+          style={{
+            display: (this.props.slideshow.active === index) ? 'block' : 'none'
+          }}>
+          {child}
+        </div>
+      );
+    });
+
     return(
-      <div className="gpn-slideshow">
-        <div className="gpn-slideshow__arrow-left" onClick={toBack}>
-          <img src={arrowLeftImage} alt="←" />
-        </div>
+      <MediaQuery minDeviceWidth={768}>
+        {(matches) => {
+          if (matches) {
 
-        <div className="gpn-slideshow__content">
-          {
-            this.props.children.map((child, index) => {
-              return (
-                <div key={`slideshow-page-${index}`} style={{display: (this.props.slideshow.active === index) ? 'block' : 'none'}}>
-                  {child}
-                  {/* test content */}
+            // Desktop
+            return (
+              <div className="gpn-slideshow">
+                <div className="gpn-slideshow__arrow-left" onClick={toBack}>
+                  <img src={arrowLeftImage} alt="←" />
                 </div>
-              );
-            })
-          }
-        </div>
 
-        <div className="gpn-slideshow__arrow-right" onClick={toFront}>
-          <img src={arrowRightImage} alt="→" />
-        </div>
-      </div>
+                <div className="gpn-slideshow__content">
+                  {children}
+                </div>
+
+                <div className="gpn-slideshow__arrow-right" onClick={toFront}>
+                  <img src={arrowRightImage} alt="→" />
+                </div>
+              </div>
+            );
+          } else {
+
+            // Mobile
+            return (
+              <div className="gpn-slideshow-mobile">
+                <div className="gpn-slideshow-mobile__content">
+                  {children}
+                </div>
+                <div className="gpn-slideshow-mobile__navigation">
+                  <img
+                    alt="←"
+                    src={arrowLeftImage}
+                    className="gpn-slideshow-mobile__navigation-left"
+
+                    onClick={toBack}
+                  />
+                  <img
+                    alt="→"
+                    src={arrowRightImage}
+                    className="gpn-slideshow-mobile__navigation-right"
+
+                    onClick={toFront}
+                  />
+                </div>
+              </div>
+            );
+          }
+        }}
+      </MediaQuery>
     );
   }
 
