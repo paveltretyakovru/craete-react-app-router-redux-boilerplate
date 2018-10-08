@@ -16,7 +16,8 @@ export const fetchLandingData = (userId = '') => {
   return (dispatch) => {
     dispatch(fetchLandingDataBegin());
 
-    return fetch(`${process.env.PUBLIC_URL}${FETCH_USER_URL}/${userId}`)
+    // return fetch(`${process.env.PUBLIC_URL}${FETCH_USER_URL}/${userId}`)
+    return fetch(`${FETCH_USER_URL}/${userId}`)
       .then(handleErrors)
       .then(res => res.json())
       .then((json) => {
