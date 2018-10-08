@@ -27,6 +27,8 @@ import {fullpageOptions} from './LandingConstants';
 import {updateActiveSection, fetchLandingData} from './LandingActions';
 import { DukovAppealMobileComponent } from './shared/components/mobile/dukovAppeal/DukovAppealMobileComponent';
 import { InformationMobileComponent } from './shared/components/mobile/information/InformationMobileComponent';
+import { DeminReviewMobileComponent } from './shared/components/mobile/DeminReview/DeminReviewMobileComponent';
+import { WinnerInterviewMobileComponent } from './shared/components/mobile/WinnerInterview/WinnerInterviewMobileComponent';
 
 
 const Mobile = props => <Responsive {...props} maxWidth={768} />;
@@ -115,6 +117,23 @@ class LandingComponent extends Component {
               scrollCallback={onScroll}
               activeSection={activeSection}
             >
+              <Section>
+                <SlideshowContainer
+                  active={activeSection === 2}
+                >
+                  <WinnerInterviewMobileComponent
+                    active={this.props.slideshow.active === 1}
+                  />
+
+                  <DeminReviewMobileComponent
+                    active={
+                      this.props.slideshow.active === 0
+                      && activeSection === 2
+                    }
+                  />
+                </SlideshowContainer>
+              </Section>
+
               <Section>
                 <InformationMobileComponent />
               </Section>
