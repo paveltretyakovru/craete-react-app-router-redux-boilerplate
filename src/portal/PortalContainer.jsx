@@ -24,6 +24,7 @@ class PortalContainer extends Component {
   }
 
   render() {
+    const {client} = this.props;
     const updTabIndex = (index) => {
       this.props.updateTabIndex(index);
     }
@@ -37,6 +38,7 @@ class PortalContainer extends Component {
         <aside className="portal__right-side">
           <div className="portal__header">
             <PortalHeaderComponent
+              client={client}
               updateTabIndex={updTabIndex}
               tabIndex={this.props.tabIndex}
             />
@@ -80,7 +82,8 @@ class PortalContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ portal }) => ({
+const mapStateToProps = ({landing, portal }) => ({
+  client: landing.client,
   tabIndex: portal.tabIndex,
 })
 
