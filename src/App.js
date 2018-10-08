@@ -14,18 +14,31 @@ try {
 } catch(error) {}
 
 ReactGA.initialize('UA-126134239-1', {
-    titleCase: false,
+    // debug: true,
     gaOptions: {
         userId: userId
     }
 });
+
+// Feature detects Navigation Timing API support.
+if (window.performance) {
+    // Gets the number of milliseconds since page load
+    // (and rounds the result since the value must be an integer).
+    var timeSincePageLoad = Math.round(performance.now());
+
+    ReactGA.timing({
+      category: 'JS App',
+      variable: 'load',
+      value: timeSincePageLoad, // in milliseconds
+      label: 'performance.now'
+    });
+}
 
 
 const withTracker = (WrappedComponent) => {
     const trackPage = (page) => {
         try {
             let landingUri = new RegExp('^/s/.*');
-
             if(landingUri.test(page)) {
                 ReactGA.set({ page : '/s/private' });
                 ReactGA.pageview('/s/private');

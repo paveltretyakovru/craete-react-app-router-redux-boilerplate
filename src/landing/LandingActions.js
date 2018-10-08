@@ -16,17 +16,21 @@ export const fetchLandingDataSuccess = (client) => {
 export const fetchLandingData = (userId = '') => {
   return (dispatch) => {
     dispatch(fetchLandingDataBegin());
-
-    ReactGA.event({
-        category: 'User',
-        action: 'Click on button'
-    });
-
     // return fetch(`${process.env.PUBLIC_URL}${FETCH_USER_URL}/${userId}`)
+    let start_time = new Date().getTime();
     return fetch(`${FETCH_USER_URL}/${userId}`)
       .then(handleErrors)
       .then(res => res.json())
       .then((json) => {
+
+        let request_time = new Date().getTime() - start_time;
+        ReactGA.timing({
+            category: 'JS App',
+            variable: 'load',
+            value: request_time, // in milliseconds
+            label: 'info.load'
+        });
+
         // Запрос успешно выполнен и пользователь НЕ нажимал стать лидером
         if (json.success && !json.data.state) {
           console.log('Пользователь НЕ нажимал на стать лидером');
@@ -76,6 +80,10 @@ export const updateActiveSection = (section = 0) => {
 export const confirmInvite = (id = '') => {
   return (dispatch) => {
     if (id) {
+      ReactGA.event({
+        category: 'User',
+        action: 'Click on button'
+      });
       postData(getConfirmInviteUrl(id))
         .then((json) => {
           // Сохраняем полученные данные
@@ -107,6 +115,7 @@ function handleErrors(response) {
 
 function postData(url = ``, data = {}) {
   // Default options are marked with *
+
     return fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, cors, *same-origin
