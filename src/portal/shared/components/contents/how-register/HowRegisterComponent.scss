@@ -24,6 +24,7 @@
     line-height: 18px;
     font-size: 13px;
     color: #2E2E2E;
+    margin-bottom: 20px;
   }
 
   &__title {
@@ -33,6 +34,20 @@
     font-size: 18px;
     color: #2E2E2E;
     width: 560px;
+    > b {
+      font-weight: bold;
+    }
+
+  }
+  &__sub-title {
+    margin-top: 10px;
+    font-family: DIN Pro;
+    line-height: 19px;
+    font-size: 13px;
+    color: #2E2E2E;
+    > a {
+      color: #0070BA;
+    }
   }
 
   &__subtitle {
@@ -102,6 +117,12 @@
       color: #dd4747;
     }
   }
+  &__list-description {
+    font-family: DIN Pro;
+    line-height: 18px;
+    font-size: 13px;
+    color: #2E2E2E;
+  }
 
   &__centered-block {
     width: 410px;
@@ -144,6 +165,9 @@
           line-height: 18px;
           font-size: 13px;
           color: #2E2E2E;
+          > b {
+            font-weight: bold;
+          }
         }
       }
     }

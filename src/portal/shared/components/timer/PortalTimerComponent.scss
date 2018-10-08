@@ -5,11 +5,11 @@
   box-sizing: border-box;
 
   &__label {
-    margin-top: 14px;
     font-family: DIN Pro;
     font-size: 13px;
     color: #706F6F;
     line-height: 15px;
+    margin-bottom: 17px;
   }
 
   &__link {
@@ -30,6 +30,9 @@
 
       &:last-child {
         margin-left: 9px;
+        > div:last-child {
+          margin-left: 20px;
+        }
       }
     }
 
@@ -57,11 +60,6 @@
     flex-direction: column;
     align-items: center;
     padding: 28px 21px 22px 21px;
-  }
-  .portal-timer__label {
-    order: -1;
-    margin-top: 0;
-    margin-bottom: 17px;
   }
   .portal-timer__link {
     width: 100%

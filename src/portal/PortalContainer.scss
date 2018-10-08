@@ -6,6 +6,10 @@
   justify-content: center;
   background-color: #f2efeb;
 
+  &__mobile-menu{
+    display: none;
+  }
+
   &__left-side {
     width: 300px;
     margin-right: 30px;
@@ -65,12 +69,19 @@
     padding-top: 0;
     display: block;
   }
-  .portal__left-side {
+  .portal__left-side, .portal__header, .portal__blue-block, .portal__blue-block-elements{
     display: none;
   }
   .portal__content {
     flex-direction: column;
     margin-top: 0;
+  }
+  .portal__mobile-menu {
+    display: block;
+    height: 40px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .portal__right-blocks {
     order: -1;

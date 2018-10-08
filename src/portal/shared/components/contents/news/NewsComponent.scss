@@ -95,3 +95,9 @@
     margin-top: 5px;
   }
 }
+
+@media screen and (max-width: 739px) {
+  .portal-news, .portal__main, .portal-news__title, .portal-news__quote, .portal-news__quote-small, .demin-signature {
+    width: 100%;
+  }
+}
