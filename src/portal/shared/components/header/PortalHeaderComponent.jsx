@@ -7,7 +7,7 @@ import { PORTAL_HEADER_ITEMS } from '../checklist/PortalChecklistConstants';
 // Images
 import lockImage from './shared/assets/images/lock.svg';
 import alarmImage from './shared/assets/images/alarm.svg';
-import rectangleImage from './shared/assets/images/rectangle.svg';
+// import rectangleImage from './shared/assets/images/rectangle.svg';
 
 export class PortalHeaderComponent extends Component {
   render() {
@@ -22,7 +22,7 @@ export class PortalHeaderComponent extends Component {
                 return (
                   <div
                     key={`portal-header-item-key-${item.id}`}
-                    onClick={() => this.props.updateTabIndex(index)}
+                    // onClick={() => this.props.updateTabIndex(index)}
                     className="portal-header__menu-item portal-header__menu-item_locked"
                   >
                     <img src={lockImage} alt="Lock section"/>
@@ -50,7 +50,7 @@ export class PortalHeaderComponent extends Component {
         <div className="portal-header__account">
           <div className="portal-header__menu-item">
             <span>{clientName}</span>
-            <img src={rectangleImage} alt="rectangle"/>
+            {/* <img src={rectangleImage} alt="rectangle"/> */}
           </div>
           <div className="portal-header__menu-item">
             <img src={alarmImage} alt="alarm"/>
