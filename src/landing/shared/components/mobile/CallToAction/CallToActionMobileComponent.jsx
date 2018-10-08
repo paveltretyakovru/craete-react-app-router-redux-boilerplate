@@ -13,13 +13,16 @@ export class CallToActionMobileComponent extends Component {
 
     return (
       <div className="call-to-action-mobile">
-
-        <div className="call-to-action-mobile__title gpn-slideshow-mobile__title">
-          <span className="blue-text">{CALL_TO_ACTION_TITLE_SPECIAL}</span>
-          &nbsp;{CALL_TO_ACTION_TITLE}
-        </div>
-        <div className="call-to-action-mobile__text gpn-slideshow-mobile__text">
-          {description}
+        <div className="call-to-action-mobile__bgimage">
+          <div className="call-to-action-mobile__bgwhite">
+            <div className="call-to-action-mobile__title gpn-slideshow-mobile__title">
+              <span className="blue-text">{CALL_TO_ACTION_TITLE_SPECIAL}</span>
+              &nbsp;{CALL_TO_ACTION_TITLE}
+            </div>
+            <div className="call-to-action-mobile__text gpn-slideshow-mobile__text">
+              {description}
+            </div>
+          </div>
         </div>
 
         <div className="call-to-action-mobile__link">
