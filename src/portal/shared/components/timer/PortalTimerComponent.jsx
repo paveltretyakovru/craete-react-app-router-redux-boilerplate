@@ -43,7 +43,7 @@ export class PortalTimerComponent extends Component {
         </div>
 
         <div className="portal-timer__link">
-          <a href="/" className="big-link">{PORTAL_TIMER_BIG_LINK_VALUE}</a>
+          <a href="https://лидерыроссии.рф/" className="big-link">{PORTAL_TIMER_BIG_LINK_VALUE}</a>
         </div>
       </div>
     );
