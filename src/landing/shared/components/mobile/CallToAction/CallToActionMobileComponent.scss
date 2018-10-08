@@ -1,0 +1,53 @@
+.call-to-action-mobile {
+  height: 100%;
+  position: relative;
+  background-color: #ffffff;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__text, &__title {
+    padding: 19px;
+  }
+
+  &__text {
+    p:last-child {
+      margin-top: 18px;
+    }
+  }
+
+  &__link {
+    margin-top: 38px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    &-description {
+      width: 183px;
+      color: #2E2E2E;
+      font-size: 20px;
+      font-family: DIN Pro;
+      line-height: 23px;
+      margin-bottom: 18px;
+    }
+
+    &-block {
+      width: 183px;
+    }
+  }
+
+  &__copyright {
+    left: 20px;
+    color: #0070BA;
+    bottom: 15px;
+    position: absolute;
+    font-family: DIN Pro;
+    line-height: 15px;
+    font-size: 11px;
+  }
+
+  .big-link {
+    font-size: 14px;
+  }
+}

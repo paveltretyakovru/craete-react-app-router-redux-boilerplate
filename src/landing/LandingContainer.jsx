@@ -30,6 +30,7 @@ import { InformationMobileComponent } from './shared/components/mobile/informati
 import { DeminReviewMobileComponent } from './shared/components/mobile/DeminReview/DeminReviewMobileComponent';
 import { WinnerInterviewMobileComponent } from './shared/components/mobile/WinnerInterview/WinnerInterviewMobileComponent';
 import { WinnerElbrusMobileComponent } from './shared/components/mobile/WinnerElbrus/WinnerElbrusMobileComponent';
+import { CallToActionMobileComponent } from './shared/components/mobile/CallToAction/CallToActionMobileComponent';
 
 
 const Mobile = props => <Responsive {...props} maxWidth={768} />;
@@ -119,34 +120,42 @@ class LandingComponent extends Component {
               activeSection={activeSection}
             >
               <Section>
+                <DukovAppealMobileComponent
+                  client={client}
+                  active={activeSection === 0}
+                />
+              </Section>
+
+              <Section>
+                <InformationMobileComponent
+                  active={activeSection === 0}
+                />
+              </Section>
+            
+              <Section>
                 <SlideshowContainer
                   active={activeSection === 2}
                 >
-                  <WinnerElbrusMobileComponent
-                    active={this.props.slideshow.active === 3}
-                  />
-
-                  <WinnerInterviewMobileComponent
-                    active={this.props.slideshow.active === 1}
-                  />
-
                   <DeminReviewMobileComponent
                     active={
                       this.props.slideshow.active === 0
                       && activeSection === 2
                     }
                   />
+
+                  <WinnerInterviewMobileComponent
+                    active={this.props.slideshow.active === 1}
+                  />
+
+                  <WinnerElbrusMobileComponent
+                    active={this.props.slideshow.active === 3}
+                  />
                 </SlideshowContainer>
               </Section>
 
               <Section>
-                <InformationMobileComponent />
-              </Section>
-
-              <Section>
-                <DukovAppealMobileComponent
-                  client={client}
-                  active={activeSection === 0}
+                <CallToActionMobileComponent 
+                  active={activeSection === 3}
                 />
               </Section>
             </SectionsContainer>
