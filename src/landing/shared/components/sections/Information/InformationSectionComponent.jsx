@@ -23,7 +23,7 @@ export class InformationSectionComponent extends Component {
           {/* Title */}
           <Animated
             isVisible={this.props.active}
-            animationIn="fadeInDown"
+            animationIn="fadeIn"
             animationOut="fadeOut"
             animationInDelay={300}
           >
@@ -40,7 +40,7 @@ export class InformationSectionComponent extends Component {
             <div className="information-section__description-text">
               <Animated
                 isVisible={this.props.active}
-                animationIn="fadeInUp"
+                animationIn="fadeIn"
                 animationOut="fadeOut"
                 animationInDelay={800}
               >
@@ -51,7 +51,7 @@ export class InformationSectionComponent extends Component {
             {/* Items */}
             <div className="information-section__items">
               <Animated
-                animationIn="fadeInRight"
+                animationIn="fadeIn"
                 animationOut="fadeOut"
                 isVisible={this.props.active}
                 animationInDelay={1500}
@@ -67,7 +67,7 @@ export class InformationSectionComponent extends Component {
               </Animated>
 
               <Animated
-                animationIn="fadeInRight"
+                animationIn="fadeIn"
                 animationOut="fadeOut"
                 isVisible={this.props.active}
                 animationInDelay={1800}
@@ -83,7 +83,7 @@ export class InformationSectionComponent extends Component {
               </Animated>
 
               <Animated
-                animationIn="fadeInRight"
+                animationIn="fadeIn"
                 animationOut="fadeOut"
                 isVisible={this.props.active}
                 animationInDelay={2100}
