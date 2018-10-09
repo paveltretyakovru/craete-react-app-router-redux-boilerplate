@@ -3,8 +3,16 @@ export const DUKOV_APPEAL_TEXT = [
   'Сегодня я приглашаю всех сотрудников нашей компании, имеющих опыт управления, принять участие в подготовке к конкурсу. Уверен, мы сможем показать ещё больший результат и талантливые руководители «Газпром нефти» займут свое достойное место в числе «Лидеров России».',
 ];
 
-export const DUKOV_APPEAL_NAME = "Дмитрий";
-export const DUKOV_APPEAL_TITLE = "Cовсем скоро стартует второй поток федерального конкурса «Лидеры России».";
-export const DUKOV_APPEAL_POSITION = "Генеральный директор ПАО «Газпром нефть»";
-export const DUKOV_APPEAL_FULL_NAME = "ДЮКОВ Александр Валерьевич";
-export const DUKOV_APPEAL_BUTTONN_VALUE = "Стать лидером";
+export const DUKOV_APPEAL_NAME = 'Дмитрий';
+export const DUKOV_APPEAL_TITLE = 'Cовсем скоро стартует второй поток федерального конкурса «Лидеры России».';
+export const DUKOV_APPEAL_POSITION = 'Генеральный директор ПАО «Газпром нефть»';
+export const DUKOV_APPEAL_FULL_NAME = 'ДЮКОВ Александр Валерьевич';
+export const DUKOV_APPEAL_BUTTONN_VALUE = 'Стать лидером';
+export const DUKOV_APPEAL_NOPERSON_NAME  = 'Совсем скоро стартует второй поток федерального конкурса «Лидеры России».';
+
+// Noperson modal window data
+export const DUKOV_NOPERSON_MODAL_MAIL = 'leadersofrussia@gazprom-neft.ru';
+export const DUKOV_NOPERSON_MODAL_TEXT = 'Х октября вам пришло письмо с персональной ссылкой для входа в личный кабинет';
+export const DUKOV_NOPERSON_MODAL_THANKS = 'Спасибо!';
+export const DUKOV_NOPERSON_MDOAL_GOTO_MAIL = 'Перейти в почту';
+export const DUKOV_NOPERSON_MODAL_FOOTER_TEXT = ['Если Вы не получили письмо, тех. поддержка', 'поможет восстановить доступ' ]

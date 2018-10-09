@@ -5,6 +5,9 @@ import {
   UPDATE_ACTIVE_SECTION, FETCH_LANDING_DATA_START, FETCH_LANDING_DATA_SUCCESS,
   FETCH_USER_URL,
   getConfirmInviteUrl,
+  ENABLE_NOPERSONE_STATE,
+  FETCH_LANDING_DATA_FAILURE,
+  SWITCH_NOPERSON_INVITE_MODAL,
 } from "./LandingConstants";
 
 export const fetchLandingDataBegin = () => ({type: FETCH_LANDING_DATA_START});
@@ -22,7 +25,6 @@ export const fetchLandingData = (userId = '') => {
       .then(handleErrors)
       .then(res => res.json())
       .then((json) => {
-
         let request_time = new Date().getTime() - start_time;
         ReactGA.timing({
             category: 'JS App',
@@ -33,7 +35,7 @@ export const fetchLandingData = (userId = '') => {
 
         // Запрос успешно выполнен и пользователь НЕ нажимал стать лидером
         if (json.success && !json.data.state) {
-          console.log('Пользователь НЕ нажимал на стать лидером');
+          // console.log('Пользователь НЕ нажимал на стать лидером');
 
           return json;
         } else {
@@ -43,7 +45,7 @@ export const fetchLandingData = (userId = '') => {
           // state=2 page visited
           // Если пользователь нажимал стать лидером
           if (json.data.state === 1) {
-            console.log('Пользователь нажимал на стать лидером');
+            // console.log('Пользователь нажимал на стать лидером');
 
             // Сохраняем полученные данные
             dispatch(fetchLandingDataSuccess({
@@ -67,7 +69,10 @@ export const fetchLandingData = (userId = '') => {
         }));
         return json.data.jsonBody;
       })
-      .catch(error => console.error('Error on fetch landing data', { error }));
+      .catch((error) => {
+        console.error('Error on fetch landing data', { error });
+        dispatch({ type: FETCH_LANDING_DATA_FAILURE });
+      });
   }
 }
 
@@ -105,9 +110,15 @@ export const confirmInvite = (id = '') => {
   }
 }
 
+export const switchNopersonInviteModal = () => {
+  return (dispatch) => {
+    dispatch({type: SWITCH_NOPERSON_INVITE_MODAL});
+  } 
+}
+
 function handleErrors(response) {
   if (!response.ok) {
-    throw Error(response.statusText);
+    throw Error({text: response.statusText, code: response.code});
   }
 
   return response;

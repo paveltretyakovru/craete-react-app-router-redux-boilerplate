@@ -6,7 +6,7 @@ import { CALL_TO_ACTION_TITLE_SPECIAL, CALL_TO_ACTION_TITLE, CALL_TO_ACTION_DESC
 
 export class CallToActionSectionComponent extends Component {
   render() {
-    const {confirmInvite} = this.props;
+    const {confirmInvite, client, switchNopersonInviteModal} = this.props;
 
     return (
       <div className="call-to-action-section__wrapper">
@@ -33,7 +33,7 @@ export class CallToActionSectionComponent extends Component {
 
             <a
               className="big-link"
-              onClick={confirmInvite}
+              onClick={!!client.id ? confirmInvite : switchNopersonInviteModal}
             >
               {CALL_TO_ACTION_LINK}
             </a>
