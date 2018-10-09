@@ -9,7 +9,7 @@ import rightFiguresImage from '../../sections/DukovAppeal/shared/images/right-fi
 
 export class DukovAppealMobileComponent extends Component {
   render() {
-    const {confirmInvite} = this.props;
+    const {confirmInvite, switchNopersonInviteModal, client} = this.props;
 
     return (
       <div className="dukov-appeal-mobile">
@@ -20,7 +20,7 @@ export class DukovAppealMobileComponent extends Component {
         <div className="dukov-appeal-mobile__text">{DUKOV_APPEAL_TEXT}</div>
         
         <div
-          onClick={confirmInvite}
+          onClick={!!client.id ? confirmInvite : switchNopersonInviteModal}
           className="dukov-appeal-mobile__button"
         >
           {DUKOV_APPEAL_BUTTONN_VALUE}
