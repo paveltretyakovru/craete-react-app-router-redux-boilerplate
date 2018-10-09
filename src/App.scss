@@ -18,6 +18,14 @@
   border-bottom: 3px solid #0070BA;
 }
 
+.show-overflow {
+  overflow: auto !important;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
 .animated {
   overflow: hidden;
 }

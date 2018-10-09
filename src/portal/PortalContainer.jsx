@@ -24,8 +24,9 @@ class PortalContainer extends Component {
     ReactGA.set({ page: this.props.location.pathname });
     ReactGA.pageview(this.props.location.pathname);
     document.body.classList.add('light-background');
+    document.body.classList.add('show-overflow');
   }
-
+  
   render() {
     const {client} = this.props;
     const updTabIndex = (index) => {
