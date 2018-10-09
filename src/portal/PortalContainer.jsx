@@ -11,7 +11,7 @@ import './PortalContainer.scss';
 import { PortalChecklistComponent } from './shared/components/checklist/PortalChecklistComponent';
 import { PortalHeaderComponent } from './shared/components/header/PortalHeaderComponent';
 import { PortalTimerComponent } from './shared/components/timer/PortalTimerComponent';
-import { PORTAL_BLUE_BLOCK_LABEL } from './portalConstants';
+import { PORTAL_BLUE_BLOCK_LABEL, PORTAL_BLUE_BLOCK_LINK_LABEL } from './portalConstants';
 
 // Images
 import blueBlockElementsImage from './shared/assets/images/elements.svg';
@@ -74,6 +74,11 @@ class PortalContainer extends Component {
                 <div className="portal__blue-block-label">
                   {PORTAL_BLUE_BLOCK_LABEL}
                 </div>
+                <div className="portal__blue-block-label-soon">
+                  {PORTAL_BLUE_BLOCK_LINK_LABEL}
+                </div>
+
+                {/* Ссылка */}
                 {/* <a href="./" className="portal__blue-block-link">
                   {PORTAL_BLUE_BLOCK_LINK_LABEL}
                 </a> */}
