@@ -6,6 +6,7 @@ import {
   DUKOV_APPEAL_TEXT, DUKOV_APPEAL_TITLE,
   DUKOV_APPEAL_FULL_NAME, DUKOV_APPEAL_POSITION, DUKOV_APPEAL_BUTTONN_VALUE,
   DUKOV_APPEAL_NOPERSON_NAME,
+  DUKOV_APPEAL_NAME_ANONIM
 } from './dukovAppealSectionComponentConstants';
 
 // Styles
@@ -31,8 +32,8 @@ export class DukovAppealSectionComponent extends Component {
         )
       } else {
         return (
-          <div className="dukov-appeal-section__noperson-name">
-            {DUKOV_APPEAL_NOPERSON_NAME}
+          <div className="dukov-appeal-section__name">
+              {DUKOV_APPEAL_NAME_ANONIM}
           </div>
         )
       }
@@ -54,14 +55,9 @@ export class DukovAppealSectionComponent extends Component {
         
         <div className="dukov-appeal-section__content">
           {name}
-          
-          {
-            (!!client.id)
-              ? <div className="dukov-appeal-section__title">{DUKOV_APPEAL_TITLE}</div>
-              : null
-          }
-          
-          <div className="dukov-appeal-section__text">{DUKOV_APPEAL_TEXT}</div>
+          <div className="dukov-appeal-section__title">{DUKOV_APPEAL_TITLE}</div>
+
+          <div className="dukov-appeal-section__text" dangerouslySetInnerHTML={{__html: DUKOV_APPEAL_TEXT.join('')}}></div>
 
           <div
             className="dukov-appeal-section__button"

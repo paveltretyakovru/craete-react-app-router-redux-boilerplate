@@ -17,7 +17,7 @@ export class DukovAppealMobileComponent extends Component {
 
         <div className="dukov-appeal-mobile__name">{this.props.client.clientName}</div>
         <div className="dukov-appeal-mobile__title">{DUKOV_APPEAL_TITLE}</div>
-        <div className="dukov-appeal-mobile__text">{DUKOV_APPEAL_TEXT}</div>
+        <div className="dukov-appeal-mobile__text" dangerouslySetInnerHTML={{__html: DUKOV_APPEAL_TEXT.join('')}}></div>
         
         <div
           onClick={!!client.id ? confirmInvite : switchNopersonInviteModal}
