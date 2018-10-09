@@ -12,7 +12,7 @@ export const DUKOV_APPEAL_NOPERSON_NAME  = 'Совсем скоро старту
 
 // Noperson modal window data
 export const DUKOV_NOPERSON_MODAL_MAIL = 'leadersofrussia@gazprom-neft.ru';
-export const DUKOV_NOPERSON_MODAL_TEXT = 'Х октября вам пришло письмо с персональной ссылкой для входа в личный кабинет';
+export const DUKOV_NOPERSON_MODAL_TEXT = '9 октября вам пришло письмо с персональной ссылкой для входа в личный кабинет';
 export const DUKOV_NOPERSON_MODAL_THANKS = 'Спасибо!';
 export const DUKOV_NOPERSON_MDOAL_GOTO_MAIL = 'Перейти в почту';
 export const DUKOV_NOPERSON_MODAL_FOOTER_TEXT = ['Если Вы не получили письмо, тех. поддержка', 'поможет восстановить доступ' ]
