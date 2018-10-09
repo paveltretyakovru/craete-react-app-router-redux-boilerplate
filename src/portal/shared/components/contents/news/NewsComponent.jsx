@@ -10,8 +10,14 @@ import { DEMIN_FULLNAME_TEXT, DEMIN_POSITION_TEXT, WINNERS_TITLE_TEXT, TITLE_TEX
 import deminAvatarImage from '../../../../../landing/shared/components/sections/DeminReview/shared/assets/images/demin-avatar.png';
 import winnersElbrusImage from '../../../../../landing/shared/components/sections/WinnerElbrus/shared/assets/images/elbrus-winner-photo.png';
 import { WINNER_ELBRUS_DESCRIPTION_LEFT, WINNER_ELBRUS_DESCRIPTION_RIGHT } from '../../../../../landing/shared/components/sections/WinnerElbrus/WinnerElbrusSectionConstants';
-
+import rectangleImage from '../how-register/shared/assets/images/rectangleImage.svg';
 export class NewsComponent extends Component {
+	state = {
+		isOpened: false,
+	}
+		 
+	handleOpen = () => this.setState({ isOpened: !this.state.isOpened });
+
 	render() {
 		const elbrusDescriptionLeft = WINNER_ELBRUS_DESCRIPTION_LEFT.map((p, i) => {
       return <p key={`winner-elbrus-description-left-${i}`}>{p}</p>;
@@ -19,11 +25,11 @@ export class NewsComponent extends Component {
 
     const elbrusDescriptionRight = WINNER_ELBRUS_DESCRIPTION_RIGHT.map((p, i) => {
       return <p key={`winner-elbrus-description-right-${i}`}>{p}</p>;
-    });
+		});
 
 		return(
 			<div className="portal-news">
-				<div className="portal-news__block">
+				<div className={this.state.isOpened ? "portal-news__block" : "portal-news__block-closed"}>
 					<p className="portal-news__label">
 						Интервью
 					</p>
@@ -55,6 +61,11 @@ export class NewsComponent extends Component {
 						</div>
 					</div>
 				</div>
+
+				<div className="portal-news__mobile-button" onMouseDown={this.handleOpen}>
+          <span>{this.state.isOpened ? "Скрыть" : "Показать полностью"}</span>
+        	<img src={rectangleImage} alt="rectangle" className={this.state.isOpened ? "rectangleImageOpen" : "rectangleImage"}/>
+        </div>
 
 				<div className="portal-news__block portal-news__elbrus-winners">
 					<div className="portal-news__label-block">
