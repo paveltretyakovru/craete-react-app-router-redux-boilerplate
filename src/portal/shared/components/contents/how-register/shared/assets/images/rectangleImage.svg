@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="7px" viewBox="0 0 10 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="All" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="GUI_part-(v2)" transform="translate(-1800.000000, -912.000000)" fill-rule="nonzero">
+            <path d="M1807.44975,915.449747 L1806.44975,916.449747 L1806.44975,915.449747 L1807.44975,915.449747 Z M1806.44975,910.449747 L1808.44975,910.449747 L1808.44975,917.449747 L1801.44975,917.449747 L1801.44975,915.449747 L1806.44975,915.449747 L1806.44975,910.449747 Z" id="Dropdown_arrow" transform="translate(1804.949747, 913.949747) rotate(-315.000000) translate(-1804.949747, -913.949747)" fill='#0070BA'></path>
+        </g>
+    </g>
+</svg>

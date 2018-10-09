@@ -84,7 +84,6 @@ class LandingComponent extends Component {
 
     return (
       <div style={{overflow: 'hidden'}}>
-
         {/* Default view */}
         <Default>
           <SectionsContainer
