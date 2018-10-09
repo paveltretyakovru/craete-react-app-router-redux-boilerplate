@@ -5,6 +5,7 @@ import {Animated} from 'react-animated-css';
 import {
   DUKOV_APPEAL_TEXT, DUKOV_APPEAL_TITLE,
   DUKOV_APPEAL_FULL_NAME, DUKOV_APPEAL_POSITION, DUKOV_APPEAL_BUTTONN_VALUE,
+  DUKOV_APPEAL_NOPERSON_NAME,
 } from './dukovAppealSectionComponentConstants';
 
 // Styles
@@ -18,7 +19,24 @@ import rightFiguresImage from './shared/images/right-figures.svg';
 
 export class DukovAppealSectionComponent extends Component {
   render() {
-    const {confirmInvite} = this.props;
+    const {confirmInvite, client, switchNopersonInviteModal} = this.props;
+
+    // Формирование заголовка в зависимости от person || noperson
+    const name = (() => {
+      if(!!client.id) {
+        return (
+          <div className="dukov-appeal-section__name">
+            {client.clientName}
+          </div>
+        )
+      } else {
+        return (
+          <div className="dukov-appeal-section__noperson-name">
+            {DUKOV_APPEAL_NOPERSON_NAME}
+          </div>
+        )
+      }
+    })()
 
     return (
       <Animated
@@ -35,11 +53,20 @@ export class DukovAppealSectionComponent extends Component {
         <img src={dukovPhotoImage} alt="" className="dukov-appeal-section__photo"/>
         
         <div className="dukov-appeal-section__content">
-          <div className="dukov-appeal-section__name">{this.props.client.clientName}</div>
-          <div className="dukov-appeal-section__title">{DUKOV_APPEAL_TITLE}</div>
+          {name}
+          
+          {
+            (!!client.id)
+              ? <div className="dukov-appeal-section__title">{DUKOV_APPEAL_TITLE}</div>
+              : null
+          }
+          
           <div className="dukov-appeal-section__text">{DUKOV_APPEAL_TEXT}</div>
 
-          <div className="dukov-appeal-section__button" onClick={confirmInvite}>
+          <div
+            className="dukov-appeal-section__button"
+            onClick={!!client.id ? confirmInvite : switchNopersonInviteModal}
+          >
             {DUKOV_APPEAL_BUTTONN_VALUE}
           </div>
 
