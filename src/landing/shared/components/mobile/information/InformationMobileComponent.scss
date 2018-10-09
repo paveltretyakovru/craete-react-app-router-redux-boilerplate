@@ -50,3 +50,14 @@
     }
   }
 }
+
+@media screen and (device-aspect-ratio: 40/71){
+  /* iPhone 5 only */
+  .information-mobile {
+    &__text {
+      font-size: 9px;
+      line-height: 11px;
+      margin-bottom: 5px;
+    }
+  }
+}
