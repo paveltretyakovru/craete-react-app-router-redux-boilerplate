@@ -1,11 +1,11 @@
 export const PORTAL_CHECKLIST_TITLE = 'Чек-лист участия в конкурсе Лидеры России';
 export const PORTAL_CHECKLIST_ITEMS = [
-  { id: 1, value: 'Приступил к обучению', checked: true },
-  { id: 2, value: 'Прошел регистрацию на официальном сайте', checked: true},
+  { id: 1, value: 'Приступил к обучению', checked: false },
+  { id: 2, value: 'Прошел регистрацию на официальном сайте', checked: false},
   { id: 3, value: 'Отправил видеоинтервью по конкурсу', checked: false},
   { id: 4, value: 'Прошел тест на эрудицию', checked: false},
-  { id: 5, value: 'Прошел тест на числовые и вербальные способности', checked: true},
-  { id: 6, value: 'Прошел опрос на управленческие способности', checked: true},
+  { id: 5, value: 'Прошел тест на числовые и вербальные способности', checked: false},
+  { id: 6, value: 'Прошел опрос на управленческие способности', checked: false},
 ]
 
 export const PORTAL_HEADER_ITEMS = [
