@@ -31,6 +31,7 @@ import { DeminReviewMobileComponent } from './shared/components/mobile/DeminRevi
 import { WinnerInterviewMobileComponent } from './shared/components/mobile/WinnerInterview/WinnerInterviewMobileComponent';
 import { WinnerElbrusMobileComponent } from './shared/components/mobile/WinnerElbrus/WinnerElbrusMobileComponent';
 import { CallToActionMobileComponent } from './shared/components/mobile/CallToAction/CallToActionMobileComponent';
+import ReactGA from "react-ga";
 
 
 const Mobile = props => <Responsive {...props} maxWidth={768} />;
@@ -46,6 +47,9 @@ class LandingComponent extends Component {
   }
 
   componentDidMount() {
+    ReactGA.set({ page : '/s/private' });
+    ReactGA.pageview('/s/private');
+
     const userId = this.props.match.params.id;
     if ((!this.props.client || !this.props.client.id) && !this.props.client.loading) {
         this.props.fetchLandingData(userId);

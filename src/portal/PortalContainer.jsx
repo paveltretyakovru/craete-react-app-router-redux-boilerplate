@@ -17,9 +17,12 @@ import { PORTAL_BLUE_BLOCK_LABEL } from './portalConstants';
 import blueBlockElementsImage from './shared/assets/images/elements.svg';
 import { NewsComponent } from './shared/components/contents/news/NewsComponent';
 import { HowRegisterComponent } from './shared/components/contents/how-register/HowRegisterComponent';
+import ReactGA from "react-ga";
 
 class PortalContainer extends Component {
   componentDidMount() {
+    ReactGA.set({ page: this.props.location.pathname });
+    ReactGA.pageview(this.props.location.pathname);
     document.body.classList.add('light-background');
   }
 
