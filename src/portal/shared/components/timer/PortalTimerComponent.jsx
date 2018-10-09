@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
+import ReactGA from 'react-ga';
+import declint from 'declint-ru';
 
 // Styles
 import './PortalTimerComponent.scss';
+
+
 import { PORTAL_TIMER_LABEL, PORTAL_TIMER_BIG_LINK_VALUE } from './PortalTimerConstants';
-import declint from 'declint-ru';
+
 
 export class PortalTimerComponent extends Component {
   constructor(props) {
@@ -89,7 +93,15 @@ export class PortalTimerComponent extends Component {
         </div>
 
         <div className="portal-timer__link">
-          <a href="https://лидерыроссии.рф" target="_blank" rel="noopener noreferrer" className="big-link">{PORTAL_TIMER_BIG_LINK_VALUE} </a>
+
+            <ReactGA.OutboundLink
+                eventLabel="registerLink"
+                className="big-link"
+                to="https://лидерыроссии.рф"
+                rel="noopener noreferrer"
+                target="_blank">
+                {PORTAL_TIMER_BIG_LINK_VALUE}
+            </ReactGA.OutboundLink>
         </div>
       </div>
     );
