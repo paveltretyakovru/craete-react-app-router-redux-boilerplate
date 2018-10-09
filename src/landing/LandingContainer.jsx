@@ -209,11 +209,11 @@ class LandingComponent extends Component {
               <div className="noperson-invite-modal__block-text">
                 {DUKOV_NOPERSON_MODAL_TEXT}
               </div>
-              <div className="noperson-invite-modal__block-link">
+              {/* <div className="noperson-invite-modal__block-link">
                 <a href={`mailto:${DUKOV_NOPERSON_MODAL_MAIL}`} className="big-link">
                   {DUKOV_NOPERSON_MDOAL_GOTO_MAIL}
                 </a>
-              </div>
+              </div> */}
             </div>
             <div className="noperson-invite-modal__block-footer">
               <p>
