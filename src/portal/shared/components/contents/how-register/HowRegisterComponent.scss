@@ -50,6 +50,10 @@
     }
   }
 
+  &__sub-title-mobile {
+    display: none;
+  }
+
   &__subtitle {
     font-family: DIN Pro;
     line-height: 18px;
@@ -193,11 +197,37 @@
       margin-right: 36px;
     }
   }
+  &__mobile-button {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 739px) {
   .portal-how-register__title, .portal-how-register, .portal-how-register__centered-block{
     width: 100%;
+  }
+  .portal-how-register__mobile-button {
+    height: 60px;
+    padding: 21px;
+    box-sizing: border-box;
+    font-family: DIN Pro;
+    font-size: 13px;
+    color: #0070BA;
+    background-color: #F9F9F9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+    margin: 0 -50px 0 -31px;
+    padding: 20px 31px;
+    margin-top: 25px;
+    border: 1px solid #E9E9E9;
+  }
+  .portal-how-register__sub-title-desktop {
+    display: none;
+  }
+  .portal-how-register__sub-title-mobile {
+    display: block;
   }
 }
 
