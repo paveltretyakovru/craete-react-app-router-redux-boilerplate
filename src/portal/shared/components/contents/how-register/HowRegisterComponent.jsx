@@ -11,11 +11,18 @@ import elementReportImage from './shared/assets/images/element-report.svg';
 import elementSearchImage from './shared/assets/images/element-search-white.svg';
 import simpleVectorImage from './shared/assets/images/vector.svg';
 import vectorImage from '../../../../../landing/shared/components/sections/Information/shared/images/vector.svg';
+import rectangleImage from './shared/assets/images/rectangleImage.svg';
 
 // Styles
 import './HowRegisterComponent.scss';
 
 export class HowRegisterComponent extends Component {
+  state = {
+		isOpened: false,
+  }
+  
+  handleOpen = () => this.setState({ isOpened: !this.state.isOpened });
+
   render() {
     return (
       <div className="portal-how-register">
@@ -27,7 +34,16 @@ export class HowRegisterComponent extends Component {
           <p className="portal-how-register__title">
             Для участия в конкурсе необходимо в период <b>с 10 по 25 октября</b> подать заявку на официальном сайте “Лидеры России
           </p>
-          <p className="portal-how-register__sub-title">Для участников прошлого конкурса сохранена информация в <a href="https://лидерыроссии.рф" target="_blank" rel="noopener noreferrer">личных кабинетах</a>, необходимо актуализировать</p>
+          <p className="portal-how-register__sub-title portal-how-register__sub-title-desktop">Для участников прошлого конкурса сохранена информация в <a href="https://лидерыроссии.рф" target="_blank" rel="noopener noreferrer">личных кабинетах</a>, необходимо актуализировать</p>
+
+          {!this.state.isOpened ?
+            <div className="portal-how-register__mobile-button" onMouseDown={this.handleOpen}>
+              <span>Участникам прошлого конкурса</span>
+              <img src={rectangleImage} alt="rectangle" className="rectangleImage"/>
+            </div>
+          :
+            <p className="portal-how-register__sub-title portal-how-register__sub-title-mobile">Для участников прошлого конкурса сохранена информация в <a href="https://лидерыроссии.рф" target="_blank" rel="noopener noreferrer">личных кабинетах</a>, необходимо актуализировать</p>
+          }
 
           <p className="portal-how-register__subtitle">
             УСЛОВИЯ УЧАСТИЯ В КОНКУРСЕ:

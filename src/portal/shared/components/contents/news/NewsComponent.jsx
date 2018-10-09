@@ -11,6 +11,7 @@ import deminAvatarImage from '../../../../../landing/shared/components/sections/
 import winnersElbrusImage from '../../../../../landing/shared/components/sections/WinnerElbrus/shared/assets/images/elbrus-winner-photo.png';
 import { WINNER_ELBRUS_DESCRIPTION_LEFT, WINNER_ELBRUS_DESCRIPTION_RIGHT } from '../../../../../landing/shared/components/sections/WinnerElbrus/WinnerElbrusSectionConstants';
 import rectangleImage from '../how-register/shared/assets/images/rectangleImage.svg';
+
 export class NewsComponent extends Component {
 	state = {
 		isOpened: false,
