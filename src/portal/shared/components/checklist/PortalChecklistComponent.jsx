@@ -10,6 +10,7 @@ import './PortalChecklistComponent.scss';
 import portalLogoImage from './shared/assets/images/portal-logo.png';
 import portalCheckboxImage from './shared/assets/images/portal-checkbox.png';
 import portalCheckboxCheckedImage from './shared/assets/images/portal-checkbox-checked.png';
+import lockImage from '../../../shared/components/header/shared/assets/images/lock.svg';
 
 export class PortalChecklistComponent extends Component {
   render() {
@@ -22,7 +23,7 @@ export class PortalChecklistComponent extends Component {
 
         <div className="portal-checklist__list">
           <div className="portal-checklist__list-title">
-          {PORTAL_CHECKLIST_TITLE}
+              <img src={lockImage} alt="Lock section"/> {PORTAL_CHECKLIST_TITLE}
           </div>
           <ul className="portal-checklist__list-items">
             {
