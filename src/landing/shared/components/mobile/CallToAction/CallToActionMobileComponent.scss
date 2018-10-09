@@ -78,3 +78,22 @@
     box-sizing: border-box;
   }
 }
+@media screen and (device-aspect-ratio: 40/71){
+  /* iPhone 5 only */
+  .call-to-action-mobile {
+    &__text {
+      font-size: 9px;
+      line-height: 11px;
+      margin-bottom: 5px;
+    }
+    &__link {
+      &-description {
+        font-size: 12px;
+      }
+    }
+    .big-link {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}

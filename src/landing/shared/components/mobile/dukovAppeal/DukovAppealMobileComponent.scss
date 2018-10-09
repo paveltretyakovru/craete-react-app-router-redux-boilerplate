@@ -95,3 +95,21 @@
     margin-top: auto;
   }
 }
+
+@media screen and (device-aspect-ratio: 40/71){
+  /* iPhone 5 only */
+  .dukov-appeal-mobile {
+    &__text {
+      font-size: 9px;
+      line-height: 11px;
+      margin-bottom: 5px;
+    }
+    &__signature {
+      padding-bottom: 15px;
+      &-fullname, &-position {
+        font-size: 9px;
+        margin-top: 1px;
+      }
+    }
+  }
+}
