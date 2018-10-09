@@ -47,7 +47,9 @@ class LandingComponent extends Component {
 
   componentDidMount() {
     const userId = this.props.match.params.id;
-    this.props.fetchLandingData(userId);
+    if ((!this.props.client || !this.props.client.id) && !this.props.client.loading) {
+        this.props.fetchLandingData(userId);
+    }
   }
 
   render() {
