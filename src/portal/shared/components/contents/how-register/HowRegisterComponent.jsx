@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactGA from 'react-ga';
 
 // Images
 import elementAvatarImage from './shared/assets/images/element-avatar.svg';
@@ -15,6 +16,7 @@ import rectangleImage from './shared/assets/images/rectangleImage.svg';
 
 // Styles
 import './HowRegisterComponent.scss';
+import {PORTAL_TIMER_BIG_LINK_VALUE} from "../../timer/PortalTimerConstants";
 
 export class HowRegisterComponent extends Component {
   state = {
@@ -34,7 +36,15 @@ export class HowRegisterComponent extends Component {
           <p className="portal-how-register__title">
             Для участия в конкурсе необходимо в период <b>с 10 по 25 октября</b> подать заявку на официальном сайте “Лидеры России
           </p>
-          <p className="portal-how-register__sub-title portal-how-register__sub-title-desktop">Для участников прошлого конкурса сохранена информация в <a href="https://лидерыроссии.рф" target="_blank" rel="noopener noreferrer">личных кабинетах</a>, необходимо актуализировать</p>
+          <p className="portal-how-register__sub-title portal-how-register__sub-title-desktop">Для участников прошлого конкурса сохранена информация в&nbsp;
+              <ReactGA.OutboundLink
+                  eventLabel="registerLinkSmall"
+                  to="https://лидерыроссии.рф"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  личных кабинетах
+              </ReactGA.OutboundLink>
+              , необходимо актуализировать</p>
 
           {!this.state.isOpened ?
             <div className="portal-how-register__mobile-button" onMouseDown={this.handleOpen}>
@@ -42,7 +52,17 @@ export class HowRegisterComponent extends Component {
               <img src={rectangleImage} alt="rectangle" className="rectangleImage"/>
             </div>
           :
-            <p className="portal-how-register__sub-title portal-how-register__sub-title-mobile">Для участников прошлого конкурса сохранена информация в <a href="https://лидерыроссии.рф" target="_blank" rel="noopener noreferrer">личных кабинетах</a>, необходимо актуализировать</p>
+            <p className="portal-how-register__sub-title portal-how-register__sub-title-mobile">
+                Для участников прошлого конкурса сохранена информация в&nbsp;
+                <ReactGA.OutboundLink
+                    eventLabel="registerLinkSmall"
+                    to="https://лидерыроссии.рф"
+                    rel="noopener noreferrer"
+                    target="_blank">
+                    личных кабинетах
+                </ReactGA.OutboundLink>
+                , необходимо актуализировать
+            </p>
           }
 
           <p className="portal-how-register__subtitle">
