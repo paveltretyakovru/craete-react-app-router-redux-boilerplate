@@ -5,7 +5,6 @@ import declint from 'declint-ru';
 // Styles
 import './PortalTimerComponent.scss';
 import { PORTAL_TIMER_LABEL, PORTAL_TIMER_BIG_LINK_VALUE, PORTAL_TIMER_LABEL_NEXT } from './PortalTimerConstants';
-import declint from 'declint-ru';
 
 export class PortalTimerComponent extends Component {
   constructor(props) {
