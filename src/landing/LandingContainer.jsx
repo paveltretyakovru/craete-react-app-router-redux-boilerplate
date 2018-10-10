@@ -33,7 +33,7 @@ import { WinnerElbrusMobileComponent } from './shared/components/mobile/WinnerEl
 import { CallToActionMobileComponent } from './shared/components/mobile/CallToAction/CallToActionMobileComponent';
 import { WinnerInterviewMobileComponent } from './shared/components/mobile/WinnerInterview/WinnerInterviewMobileComponent';
 import { updateActiveSection, fetchLandingData, confirmInvite, switchNopersonInviteModal } from './LandingActions';
-import { DUKOV_NOPERSON_MODAL_THANKS, DUKOV_NOPERSON_MODAL_TEXT, DUKOV_NOPERSON_MDOAL_GOTO_MAIL, DUKOV_NOPERSON_MODAL_FOOTER_TEXT, DUKOV_NOPERSON_MODAL_MAIL } from './shared/components/sections/DukovAppeal/dukovAppealSectionComponentConstants';
+import { DUKOV_NOPERSON_MODAL_THANKS, DUKOV_NOPERSON_MODAL_TEXT, DUKOV_NOPERSON_MODAL_FOOTER_TEXT, DUKOV_NOPERSON_MODAL_MAIL } from './shared/components/sections/DukovAppeal/dukovAppealSectionComponentConstants';
 
 const Mobile = props => <Responsive {...props} maxWidth={768} />;
 const Default = props => <Responsive {...props} minWidth={768} />;
@@ -60,11 +60,6 @@ class LandingComponent extends Component {
   render() {
     const onScroll = this.onScroll.bind(this);
     const {loading, client, activeSection} = this.props;
-    
-    // Формирование классов для отображения моадального окна noperson invite
-    const noPersonInviteModalClasses = this.props.nopersonInviteModalVisiable
-    ? 'noperson-invite-modal noperson-invite-modal--visble'
-    : 'noperson-invite-modal noperson-invite-modal--hidden';
     
     const confirmInvite = () => {
       this.props.confirmInvite(this.props.client.id)

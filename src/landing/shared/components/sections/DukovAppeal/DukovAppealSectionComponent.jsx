@@ -5,7 +5,6 @@ import {Animated} from 'react-animated-css';
 import {
   DUKOV_APPEAL_TEXT, DUKOV_APPEAL_TITLE,
   DUKOV_APPEAL_FULL_NAME, DUKOV_APPEAL_POSITION, DUKOV_APPEAL_BUTTONN_VALUE,
-  DUKOV_APPEAL_NOPERSON_NAME,
   DUKOV_APPEAL_NAME_ANONIM
 } from './dukovAppealSectionComponentConstants';
 
