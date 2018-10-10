@@ -18,7 +18,7 @@ export class PortalTimerComponent extends Component {
   }
 
    componentDidMount() {
-      const endDate = new Date(2018, 9, 10, 18, 0, 0);
+      const endDate = new Date(2018, 9, 10, 15, 30, 0);
       this.calculatedTime(endDate);
       
       this.intervalId = setInterval(() => {
