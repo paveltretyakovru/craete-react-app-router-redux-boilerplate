@@ -4,32 +4,49 @@ import declint from 'declint-ru';
 
 // Styles
 import './PortalTimerComponent.scss';
-
-
-import { PORTAL_TIMER_LABEL, PORTAL_TIMER_BIG_LINK_VALUE } from './PortalTimerConstants';
-
+import { PORTAL_TIMER_LABEL, PORTAL_TIMER_BIG_LINK_VALUE, PORTAL_TIMER_LABEL_NEXT } from './PortalTimerConstants';
+import declint from 'declint-ru';
 
 export class PortalTimerComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      remainTime: {}
+      remainTime: {},
+      currentPartEndDate: {
+        text: PORTAL_TIMER_LABEL,
+        date: 'October 10, 2018 15:30:00',
+      },
+      nextPartEndDate: {
+        text: PORTAL_TIMER_LABEL_NEXT,
+        date: 'October 25, 2018 23:59:00',
+      },
     };
   }
 
+  getEndDate() {
+    const nowDate = new Date();
+    const currentPartEndDate = new Date(this.state.currentPartEndDate.date);
+
+    return nowDate > currentPartEndDate
+      ? this.state.nextPartEndDate
+      : this.state.currentPartEndDate;
+  }
+
    componentDidMount() {
-      const endDate = new Date(2018, 9, 10, 15, 30, 0);
+      const endDate = new Date(this.getEndDate().date);
+
       this.calculatedTime(endDate);
       
       this.intervalId = setInterval(() => {
+        const endDate = new Date(this.getEndDate().date);
+
         this.calculatedTime(endDate)
       }, 1000 * 60);
-     
    };
 
-   componentWillUnmount() {
+  componentWillUnmount() {
     clearInterval(this.intervalId);
-   }
+  }
 
   calculatedTime = (endDate) => {
 
@@ -60,7 +77,7 @@ export class PortalTimerComponent extends Component {
       <div className="portal-timer">
 
         <div className="portal-timer__label">
-          {PORTAL_TIMER_LABEL}
+          {this.getEndDate().text}
         </div>
 
         <div className="portal-timer__counter">
