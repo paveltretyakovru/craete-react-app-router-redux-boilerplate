@@ -34,7 +34,7 @@ export class HowRegisterComponent extends Component {
           </p>
 
           <p className="portal-how-register__title">
-            Для участия в конкурсе необходимо в период <b>с 10 по 25 октября</b> подать заявку на официальном сайте “Лидеры России
+            Для участия в конкурсе необходимо в период <b>с 10 по 25 октября</b> подать заявку на официальном сайте “Лидеры России”
           </p>
           <p className="portal-how-register__sub-title portal-how-register__sub-title-desktop">Для участников прошлого конкурса сохранена информация в&nbsp;
               <ReactGA.OutboundLink
@@ -190,7 +190,7 @@ export class HowRegisterComponent extends Component {
               <img src={elementGroupImage} alt="avatar"/>
               <div className="need-element__description">
                 <div className="need-element__description-title">
-                  Количество и «качество» друзей, професииональные связи
+                  Количество и «качество» друзей, профессиональные связи
                 </div>
                 <div className="need-element__description-text">
                   Большое количество контактов говорит об открытости участника, его социальной активности
